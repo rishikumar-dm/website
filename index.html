@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Marketing Agency | More Patients, More Revenue — Intellius Medical</title>
+<meta name="description" content="We help medspas, doctors, and healthcare practices grow revenue through Google. Not just SEO — a revenue partnership. See real results: $0 to $1M/year for an LA medspa. Free audit available.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════════════
+     INTELLIUS MEDICAL — HOMEPAGE
+     Same design system as audit page template.
+     Rishi: Rebuild each section in Wix editor.
+     ═══════════════════════════════════════════════════ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand-dark: #0F172A;
+    --brand-blue: #1D4ED8;
+    --brand-blue-light: #EFF6FF;
+    --brand-green: #059669;
+    --brand-green-light: #ECFDF5;
+    --brand-orange: #EA580C;
+    --brand-orange-light: #FFF7ED;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --border: #E2E8F0;
+    --bg-page: #FFFFFF;
+    --bg-section-alt: #F8FAFC;
+    --radius: 12px;
+    --max-width: 780px;
+    --max-width-wide: 1080px;
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── WIX SECTION: Trust Bar (top) ─── */
+  .trust-bar {
+    background: var(--brand-dark);
+    color: #CBD5E1;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .trust-bar strong { color: #FFF; }
+
+  /* ─── WIX SECTION: Hero ─── */
+  .hero {
+    background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+    padding: 72px 24px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(29,78,216,0.15) 0%, transparent 50%);
+  }
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #93C5FD;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    color: #FFF;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: #60A5FA; }
+  .hero p.hero-sub {
+    color: #CBD5E1;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 12px;
+    line-height: 1.7;
+  }
+  .hero p.hero-detail {
+    color: #94A3B8;
+    font-size: 15px;
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  /* ─── REUSABLE: CTA Button ─── */
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-green);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .cta-btn:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
+  .cta-btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .cta-btn-secondary:hover { border-color: #FFF; background: rgba(255,255,255,0.05); }
+  .hero-ctas { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+
+  /* ─── REUSABLE: Stat Strip ─── */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item {
+    background: #FFF;
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--brand-blue);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ─── WIX SECTION: Content area ─── */
+  .content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .content h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 48px 0 16px;
+    line-height: 1.3;
+  }
+  .content h2:first-child { margin-top: 0; }
+  .content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand-blue);
+    margin: 36px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--brand-blue);
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .content p {
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── REUSABLE: Callout Box ─── */
+  .callout {
+    margin: 24px 0;
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .callout-warning {
+    background: var(--brand-orange-light);
+    border-left: 4px solid var(--brand-orange);
+    color: #9A3412;
+  }
+  .callout-success {
+    background: var(--brand-green-light);
+    border-left: 4px solid var(--brand-green);
+    color: #065F46;
+  }
+  .callout-info {
+    background: var(--brand-blue-light);
+    border-left: 4px solid var(--brand-blue);
+    color: #1E40AF;
+  }
+
+  /* ─── REUSABLE: Result Card ─── */
+  .result-card {
+    background: var(--bg-section-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 28px 0;
+  }
+  .result-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .result-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .result-badge-before { background: #FEE2E2; color: #991B1B; }
+  .result-badge-after { background: #D1FAE5; color: #065F46; }
+  .result-stat {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .result-stat-red { color: #DC2626; }
+  .result-stat-green { color: #059669; }
+  .result-vs { color: var(--text-muted); font-size: 20px; font-weight: 600; margin: 0 4px; }
+
+  /* ─── REUSABLE: Inline CTA Block ─── */
+  .inline-cta {
+    background: linear-gradient(135deg, #0F172A, #1E3A5F);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .inline-cta p {
+    color: #CBD5E1;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .inline-cta strong {
+    color: #FFF;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* ─── HOMEPAGE: Differentiator Cards ─── */
+  .diff-section {
+    background: var(--bg-section-alt);
+    padding: 56px 24px;
+  }
+  .diff-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+  }
+  .diff-inner h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .diff-inner > p {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 36px;
+    font-size: 16px;
+  }
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .diff-card {
+    background: #FFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: box-shadow 0.2s;
+  }
+  .diff-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .diff-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .diff-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .diff-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ─── HOMEPAGE: Results Grid ─── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .results-grid .result-card { margin: 0; }
+  .result-card-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .result-card-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .result-card-detail {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ─── HOMEPAGE: Process Steps ─── */
+  .process-section {
+    background: var(--bg-section-alt);
+    padding: 56px 24px;
+  }
+  .process-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+  }
+  .process-inner h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .process-inner > p {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .process-step {
+    text-align: center;
+    padding: 24px 16px;
+  }
+  .process-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--brand-blue);
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 50%;
+    margin-bottom: 16px;
+  }
+  .process-step h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .process-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .process-arrow {
+    display: none;
+  }
+
+  /* ─── WIX SECTION: Who We Work With ─── */
+  .specialties {
+    background: var(--bg-page);
+    padding: 48px 24px;
+  }
+  .specialties-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+  .specialties-inner h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .specialties-inner > p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .specialty-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .specialty-tag {
+    background: var(--bg-section-alt);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  /* ─── WIX SECTION: Final CTA / Form ─── */
+  .final-cta {
+    background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .final-cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .final-cta h2 {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .final-cta p {
+    color: #94A3B8;
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  .form-mock {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: left;
+  }
+  .form-row { margin-bottom: 16px; }
+  .form-label {
+    display: block;
+    color: #CBD5E1;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus { border-color: #60A5FA; }
+  .form-input::placeholder { color: #64748B; }
+  .form-submit { width: 100%; margin-top: 8px; }
+  .form-note {
+    color: #64748B;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* ─── REUSABLE: Author byline ─── */
+  .byline {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px 24px 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .byline-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .byline-text { font-size: 14px; color: var(--text-muted); }
+  .byline-text strong { color: var(--text-primary); }
+
+  /* ─── REUSABLE: Sticky Mobile CTA ─── */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    padding: 12px 20px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .sticky-cta .cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* ─── HOMEPAGE: Client Logo Bar ─── */
+  .logo-bar {
+    background: var(--bg-section-alt);
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo-bar-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+  }
+  .logo-placeholder {
+    width: 120px;
+    height: 48px;
+    background: #E2E8F0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+  }
+
+  /* ─── HOMEPAGE: Video Testimonials ─── */
+  .testimonials-section {
+    background: var(--bg-page);
+    padding: 56px 24px;
+  }
+  .testimonials-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+  }
+  .testimonials-inner h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .testimonials-inner > p {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 36px;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--bg-section-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .video-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+  }
+  .play-btn {
+    width: 56px;
+    height: 56px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 20px;
+  }
+  .video-label {
+    color: #94A3B8;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .testimonial-info {
+    padding: 20px 24px;
+  }
+  .testimonial-quote {
+    font-size: 15px;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .testimonial-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .testimonial-role {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ─── Mobile responsive ─── */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 40px; }
+    .hero h1 { font-size: 28px; }
+    .hero p.hero-sub { font-size: 16px; }
+    .content { padding: 32px 20px; }
+    .content h2 { font-size: 24px; }
+    .content h3 { font-size: 18px; }
+    body { font-size: 16px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .stat-number { font-size: 26px; }
+    .inline-cta { padding: 24px 20px; }
+    .result-card { padding: 20px; }
+    .result-stat { font-size: 28px; }
+    .cta-btn-secondary { margin-left: 0; }
+    .sticky-cta { display: block; }
+    .final-cta { padding-bottom: 100px; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .results-grid { grid-template-columns: 1fr; }
+    .diff-section, .process-section { padding: 40px 20px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .logo-grid { gap: 20px; }
+    .logo-placeholder { width: 100px; height: 40px; font-size: 10px; }
+    .testimonials-section { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ WIX SECTION 1: Trust Bar ═══ -->
+<div class="trust-bar">
+  <strong>12+ Years in Healthcare Marketing</strong> · Dallas, TX · Medspas, Doctors & Surgeons Across the U.S.
+</div>
+
+<!-- ═══ WIX SECTION 2: Hero ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Healthcare Revenue Partners</div>
+    <h1>We Don't Do SEO.<br>We <span>Grow Your Revenue.</span></h1>
+    <p class="hero-sub">Most agencies sell you channels — SEO, ads, social media — and charge for each one separately. We focus on one thing: getting you more patients and more revenue. Whatever channel does that, we use it.</p>
+    <p class="hero-detail">Co-founded by Dr. Amir Baluch, a practicing anesthesiologist in Dallas. We understand healthcare because we're in it.</p>
+    <div class="hero-ctas">
+      <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+      <a href="#results" class="cta-btn-secondary">See Client Results</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 3: Stat Strip ═══ -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">$1M+</div>
+    <div class="stat-label">Annual Revenue for LA Medspa</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">$80K</div>
+    <div class="stat-label">Monthly Revenue from Google</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">20+</div>
+    <div class="stat-label">Medspa Case Studies</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">12+</div>
+    <div class="stat-label">Years in Healthcare</div>
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 3.5: Client Logo Bar ═══ -->
+<!-- RISHI: Replace placeholder boxes with actual client logos (PNG/SVG, grayscale) -->
+<div class="logo-bar">
+  <div class="logo-bar-label">Trusted by Healthcare Practices Across the U.S.</div>
+  <div class="logo-grid">
+    <div class="logo-placeholder">RENEWME</div>
+    <div class="logo-placeholder">PARI'S MEDSPA</div>
+    <div class="logo-placeholder">CELLEXION</div>
+    <div class="logo-placeholder">SCULPTED MD</div>
+    <div class="logo-placeholder">ROOT MEDSPA</div>
+    <div class="logo-placeholder">HILLARY WELLNESS</div>
+    <div class="logo-placeholder">CLIENT 7</div>
+    <div class="logo-placeholder">CLIENT 8</div>
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 4: How We're Different ═══ -->
+<section class="diff-section">
+  <div class="diff-inner">
+    <h2>How We Work Is Entirely Different</h2>
+    <p>Other marketing agencies don't look at what you really need. They sell you a service. We focus on your revenue.</p>
+
+    <div class="diff-grid">
+
+      <div class="diff-card">
+        <div class="diff-card-icon" style="background: var(--brand-green-light); color: var(--brand-green);">$</div>
+        <h3>Revenue First, Not Channels</h3>
+        <p>We don't pitch you SEO, then ads, then social media — charging separately for each. We study your market, your competitors, and your current performance. Whatever channel drives revenue fastest, that's where we start.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-card-icon" style="background: var(--brand-blue-light); color: var(--brand-blue);">⚡</div>
+        <h3>Fix What's Broken First</h3>
+        <p>Before any new strategy, we find the low-hanging fruit. Maybe you're on page 2 for keywords that matter. Maybe your ads have a negative ROI because the landing page doesn't convert. We fix what generates revenue right away, then execute our strategy.</p>
+      </div>
+
+      <div class="diff-card">
+        <div class="diff-card-icon" style="background: var(--brand-orange-light); color: var(--brand-orange);">🔍</div>
+        <h3>We Study Your Competitors</h3>
+        <p>We find the gaps your competitors are leaving open and exploit them to get you results fast — instead of telling you "SEO takes 8 to 9 months, just wait." And after 9 months of charging you, telling you they need 3 more months. We are not those agencies.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 5: The "Not Those Agencies" Callout ═══ -->
+<div class="content">
+  <div class="callout callout-warning">
+    <strong>Tired of this pattern?</strong> You hire an agency. They promise results in 6 months. They charge you every month. After 8 to 9 months, they say "competition is tough, give us 3 more months." You've spent thousands and have nothing to show for it. We work differently — we fix what's broken first and you see results before we ask for a long commitment.
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 6: Client Results ═══ -->
+<div class="content" id="results" style="padding-top: 0;">
+  <h2>Real Results. Real Revenue. Real Clients.</h2>
+  <p>We don't show you vanity metrics. We show you the revenue our work generates. Here are a few examples from more than 20 medspa and healthcare case studies.</p>
+
+  <div class="results-grid">
+
+    <div class="result-card">
+      <div class="result-card-label">IV Therapy Medspa · Los Angeles</div>
+      <div class="result-card-name">From Zero to $1 Million a Year</div>
+      <div class="result-card-header" style="margin-bottom:0">
+        <div>
+          <span class="result-badge result-badge-before">Before</span>
+          <div class="result-stat result-stat-red" style="margin-top:8px">$0</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:4px">No organic traffic</div>
+        </div>
+        <div style="padding: 0 4px;"><span class="result-vs">→</span></div>
+        <div>
+          <span class="result-badge result-badge-after">After</span>
+          <div class="result-stat result-stat-green" style="margin-top:8px">$1M/yr</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Pure organic revenue</div>
+        </div>
+      </div>
+      <p class="result-card-detail" style="margin-top:12px;margin-bottom:0;">Started during COVID. Penetrated the competitive LA market through strategic SEO and content — no ads, all organic Google traffic.</p>
+    </div>
+
+    <div class="result-card">
+      <div class="result-card-label">Pari's Medspa</div>
+      <div class="result-card-name">$0 to $80,000/Month from Google</div>
+      <div class="result-card-header" style="margin-bottom:0">
+        <div>
+          <span class="result-badge result-badge-before">Before</span>
+          <div class="result-stat result-stat-red" style="margin-top:8px">$0</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:4px">No Google presence</div>
+        </div>
+        <div style="padding: 0 4px;"><span class="result-vs">→</span></div>
+        <div>
+          <span class="result-badge result-badge-after">After</span>
+          <div class="result-stat result-stat-green" style="margin-top:8px">$80K/mo</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:4px">From Google only</div>
+        </div>
+      </div>
+      <p class="result-card-detail" style="margin-top:12px;margin-bottom:0;">Not from ads. Not from Facebook or Instagram. Pure organic Google traffic. And it doesn't cost a fortune to maintain.</p>
+    </div>
+
+    <!-- RESULT CARD 3: Placeholder — voice-type a 30-second blurb -->
+    <div class="result-card" style="margin-top: 20px;">
+      <div class="result-card-label">Healthy By Hillary · [Location]</div>
+      <div class="result-card-name">[PLACEHOLDER — Voice-type: how you got Hillary to 44 patient calls/month]</div>
+      <div class="result-card-header" style="margin-bottom:0">
+        <div>
+          <span class="result-badge result-badge-before">Before</span>
+          <div class="result-stat result-stat-red" style="margin-top:8px">—</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:4px">[Before numbers]</div>
+        </div>
+        <div style="padding: 0 4px;"><span class="result-vs">→</span></div>
+        <div>
+          <span class="result-badge result-badge-after">After</span>
+          <div class="result-stat result-stat-green" style="margin-top:8px">44 calls/mo</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Patient calls per month</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-info">
+    <strong>We have more than 20 medspa and doctor case studies.</strong> Click the link at the bottom of this page to see the full case study breakdown with real numbers, real timelines, and real strategies.
+  </div>
+
+  <p style="text-align:center;margin-top:20px;"><a href="/results" style="color:var(--brand-blue);font-weight:700;font-size:16px;text-decoration:none;">See All 20+ Case Studies →</a></p>
+
+  <!-- ─── INLINE CTA ─── -->
+  <div class="inline-cta">
+    <strong>Want results like these for your practice?</strong>
+    <p>We start with a free audit. No contracts. No commitments. Just a clear picture of where your revenue opportunity is.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 6.5: Video Testimonials ═══ -->
+<!-- MADHAN: Record 60-second video testimonials from 2 clients -->
+<!-- RISHI: Embed YouTube/Vimeo videos replacing the placeholder boxes -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <h2>Hear It From Our Clients</h2>
+    <p>Don't take our word for it. Here's what practice owners say about working with us.</p>
+
+    <div class="testimonial-grid">
+
+      <!-- TESTIMONIAL 1: Ask Dr. Amir Baluch for a 60-second video -->
+      <div class="testimonial-card">
+        <div class="video-placeholder">
+          <div class="play-btn">&#9654;</div>
+          <div class="video-label">Video Testimonial — Coming Soon</div>
+        </div>
+        <div class="testimonial-info">
+          <div class="testimonial-quote">"[PLACEHOLDER — Ask Dr. Amir for a 60-second video about working with Intellius Medical as both co-founder and client]"</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AB</div>
+            <div>
+              <div class="testimonial-name">Dr. Amir Baluch</div>
+              <div class="testimonial-role">Anesthesiologist · Baluch Capital, Dallas TX</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIAL 2: Ask Spencer Carrado for a 60-second video -->
+      <div class="testimonial-card">
+        <div class="video-placeholder">
+          <div class="play-btn">&#9654;</div>
+          <div class="video-label">Video Testimonial — Coming Soon</div>
+        </div>
+        <div class="testimonial-info">
+          <div class="testimonial-quote">"[PLACEHOLDER — Ask Spencer what made him choose Intellius over other agencies for his 6 Texas medspa locations]"</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SC</div>
+            <div>
+              <div class="testimonial-name">Spencer Carrado</div>
+              <div class="testimonial-role">Owner · Sculpted MD, 6 Locations in Texas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 7: How We Work — Process ═══ -->
+<section class="process-section">
+  <div class="process-inner">
+    <h2>How We Work With You</h2>
+    <p>We don't work as an offshore agency you have to chase for results. We work as your in-house marketing team.</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-num">1</div>
+        <h3>Free Video Audit</h3>
+        <p>We review your site, your competitors, your Google presence — and record a personalized video showing exactly what's broken and what to fix first.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">2</div>
+        <h3>Fix the Quick Wins</h3>
+        <p>We find low-hanging fruit that generates revenue immediately — before any new strategy. Page 2 rankings that need a small push. Ads with negative ROI. Landing pages that don't convert.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">3</div>
+        <h3>Execute the Strategy</h3>
+        <p>Only after the quick wins are producing results do we move into our full strategy — competitor gap analysis, content, SEO, ads, or whatever channel drives the most patients.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">4</div>
+        <h3>Partner, Not Vendor</h3>
+        <p>We need your feedback and input to grow fast. If you want to pay an agency and forget about it, we're not the right fit. We work with committed practice owners who want real growth.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 8: Common Mistakes ═══ -->
+<div class="content">
+  <h2>Stop Making These Expensive Mistakes</h2>
+
+  <p>If you've been working with a marketing agency and not seeing results, chances are one or more of these is happening to your practice right now.</p>
+
+  <h3><span class="step-num">1</span> Hiring Cheap SEO That Hurts Your Rankings</h3>
+  <p>Low-cost SEO people don't help you — they hurt you. They create duplicate content, thin pages, category pages, and tag pages full of nonsense. They use AI to write content that provides zero value to your patients. Google sees this and pushes you down instead of up.</p>
+
+  <h3><span class="step-num">2</span> Websites That Take 10 Seconds to Load</h3>
+  <p>Cheap developers build websites covered in iframes that Google can't even crawl. Most of these sites take 5 to 10 seconds to load on mobile. 80 to 90 percent of your patients are searching on their phones. If your site doesn't load in 3 seconds, they leave and book with your competitor.</p>
+
+  <h3><span class="step-num">3</span> Paying for Channels Instead of Results</h3>
+  <p>Most agencies sell you services — SEO package, social media package, PPC package — and charge separately for each one. They focus on delivering the service, not on whether the service is actually bringing you patients. You end up paying for three channels and none of them are producing revenue.</p>
+
+  <div class="callout callout-success">
+    <strong>Our approach:</strong> We don't charge you for every channel separately. We focus on what drives revenue for your specific practice and market. One practice might need local SEO. Another might need Google Ads. Another might need a complete website overhaul. We figure out what works for YOU, not what's easiest for us to sell.
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 9: About / Trust ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Why Trust Us</h2>
+
+  <p>Intellius Medical is co-founded by <strong>Dr. Amir Baluch</strong>, a practicing anesthesiologist and healthcare entrepreneur based in Dallas, Texas. We're not marketers pretending to understand healthcare. We're healthcare people who happen to be very good at marketing.</p>
+
+  <p>We've been doing this for more than <strong>12 years.</strong> Our team is based in Dallas with members across the United States and India. We work with a handful of clients at a time — not hundreds — because we focus on real, measurable results for every practice we serve.</p>
+
+  <p>We don't want clients who aren't committed to their own growth. If you're looking to pay an agency, forget about it, and then ask for results 6 months later — we're not the right fit. We partner with practice owners who are ready to grow and willing to give us the feedback and input we need to move fast.</p>
+
+  <div class="callout callout-info">
+    <strong>We focus on medspas, doctors, pain management clinics, surgeons, and podiatrists.</strong> That's it. We stay lean, focused, and targeted so we can deliver the best possible results — instead of trying to serve every industry and delivering mediocre work for everyone.
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 10: Who We Work With ═══ -->
+<section class="specialties">
+  <div class="specialties-inner">
+    <h2>Who We Work With</h2>
+    <p>We serve healthcare practices that depend on local patients finding them online. If you're in one of these specialties, we can help.</p>
+    <div class="specialty-tags">
+      <span class="specialty-tag">Medspas</span>
+      <span class="specialty-tag">Doctors</span>
+      <span class="specialty-tag">Pain Management</span>
+      <span class="specialty-tag">Surgeons</span>
+      <span class="specialty-tag">Podiatrists</span>
+      <span class="specialty-tag">Dermatologists</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 11: Final CTA + Form ═══ -->
+<section class="final-cta" id="audit-form">
+  <div class="final-cta-inner">
+    <h2>Get Your Free Video Audit</h2>
+    <p>We'll review your website, your competitors, and your Google presence — then send you a personalized video showing exactly what's broken and what to fix first. No pitch. No contracts. No obligations.</p>
+
+    <div class="form-mock">
+      <div class="form-row">
+        <label class="form-label">Your Name *</label>
+        <input type="text" class="form-input" placeholder="Dr. Jane Smith">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-input" placeholder="jane@yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Website URL *</label>
+        <input type="url" class="form-input" placeholder="https://yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Practice Type</label>
+        <input type="text" class="form-input" placeholder="Medspa, Doctor, Surgeon, etc.">
+      </div>
+      <button class="cta-btn form-submit">Send Me My Free Audit →</button>
+      <p class="form-note">Video audit delivered within 48–72 hours. No spam. No sales calls.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 12: Byline ═══ -->
+<div class="byline">
+  <div class="byline-avatar">M</div>
+  <div class="byline-text">
+    <strong>By Madhan</strong> · Founder, Intellius Medical
+  </div>
+</div>
+
+<!-- ═══ MOBILE: Sticky CTA ═══ -->
+<div class="sticky-cta">
+  <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+</div>
+
+</body>
+</html>
