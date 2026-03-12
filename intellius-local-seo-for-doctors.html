@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local SEO for Doctors: What Actually Works (100+ Healthcare Site Audits) | Intellius Medical</title>
+<meta name="description" content="We've audited 200+ doctor websites and found the same mistakes killing rankings. Real case study: gastroenterologist went from 0 to 100+ calls/month. Free audit available.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand-dark: #0F172A;
+    --brand-blue: #1D4ED8;
+    --brand-blue-light: #EFF6FF;
+    --brand-green: #059669;
+    --brand-green-light: #ECFDF5;
+    --brand-orange: #EA580C;
+    --brand-orange-light: #FFF7ED;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --border: #E2E8F0;
+    --bg-page: #FFFFFF;
+    --bg-section-alt: #F8FAFC;
+    --radius: 12px;
+    --max-width: 780px;
+  }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text-primary); background: var(--bg-page); line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .trust-bar { background: var(--brand-dark); color: #CBD5E1; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; }
+  .trust-bar strong { color: #FFF; }
+  .hero { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); padding: 64px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(29,78,216,0.15) 0%, transparent 50%); }
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #93C5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; }
+  .hero h1 { color: #FFF; font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero h1 span { color: #60A5FA; }
+  .hero p { color: #CBD5E1; font-size: 17px; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-green); color: #FFF; font-size: 16px; font-weight: 700; padding: 16px 32px; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+  .cta-btn:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
+  .cta-btn-secondary { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #FFF; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+  .cta-btn-secondary:hover { border-color: #FFF; background: rgba(255,255,255,0.05); }
+  .hero-ctas { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stat-item { background: #FFF; padding: 28px 20px; text-align: center; }
+  .stat-number { font-size: 32px; font-weight: 800; color: var(--brand-blue); line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  .content { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px; }
+  .content h2 { font-size: 28px; font-weight: 800; color: var(--text-primary); margin: 48px 0 16px; line-height: 1.3; }
+  .content h2:first-child { margin-top: 0; }
+  .content h3 { font-size: 20px; font-weight: 700; color: var(--brand-blue); margin: 36px 0 12px; display: flex; align-items: center; gap: 10px; }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--brand-blue); color: #FFF; font-size: 14px; font-weight: 800; border-radius: 50%; flex-shrink: 0; }
+  .content p { margin-bottom: 16px; color: var(--text-secondary); }
+  .callout { margin: 24px 0; padding: 20px 24px; border-radius: var(--radius); font-weight: 600; line-height: 1.7; font-size: 16px; }
+  .callout-warning { background: var(--brand-orange-light); border-left: 4px solid var(--brand-orange); color: #9A3412; }
+  .callout-success { background: var(--brand-green-light); border-left: 4px solid var(--brand-green); color: #065F46; }
+  .callout-info { background: var(--brand-blue-light); border-left: 4px solid var(--brand-blue); color: #1E40AF; }
+  .result-card { background: var(--bg-section-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 28px 0; }
+  .result-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .result-badge { padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .result-badge-before { background: #FEE2E2; color: #991B1B; }
+  .result-badge-after { background: #D1FAE5; color: #065F46; }
+  .result-stat { font-size: 36px; font-weight: 800; line-height: 1; }
+  .result-stat-red { color: #DC2626; }
+  .result-stat-green { color: #059669; }
+  .result-vs { color: var(--text-muted); font-size: 20px; font-weight: 600; margin: 0 4px; }
+  .inline-cta { background: linear-gradient(135deg, #0F172A, #1E3A5F); border-radius: var(--radius); padding: 32px; text-align: center; margin: 40px 0; }
+  .inline-cta p { color: #CBD5E1; font-size: 15px; margin-bottom: 16px; }
+  .inline-cta strong { color: #FFF; font-size: 20px; display: block; margin-bottom: 8px; }
+  .specialties { background: var(--bg-section-alt); padding: 48px 24px; }
+  .specialties-inner { max-width: var(--max-width); margin: 0 auto; }
+  .specialty-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .specialty-tag { background: #FFF; border: 1px solid var(--border); padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; color: var(--text-primary); }
+  .final-cta { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); padding: 64px 24px; text-align: center; }
+  .final-cta-inner { max-width: 560px; margin: 0 auto; }
+  .final-cta h2 { color: #FFF; font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+  .final-cta p { color: #94A3B8; font-size: 16px; margin-bottom: 32px; }
+  .form-mock { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 32px 24px; text-align: left; }
+  .form-row { margin-bottom: 16px; }
+  .form-label { display: block; color: #CBD5E1; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .form-input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #FFF; font-size: 15px; font-family: inherit; outline: none; transition: border-color 0.2s; }
+  .form-input:focus { border-color: #60A5FA; }
+  .form-input::placeholder { color: #64748B; }
+  .form-submit { width: 100%; margin-top: 8px; }
+  .form-note { color: #64748B; font-size: 12px; text-align: center; margin-top: 12px; }
+  .byline { max-width: var(--max-width); margin: 0 auto; padding: 24px 24px 48px; display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border); }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--brand-blue); display: flex; align-items: center; justify-content: center; color: #FFF; font-weight: 800; font-size: 16px; }
+  .byline-text { font-size: 14px; color: var(--text-muted); }
+  .byline-text strong { color: var(--text-primary); }
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #FFF; padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 1000; text-align: center; border-top: 1px solid var(--border); }
+  .sticky-cta .cta-btn { width: 100%; justify-content: center; padding: 14px; font-size: 15px; }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 40px; } .hero h1 { font-size: 28px; } .hero p { font-size: 15px; }
+    .content { padding: 32px 20px; } .content h2 { font-size: 24px; } .content h3 { font-size: 18px; }
+    body { font-size: 16px; } .stat-strip { grid-template-columns: repeat(2, 1fr); } .stat-number { font-size: 26px; }
+    .inline-cta { padding: 24px 20px; } .result-card { padding: 20px; } .result-stat { font-size: 28px; }
+    .sticky-cta { display: block; } .final-cta { padding-bottom: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <strong>200+ Doctor Websites Audited</strong> · 10+ Years in Healthcare Marketing · Dallas, TX
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">The Definitive Guide</div>
+    <h1>Local SEO for Doctors:<br><span>What Actually Works</span></h1>
+    <p>Every marketing agency sells you "SEO for doctors" without understanding what you do. We've audited 200+ doctor and medspa websites over 10 years. Here's what we found — with real case studies, real numbers, and strategies you can do yourself.</p>
+    <div class="hero-ctas">
+      <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+      <a href="#case-study" class="cta-btn-secondary">See the Case Study</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ═══ -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">200+</div>
+    <div class="stat-label">Doctor Sites Audited</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Calls/Month for GI Client</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">50+</div>
+    <div class="stat-label">Actionable Tips Inside</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">10+</div>
+    <div class="stat-label">Years in Healthcare SEO</div>
+  </div>
+</div>
+
+<!-- ═══ INTRO ═══ -->
+<div class="content">
+  <h2>The Myths Every Marketing Agency Uses to Get Doctors as Clients</h2>
+
+  <p>Most marketing agencies that pitch doctors don't understand what you actually do. They don't understand what procedures you perform, what conditions you treat, or what your patients are searching for. They try to rank you for "doctors near me" or "specialists near me" — and that's it.</p>
+
+  <p>We do that too. But we also rank doctors for their <strong>procedures, conditions, treatments, and every variation of what patients actually search when they need help.</strong> That's the difference between getting a few clicks and getting 100+ patient calls a month.</p>
+
+  <p>We've worked with more than 100 doctors and medspas over the last 10 years. In this guide, I'm sharing more than 50 insights, hidden gems, statistics, and strategies that you can use yourself — with your nurse practitioner, with AI tools, or on your own — to start getting more patients from Google without hiring another agency.</p>
+
+  <div class="callout callout-info">
+    <strong>This guide is designed to help you do SEO on your own.</strong> Everything here comes from real audits of 200+ doctor websites. We found the same basic issues over and over. I'm going to walk you through them one by one with real examples.
+  </div>
+</div>
+
+<!-- ═══ CASE STUDY: Gastroenterologist ═══ -->
+<div class="content" id="case-study" style="padding-top: 0;">
+  <h2>Case Study: How We Took a Gastroenterologist From Zero to 100+ Calls a Month</h2>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div>
+        <span class="result-badge result-badge-before">Before</span>
+        <div class="result-stat result-stat-red" style="margin-top:8px">0</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">100% dependent on DHAT referrals</div>
+      </div>
+      <div style="padding: 0 8px;"><span class="result-vs">→</span></div>
+      <div>
+        <span class="result-badge result-badge-after">After</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">100+</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Patient calls per month from Google</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin:0"><strong style="color:var(--text-primary)">Specialty:</strong> Gastroenterology · Dallas, TX · Page 1 rankings within 6 months</p>
+  </div>
+
+  <p>A gastroenterologist based in Dallas reached out to us with one request: he wanted more patients for <strong>endoscopic sleeve gastroplasty (ESG).</strong> This was before the semaglutide and Wegovy era. People who wanted to lose weight but didn't want surgery were looking for ESG as an alternative.</p>
+
+  <p>His website was built on Wix — and back then, Wix was iframe-only. Google couldn't crawl it. So the first thing we did was <strong>remove the Wix site, build a custom WordPress website, and make it crawlable for Google.</strong></p>
+
+  <h3>Step 1: We Didn't Stop at One Procedure</h3>
+
+  <p>The doctor only asked for ESG. But we found that bariatric surgeons in Dallas were spending more than <strong>$50 per click on Google Ads</strong> trying to get weight-loss patients. Since our gastroenterologist couldn't do surgery, he had a natural advantage — ESG is non-surgical. Patients looking for alternatives to gastric sleeve were his ideal audience.</p>
+
+  <p>So we started creating content that captured those patients:</p>
+
+  <p><strong>City-based pages</strong> — dedicated pages for Dallas, Fort Worth, San Antonio, and surrounding areas. These patients pay $5,000 to $10,000 per procedure, so every ranking is worth real money.</p>
+
+  <p><strong>Comparison content</strong> — "Gastric Sleeve vs Endoscopic Sleeve Gastroplasty" articles that ranked nationwide. Patients actively comparing their options found our client's content and booked with him.</p>
+
+  <p><strong>Patient education content</strong> — what to eat before the procedure, how to prepare, recovery timelines, pros and cons. Every question a patient has before booking became a page on his site.</p>
+
+  <div class="callout callout-success">
+    <strong>Result:</strong> Page 1 rankings within 6 months. Steady traffic growth. Minimum 10 to 15 patients per month inquiring about ESG alone.
+  </div>
+
+  <h3>Step 2: We Expanded Beyond ESG</h3>
+
+  <p>Once we had ESG ranking, we decided to find <strong>every procedure this doctor could perform</strong> and build content for each one.</p>
+
+  <p><strong>Colonoscopy</strong> was the next target. It's competitive in Dallas, so we didn't just write a generic "what is a colonoscopy" page. We found the exact questions patients were asking:</p>
+
+  <p>"ColoGuard vs colonoscopy" — patients deciding between options. "How painful is a colonoscopy" — patients with anxiety about the procedure. "Is it worth having a colonoscopy" — patients on the fence. "What to eat before colonoscopy" — patients who already booked but need prep info. "How long will I poop after colonoscopy" — yes, people really search this. And we wrote content for every single one.</p>
+
+  <p>We helped him rank for <strong>ERCP vs EUS</strong> — two procedures that patients constantly confuse. Endoscopic ultrasound versus endoscopic retrograde cholangiopancreatography. Most patients have no idea what the difference is. We built content that explained it clearly, and Google ranked it because nobody else had done it well.</p>
+
+  <p>Then we built pages for <strong>every condition he treats:</strong> anemia, achalasia, bile duct stones, bile duct tumors, colon cancer screening, GERD, large colon polyps, pancreas tumors, obesity, and weight management.</p>
+
+  <div class="callout callout-warning">
+    <strong>Why condition pages matter:</strong> You may be thinking "why do I need to write about conditions I treat?" Because Google considers this as authority. When you write about the conditions you treat, the procedures you perform, and the questions patients have — Google recognizes you as a real expert and ranks you above competitors who have a generic 5-page website.
+  </div>
+
+  <h3>Step 3: Small Fixes That Drove Immediate Calls</h3>
+
+  <p>For pages that were already ranking on page 2, we didn't create new content. We simply <strong>updated the existing content, added images and video, and improved the page structure.</strong> That small push moved pages from page 2 to page 1, and the traffic came immediately.</p>
+
+  <p>One of the most impactful changes: we added a <strong>large "Call Now" button on mobile.</strong> People reading content about their condition on their phone could instantly tap to call and book an appointment. This one change significantly increased the call volume.</p>
+
+  <div class="callout callout-success">
+    <strong>Final result:</strong> This doctor was 100% dependent on DHAT patient referrals when he came to us. After our work on his Google Business Profile, website, cornerstone content, and condition pages — he was getting more than 100 calls per month directly from Google. Independent. Not dependent on any referral network.
+  </div>
+
+  <div class="inline-cta">
+    <strong>Want to know what's holding your practice back?</strong>
+    <p>We'll audit your site and show you the exact opportunities — just like we did for this gastroenterologist.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ INVISIBLE PAGES PROBLEM ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>The "Invisible Pages" Problem — Google Can't Rank What Doesn't Exist</h2>
+
+  <p>This is the single most common issue we find in every doctor website audit. <strong>Doctors do an incredible job healing patients, but they have no idea that they need dedicated pages for every condition they treat, every procedure they perform, and every sub-condition related to their specialty.</strong></p>
+
+  <p>That gastroenterologist we just talked about? When he came to us, he didn't have a single condition page on his entire website. Zero. No pages for GERD. No pages for colon cancer screening. No pages for bile duct stones. Nothing.</p>
+
+  <p>We had to build all of them — and once we did, he started showing up on Google for conditions he'd been treating for years but was invisible for online.</p>
+
+  <div class="callout callout-warning">
+    <strong>The page quality matters.</strong> These pages should not be thin 500-word pages written by ChatGPT. Each page needs to be a dedicated, in-depth resource of 1,000 words or more — written for that specific condition or procedure only. Google rewards depth and specificity. Generic AI content will hurt you more than having no page at all.
+  </div>
+</div>
+
+<!-- ═══ GOOGLE BUSINESS PROFILE ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Google Business Profile: What We Do for Every Doctor Client</h2>
+
+  <p>One of the first things we do for every doctor we work with is <strong>optimize their Google Business Profile.</strong> We update services, procedures, and everything they do. And we don't let the profile die just because there's nothing to post.</p>
+
+  <p>We post at least <strong>three times per week.</strong> We use Canva to create posts about procedures, conditions, treatments, before-and-after pictures of healed wounds, video testimonials from patients — anything that keeps the profile active and fresh.</p>
+
+  <p>The result: when someone searches "doctor near me," "gastroenterologist near me," "podiatrist near me," or "pain doctor near me" — our clients show up on Google Maps. Because Google rewards active, updated profiles over dormant ones.</p>
+</div>
+
+<!-- ═══ REVIEWS STRATEGY ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>The Review Strategy That Actually Moves Rankings</h2>
+
+  <p>Most doctors think they need 200 or 400 reviews because the other pain doctor or gastroenterologist or dentist in their area has 300 or 500 reviews. But new doctors — or doctors opening their own practice and building their own brand — don't need that many reviews. Even 10, 20, or 30 reviews can make a massive difference. Reviews are a decision maker for patients, and they tell Google that you're providing great procedures, great service, and great treatment.</p>
+
+  <h3>Quality Beats Quantity — Every Time</h3>
+
+  <p>Here's an example. A pain doctor with 100+ reviews where every single one says "doctor was helpful," "doctor was on time," "doctor cured me," "thank you doctor," "highly recommended." These template-style one-liner reviews will not stand up against reviews that tell a real story.</p>
+
+  <p>Compare that to a review like this: <em>"This doctor took care of my dad. My dad was with this doctor for his knee replacement surgery and they took care of him so much. They cured him, followed up with calls, and he took the time to explain the entire procedure. I am so happy — this doctor is a lifesaver."</em></p>
+
+  <p><strong>That one review will outbeat 10 generic reviews from patients posting just because the doctor asked them to.</strong></p>
+
+  <p>Google reads the review text — not just how many reviews you have. More keywords, more emotion, and more story the review tells, the more Google loves to promote you. It will show your website more often than the doctor who collected 300 one-liner reviews over 10 years.</p>
+
+  <h3>Review Velocity: What Google Actually Cares About</h3>
+
+  <p>Google also tracks review velocity — how fast you're getting new reviews. Your competitor may have 200 reviews over 5 years. That's roughly 40 reviews per year, or 3 to 4 reviews per month.</p>
+
+  <p>If you open your Google Business Profile right now and get 30 legitimate reviews in your first month — all with real keywords and real patient stories — <strong>Google is going to love you.</strong> Even with fewer total reviews, you can outrank your competitor because in the last 6 months, that competitor may have gotten zero new reviews. Or worse — they may have gotten one-star ratings that are actively hurting their rankings.</p>
+
+  <div class="callout callout-warning">
+    <strong>Why "leave us a review" doesn't work:</strong> Doctors put a QR code at the front desk or say "hey, leave us a review" when the patient walks out. But once patients step out of the clinic, they're busy. They forget to take their tablets. They forget to come back for follow-ups. They are definitely not going to remember to leave you a review. That's why we recommend doctors use review generation software — an automated platform that sends email and SMS reminders 7 or 14 days after the visit. Some platforms also collect negative feedback privately and only redirect happy patients to leave public reviews.
+  </div>
+
+  <h3>The HIPAA Trap in Review Responses</h3>
+
+  <p>This one catches doctors all the time. A doctor responds to a patient review and mentions a keyword related to the patient's condition — <strong>that's a HIPAA violation.</strong></p>
+
+  <p>If you reply to a review saying "thank you, your surgery went great" or "glad your chemotherapy is going well" — you're confirming that person is a patient and disclosing their medical information publicly. Even if the patient mentioned it first in their own review, your response as the provider has different legal implications.</p>
+
+  <p>The safe approach: keep your responses general. Thank them. Say you appreciate the kind words. Invite them back. <strong>Never mention a specific condition, procedure, or treatment in a public review response.</strong></p>
+
+  <div class="inline-cta">
+    <strong>Not sure if your review strategy is working?</strong>
+    <p>We check your review count, velocity, quality, and response strategy as part of every free audit.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ WEBSITE SPEED ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Your Website Is Losing Patients in 3 Seconds</h2>
+
+  <p>One thing most doctor sites miss: the website needs to <strong>load within 3 seconds on desktop and within 2 seconds on mobile.</strong> But doctors are busy making money and they care about how their site looks — not how fast it loads.</p>
+
+  <p>They keep adding high-definition team photos, before-and-after images, and video testimonials at full resolution. All of that slows the site down dramatically. It increases bounce rate — patients land on the site, wait 5 seconds for it to load, give up, and go to the next result.</p>
+
+  <p>Your website doesn't need to look like a magazine. It needs to <strong>load fast, work perfectly on mobile, and make it easy to book an appointment in two taps.</strong> That matters more than high-definition hero images.</p>
+</div>
+
+<!-- ═══ LINK BUILDING ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Link Building for Doctors: Why Healthcare Sites Need Different Backlinks</h2>
+
+  <p>Most SEO agencies build the same backlinks for doctors that they build for plumbers, electricians, HVAC specialists, and lawyers. That doesn't work for healthcare. Healthcare sites need a different kind of authority.</p>
+
+  <p>Google tracks something called <strong>E-E-A-T — Experience, Expertise, Authoritativeness, and Trustworthiness.</strong> For health content, Google doesn't care as much about the number of backlinks you have. Google wants to see authoritative content with proper disclaimers and medical accuracy — not 200 directory links blasted from a $5 Fiverr gig.</p>
+
+  <h3>The Backlinks That Actually Work</h3>
+
+  <p>You don't need hundreds of backlinks from random websites. <strong>You need relevant backlinks from high domain authority websites.</strong></p>
+
+  <p>Even posting on Medium, LinkedIn, and Quora with great answers that get a lot of upvotes — that sends social signals that Google values. A Quora answer with hundreds of upvotes, a Medium article with a lot of claps, a LinkedIn post with real engagement — Google loves those kinds of signals from high-authority platforms far more than directories or Web 2.0 link-building sites where you post on 100 sites for backlinks.</p>
+
+  <p>You literally don't need to do any of that directory blasting. It's a waste of money at best and a ranking penalty at worst.</p>
+
+  <h3>Cheap Backlinks Hurt You More Than They Help</h3>
+
+  <p><strong>Generic blog comments, bots posting 200 comments a day, and paid link schemes all violate Google's guidelines.</strong> For a healthcare site, this is especially dangerous. Google holds health content to a higher standard. If your backlink profile looks spammy, Google doesn't just ignore those links — it actively pushes your rankings down.</p>
+
+  <p>That's why in every audit we do, we check the backlink profile and help doctors get rid of the toxic backlinks that previous agencies built. In many cases, removing bad backlinks is as important as building good ones.</p>
+
+  <div class="callout callout-success">
+    <strong>What doctors can do themselves:</strong> Claim every legitimate medical directory listing. Ask hospitals where you have privileges to link to your practice website. Write a guest article for a local health publication. Sponsor a local health event — they'll link to you on the event page. These are easy, free, and far more valuable than anything you can buy on Fiverr.
+  </div>
+</div>
+
+<!-- ═══ 90-DAY PLAN ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Sample 90-Day SEO Plan: Pain Management Practice</h2>
+
+  <p>Here's exactly how we'd approach a pain management doctor who wants to grow their practice through Google.</p>
+
+  <h3><span class="step-num">1</span> Month 1: Fix What's Broken (Low-Hanging Fruit)</h3>
+
+  <p>First, we analyze the competition. We find which pain doctors in the area have the best reviews, which ones rank highest for "pain doctor near me" and condition-based keywords. We check their social media. We look at how many Google reviews they have.</p>
+
+  <p>Then we use SEMrush, Ahrefs, and competitor analysis tools to find the <strong>keyword gap</strong> — which keywords competitors rank for that our client doesn't. We look at how many pages competitors have, how long their content is, and how detailed their reviews are.</p>
+
+  <p>Then we audit our client's site: title tag issues, Google Business Profile problems, site speed, thin pages. <strong>We fix all of this in Month 1.</strong> This is the low-hanging fruit that can move rankings within weeks.</p>
+
+  <h3><span class="step-num">2</span> Month 2: Build the Content Foundation</h3>
+
+  <p>While the fixes from Month 1 are taking effect, we assign our writers to build condition and procedure pages. For a pain doctor, this means dedicated 2,000+ word pages for:</p>
+
+  <p><strong>Conditions:</strong> back pain, neck pain, hip pain, leg pain, neuropathy, foot pain, knee pain, fibromyalgia, arthritis, bone spurs, frozen shoulder, dislocated shoulder, and more.</p>
+
+  <p><strong>Treatments:</strong> stem cell therapy, advanced physical medicine, integrative medicine, sports injury treatment, weight loss and management, shoulder pain treatment, and more.</p>
+
+  <p>We build this as a <strong>content cluster.</strong> Treatment pages link to related condition pages. Condition pages link back to treatments. The internal linking structure tells Google "this site is the authority on pain management in this city."</p>
+
+  <h3><span class="step-num">3</span> Month 3: Promote and Grow</h3>
+
+  <p>By Month 3, the site has all the technical fixes from Month 1 and all the new content from Month 2. Now we promote those cornerstone pages: Google Business Profile posts, social media, Quora answers, YouTube videos using AI tools, Medium articles, and more.</p>
+
+  <p>We also help the doctor set up <strong>review generation software</strong> to get consistent patient reviews without having to manually ask every patient.</p>
+
+  <div class="callout callout-info">
+    <strong>Realistic expectations:</strong> This is not a "30 days to 100 patients" scam. This is how Google actually works. After Month 1, your site is fixed. After Month 2, you have comprehensive content covering your conditions and treatments. When people in your city search for "shoulder pain Dallas" or "pain doctor Dallas," your site appears on page 3 or 4 — because the content alone is enough for Google to test you there. As you build more pages, earn reviews, and get backlinks, Google moves you to page 1. That's when the calls start flowing.
+  </div>
+
+  <div class="inline-cta">
+    <strong>Want a 90-day plan customized for your practice?</strong>
+    <p>We'll build it for you — based on your specialty, your city, and your competitors. Starts with a free audit.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ 30-MINUTE SELF-AUDIT ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>The 30-Minute Self-Audit: Check Your Online Presence Before Hiring Any Agency</h2>
+
+  <p>Before you hire any agency, do this yourself. This is not a full SEO audit — this is an overall online presence check to see how you're doing against your competitors. It takes 30 minutes and you'll know exactly where you stand.</p>
+
+  <h3><span class="step-num">1</span> Google Yourself in Incognito Mode (5 minutes)</h3>
+
+  <p>Open an incognito or private browser window and Google yourself. Search for whatever your practice does — "pain doctor near me," "weight loss doctor near me," "gastroenterologist near me," "colonoscopy near me," "back pain doctors near me." Use the keywords that matter to your practice and the procedures you want more patients for.</p>
+
+  <p>Find out if you're on page 1, page 2, page 3 — or not there at all.</p>
+
+  <p>Then check the Google Maps section. Are you in the top 3 of the Maps pack? If you are, that's good — you just need to work a little more to become dominant in your location. If you're not, note down what position you're in. Look at who is in the top 3 and note how many reviews they have, how many recent reviews they have, and what they're doing differently.</p>
+
+  <div class="callout callout-info">
+    <strong>Why incognito matters:</strong> When you search normally, Google shows you personalized results based on your search history. You may think you're ranking #1, but that's just Google showing you what you've clicked on before. Incognito mode shows you what your patients actually see.
+  </div>
+
+  <h3><span class="step-num">2</span> Check Your Google Business Profile (5 minutes)</h3>
+
+  <p>Go to your Google Business Profile and ask yourself these questions:</p>
+
+  <p>When is the last time you or your team posted an update? When was your last review — a month ago? Six months ago? Look through your negative reviews — have they been addressed? Are they real complaints or fake reviews from competitors?</p>
+
+  <p>Check if your operating hours are correct. If you've entered the wrong hours, patients may drive to your location only to find out you're closed. Is your phone number clickable? Is every service and procedure listed? Are your photos recent or from three years ago?</p>
+
+  <h3><span class="step-num">3</span> Open Your Website on Your Phone (5 minutes)</h3>
+
+  <p>Open your website on your actual phone — not a desktop browser resized to look like a phone. Time how long it takes to load. Then go through it like a patient would.</p>
+
+  <p>Look at your homepage. Are you convinced — as a doctor yourself — that this homepage is good enough for a patient who is in pain and trying to find a way to book an appointment with you?</p>
+
+  <p>Here's the truth: <strong>if crawling through your website to book an appointment creates more pain than the pain they already have in their body, they will leave.</strong> They'll go to the competitor doctor near you who makes it easy to book — even if you're the more experienced doctor. Even if you're the best in your location. If your website doesn't make their journey easy, they are not going to be your patients.</p>
+
+  <p>Can a patient book an appointment in 2 or 3 taps? Or are they filling out 10 fields and clicking through 15 screens? Don't use an EMR-based appointment booking system that requires 125 clicks before a patient can even book. If your booking process is painful, patients will abandon it and go to someone else.</p>
+
+  <div class="callout callout-warning">
+    <strong>Test on multiple devices.</strong> If you don't have multiple phones, Google "responsive test tool" — there are free websites where you can enter your URL and test your site on every phone screen size, tablet, and desktop. Try it. You might be surprised by what's broken.
+  </div>
+
+  <h3><span class="step-num">4</span> Count Your Pages vs Your Competitor's Pages (5 minutes)</h3>
+
+  <p>Go to Google and type <strong>site:yourwebsite.com</strong> — then hit enter. This shows you every page Google has indexed for your site. Count them.</p>
+
+  <p>Now do the same for the #1 ranking competitor in your area. Type <strong>site:competitorwebsite.com</strong> and count their pages.</p>
+
+  <p>If they have 200 pages and you have 5 — a homepage, about page, services page, treatments page, and contact page — then you are in trouble. You cannot beat a competitor with 200 pages using your 5 pages. You need the content weapons to compete. That doesn't mean you need 200 pages tomorrow, but you need to start building dedicated pages for every condition and procedure you offer.</p>
+
+  <h3><span class="step-num">5</span> Install and Check Google Search Console (10 minutes)</h3>
+
+  <p>If you haven't installed Google Search Console, that's problem number one. If you're on WordPress, you can install a plugin that connects it in minutes. Once installed, it takes 24 to 48 hours to populate your data.</p>
+
+  <p>Once it's set up, Search Console shows you the truth about your rankings. It shows you every query you're ranking for, which pages are getting clicks, and which pages are invisible. You'll see queries where you're sitting on page 2 or page 3 — those are the keywords where a small push could move you to page 1.</p>
+
+  <p><strong>This is also where you catch agency lies.</strong> If your SEO agency tells you they're ranking you for certain keywords, Search Console will show you the real picture. Many agencies show you keywords where you're technically on page 1 — but the search volume for those keywords is literally zero. You're ranking #1 for a keyword nobody searches. That's why you're paying for SEO but not getting patients.</p>
+
+  <div class="callout callout-success">
+    <strong>What to do with your findings:</strong> Write down every problem you found across all 5 steps. You can take this list to ChatGPT and ask it to help you build a quick fix plan. You can fix many of these things yourself — or you can submit your site for a free audit with us and we'll do it with real data, real competitor analysis, and a real action plan.
+  </div>
+
+  <div class="inline-cta">
+    <strong>Did this self-audit reveal problems?</strong>
+    <p>Submit your site and we'll give you the full picture — with competitor data, keyword gaps, and a prioritized fix list. Free. No contracts.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ WHO WE WORK WITH ═══ -->
+<section class="specialties">
+  <div class="specialties-inner">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Who We Work With</h2>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">We stay focused and lean so we can deliver the best results possible — instead of trying to serve every industry.</p>
+    <div class="specialty-tags">
+      <span class="specialty-tag">Medspas</span>
+      <span class="specialty-tag">Doctors</span>
+      <span class="specialty-tag">Pain Management</span>
+      <span class="specialty-tag">Surgeons</span>
+      <span class="specialty-tag">Podiatrists</span>
+      <span class="specialty-tag">Dermatologists</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA + FORM ═══ -->
+<section class="final-cta" id="audit-form">
+  <div class="final-cta-inner">
+    <h2>Get Your Free SEO Audit</h2>
+    <p>If you made it this far, you know your practice needs more patients from Google. Apply for a free audit — we'll send you a personalized video walkthrough within 48 hours. No pitch. No obligation. No contracts.</p>
+    <div class="form-mock">
+      <div class="form-row">
+        <label class="form-label">Your Name *</label>
+        <input type="text" class="form-input" placeholder="Dr. Jane Smith">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-input" placeholder="jane@yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Website URL *</label>
+        <input type="url" class="form-input" placeholder="https://yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Specialty</label>
+        <input type="text" class="form-input" placeholder="Pain Management, Gastroenterology, etc.">
+      </div>
+      <button class="cta-btn form-submit">Get My Free Video Audit →</button>
+      <p class="form-note">Audit delivered within 48 hours. We won't pitch you our services or ask you for money.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BYLINE ═══ -->
+<div class="byline">
+  <div class="byline-avatar">M</div>
+  <div class="byline-text">
+    <strong>By Madhan</strong> · Founder, Intellius Medical
+  </div>
+</div>
+
+<!-- ═══ MOBILE: Sticky CTA ═══ -->
+<div class="sticky-cta">
+  <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+</div>
+
+</body>
+</html>
