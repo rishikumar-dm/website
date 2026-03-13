@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RenewMe MedSpa Case Study: From Zero to $1M+ and Acquired | Intellius Medical</title>
+<meta name="description" content="How we helped RenewMe MedSpa, a brand-new Los Angeles med spa, go from zero patients to $1 million+ a year in revenue — then get acquired at 10x. No paid ads. Pure SEO and content marketing.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand-dark: #0F172A;
+    --brand-blue: #1D4ED8;
+    --brand-blue-light: #EFF6FF;
+    --brand-green: #059669;
+    --brand-green-light: #ECFDF5;
+    --brand-orange: #EA580C;
+    --brand-orange-light: #FFF7ED;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --border: #E2E8F0;
+    --bg-page: #FFFFFF;
+    --bg-section-alt: #F8FAFC;
+    --radius: 12px;
+    --max-width: 780px;
+  }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text-primary); background: var(--bg-page); line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .trust-bar { background: var(--brand-dark); color: #CBD5E1; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; }
+  .trust-bar strong { color: #FFF; }
+  .hero { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); padding: 64px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(29,78,216,0.15) 0%, transparent 50%); }
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #93C5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; }
+  .hero h1 { color: #FFF; font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero h1 span { color: #60A5FA; }
+  .hero p { color: #CBD5E1; font-size: 17px; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-green); color: #FFF; font-size: 16px; font-weight: 700; padding: 16px 32px; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+  .cta-btn:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
+  .cta-btn-secondary { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #FFF; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+  .cta-btn-secondary:hover { border-color: #FFF; background: rgba(255,255,255,0.05); }
+  .hero-ctas { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stat-item { background: #FFF; padding: 28px 20px; text-align: center; }
+  .stat-number { font-size: 32px; font-weight: 800; color: var(--brand-blue); line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  .content { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px; }
+  .content h2 { font-size: 28px; font-weight: 800; color: var(--text-primary); margin: 48px 0 16px; line-height: 1.3; }
+  .content h2:first-child { margin-top: 0; }
+  .content h3 { font-size: 20px; font-weight: 700; color: var(--brand-blue); margin: 36px 0 12px; display: flex; align-items: center; gap: 10px; }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--brand-blue); color: #FFF; font-size: 14px; font-weight: 800; border-radius: 50%; flex-shrink: 0; }
+  .content p { margin-bottom: 16px; color: var(--text-secondary); }
+  .callout { margin: 24px 0; padding: 20px 24px; border-radius: var(--radius); font-weight: 600; line-height: 1.7; font-size: 16px; }
+  .callout-warning { background: var(--brand-orange-light); border-left: 4px solid var(--brand-orange); color: #9A3412; }
+  .callout-success { background: var(--brand-green-light); border-left: 4px solid var(--brand-green); color: #065F46; }
+  .callout-info { background: var(--brand-blue-light); border-left: 4px solid var(--brand-blue); color: #1E40AF; }
+  .result-card { background: var(--bg-section-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 28px 0; }
+  .result-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .result-badge { padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .result-badge-before { background: #FEE2E2; color: #991B1B; }
+  .result-badge-after { background: #D1FAE5; color: #065F46; }
+  .result-stat { font-size: 36px; font-weight: 800; line-height: 1; }
+  .result-stat-red { color: #DC2626; }
+  .result-stat-green { color: #059669; }
+  .result-vs { color: var(--text-muted); font-size: 20px; font-weight: 600; margin: 0 4px; }
+  .inline-cta { background: linear-gradient(135deg, #0F172A, #1E3A5F); border-radius: var(--radius); padding: 32px; text-align: center; margin: 40px 0; }
+  .inline-cta p { color: #CBD5E1; font-size: 15px; margin-bottom: 16px; }
+  .inline-cta strong { color: #FFF; font-size: 20px; display: block; margin-bottom: 8px; }
+  .specialties { background: var(--bg-section-alt); padding: 48px 24px; }
+  .specialties-inner { max-width: var(--max-width); margin: 0 auto; }
+  .specialty-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .specialty-tag { background: #FFF; border: 1px solid var(--border); padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; color: var(--text-primary); }
+  .final-cta { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); padding: 64px 24px; text-align: center; }
+  .final-cta-inner { max-width: 560px; margin: 0 auto; }
+  .final-cta h2 { color: #FFF; font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+  .final-cta p { color: #94A3B8; font-size: 16px; margin-bottom: 32px; }
+  .form-mock { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 32px 24px; text-align: left; }
+  .form-row { margin-bottom: 16px; }
+  .form-label { display: block; color: #CBD5E1; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .form-input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #FFF; font-size: 15px; font-family: inherit; outline: none; transition: border-color 0.2s; }
+  .form-input:focus { border-color: #60A5FA; }
+  .form-input::placeholder { color: #64748B; }
+  .form-submit { width: 100%; margin-top: 8px; }
+  .form-note { color: #64748B; font-size: 12px; text-align: center; margin-top: 12px; }
+  .byline { max-width: var(--max-width); margin: 0 auto; padding: 24px 24px 48px; display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border); }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--brand-blue); display: flex; align-items: center; justify-content: center; color: #FFF; font-weight: 800; font-size: 16px; }
+  .byline-text { font-size: 14px; color: var(--text-muted); }
+  .byline-text strong { color: var(--text-primary); }
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #FFF; padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 1000; text-align: center; border-top: 1px solid var(--border); }
+  .sticky-cta .cta-btn { width: 100%; justify-content: center; padding: 14px; font-size: 15px; }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 40px; } .hero h1 { font-size: 28px; } .hero p { font-size: 15px; }
+    .content { padding: 32px 20px; } .content h2 { font-size: 24px; } .content h3 { font-size: 18px; }
+    body { font-size: 16px; } .stat-strip { grid-template-columns: repeat(2, 1fr); } .stat-number { font-size: 26px; }
+    .inline-cta { padding: 24px 20px; } .result-card { padding: 20px; } .result-stat { font-size: 28px; }
+    .sticky-cta { display: block; } .final-cta { padding-bottom: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <strong>Med Spa SEO Case Study</strong> · $0 in Paid Ads · $1M+ Annual Revenue · Acquired at 10x
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Case Study</div>
+    <h1>How a Brand New Med Spa Became a <span>$1M+ Business</span> and Got Acquired</h1>
+    <p>RenewMe MedSpa went from zero patients, zero reviews, and zero budget for ads to $120,000+ a month in revenue — then got acquired by a 100+ location franchise group. Here's exactly how we did it.</p>
+    <div class="hero-ctas">
+      <a href="#strategy-call" class="cta-btn">Book a Strategy Call →</a>
+      <a href="#results" class="cta-btn-secondary">See the Results</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ═══ -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">$0</div>
+    <div class="stat-label">Spent on Paid Ads</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">$120K</div>
+    <div class="stat-label">Monthly Revenue at Peak</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">24mo</div>
+    <div class="stat-label">From Zero to $1M+/Year</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">10x</div>
+    <div class="stat-label">Acquisition Multiple</div>
+  </div>
+</div>
+
+<!-- ═══ THE BEGINNING ═══ -->
+<div class="content">
+  <h2>The Beginning</h2>
+
+  <p>RenewMe MedSpa came to us through a referral. They had just opened in Los Angeles and wanted to grow. Leila Jones ran the med spa, and her brother David Jones, a doctor, served as the medical director. Both owned the business.</p>
+
+  <p>Before reaching out to us, they had already spoken with multiple agencies. Every one of them was quoting $5,000+ a month with contracts stretching 12 to 18 months. For a brand-new med spa with no patient base, that kind of commitment felt like a gamble with no safety net.</p>
+</div>
+
+<!-- ═══ WHY WE TOLD THEM TO SKIP PPC ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Why We Told a New Med Spa to Skip PPC Ads</h2>
+
+  <p>We did extensive research on the LA market before recommending anything. What we found was brutal. The top med spas in Los Angeles had 500+ Google reviews, 5 to 10+ years in business, and brand name search volumes running into thousands per month. Competing against that through ads alone would have been a money pit.</p>
+
+  <p>Here is the math we showed Leila. In Los Angeles, med spa related keywords cost $5 to $10 per click. If she spent $10,000 on ads, she would get roughly 1,000 clicks. Even with a strong landing page converting at 5%, that gives her 50 appointment bookings. Of those, maybe 30% actually show up. That is 15 people spending an average of $200 each, which comes to $3,000 in revenue. Against $10,000 in ad spend. That is a <strong>$7,000 loss every single month</strong>, and we have not even counted our fees yet.</p>
+
+  <div class="callout callout-warning">
+    <strong>The math on ads:</strong> $10,000 ad spend → 1,000 clicks → 50 bookings → 15 show up → $3,000 revenue. That's a $7,000 loss every month before agency fees.
+  </div>
+
+  <p>So we told Leila the truth: ads will not work for you right now. Instead, we asked her to commit to six to nine months of content marketing and SEO, and let Google send the traffic organically. The only thing we asked from her end was to focus on delivering great service and collecting as many Google reviews as possible.</p>
+</div>
+
+<!-- ═══ MARKET RESEARCH ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Med Spa SEO Starts with Market Research, Not Keywords</h2>
+
+  <p>Every obvious keyword was a bloodbath. "Med spa near me," "Botox Los Angeles," "fillers West Hollywood" — the top spots were locked down by established players with years of domain authority and hundreds of reviews. RenewMe could not crack the Maps 3-pack without at least 100 reviews, which was not happening overnight.</p>
+
+  <p>So we looked for a procedure that was profitable, scalable, and most importantly, non-competitive. We found IV therapy.</p>
+
+  <div class="callout callout-info">
+    <strong>The discovery:</strong> Los Angeles has a massive weekend culture. People go out, stay up late, and the nightlife runs deep. Everyone needs recovery the next day. Hangover IV therapy, detox drips, energy infusions — the demand was real, but nobody was creating serious content around it.
+  </div>
+
+  <p>And this discovery did not come from Leila telling us "hey, rank us for IV therapy." It came from us studying the competition, not just in Los Angeles, but across top markets like Dallas, New York, and other major cities. We looked at what was working elsewhere, identified which procedures had demand but low competition locally, and mapped that against what RenewMe could actually deliver. Market research is the foundation of everything we do. Without it, you are guessing. And guessing in SEO means wasting months and money trying to rank for keywords you have no realistic shot at winning.</p>
+</div>
+
+<!-- ═══ 20 PAGES IN TWO MONTHS ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Our Med Spa Content Marketing Strategy: 20 Pages in Two Months</h2>
+
+  <p>We built cornerstone content targeting every angle of IV therapy. Not thin 500-word pages. We wrote 2,000+ word deep dives, the kind of content Neil Patel or Brian Dean from Backlinko would create. Each page answered every question a potential patient would have: How much does a hangover IV cost? How long does it take? Can I leave right after or do I need to rest for an hour? Should I eat before coming in?</p>
+
+  <p>We researched voice-search and FAQ-style keywords, even ones with search volumes of 10 or less. The goal was never to chase volume. It was to capture real intent. If someone at 11 AM on a Sunday is typing "hangover IV therapy near me," they are ready to book. We wanted to be the answer.</p>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div>
+        <span class="result-badge result-badge-before">Month 0</span>
+        <div class="result-stat result-stat-red" style="margin-top:8px">0</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Patients from Google</div>
+      </div>
+      <div style="padding: 0 8px;"><span class="result-vs">→</span></div>
+      <div>
+        <span class="result-badge result-badge-after">Month 3</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">10–20</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">New clients/month from Google</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin:0"><strong style="color:var(--text-primary)">Content:</strong> 20 pages published in 2 months · 2,000+ words each · IV therapy, detox, energy drips, hangover recovery</p>
+  </div>
+
+  <p>Within 2.5 months, we were ranking for hangover IV therapy, detox IV drip, energy IV Los Angeles, and dozens of related terms. We published 20 pieces of content in those first two months, and each one was pulling in at least one or two paying clients.</p>
+
+  <p>By month three, RenewMe was getting 10 to 20 new clients from Google every month, each paying $200 to $300 per visit. And those clients brought friends.</p>
+</div>
+
+<!-- ═══ GLUTATHIONE PAGE ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>How One Glutathione IV Page Became the Highest-Converting Med Spa SEO Page</h2>
+
+  <p>One of the biggest revenue drivers turned out to be glutathione IV therapy. When we researched the keyword, there was virtually zero competition for it. Nobody in the LA market was creating real content around glutathione drips.</p>
+
+  <p>So we published a single 2,000-word article covering everything about glutathione IV therapy — the benefits, what to expect, how it works, who it is for. That page went straight to the top of Google almost immediately. And the calls started coming in.</p>
+
+  <div class="callout callout-success">
+    <strong>60–70% call-to-visit conversion rate.</strong> The benefits of glutathione are significant and well-documented, so the people calling were already sold. More than half the people who called actually showed up and paid. That single keyword became one of the highest revenue-producing pages on the entire site.
+  </div>
+</div>
+
+<!-- ═══ WHY NO AI CONTENT ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Why We Never Used AI Content for Med Spa SEO</h2>
+
+  <p>There was no secret hack. We did the boring work that actually moves the needle. We published content consistently. We built links through Medium and LinkedIn with original, unique articles written by human writers. We never bought links from Fiverr. We never did HARO outreach or press releases for link juice. We never used AI-generated content.</p>
+
+  <p>On that last point — we have tested AI content extensively. We ran an experiment with 1,000 AI-generated articles across different projects. The content was decent quality. But nearly all of those pages got penalized by Google over time. The E-E-A-T algorithm does not care how polished AI writing looks if there is no real authority or expertise behind it. So we stick with human writers for everything we publish.</p>
+
+  <div class="callout callout-warning">
+    <strong>We tested it:</strong> 1,000 AI-generated articles across different projects. Nearly all got penalized by Google over time. E-E-A-T does not care how polished AI writing looks if there is no real authority behind it.
+  </div>
+</div>
+
+<!-- ═══ WEBSITE OPTIMIZATION ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>How We Optimized the Med Spa Website for Calls, Not Forms</h2>
+
+  <p>What we did do was update content monthly. If a page was sitting on the second or third page of Google, we would refresh the content, add new information, and improve the structure. Those updates consistently pushed pages from page two to page one, bringing in additional traffic without creating new content from scratch.</p>
+
+  <p>We also kept the website dead simple. A clean layout with a call button for mobile users. Since most traffic came through blog content, we knew people were reading on their phones. Instead of pushing them to fill out a form, we gave them a tap-to-call button with tracking. Even if the call came after hours, the RenewMe team could call back the next morning.</p>
+
+  <div class="inline-cta">
+    <strong>Want us to build the same growth engine for your med spa?</strong>
+    <p>We'll study your market, find the gap, and build the content strategy to dominate it.</p>
+    <a href="#strategy-call" class="cta-btn">Book a Strategy Call →</a>
+  </div>
+</div>
+
+<!-- ═══ FROM ZERO TO $120K ═══ -->
+<div class="content" style="padding-top: 0;" id="results">
+  <h2>Med Spa SEO Results: From Zero to $120,000 a Month</h2>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div>
+        <span class="result-badge result-badge-before">Month 9</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">$45K</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Monthly revenue · 50+ reviews · #1 for IV therapy LA</div>
+      </div>
+      <div style="padding: 0 8px;"><span class="result-vs">→</span></div>
+      <div>
+        <span class="result-badge result-badge-after">Month 24</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">$120K+</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Monthly revenue · 10 employees · 5x office expansion</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin:0"><strong style="color:var(--text-primary)">Growth:</strong> 2-person operation → 10 employees · Expanded to 5x original office size · $0 in paid ads</p>
+  </div>
+
+  <p>By month 9, RenewMe was the top-ranking med spa for IV therapy in Los Angeles and the surrounding areas including West Hollywood. They had collected over 50 Google reviews. Monthly revenue hit $40,000 to $45,000.</p>
+
+  <p>Leila and David trusted the process. They never hired another agency. They never tried to shortcut the strategy. They just kept delivering great patient experiences while we kept producing content and optimizing.</p>
+
+  <p>By month 24, revenue crossed $120,000 per month. The team grew from just Leila to 10 employees. They ran out of space, rented the unit next door, broke through the wall, and expanded to 5x their original office size. At one point, they were so busy they could not even make time for our monthly review calls.</p>
+</div>
+
+<!-- ═══ THE HIDDEN STRATEGY ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>How IV Therapy Clients Drove Botox Revenue Without Ranking for a Single Botox Keyword</h2>
+
+  <p>Here is something most med spa owners do not think about. We never ranked RenewMe for Botox or dermal fillers or any of the traditional injectable keywords. We did not need to. IV therapy was the entry point, but those same clients also needed fillers, Botox, and other procedures. They were already in the door, they already trusted the practice, and they came back again and again.</p>
+
+  <p>The referrals and word of mouth from IV therapy clients alone drove a massive amount of injectable revenue that never showed up as an SEO metric. RenewMe was making money from Botox without ever ranking for a single Botox keyword. That is the power of finding the right entry point and dominating it.</p>
+
+  <p>With the extra capacity, they expanded into ozone therapy and other high-ticket procedures, investing in new equipment and pushing into treatments that most LA med spas were not offering yet.</p>
+
+  <div class="callout callout-success">
+    <strong>The hidden strategy:</strong> IV therapy was the entry point. Botox, fillers, and high-ticket procedures came from the same clients returning and referring friends. RenewMe made money from Botox without ever ranking for a single Botox keyword.
+  </div>
+</div>
+
+<!-- ═══ THE ACQUISITION ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>From $1 Million a Year Med Spa to a 10x Acquisition</h2>
+
+  <p>RenewMe MedSpa was acquired by a nationwide med spa franchise group with 100+ locations. The acquisition was at 10x or more of their annual revenue. We cannot share the exact figures, but the number was life-changing for Leila and David.</p>
+
+  <p>That is the trajectory we helped create. From a two-person operation with no patients, no reviews, and no budget for ads, to a million-dollar-a-year med spa that attracted a franchise acquisition — all built on content, SEO, and patience.</p>
+
+  <div class="inline-cta">
+    <strong>This is the same playbook we run for every med spa we work with.</strong>
+    <p>Study the market. Find the gap. Dominate it with content. Let the revenue compound.</p>
+    <a href="#strategy-call" class="cta-btn">Book a Strategy Call →</a>
+  </div>
+</div>
+
+<!-- ═══ THE ONE STRATEGY ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>The One Med Spa Marketing Strategy That Actually Works</h2>
+
+  <p>If you are a new med spa trying to reach $1 million a year, do not start by trying to rank for Botox or fillers or "med spa near me." Study the market first. Find the gap where you can enter and dominate. Then grow from there through referrals, upsells, and repeat visits.</p>
+
+  <p>And if you ask me for the single most important thing that will get you there, it is this: every piece of content you put out — whether it is a blog post, a video, an ebook, anything — needs to be so valuable that people read it, consume it, and share it. That is the only thing that matters.</p>
+
+  <p>Technical SEO, link building strategies, blog commenting, cross-promotional link schemes — none of that is going to move the needle. What moves the needle is a reader landing on your page, getting the answer they were looking for, clicking to another page on your site instead of bouncing back to Google, and then picking up the phone.</p>
+
+  <p>Once that happens, Google notices. Google starts ranking more of your pages. More content shows up in search. More patients find you. And the whole thing compounds month after month until you are turning away clients because you cannot fit them in.</p>
+
+  <p>That is exactly what happened to RenewMe. And it is the same playbook we run for every med spa we work with.</p>
+</div>
+
+<!-- ═══ WHO WE WORK WITH ═══ -->
+<section class="specialties">
+  <div class="specialties-inner">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Who We Work With</h2>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">We stay focused on healthcare so we can deliver the best results possible — instead of trying to serve every industry.</p>
+    <div class="specialty-tags">
+      <span class="specialty-tag">Medspas</span>
+      <span class="specialty-tag">Pain Management</span>
+      <span class="specialty-tag">Cardiologists</span>
+      <span class="specialty-tag">Podiatrists</span>
+      <span class="specialty-tag">Surgeons</span>
+      <span class="specialty-tag">Doctors</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA + FORM ═══ -->
+<section class="final-cta" id="strategy-call">
+  <div class="final-cta-inner">
+    <h2>Want to Build the Same Growth Engine for Your Med Spa?</h2>
+    <p>We'll study your market, find the gap your competitors are missing, and build a content strategy to dominate it. No contracts. No $5,000/month retainers to start. Just results.</p>
+    <div class="form-mock">
+      <div class="form-row">
+        <label class="form-label">Your Name *</label>
+        <input type="text" class="form-input" placeholder="Dr. Jane Smith">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-input" placeholder="jane@yourmedspa.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Website URL *</label>
+        <input type="url" class="form-input" placeholder="https://yourmedspa.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-input" placeholder="Los Angeles, Dallas, Miami, etc.">
+      </div>
+      <button class="cta-btn form-submit">Book a Strategy Call →</button>
+      <p class="form-note">We'll respond within 24 hours. No pitch. No obligation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BYLINE ═══ -->
+<div class="byline">
+  <div class="byline-avatar">M</div>
+  <div class="byline-text">
+    <strong>By Madhan</strong> · Founder, Intellius Medical
+  </div>
+</div>
+
+<!-- ═══ MOBILE: Sticky CTA ═══ -->
+<div class="sticky-cta">
+  <a href="#strategy-call" class="cta-btn">Book a Strategy Call →</a>
+</div>
+
+</body>
+</html>
