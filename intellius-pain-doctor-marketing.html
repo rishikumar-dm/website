@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pain Management Marketing: How to Get 100+ Patient Calls a Month | Intellius Medical</title>
+<meta name="description" content="Real case study: How we helped a pain management doctor in Mansfield, Texas go from referral-dependent to 150-200 calls a month. With real Google Search Console data, strategy breakdown, and results.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand-dark: #0F172A;
+    --brand-blue: #1D4ED8;
+    --brand-blue-light: #EFF6FF;
+    --brand-green: #059669;
+    --brand-green-light: #ECFDF5;
+    --brand-orange: #EA580C;
+    --brand-orange-light: #FFF7ED;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --border: #E2E8F0;
+    --bg-page: #FFFFFF;
+    --bg-section-alt: #F8FAFC;
+    --radius: 12px;
+    --max-width: 780px;
+  }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; color: var(--text-primary); background: var(--bg-page); line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .trust-bar { background: var(--brand-dark); color: #CBD5E1; text-align: center; padding: 10px 20px; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; }
+  .trust-bar strong { color: #FFF; }
+  .hero { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); padding: 64px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(29,78,216,0.15) 0%, transparent 50%); }
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #93C5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; }
+  .hero h1 { color: #FFF; font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .hero h1 span { color: #60A5FA; }
+  .hero p { color: #CBD5E1; font-size: 17px; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-green); color: #FFF; font-size: 16px; font-weight: 700; padding: 16px 32px; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+  .cta-btn:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
+  .cta-btn-secondary { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: #FFF; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+  .cta-btn-secondary:hover { border-color: #FFF; background: rgba(255,255,255,0.05); }
+  .hero-ctas { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stat-item { background: #FFF; padding: 28px 20px; text-align: center; }
+  .stat-number { font-size: 32px; font-weight: 800; color: var(--brand-blue); line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  .content { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px; }
+  .content h2 { font-size: 28px; font-weight: 800; color: var(--text-primary); margin: 48px 0 16px; line-height: 1.3; }
+  .content h2:first-child { margin-top: 0; }
+  .content h3 { font-size: 20px; font-weight: 700; color: var(--brand-blue); margin: 36px 0 12px; display: flex; align-items: center; gap: 10px; }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--brand-blue); color: #FFF; font-size: 14px; font-weight: 800; border-radius: 50%; flex-shrink: 0; }
+  .content p { margin-bottom: 16px; color: var(--text-secondary); }
+  .callout { margin: 24px 0; padding: 20px 24px; border-radius: var(--radius); font-weight: 600; line-height: 1.7; font-size: 16px; }
+  .callout-warning { background: var(--brand-orange-light); border-left: 4px solid var(--brand-orange); color: #9A3412; }
+  .callout-success { background: var(--brand-green-light); border-left: 4px solid var(--brand-green); color: #065F46; }
+  .callout-info { background: var(--brand-blue-light); border-left: 4px solid var(--brand-blue); color: #1E40AF; }
+  .result-card { background: var(--bg-section-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 28px 0; }
+  .result-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+  .result-badge { padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .result-badge-before { background: #FEE2E2; color: #991B1B; }
+  .result-badge-after { background: #D1FAE5; color: #065F46; }
+  .result-stat { font-size: 36px; font-weight: 800; line-height: 1; }
+  .result-stat-red { color: #DC2626; }
+  .result-stat-green { color: #059669; }
+  .result-vs { color: var(--text-muted); font-size: 20px; font-weight: 600; margin: 0 4px; }
+  .inline-cta { background: linear-gradient(135deg, #0F172A, #1E3A5F); border-radius: var(--radius); padding: 32px; text-align: center; margin: 40px 0; }
+  .inline-cta p { color: #CBD5E1; font-size: 15px; margin-bottom: 16px; }
+  .inline-cta strong { color: #FFF; font-size: 20px; display: block; margin-bottom: 8px; }
+  .specialties { background: var(--bg-section-alt); padding: 48px 24px; }
+  .specialties-inner { max-width: var(--max-width); margin: 0 auto; }
+  .specialty-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .specialty-tag { background: #FFF; border: 1px solid var(--border); padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; color: var(--text-primary); }
+  .final-cta { background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%); padding: 64px 24px; text-align: center; }
+  .final-cta-inner { max-width: 560px; margin: 0 auto; }
+  .final-cta h2 { color: #FFF; font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+  .final-cta p { color: #94A3B8; font-size: 16px; margin-bottom: 32px; }
+  .form-mock { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 32px 24px; text-align: left; }
+  .form-row { margin-bottom: 16px; }
+  .form-label { display: block; color: #CBD5E1; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .form-input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #FFF; font-size: 15px; font-family: inherit; outline: none; transition: border-color 0.2s; }
+  .form-input:focus { border-color: #60A5FA; }
+  .form-input::placeholder { color: #64748B; }
+  .form-submit { width: 100%; margin-top: 8px; }
+  .form-note { color: #64748B; font-size: 12px; text-align: center; margin-top: 12px; }
+  .byline { max-width: var(--max-width); margin: 0 auto; padding: 24px 24px 48px; display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border); }
+  .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--brand-blue); display: flex; align-items: center; justify-content: center; color: #FFF; font-weight: 800; font-size: 16px; }
+  .byline-text { font-size: 14px; color: var(--text-muted); }
+  .byline-text strong { color: var(--text-primary); }
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #FFF; padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); z-index: 1000; text-align: center; border-top: 1px solid var(--border); }
+  .sticky-cta .cta-btn { width: 100%; justify-content: center; padding: 14px; font-size: 15px; }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 40px; } .hero h1 { font-size: 28px; } .hero p { font-size: 15px; }
+    .content { padding: 32px 20px; } .content h2 { font-size: 24px; } .content h3 { font-size: 18px; }
+    body { font-size: 16px; } .stat-strip { grid-template-columns: repeat(2, 1fr); } .stat-number { font-size: 26px; }
+    .inline-cta { padding: 24px 20px; } .result-card { padding: 20px; } .result-stat { font-size: 28px; }
+    .sticky-cta { display: block; } .final-cta { padding-bottom: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <strong>Pain Management Marketing Case Study</strong> · 7.3M+ Impressions · 150–200 Calls/Month · Real Google Data
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Pain Doctor Marketing</div>
+    <h1>How to Get <span>100+ Patient Calls a Month</span> for Your Pain Management Clinic</h1>
+    <p>Real case study: how we helped a pain management doctor in Mansfield, Texas go from 100% referral-dependent to 150–200 calls a month from Google alone. With real Search Console data, strategy breakdown, and results.</p>
+    <div class="hero-ctas">
+      <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+      <a href="#results" class="cta-btn-secondary">See the Results</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ═══ -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">7.3M+</div>
+    <div class="stat-label">Google Impressions (12 Months)</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">27,831</div>
+    <div class="stat-label">Clicks from Google</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">200+</div>
+    <div class="stat-label">Calls/Month from Google</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">308</div>
+    <div class="stat-label">Pages Ranking on Google</div>
+  </div>
+</div>
+
+<!-- ═══ THE BEGINNING ═══ -->
+<div class="content">
+  <h2>How It All Started with Dr. Rozier MD in Mansfield, Texas</h2>
+
+  <p>When Dr. Antonio Rozier from Mansfield, Texas reached out to us, he was a pain management physician who wanted to grow his practice. It doesn't mean he was not busy. He was a little bit busy, but 100% dependent upon referrals. He and his nurse practitioner alone were doing the practice. Of course, he gets cases from hospitals and other places where he needs to go and treat patients, but he wanted to grow his own practice.</p>
+
+  <p>He had paid a lot of money to other marketing agencies that were telling him they exclusively do healthcare marketing. He paid them more than $5,000 a month. He even paid for ads — up to $5,000 to $10,000 a month — thinking that Google AdWords and Facebook ads would convert easily.</p>
+
+  <p>But with Facebook ads, he was basically throwing money out of the window. People who are in pain are going to come to Google and search and go to the doctor. They are not going to Facebook ads to click on someone and get treatment for their pain, especially chronic pain. Even for a small pain, they are not going to Facebook to find a doctor. Maybe recently, people are trying to use Instagram or TikTok to find a doctor who has reviews, testimonials, and all that stuff. But three years before, people were not using Instagram to find a pain doctor.</p>
+
+  <div class="callout callout-warning">
+    <strong>Facebook ads for pain doctors are a money pit.</strong> People in chronic pain go to Google, not Facebook. They search for symptoms, treatments, and doctors near them. Paying $5,000–$10,000 a month on Facebook ads for a pain management clinic is throwing money out the window.
+  </div>
+
+  <h3>What We Found When We Audited His Website</h3>
+
+  <p>When he reached out to us, we told him that we would study his whole website, audit it first, then start working for him. He wanted to know the cost. Surprisingly, he came to know that the cost was one-third of what others were charging.</p>
+
+  <p>We audited his website and found a lot of issues, especially with link building. It was done with a lot of local directories that did not have a relevancy score with what he does. He is a doctor. He should be in Healthgrades and other medical platforms — not directories that have nothing to do with healthcare. He was listed in directories where booksellers of Dallas are listed. We found that we needed to clean up a lot of things on his link building.</p>
+
+  <p>We also found he had only 25 pages in total, and almost all of them were 300 to 500 words, written by some European English-speaking writers paid through Upwork. That's what was happening.</p>
+
+  <div class="result-card">
+    <p style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:12px;">What We Found in the Audit</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">❌ Only <strong>25 pages</strong> — all 300–500 words each</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">❌ Backlinks from <strong>irrelevant directories</strong> — booksellers, general business listings</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">❌ Content written by <strong>non-medical Upwork writers</strong></p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">❌ Paying <strong>$5,000–$10,000/month</strong> on ads with no ROI</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:0">❌ <strong>100% dependent</strong> on referrals — zero patients from Google</p>
+  </div>
+
+  <h3>The Competition Was Brutal</h3>
+
+  <p>We did the research. Almost 15+ pain doctors were already established with 100+ Google reviews in Dallas, Texas and Mansfield, Texas. So how could we dominate these pain doctors and get him patients?</p>
+
+  <p>If we wanted to try to rank for keywords like conditions, pain treatments, and other general terms, there are websites called WebMD, Mayo Clinic, and Healthline competing against each other for these keywords. It is literally not possible to beat them and help him rank for those keywords. Even if we ranked for something like "pain treatment," he still could not get patients because people searching for "pain treatment" can be from anywhere on the internet.</p>
+
+  <p>So we crafted a plan to first get him patients from Google Maps — people searching for "pain doctor near me" or condition-related keywords like "back pain near me doctors" or "back pain treatment near me."</p>
+
+  <div class="callout callout-info">
+    <strong>Our strategy:</strong> Don't compete with WebMD and Mayo Clinic for generic keywords. Don't burn money on ads. Instead, dominate Google Maps with a fully optimized Google My Business profile, and build cornerstone content pages for every condition and treatment — optimized for the local area.
+  </div>
+</div>
+
+<!-- ═══ GOOGLE MY BUSINESS ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Google My Business Optimization for Pain Management Practice</h2>
+
+  <p>When we found Dr. Antonio Rozier MD, pain management physician, his Google My Business had him marked as a "medical doctor" as his business type. So we went ahead and changed the type to "pain management physician." Then we verified his business at the actual location. Initially, it was listed in a different area, but his actual location is Mansfield, Texas — a very simple change that the older agency was not able to do.</p>
+
+  <p>Then we found that none of the services he performs were added to his Google My Business page. We added all of them: sports injury treatment, shoulder pain treatment, back pain treatment, stem cell therapy, regenerative medicine and therapy, elbow pain treatment, foot and ankle pain treatment, hip pain treatment, chronic pain treatment, facet injection, epidural injection, spinal cord stimulation, trigger point injection, PRP for pain, occipital nerve blocks, chronic pain management, and more.</p>
+
+  <p>We verified the new location, added the website correctly, and added photos of the clinic, the way he treats patients inside, and a few more images. We didn't add 100 images. We intentionally added about 20, which we grabbed from the doctor right away, and added all of them.</p>
+
+  <div class="callout callout-info">
+    <strong>Google My Business fixes we made on day one:</strong> Changed business type from "medical doctor" to "pain management physician" → verified correct address in Mansfield, TX → added all services and treatments → added 20 clinic photos → connected website correctly. These are basic fixes that the previous agency missed — and they make an immediate difference in Google Maps rankings.
+  </div>
+
+  <h3>How We Post Content on Google My Business Twice a Week</h3>
+
+  <p>Our team started updating the Google My Business page twice a week. For example, we write content on "stem cell treatment cost in Mansfield," then we publish an update with an image that we create using Canva. It is very simple — "Stem Cell Treatment Cost, Mansfield, Texas" — and we write quick content like: "If you are searching for stem cell therapy cost in Mansfield, Texas, here's the cost. The cost depends on the treatment area, severity of the condition, and the type of regenerative therapy recommended. At Rozier MD, our stem cell therapy supports your body's natural healing process." And then we share the pricing details.</p>
+
+  <p>Another example — one of the main conditions people face is rheumatoid arthritis. People ask questions like "Does rheumatoid arthritis cause fatigue?" So we answer that question and publish it on the Google My Business page. Same thing with "What is CRPS?" — CRPS is complex regional pain syndrome, and "chronic pain doesn't match the injury" is how people describe it. So we write a small update about that content and post it on Google My Business.</p>
+
+  <p>This is how we publish content over and over again on Google My Business, twice a week. When people search for something related to these topics on Maps, because of the relevancy — even without a lot of reviews — we are able to beat pain doctors who do not have that many updates. Because we have pain management related updates, pain management related services, and pain management related keywords. This is how Google can identify you on Google Maps and help you rank when people search for "chronic pain doctor near me" and other keywords.</p>
+
+  <div class="callout callout-success">
+    <strong>The Google Maps formula:</strong> Correct business category + verified location + all services listed + photos + twice-weekly content updates = Google Maps rankings even without hundreds of reviews. Relevancy beats review count.
+  </div>
+</div>
+
+<!-- ═══ WEBSITE REDESIGN ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Website Redesign: Mobile-First for Pain Management Patients</h2>
+
+  <p>We found that when we looked at the website, it was not mobile optimized. 60–70% of his visitors were not desktop visitors. They were mobile users from Apple and Android devices. We found these numbers from Google Analytics, which is very easy to install. If you are on WordPress, you can install it using a plugin. If you are on Wix or any other platform, you can find an easy plugin to install Google Analytics using your Gmail — just two minutes of work.</p>
+
+  <p>Then you can go ahead and install Google Webmaster Tools, which is called Search Console, where you can find what keywords your site is ranking for. You can find what pain management keywords you are ranking for very easily.</p>
+
+  <h3>What We Put on the Homepage</h3>
+
+  <p>Once we redesigned the website, we wanted to make sure big category keywords were on the homepage. For example: advanced pain medicine, knee pain treatment, regenerative medicine, physician education, rehabilitation, spine medicine, stem cell therapies, sports injury, back pain treatment, stem cell injection, and more. We wanted to make sure people can find these things on the homepage right away.</p>
+
+  <p>Then we created a big blog article that says "5 Reasons Why You Need to Consider Rozier MD as Your Pain Management Doctor." We wrote about what he did, where he graduated, where he finished his residency, how he is experienced with pain management and treatment, and what advanced things he does.</p>
+
+  <p>We had a big section that displays all the reviews from Google My Business. We connected the API of Google My Business so people can look at the recent reviews — glowing five-star reviews and more.</p>
+
+  <div class="inline-cta">
+    <strong>Is your pain management website mobile-optimized?</strong>
+    <p>60–70% of your patients are browsing on their phone. If your site isn't built for mobile, you're losing them.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ SERVICE, TREATMENT & CONDITION PAGES ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Building Service, Treatment, and Condition Pages</h2>
+
+  <p>We created service pages, and each service page is almost 1,000 to 1,500 words. Example services include: facet injection, spinal cord stimulation, occipital nerve blocks, PRP therapy for pain, sympathetic nerve block, trigger point injection, medial branch block, and ultrasound-guided injection. Every service page has a "Call Now" button and a contact form so someone reading can quickly book an appointment.</p>
+
+  <p>Then we created treatment pages — the same categories we have on the homepage: advanced physical medicine, sports injury treatment, weight loss programs, shoulder pain treatment, and more.</p>
+
+  <p>Then we created condition pages for: back pain, neck pain, hip pain, leg pain, headache, neuropathy, foot pain, knee joint pain, fibromyalgia, and more.</p>
+
+  <p>We also have an "About Me" page that talks a lot about what Rozier MD does for his patients and more.</p>
+
+  <p>This is how we designed the whole website — not with a simple 5-page website, but with cornerstone content pages for every condition, treatment, and service.</p>
+
+  <div class="result-card">
+    <p style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:12px;">The Website Structure We Built</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">🔹 <strong>Service Pages</strong> (1,000–1,500 words each): Facet injection, spinal cord stimulation, occipital nerve blocks, PRP therapy, trigger point injection, and more</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">🔹 <strong>Treatment Pages:</strong> Advanced physical medicine, sports injury treatment, weight loss programs, shoulder pain treatment, and more</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">🔹 <strong>Condition Pages:</strong> Back pain, neck pain, hip pain, leg pain, headache, neuropathy, foot pain, knee joint pain, fibromyalgia, and more</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:0">🔹 <strong>Every page</strong> has a Call Now button + contact form + FAQ section</p>
+  </div>
+</div>
+
+<!-- ═══ CORNERSTONE CONTENT ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>How We Approach Cornerstone Content for Pain Management</h2>
+
+  <p>We write content on topics that will be the best on the internet, but we optimize it for location-based visitors.</p>
+
+  <h3>Example 1: Female Hip Bursitis — Symptoms and Treatment in Mansfield, Texas</h3>
+
+  <p>For example, the title would be: "Female Hip Bursitis Symptoms and Treatment in Mansfield, Texas." We write about the symptoms. We start with statistics — like how many percentage of women over 60 suffer from female hip bursitis. We talk about what hip bursitis is and what females feel when they have this pain.</p>
+
+  <p>Then we cover the top symptoms: sharp hip pain, swelling and warmth, radiating pain, nighttime aggravation, stiffness, and weakness. Then we create content about how to treat this pain and how to choose a doctor.</p>
+
+  <p>And we have a detailed FAQ section where we research and find questions that people actually search on Google. For example: Can hip bursitis go away on its own? How long will it take to heal? Is walking good for hip bursitis? What aggravates hip bursitis? Can weight loss help hip bursitis? And more.</p>
+
+  <h3>Example 2: Occipital Nerve Blocks in Mansfield, Texas</h3>
+
+  <p>We want to rank for people who are searching for occipital nerve blocks in Mansfield, Texas — people trying to find a pain medicine doctor in this location. We start writing the same formula: What is this pain? What are occipital nerve blocks and how do they work? What are the primary conditions treated by this? Chronic migraines, occipital neuralgia, tension headaches, cluster headaches.</p>
+
+  <p>And we answer questions like: Who would benefit most from this treatment? Treatment frequency and duration. What are the risks of going through this treatment? Why should people choose Rozier MD for this treatment?</p>
+
+  <p>Again, frequently asked questions like: How painful is an occipital nerve block? Can occipital nerve blocks cure headaches for good? Will insurance cover this treatment? And more. Overall, this content is almost 1,500 words.</p>
+
+  <h3>Example 3: Rheumatoid Arthritis in Mansfield</h3>
+
+  <p>We also cover general pain medicine keywords like rheumatoid arthritis — how to treat it and who to contact in Mansfield. We start with statistics: almost 1.3 million Americans are facing this condition. Then we cover the signs of this pain, how worsening rheumatoid arthritis can steal your independence, and why rheumatoid arthritis sometimes gets worse.</p>
+
+  <p>Again, we include frequently asked questions, try to reach at least 1,500 words, and then finish with a "Call Now" button or a "Book an Appointment" form. So someone reading this article can quickly jump on the form and book an appointment with us.</p>
+
+  <div class="callout callout-info">
+    <strong>The cornerstone content formula:</strong> Start with statistics → explain the condition → cover symptoms → treatment options → why choose Rozier MD → FAQ section with real questions people search on Google → Call Now button or booking form. Every page is at least 1,500 words and optimized for location-based keywords.
+  </div>
+
+  <h3>Topic Cluster Strategy</h3>
+
+  <p>I didn't share a lot of information about interlinking multiple articles. We have a topic cluster strategy where the parent page is the topic head, and we create child pages under each topic. That's how we create our topic cluster strategy, which is more complex by nature, but it is basically telling Google that you have the entire arsenal of content that people are searching for about a certain pain condition or treatment.</p>
+
+  <div class="callout callout-warning">
+    <strong>Why topic clusters matter for pain management SEO:</strong> If you only have one page about "back pain," Google sees you as a lightweight. But if you have a parent page about back pain linking to child pages about lower back pain, upper back pain, back pain during pregnancy, back pain treatment options, and back pain home remedies — Google sees you as the authority. That cluster approach is what separates a 5-page website from a 308-page website that dominates.
+  </div>
+</div>
+
+<!-- ═══ LINK BUILDING ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Link Building and Ranking Strategy for Pain Management</h2>
+
+  <p>Once we publish our cornerstone content, we go ahead and create articles — human-written, mostly — and post them on Medium for link building, LinkedIn for visibility, Quora for answering patient questions, Pinterest for posting, and other link building strategies for pain management.</p>
+
+  <div class="callout callout-info">
+    <strong>Our link building channels for pain management:</strong> Medium articles (unique, not repurposed) → LinkedIn posts and articles → Quora answers with links → Pinterest posting → Guest posts on healthcare blogs. All human-written. No Fiverr. No comment spam. No paid backlinks. No AI-generated content.
+  </div>
+
+  <h3>Tracking Rankings and Pushing Pages to Page 1</h3>
+
+  <p>Then we keep tracking the rankings. If a page is ranking on page 2 or 3, we try to get those pages to page 1.</p>
+
+  <p>For example, we had a page where peripheral neuropathy was ranking on page 2. We were ranking for keywords like nerve pain relief, nerve pain treatment at home, neuropathy for feet, and other keywords — but on page 2. Then we updated the content by 300 words and built more links. Instantly, the page was ranking on page 1, and all the keywords that were on page 2 jumped to page 1 instantly.</p>
+
+  <p>Even now, we are trying to rank for "rheumatoid arthritis fatigue in Mansfield." Though we are ranking in Mansfield on page 1, we are not ranking for more rheumatoid arthritis keywords on page 1. So we recently updated that page with 300 to 500 more words, answered some more FAQ questions, updated the page, and built more links from Medium, LinkedIn, and more. We are expecting that this page will be ranking very soon on page 1.</p>
+
+  <div class="callout callout-success">
+    <strong>The page 2 to page 1 strategy:</strong> If a page is ranking on page 2, update it with 300–500 more words, answer more FAQ questions, and build more links from Medium, LinkedIn, and Quora. That small push consistently moves pages from page 2 to page 1 — and all the associated keywords jump with it.
+  </div>
+</div>
+
+<!-- ═══ RESULTS ═══ -->
+<div class="content" style="padding-top: 0;" id="results">
+  <h2>The Results: Real Google Search Console Data</h2>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div>
+        <span class="result-badge result-badge-before">March 2025</span>
+        <div class="result-stat result-stat-red" style="margin-top:8px">629</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Clicks/month from Google</div>
+      </div>
+      <div style="padding: 0 8px;"><span class="result-vs">→</span></div>
+      <div>
+        <span class="result-badge result-badge-after">February 2026</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">4,054</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Clicks/month from Google</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin:0"><strong style="color:var(--text-primary)">Growth:</strong> 544% increase in clicks · 7.3M+ impressions · 1,003 ranking queries · 308 pages indexed</p>
+  </div>
+
+  <p>In the last 12 months, we have earned more than 27,831 clicks, and our impressions are more than 7.3 million. Even though our click-through rate averages around 0.5%, we receive 150 to 200 calls a month from Google My Business alone — people searching for "near me" and treatment-based keywords.</p>
+
+  <p>We are also getting more than 40+ monthly inquiries just from the website alone. Even though some of the website leads are coming from different states and cities, considering only the location-based people requesting information about treatment — 40 from the website and 150 to 200 a month from Google My Business — this is driving more than $100,000 or more in sales just from these organic efforts.</p>
+
+  <h3>Top Performing Pages from Google Search Console</h3>
+
+  <p>One single page — "Why Shingles Pain Hurts at Night in Mansfield, TX" — earned 16,574 clicks and 679,010 impressions in the last 12 months. That is one article driving more traffic than most pain management websites get in total.</p>
+
+  <div class="result-card">
+    <p style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:12px;">Top Performing Pages (12 Months — Google Search Console)</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">🏆 <strong>Why Shingles Pain Hurts at Night</strong> — 16,574 clicks · 679K impressions</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">📊 <strong>Shingles Pain Symptoms & Treatment</strong> — 1,647 clicks · 1.2M impressions</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">📊 <strong>Occipital Nerve Block</strong> — 1,151 clicks · 471K impressions</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">📊 <strong>Rheumatoid Arthritis Stages</strong> — 1,089 clicks · 748K impressions</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">📊 <strong>Peripheral Neuropathy</strong> — 832 clicks · 391K impressions</p>
+    <p style="font-size:15px;color:var(--text-secondary);margin-bottom:0">📊 <strong>Sciatica Treatment</strong> — 748 clicks · 112K impressions</p>
+  </div>
+
+  <p>These are all cornerstone content pages — each one is 1,500 to 2,500 words, covering everything a patient needs to know about that condition, treatment options, and how to book an appointment.</p>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div>
+        <span class="result-badge result-badge-before">Before</span>
+        <div class="result-stat result-stat-red" style="margin-top:8px">25</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Pages · 300–500 words each</div>
+      </div>
+      <div style="padding: 0 8px;"><span class="result-vs">→</span></div>
+      <div>
+        <span class="result-badge result-badge-after">After</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">308</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px">Pages · 1,000–2,500 words each</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin:0"><strong style="color:var(--text-primary)">Revenue:</strong> $100,000+/month from organic efforts · 150–200 calls from Google Maps · 40+ website inquiries/month</p>
+  </div>
+
+  <h3>Monthly Growth Trajectory</h3>
+
+  <p>Here is the month-by-month growth from Google Search Console data:</p>
+
+  <p><strong>March 2025:</strong> 629 clicks, 315K impressions — the starting point.</p>
+  <p><strong>June 2025:</strong> 1,438 clicks, 546K impressions — content is gaining traction.</p>
+  <p><strong>August 2025:</strong> 2,679 clicks, 547K impressions — cornerstone pages hitting page 1.</p>
+  <p><strong>October 2025:</strong> 2,880 clicks, 494K impressions — peak performance.</p>
+  <p><strong>January 2026:</strong> 2,679 clicks, 757K impressions — impressions expanding to new keywords.</p>
+  <p><strong>February 2026:</strong> 4,054 clicks, 922K impressions — highest month ever. 544% growth from day one.</p>
+
+  <div class="inline-cta">
+    <strong>Want the same results for your pain management clinic?</strong>
+    <p>We'll audit your website, your Google My Business, your backlink profile, and your competition — and show you exactly what needs to happen.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ WHO WE WORK WITH ═══ -->
+<section class="specialties">
+  <div class="specialties-inner">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Who We Work With</h2>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">We stay focused on healthcare so we can deliver the best results possible — instead of trying to serve every industry.</p>
+    <div class="specialty-tags">
+      <span class="specialty-tag">Pain Management</span>
+      <span class="specialty-tag">Medspas</span>
+      <span class="specialty-tag">Cardiologists</span>
+      <span class="specialty-tag">Podiatrists</span>
+      <span class="specialty-tag">Surgeons</span>
+      <span class="specialty-tag">Doctors</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA + FORM ═══ -->
+<section class="final-cta" id="audit-form">
+  <div class="final-cta-inner">
+    <h2>Get Your Free Pain Management Marketing Audit</h2>
+    <p>Submit your site and we'll audit your website, Google My Business, backlink profile, and competition — with real data, real competitor analysis, and a real action plan.</p>
+    <div class="form-mock">
+      <div class="form-row">
+        <label class="form-label">Your Name *</label>
+        <input type="text" class="form-input" placeholder="Dr. Jane Smith">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-input" placeholder="jane@yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Website URL *</label>
+        <input type="url" class="form-input" placeholder="https://yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-input" placeholder="Dallas, Mansfield, Fort Worth, etc.">
+      </div>
+      <button class="cta-btn form-submit">Get My Free Audit →</button>
+      <p class="form-note">Audit delivered within 48 hours. No contracts. No obligation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BYLINE ═══ -->
+<div class="byline">
+  <div class="byline-avatar">M</div>
+  <div class="byline-text">
+    <strong>By Madhan</strong> · Founder, Intellius Medical
+  </div>
+</div>
+
+<!-- ═══ MOBILE: Sticky CTA ═══ -->
+<div class="sticky-cta">
+  <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+</div>
+
+</body>
+</html>
