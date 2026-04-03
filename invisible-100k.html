@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Invisible $100K: How to Find and Capture $100,000/Month in Hidden Patient Revenue | Intellius Medical</title>
+<meta name="description" content="We analyzed 6 healthcare businesses across 11.3M Google impressions and found $100K+ in hidden monthly revenue in every market. Real GSC data. Real case studies. Zero ad spend.">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #faf9f6;
+    --accent: #c8102e;
+    --accent-soft: #fff0f0;
+    --gold: #b8860b;
+    --gold-soft: #fdf8ef;
+    --blue: #1a365d;
+    --blue-soft: #eef2ff;
+    --green: #065f46;
+    --green-soft: #ecfdf5;
+    --gray-50: #f8f7f4;
+    --gray-100: #f0eeea;
+    --gray-200: #e2dfd8;
+    --gray-400: #9c9788;
+    --gray-600: #5c5a52;
+    --gray-800: #2d2b26;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --max-w: 780px;
+    --max-w-wide: 1000px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══ HERO ═══ */
+  .hero {
+    padding: 80px 24px 60px;
+    text-align: center;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(200,16,46,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(184,134,11,0.06) 0%, transparent 50%);
+    animation: shimmer 15s ease-in-out infinite alternate;
+  }
+  @keyframes shimmer {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-5%, 3%); }
+  }
+  .hero-inner { position: relative; max-width: var(--max-w); margin: 0 auto; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    color: var(--gold);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 7vw, 64px);
+    line-height: 1.08;
+    font-weight: 400;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  /* Stats ribbon */
+  .stats-ribbon {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .stat-chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .stat-chip strong {
+    color: var(--gold);
+    font-family: var(--mono);
+    font-weight: 700;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+  .hero-cta:hover { background: #a50d26; transform: translateY(-1px); }
+
+  /* ═══ CONTENT SECTIONS ═══ */
+  .content-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-wrap-wide {
+    max-width: var(--max-w-wide);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 60px 0; }
+
+  .section-intro {
+    padding: 80px 0 40px;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  h2 em { font-style: italic; color: var(--accent); }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 48px 0 16px;
+    color: var(--blue);
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: var(--gray-800);
+  }
+
+  /* ═══ CALLOUT BOXES ═══ */
+  .callout {
+    border-radius: 12px;
+    padding: 28px 28px 28px 28px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .callout-red {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+  }
+  .callout-gold {
+    background: var(--gold-soft);
+    border-left: 4px solid var(--gold);
+  }
+  .callout-blue {
+    background: var(--blue-soft);
+    border-left: 4px solid var(--blue);
+  }
+  .callout-green {
+    background: var(--green-soft);
+    border-left: 4px solid var(--green);
+  }
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .callout-red .callout-label { color: var(--accent); }
+  .callout-gold .callout-label { color: var(--gold); }
+  .callout-blue .callout-label { color: var(--blue); }
+  .callout-green .callout-label { color: var(--green); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ═══ DATA CARDS ═══ */
+  .data-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 32px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .data-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .data-card-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .data-card-title {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+  .data-card-subtitle {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-left: auto;
+    font-family: var(--mono);
+  }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 15px;
+  }
+  .data-row:last-child { border-bottom: none; }
+  .data-row-label {
+    color: var(--gray-600);
+    flex: 1;
+  }
+  .data-row-value {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+  }
+  .data-row-value.highlight { color: var(--accent); }
+  .data-row-value.green { color: var(--green); }
+
+  /* ═══ BIG NUMBER ═══ */
+  .big-num {
+    text-align: center;
+    padding: 48px 24px;
+    margin: 40px 0;
+    background: linear-gradient(135deg, var(--gray-50), #fff);
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+  }
+  .big-num-value {
+    font-family: var(--mono);
+    font-size: clamp(40px, 8vw, 72px);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .big-num-value.red { color: var(--accent); }
+  .big-num-value.gold { color: var(--gold); }
+  .big-num-value.green { color: var(--green); }
+  .big-num-label {
+    font-size: 15px;
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+
+  /* ═══ CASE STUDY SECTION ═══ */
+  .case-study {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 40px 32px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-study::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+  .case-study.cs-pain::before { background: linear-gradient(90deg, var(--accent), var(--gold)); }
+  .case-study.cs-gastro::before { background: linear-gradient(90deg, var(--blue), #4a90d9); }
+  .case-study.cs-medspa::before { background: linear-gradient(90deg, var(--green), #34d399); }
+  .case-study.cs-cardio::before { background: linear-gradient(90deg, var(--gold), #f59e0b); }
+
+  .cs-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 12px;
+  }
+  .cs-name {
+    font-family: var(--serif);
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  .cs-niche {
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-bottom: 20px;
+  }
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .cs-metric {
+    text-align: center;
+    padding: 16px 8px;
+    background: var(--gray-50);
+    border-radius: 8px;
+  }
+  .cs-metric-value {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .cs-metric-label {
+    font-size: 12px;
+    color: var(--gray-600);
+    margin-top: 4px;
+  }
+
+  /* ═══ DIVIDER ═══ */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gray-200);
+    margin: 60px auto;
+    border-radius: 2px;
+  }
+
+  /* ═══ PATTERN PROBLEM VISUAL ═══ */
+  .pattern-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin: 32px 0;
+    background: var(--gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .pattern-step {
+    background: #fff;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .pattern-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .pattern-text { font-size: 15px; }
+  .pattern-text strong { color: var(--accent); }
+
+  /* ═══ RANKING TRAP TABLE ═══ */
+  .trap-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .trap-table th {
+    background: var(--gray-50);
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gray-600);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .trap-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .trap-table tr:last-child td { border-bottom: none; }
+  .trap-table .keyword { font-family: var(--mono); font-size: 13px; }
+  .trap-table .bad { color: var(--accent); font-weight: 600; }
+  .trap-table .good { color: var(--green); font-weight: 600; }
+
+  /* ═══ BYLINE ═══ */
+  .byline-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 0;
+    margin: 40px 0 0;
+    border-top: 1px solid var(--gray-200);
+  }
+  .byline-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .byline-name { font-weight: 700; font-size: 15px; }
+  .byline-role { font-size: 13px; color: var(--gray-600); }
+
+  /* ═══ CTA SECTION ═══ */
+  .cta-section {
+    background: linear-gradient(180deg, #0a0a0a, #1a1a2e);
+    color: #fff;
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .cta-section h2 { color: #fff; }
+  .cta-section p { color: rgba(255,255,255,0.7); }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    padding: 18px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    transition: all 0.2s;
+    margin-top: 12px;
+  }
+  .cta-btn:hover { background: #a50d26; transform: translateY(-2px); }
+  .cta-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 16px;
+  }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 640px) {
+    .hero { padding: 60px 20px 40px; }
+    .stats-ribbon { gap: 8px; }
+    .stat-chip { padding: 8px 12px; font-size: 12px; }
+    .case-study { padding: 28px 20px; }
+    .cs-grid { grid-template-columns: repeat(2, 1fr); }
+    .data-card { padding: 24px 20px; }
+    .trap-table { font-size: 12px; }
+    .trap-table td, .trap-table th { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ═══════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">◆ The Complete Market Analysis Playbook</div>
+    <h1>The Invisible <em>$100K</em></h1>
+    <p class="hero-sub">How to find and capture $100,000 a month in hidden patient revenue in any healthcare market. Based on real Google data from 6 healthcare businesses across 11.3 million impressions.</p>
+    <div class="stats-ribbon">
+      <div class="stat-chip"><strong>11.3M</strong>&nbsp; Impressions Analyzed</div>
+      <div class="stat-chip"><strong>6</strong>&nbsp; Healthcare Businesses</div>
+      <div class="stat-chip"><strong>$0</strong>&nbsp; Ad Spend</div>
+      <div class="stat-chip"><strong>$100K+</strong>&nbsp; Monthly Revenue Each</div>
+    </div>
+    <a href="#audit-form" class="hero-cta">Get Your Free Market Gap Analysis →</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- INTRO -->
+<!-- ═══════════════════════════════════════ -->
+<section class="section-intro">
+  <div class="content-wrap">
+
+    <p>This guide is going to show you how we analyze the market and find the invisible $100K revenue in any healthcare market — whether it is for doctors, surgeons, pain doctors, or medspas.</p>
+
+    <p>We focus on helping healthcare businesses like medspas, medical practices, pain doctors, plastic surgeons, wellness clinics, and more. In this content, you will learn the step-by-step method that we use to find a gap in the market where anyone who starts a new medspa or a medical practice — any doctor or surgeon who starts their practice — can make $100,000 a month.</p>
+
+    <p>This is not about SEO. This is not about content marketing, social media, or anything like that. This is a pure market understanding — positioning yourself as an expert in a particular location, in a particular healthcare niche, and getting hundreds of inbound leads a month using Google Maps, Google Traffic, AI Traffic, and more.</p>
+
+    <div class="callout callout-gold">
+      <span class="callout-label">What You Need to Know</span>
+      <p>The Invisible $100K plan is not a one-day job. If you finish reading this article, you will get a full understanding of how we did this for our medspa and doctor clients. We are sharing almost everything we tried for our clients. Not every strategy needs to be used to reach the $100K. Even one of the strategies we are sharing below can be mastered and implemented by yourself — even if you are a busy doctor — with the help of a freelancer or a one-person marketing executive. You can execute on your own to make the same amount of revenue.</p>
+    </div>
+
+    <p>$100K — people think that is a huge amount of revenue. You need a lot of laser hair removal machines, you need a lot of space in your location, and all the things. But every strategy in this article is going to reveal something that you may have heard about, you may know about, but you never thought — "Wow, this alone made this much traffic."</p>
+
+    <p>You may never have thought about it. It may sound so simple that you may think, "I have tried this, but it never worked." Have you tried it correctly? Have you tried SEO correctly? Have you tried content marketing correctly? Have you tried Google My Business correctly?</p>
+
+    <p>Just because you pay $5,000 for an agency doesn't mean they will help you get $100K a month in revenue. If you don't have skin in the game, you are going to fail after you pay them $5K a month for 10 months and fight with them on the ninth month. They will eventually make you pay for the remaining three months because of the one-year contract. That is how every marketing agency makes money — not because they are providing results, but because of the contract.</p>
+
+    <p>They sound so great in the beginning. As the time goes, you know their true nature. Results are not good. Results are okay. Just break even, and sometimes less. Eventually you have taxes to pay. You have rent to pay. You may be spending a lot of money on ads, and you have hired a few front office people just to talk with the crappy leads these agencies are sending from Facebook ads.</p>
+
+    <p>So stay tuned. This content is going to be massive. But every section of this guide is going to help you make a huge impact for your healthcare business. It does not matter if you own a medspa or a hospital or a doctor's practice. This article will change the way you see marketing for your business, forever.</p>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- THE PATTERN PROBLEM -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="content-wrap">
+
+    <h2>The Pattern <em>Problem</em></h2>
+    <p>The marketing pattern that almost every failing medspa, doctor's clinic, or pain management practice follows. We see it every time we audit their profile.</p>
+
+    <div class="pattern-flow">
+      <div class="pattern-step">
+        <div class="pattern-num">1</div>
+        <div class="pattern-text">Medspa owner pays <strong>$10,000/month in rent</strong></div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">2</div>
+        <div class="pattern-text">Four or five staff at <strong>$15,000–$20,000/month in salaries</strong></div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">3</div>
+        <div class="pattern-text">Marketing agency at <strong>$3,000–$5,000/month</strong></div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">4</div>
+        <div class="pattern-text">Ad spend of <strong>$3,000–$5,000/month</strong> on top of that</div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">5</div>
+        <div class="pattern-text">Agency brings ~100 leads from Facebook ads. <strong>Most are junk.</strong></div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">6</div>
+        <div class="pattern-text">Leads come in at <strong>2 AM from doom scrollers</strong> on Instagram</div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">7</div>
+        <div class="pattern-text">Front office calendar looks great: <strong>30 appointments</strong></div>
+      </div>
+      <div class="pattern-step">
+        <div class="pattern-num">8</div>
+        <div class="pattern-text">Average cost per appointment: <strong>$60–$70</strong> — worse than industry average</div>
+      </div>
+    </div>
+
+    <p>A decent marketing agency will bring you anywhere from 100 leads a month from Facebook ads. Google Ads may be a little less. But you will be pushing your team to follow up with them. Marketing agencies are clever — they will tell you that these leads are good, but your team needs to follow up. Yeah, that is correct. Follow-ups are the only way that you can convert many leads. But the gap between the marketing team and your front office follow-up team will be huge because they think if a call comes, they will follow up during the office hours.</p>
+
+    <p>Most marketing agencies have the ads running 24 hours. You will get leads when someone is scrolling their Instagram at 2 AM and they want to book an appointment for your Botox special. Or you may be offering some glutathione offer. If you are a pain doctor, you may have posted a stem cell or exosome awareness post, and ads are running for that, and people are inquiring around 2 AM when they are doom scrolling their Instagram.</p>
+
+    <div class="callout callout-red">
+      <span class="callout-label">The Real Question</span>
+      <p>Do you think people who are doom scrolling Instagram at 2 AM are going to convert by seeing your ad? Definitely not. But according to your marketing agency, it is a "good lead." That lead filled the form inside their Facebook ads, which auto-filled most of the information. Does it mean people filling that information are going to become your patient? 100% no.</p>
+    </div>
+
+    <p>The owner — the medspa owner or the doctor — does not care about what the marketing agency says. He knows there is something off. Because the front office team is telling the truth: the leads are not responding, the leads are not the correct fit. Some of them do convert because of too much effort. Many will book an appointment — they are actually a patient and they will actually pay. They may come and get a Botox special or some other treatment. But the problem is not the ads, not the marketing agency, not the front office team.</p>
+
+    <div class="big-num">
+      <div class="big-num-value red">Single Problem</div>
+      <div class="big-num-label">After auditing thousands of medspa owners, pain doctors, and surgeons, we found the same one problem in every single healthcare business.</div>
+    </div>
+
+    <p>The demand is there. Patients and clients are searching. Hundreds of thousands of them across DFW, Houston, and other Texas markets. But the doctor's website or the medspa website is totally invisible. They fail to show up for the patient or client that searches for their needs.</p>
+
+    <p>So are you thinking this is going to be another "doctor SEO" content? I know the internet has more than 100 good doctor SEO articles. But this article is not about SEO or content marketing — because Neil Patel and Backlinko and those legends explained those topics much better than me. We are going to show you what works in this industry. Things that work in this industry may not work for other industries. We are here to give you this guide so you can find that $100K gap in the market you are in and how to capture that revenue.</p>
+
+    <div class="callout callout-green">
+      <span class="callout-label">The Math</span>
+      <p>Even if you try a little bit and capture just 10% of the $100K invisible market, you are going to make $10,000 in additional income without doing much — without paying any marketing agencies more. We call this system <strong>The Invisible $100K</strong>.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- WHY MARKETING FAILS -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="content-wrap">
+
+    <h2>Why Most Medspa or Doctor Practice <em>Marketing Fails</em></h2>
+
+    <p>Most medspas or doctors hire a marketing agency and the agency will tell them: in six months, you will be on the New York Stock Exchange. We will get you listed there, and you will become a billionaire. By the 12th month, you will be sitting next to Elon Musk thinking about the next big thing in the world.</p>
+
+    <p>Those kinds of promises are made by marketing agency owners or the closers. Medspas and doctors believe that, and they move forward with the one-year package. People who are selling bigger dreams do not come with cheap pricing either. Since they offered huge dreams of achieving the best in the city and helping them get X number of clients a month — doctors or medspa owners calculate: "Okay, if I get 100 patients a month, even if they pay $200 on average, that is $20,000 additional income. So it makes sense to pay $5,000 for the agency, $5,000 on ads."</p>
+
+    <p>Once they hire the agency, the medspa owner or doctor celebrates. They are happy. Everything feels great.</p>
+
+    <h3>A Real Story: The "Nationally Recognized" Agency</h3>
+
+    <p>A medspa owner came to us after working with a nationally recognized medspa marketing agency for a year. We found that their contract covered social media, ranking, Instagram ads, and increasing follower count.</p>
+
+    <p>Do you know how many followers they increased over the year? From 100 to 1,000 followers. They posted four times a month — all images and two videos, which the medspa owner needed to create and give them the Drive link. The agency would edit and post. Those four Instagram posts were basically the first Canva template you get when you search "Instagram template for medspa." They used that, they posted, and that was it.</p>
+
+    <p>How many blogs did they publish? Total for the year — 24. AI-written content to "help them rank." How many Google My Business posts? How many GMB updates? Nothing. They did not help the medspa owner do anything. They did optimize the on-page SEO, off-page SEO, and all the standard stuff.</p>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- THE RANKING TRAP -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="content-wrap">
+
+    <h2>The Ranking <em>Trap</em></h2>
+
+    <p>This is the one thing that kept them stuck with the marketing agency for a year.</p>
+
+    <p>The ranking trap is basically this: the agency shows you that you are ranking for "best medspa for Botox in Flower Mound" — position 11, 12, 9, 10. Sounds great, right? The number of people searching for that keyword is pretty much nil. Nobody searches for that. Maybe 10 people a month or a year. And not even a single one is going to convert because you are already on position 10.</p>
+
+    <div class="callout callout-red">
+      <span class="callout-label">The Trap Exposed</span>
+      <p>You can rank position 1, 2, 3 for a keyword like "Botox side effects" or "after Botox how to take care of my body." Agencies show you these keywords and tell you that you are ranking and going to get clients. These keywords do help you rank faster. But they will not give you any patients or results.</p>
+    </div>
+
+    <h3>Real Example: Rozier MD</h3>
+
+    <p>The same ranking trap we found for a pain doctor, Rozier MD. He also worked with another marketing agency — also nationwide. He was paying $6,000 a month just for SEO ranking. They were showing him that he is ranking for "best pain treatment doctor in Mansfield Texas." Okay — eight words in a single keyword. Who is going to search or type that long?</p>
+
+    <p>Even if they type it, how many people are searching that? Rarely and very few. This doctor is so busy with his clinic, his hospital work, and everything else. He sees the ranking reports popping up, but he is not getting enough patient calls from these people. He kept paying them more than $60,000 before he came to us.</p>
+
+    <div class="data-card">
+      <div class="data-card-header">
+        <div class="data-card-dot" style="background:var(--accent)"></div>
+        <div class="data-card-title">The "Ranking Trap" Keywords They Show You</div>
+        <div class="data-card-subtitle">vs. What Actually Works</div>
+      </div>
+      <table class="trap-table">
+        <thead>
+          <tr>
+            <th>What Agency Shows You</th>
+            <th>Monthly Searches</th>
+            <th>Patients?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyword">"best pain treatment doctor in mansfield texas"</td>
+            <td class="bad">~10</td>
+            <td class="bad">Zero</td>
+          </tr>
+          <tr>
+            <td class="keyword">"best medspa for botox in flower mound"</td>
+            <td class="bad">~10</td>
+            <td class="bad">Zero</td>
+          </tr>
+          <tr>
+            <td class="keyword">"botox side effects after treatment"</td>
+            <td>2,000+</td>
+            <td class="bad">Zero — informational only</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="trap-table" style="margin-top:16px;">
+        <thead>
+          <tr>
+            <th>What We Target Instead</th>
+            <th>3-Month Impressions</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyword">"shingles pain worse at night"</td>
+            <td>1,370</td>
+            <td class="good">115 clicks → pain patients calling</td>
+          </tr>
+          <tr>
+            <td class="keyword">"occipital nerve block"</td>
+            <td>27,331</td>
+            <td class="good">99 clicks → procedure bookings</td>
+          </tr>
+          <tr>
+            <td class="keyword">"mid back pain"</td>
+            <td>51,377</td>
+            <td class="good">198 clicks → local patients</td>
+          </tr>
+          <tr>
+            <td class="keyword">"eus vs ercp"</td>
+            <td>1,350</td>
+            <td class="good">36 clicks → $10K procedure patients</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The ranking trap is so real. It makes medspa owners and doctors think they are ranking and getting traffic. But are these people actually booking an appointment with you or making a call from Google My Business? Definitely not.</p>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HOW TO FIND THE INVISIBLE $100K -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="content-wrap">
+
+    <h2>How to Find the <em>Invisible $100K</em> in Your Market</h2>
+
+    <div class="callout callout-gold">
+      <span class="callout-label">Read This Carefully</span>
+      <p>What you are going to read is the most important thing on this entire page. What you learn is one thing, and what you implement is another thing. Whether you ask your agency to implement it, you implement it with your own in-house team, or you hire us — it is up to you. But this is the concrete idea that we are implementing for almost all our doctor and medspa clients, and they are all making $100K per month.</p>
+    </div>
+
+    <p>To find the $100K invisible gap in your target market — let's say it is Dallas, or Plano, or Houston, Miami, Los Angeles — we have found the $100K invisible gap in all of these locations. We have done this without spending a dollar on Facebook ads, Instagram ads, LinkedIn, or Google AdWords. Zero dollars on ads. And yet we have found the invisible $100K monthly income from these markets.</p>
+
+    <p>This strategy is not about finding the keywords that top competitors are ranking for and trying to beat them. That is foolishness. Yes, competitor analysis is great. But how can you find the keywords they are ranking for indirectly — the ones that are getting traffic and generating $100K or more? That is not possible to know just by looking at their top keywords. High traffic does not mean that page is giving them clients.</p>
+
+    <p>For example, you may rank nationally for "Botox before and after." But it does not mean clients are flying from all over the nation to your medspa to get Botox done.</p>
+
+    <h3>The Actual Method</h3>
+
+    <p>Finding the competitors is the number one thing. Then finding what they are ranking for using SpyFu, SEMrush, or Ahrefs — and finding the gap. Here is the key insight:</p>
+
+    <p>A competitor may have a page with only 10 visitors a month. But out of those 10, three may be buying a $1,000/month weight loss package subscription. You do not know that by looking at traffic alone. You find that by finding the highly competitive or high-cost keywords in Google AdWords and then checking how easily someone is ranking for those terms organically.</p>
+
+    <div class="callout callout-blue">
+      <span class="callout-label">The Gap Formula</span>
+      <p>Find keywords that are <strong>non-competitive in organic search</strong> but <strong>highly competitive in pay-per-click</strong> — meaning people are paying $20 to $30 per click for them. That tells you advertisers are fighting for that keyword because it converts. But organically, there is little competition. That one gap alone can be $3,000 a month. Find 20 or 30 of those opportunities, and you win.</p>
+    </div>
+
+    <p>Every doctor in the pain management niche, every medspa owner — they all want to rank for "pain doctor near me" or "orthopedic surgeon near me." Yes, it is the obvious keyword. But that obvious keyword is where everyone is fighting.</p>
+
+    <p>A new doctor who just finished school, just finished training, a new surgeon who finished all of his courses — he has the burden of half a million dollars in education loans. Maybe he just got married. He bought a new house. He has huge weight on his shoulders. He wants to run his own practice. And he wants to rank for "orthopedic surgeon near me." Of course. But we found something better.</p>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- REAL CASE STUDIES WITH GSC DATA -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="content-wrap-wide">
+
+    <h2 style="text-align:center;">Real Results. Real <em>Google Data.</em></h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto 48px; color:var(--gray-600);">Every number below comes directly from Google Search Console. Not estimates. Not projections. Actual data from the last 3 months.</p>
+
+    <!-- ROZIER MD -->
+    <div class="case-study cs-pain">
+      <div class="cs-tag">Case Study — Pain Management</div>
+      <div class="cs-name">Rozier MD</div>
+      <div class="cs-niche">Pain Management · Mansfield, TX</div>
+
+      <p>For our client Rozier MD — a Mansfield pain doctor — we did not target "pain doctor near me." Instead, we found that a keyword like "Mansfield stem cell pain doctor" has very low search volume, less than 100 searches. But the people who click on that keyword become $1,000 patients each. Ten of them a month is $10,000 a month. Add recurring patients, and you are at $100K or more.</p>
+
+      <div class="cs-grid">
+        <div class="cs-metric">
+          <div class="cs-metric-value">2.8M</div>
+          <div class="cs-metric-label">Impressions (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">10,615</div>
+          <div class="cs-metric-label">Clicks (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">261</div>
+          <div class="cs-metric-label">Pages Indexed</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">$0</div>
+          <div class="cs-metric-label">Ad Spend</div>
+        </div>
+      </div>
+
+      <div class="data-card" style="margin:24px 0 0;">
+        <div class="data-card-header">
+          <div class="data-card-dot" style="background:var(--accent)"></div>
+          <div class="data-card-title">Top Pages — Real GSC Data</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Why Shingles Pain Hurts at Night</div>
+          <div class="data-row-value green">7,333 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">How Long Do Shingles Last</div>
+          <div class="data-row-value green">518 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Shingles Pain Symptoms & Treatment</div>
+          <div class="data-row-value green">384 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Occipital Nerve Block Procedure</div>
+          <div class="data-row-value green">365 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Rheumatoid Arthritis Stages</div>
+          <div class="data-row-value green">229 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Sciatica Treatment</div>
+          <div class="data-row-value green">174 clicks</div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--gray-600); margin-top:12px;">One single page about shingles pain at night generated 352,197 impressions and 7,333 clicks in 3 months. That is one article. No ads. No social media. Just the right content targeting the right gap.</p>
+    </div>
+
+    <!-- KEDIA MD -->
+    <div class="case-study cs-gastro">
+      <div class="cs-tag">Case Study — Gastroenterology</div>
+      <div class="cs-name">Dr. Prashant Kedia</div>
+      <div class="cs-niche">Gastroenterologist · Dallas, TX</div>
+
+      <p>Same thing with gastroenterology. If we tried to help Dr. Prashant Kedia rank for "gastroenterologist near me," he would be landing 100 patients who pay $300 or $400 for a visit — that is $40,000 a month, but he needs to see 100 patients. Instead, we gave him ESG patients — 3 to 4 a month. They all pay cash, $10,000 each. Easily he made $40,000 to $50,000 a month. This is how we find the gap that is equivalent to $100K or more.</p>
+
+      <div class="cs-grid">
+        <div class="cs-metric">
+          <div class="cs-metric-value">2.4M</div>
+          <div class="cs-metric-label">Impressions (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">3,254</div>
+          <div class="cs-metric-label">Clicks (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">304</div>
+          <div class="cs-metric-label">Pages Indexed</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">$0</div>
+          <div class="cs-metric-label">Ad Spend</div>
+        </div>
+      </div>
+
+      <div class="data-card" style="margin:24px 0 0;">
+        <div class="data-card-header">
+          <div class="data-card-dot" style="background:var(--blue)"></div>
+          <div class="data-card-title">Top Pages — Real GSC Data</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Why No Smoking Before Colonoscopy</div>
+          <div class="data-row-value green">1,112 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Colonoscopy FAQs — Ultimate Guide</div>
+          <div class="data-row-value green">264 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Cologuard vs Colonoscopy</div>
+          <div class="data-row-value green">205 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">ERCP vs EUS — What's the Difference</div>
+          <div class="data-row-value green">199 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Constipation: Symptoms, Causes, Treatment</div>
+          <div class="data-row-value green">119 clicks</div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--gray-600); margin-top:12px;">The ERCP vs EUS page alone — a keyword that gets only 1,350 impressions — brings in patients who need $10,000 procedures. Low volume. Massive revenue per patient.</p>
+    </div>
+
+    <!-- SOUTHLAKE PAIN RELIEF -->
+    <div class="case-study cs-pain">
+      <div class="cs-tag">Case Study — Pain Management</div>
+      <div class="cs-name">Southlake Pain Relief</div>
+      <div class="cs-niche">Pain Management · Southlake, TX</div>
+
+      <div class="cs-grid">
+        <div class="cs-metric">
+          <div class="cs-metric-value">5.2M</div>
+          <div class="cs-metric-label">Impressions (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">8,073</div>
+          <div class="cs-metric-label">Clicks (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">365</div>
+          <div class="cs-metric-label">Pages Indexed</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">$0</div>
+          <div class="cs-metric-label">Ad Spend</div>
+        </div>
+      </div>
+
+      <div class="data-card" style="margin:24px 0 0;">
+        <div class="data-card-header">
+          <div class="data-card-dot" style="background:var(--accent)"></div>
+          <div class="data-card-title">Top Pages — Real GSC Data</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Upper & Middle Back Pain Treatment</div>
+          <div class="data-row-value green">1,948 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Right Mid Back Pain Treatment</div>
+          <div class="data-row-value green">1,141 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Low Back & Buttock Pain Treatment</div>
+          <div class="data-row-value green">943 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Night Cramps Treatment</div>
+          <div class="data-row-value green">873 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Cervicogenic Headache Treatment</div>
+          <div class="data-row-value green">473 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Stiff Neck Treatment</div>
+          <div class="data-row-value green">148 clicks</div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--gray-600); margin-top:12px;">The night cramps page alone has 1.49 million impressions in 3 months. One article. No ads. Patients searching at 2 AM when they cannot sleep because of leg cramps — and they find this page, not an Instagram ad.</p>
+    </div>
+
+    <!-- WACO HV -->
+    <div class="case-study cs-cardio">
+      <div class="cs-tag">Case Study — Cardiology</div>
+      <div class="cs-name">Waco Heart & Vascular</div>
+      <div class="cs-niche">Cardiology · Waco, TX</div>
+
+      <div class="cs-grid">
+        <div class="cs-metric">
+          <div class="cs-metric-value">106K</div>
+          <div class="cs-metric-label">Impressions (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">1,945</div>
+          <div class="cs-metric-label">Clicks (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">105</div>
+          <div class="cs-metric-label">Pages Indexed</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">$0</div>
+          <div class="cs-metric-label">Ad Spend</div>
+        </div>
+      </div>
+
+      <div class="data-card" style="margin:24px 0 0;">
+        <div class="data-card-header">
+          <div class="data-card-dot" style="background:var(--gold)"></div>
+          <div class="data-card-title">Top Pages — Real GSC Data</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Homepage — "Waco Cardiology"</div>
+          <div class="data-row-value green">925 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Swollen Feet After Pacemaker</div>
+          <div class="data-row-value green">454 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Dr. Phillip Myatt Profile</div>
+          <div class="data-row-value green">134 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Holter Monitor Restrictions</div>
+          <div class="data-row-value green">34 clicks</div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--gray-600); margin-top:12px;">One article about swollen feet after pacemaker implantation — a topic no other cardiologist in Waco has written about — is generating 454 clicks. Patients searching for this are not casual browsers. They just had a pacemaker implanted. They need a cardiologist.</p>
+    </div>
+
+    <!-- RENEWME -->
+    <div class="case-study cs-medspa">
+      <div class="cs-tag">Case Study — MedSpa</div>
+      <div class="cs-name">RenewMe MedSpa</div>
+      <div class="cs-niche">IV Therapy & MedSpa · Los Angeles, CA</div>
+
+      <div class="cs-grid">
+        <div class="cs-metric">
+          <div class="cs-metric-value">652K</div>
+          <div class="cs-metric-label">Impressions (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">4,594</div>
+          <div class="cs-metric-label">Clicks (3 months)</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">491</div>
+          <div class="cs-metric-label">Pages Indexed</div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric-value">$0</div>
+          <div class="cs-metric-label">Ad Spend</div>
+        </div>
+      </div>
+
+      <div class="data-card" style="margin:24px 0 0;">
+        <div class="data-card-header">
+          <div class="data-card-dot" style="background:var(--green)"></div>
+          <div class="data-card-title">Top Pages — Real GSC Data</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Homepage — IV Therapy Los Angeles</div>
+          <div class="data-row-value green">1,527 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Gluta Push vs Gluta Drip</div>
+          <div class="data-row-value green">423 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Semaglutide Injection Sites</div>
+          <div class="data-row-value green">333 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Glutathione Before & After</div>
+          <div class="data-row-value green">129 clicks</div>
+        </div>
+        <div class="data-row">
+          <div class="data-row-label">Foods to Eat/Avoid on Tirzepatide</div>
+          <div class="data-row-value green">48 clicks</div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--gray-600); margin-top:12px;">The tirzepatide foods page has 145,215 impressions in 3 months. One article about what to eat while on a weight loss medication — and it is getting more impressions than most medspa websites get in a year. This went from zero to over $1M annual revenue.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- AGGREGATE DATA -->
+<!-- ═══════════════════════════════════════ -->
+<section style="background:var(--gray-50); padding:60px 0;">
+  <div class="content-wrap">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:24px; text-align:center;">
+      <div>
+        <div style="font-family:var(--mono); font-size:42px; font-weight:700; color:var(--accent);">11.3M</div>
+        <div style="font-size:14px; color:var(--gray-600); margin-top:4px;">Total Impressions · 3 Months</div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono); font-size:42px; font-weight:700; color:var(--green);">29,050</div>
+        <div style="font-size:14px; color:var(--gray-600); margin-top:4px;">Total Clicks · 3 Months</div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono); font-size:42px; font-weight:700; color:var(--gold);">$0</div>
+        <div style="font-size:14px; color:var(--gray-600); margin-top:4px;">Combined Ad Spend</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:24px; font-size:14px; color:var(--gray-400);">Data across 6 healthcare businesses · Google Search Console · Last 3 months</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- THE CORNERSTONE STRATEGY -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="content-wrap">
+
+    <h2>The Cornerstone Content <em>Strategy</em></h2>
+
+    <p>This is how we helped our doctor clients find the gap equivalent to $100K or more a month. We find the gap and we use cornerstone content strategy — but we implement that for location-based keywords.</p>
+
+    <p>You write 2,000 to 3,000 words like a Wikipedia page, but you optimize that for your location. No other pain doctor has written such detailed content ever again on their website. So our client Rozier MD, Prashant Kedia MD, Cardiologist Waco Heart & Vascular with Dr. Phillip Myatt — all of them are ranking insanely high for their target keywords and also for keywords that brought in thousands of dollars, $10,000 or $100,000 a month or more, in revenue for their practice.</p>
+
+    <p>Without spending a lot of money on ads. Without Facebook. Without Google AdWords.</p>
+
+    <div class="callout callout-green">
+      <span class="callout-label">The Cornerstone Formula</span>
+      <p>Write one 2,000–3,000 word page about a specific condition or treatment, optimized for your city. Make it the best, most detailed page on the internet for that topic in your location. Not 500 words of AI filler. Real depth. Real expertise. The kind of content only a practicing doctor could write or approve. That single page becomes your $10,000/month asset.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CTA -->
+<!-- ═══════════════════════════════════════ -->
+<section class="cta-section" id="audit-form">
+  <div class="content-wrap">
+    <h2>Want to Find the Invisible $100K<br>in <em>Your</em> Market?</h2>
+    <p style="max-width:520px; margin:0 auto 24px;">We will analyze your market, find the gap, and show you exactly where the hidden revenue is — with real data, not guesses. Free. No contracts. No obligation.</p>
+    <a href="#" class="cta-btn">Get Your Free Market Gap Analysis →</a>
+    <p class="cta-note">Free 48-hour video audit · No contracts · No obligation</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- BYLINE -->
+<!-- ═══════════════════════════════════════ -->
+<div style="padding:40px 24px 60px; max-width:var(--max-w); margin:0 auto;">
+  <div class="byline-section">
+    <div class="byline-avatar">M</div>
+    <div>
+      <div class="byline-name">By Madhan</div>
+      <div class="byline-role">Founder, Intellius Medical · 12+ Years in Healthcare Marketing</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
