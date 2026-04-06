@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Took a Cardiologist from 20 Calls to 300+ Calls/Month | Intellius Medical</title>
+<meta name="description" content="Case study: Waco Heart & Vascular was paying $4,000/month to an agency and getting less than 20 calls. We charged $2,000/month and delivered 300-400 calls. 225,711 Google impressions. Real data from Search Console.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;color:#1a2a3a;font-family:'Inter',sans-serif;overflow-x:hidden}
+.inter{font-family:'Inter',sans-serif}.playfair{font-family:'Playfair Display',serif}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+.container{max-width:720px;margin:0 auto;padding:0 24px}
+.container-wide{max-width:900px;margin:0 auto;padding:0 24px}
+.tag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:#E8734A}
+h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1.25;margin-bottom:24px;color:#0f2137}
+.body-text{font-size:16px;line-height:1.85;color:#4a5568}
+.accent{color:#E8734A}
+.navy{color:#0f2137}
+.inline-cta{display:block;padding:16px 20px;background:#E8734A08;border:1px solid #E8734A30;border-radius:10px;margin-top:28px;text-align:center;font-size:13px;font-weight:600;color:#E8734A;cursor:pointer;text-decoration:none;transition:all .2s}
+.inline-cta:hover{background:#E8734A15}
+.btn{display:inline-block;padding:14px 36px;background:#E8734A;color:#fff;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;text-decoration:none;border:none;transition:all .2s}
+.btn:hover{background:#d4623e}
+.btn-outline{display:inline-block;padding:14px 32px;background:transparent;color:#E8734A;font-size:14px;font-weight:600;border-radius:8px;border:1px solid #E8734A44;cursor:pointer;text-decoration:none}
+.section-light{background:#fff;padding:80px 0}
+.section-warm{background:#FFF8F5;padding:80px 0}
+.section-navy{background:#0f2137;color:#fff;padding:80px 0}
+.section-navy h2{color:#fff}
+.section-navy .body-text{color:rgba(255,255,255,.7)}
+.section-navy .tag{color:#E8734A}
+.stat-card{background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #e8ecf1}
+.callout{padding:20px 24px;border-radius:12px;font-size:14px;line-height:1.7;margin:28px 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:linear-gradient(180deg,transparent,#fffffff0 30%,#fff);padding:16px 24px;display:flex;justify-content:center;align-items:center;gap:16px;border-top:1px solid #e8ecf1}
+.sticky-bar span{font-size:13px;font-weight:500;color:#4a5568}
+.sticky-btn{padding:10px 24px;background:#E8734A;color:#fff;font-size:13px;font-weight:700;border-radius:6px;text-decoration:none;flex-shrink:0}
+.counter{font-family:'Playfair Display',serif;font-weight:800}
+.chart-container{display:flex;gap:3px;align-items:flex-end;height:200px;padding:20px 0}
+.chart-bar{flex:1;border-radius:4px 4px 0 0;min-height:4px;position:relative;transition:all .3s}
+.chart-bar .tooltip{display:none;position:absolute;top:-32px;left:50%;transform:translateX(-50%);background:#0f2137;border-radius:4px;padding:4px 10px;font-size:10px;white-space:nowrap;color:#fff}
+.chart-bar:hover .tooltip{display:block}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0}
+.compare-table th{padding:14px 16px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #e8ecf1}
+.compare-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid #f0f0f0}
+.compare-table tr:last-child td{border-bottom:none}
+.niche-card{border-radius:12px;padding:24px;border:1px solid #e8ecf1}
+.niche-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f4f8;font-size:13px}
+.niche-row:last-child{border:none}
+.framework-step{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid #f0f4f8}
+.framework-step:last-child{border:none}
+.step-num{width:36px;height:36px;border-radius:50%;background:#E8734A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+.link-example{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f8fafc;border-radius:8px;margin-bottom:10px;border:1px solid #e8ecf1}
+.link-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;flex-shrink:0;color:#fff}
+input,select{width:100%;padding:13px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-family:'Inter',sans-serif;font-size:14px;outline:0}
+input::placeholder{color:rgba(255,255,255,.35)}
+select option{color:#1a2a3a;background:#fff}
+label{font-size:11px;color:rgba(255,255,255,.6);display:block;margin-bottom:5px;font-weight:500}
+.form-group{margin-bottom:16px}
+@media(max-width:640px){.grid-2{grid-template-columns:1fr}.sticky-bar span{display:none}h2{font-size:26px}}
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span>Want 300+ patient calls a month?</span>
+  <a href="#audit-form" class="sticky-btn">Free Audit →</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:60px 24px 100px;position:relative;background:linear-gradient(135deg,#0a1929,#0f2137 60%,#162d50)">
+  <div style="position:relative;z-index:1;max-width:800px;margin:0 auto">
+    <div style="font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#E8734A;margin-bottom:32px">Intellius Medical · Client Case Study</div>
+    <div style="display:inline-block;padding:6px 14px;background:#E8734A20;border:1px solid #E8734A40;border-radius:6px;font-size:12px;font-weight:600;color:#E8734A;margin-bottom:20px">His previous agency charged $4,000/mo and delivered less than 20 calls</div>
+    <h1 class="playfair" style="font-size:clamp(34px,6vw,54px);font-weight:800;line-height:1.08;margin-bottom:24px;color:#fff">A Cardiologist in Waco<br>Was <span style="color:#E8734A">Invisible</span> on Google.</h1>
+    <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,.55);max-width:540px;margin-bottom:48px">We took Dr. Philip Myatt from less than 20 calls a month to 300–400 calls a month. For half the price. With zero ads. Here's the complete playbook.</p>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;margin-bottom:48px">
+      <div><div class="counter" style="font-size:46px;color:#fff" data-target="225711">0</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px">Google Impressions</div></div>
+      <div><div class="counter" style="font-size:46px;color:#fff" data-target="1540">0</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px">Patient Calls from Maps</div></div>
+      <div><div class="counter" style="font-size:46px;color:#E8734A" data-target="7586">0</div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px">Clicks from Google</div></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#audit-form" class="btn" style="padding:16px 36px;font-size:15px">Get These Results for Your Practice</a>
+      <a href="#audit-form" class="btn-outline" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2);padding:16px 32px">Free SEO Audit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BEFORE / AFTER ═══════════ -->
+<section class="reveal section-warm">
+  <div class="container-wide">
+    <div class="tag">The Transformation</div>
+    <h2>Before Intellius vs. After Intellius</h2>
+    <div class="grid-2" style="gap:20px">
+      <div style="background:#fff;border-radius:16px;padding:28px;border:2px solid #e74c3c22">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e74c3c;margin-bottom:16px">✕ Previous Agency</div>
+        <div style="font-size:13px;line-height:2;color:#4a5568">
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0"><strong style="color:#e74c3c">$4,000+</strong>/month</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0"><strong style="color:#e74c3c">&lt; 20</strong> calls/month</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0">Ugly GoDaddy HTML website</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0">No content strategy</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0">No Google My Business</div>
+          <div style="padding:6px 0">100% referral dependent</div>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:28px;border:2px solid #10b98133">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#10b981;margin-bottom:16px">✓ Intellius Medical</div>
+        <div style="font-size:13px;line-height:2;color:#4a5568">
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0"><strong style="color:#10b981">$2,000</strong>/month</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0"><strong style="color:#10b981">300–400</strong> calls/month</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0">WordPress site + $50 theme</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0">152 pages of cornerstone content</div>
+          <div style="padding:6px 0;border-bottom:1px solid #f0f0f0">GMB updated twice/week</div>
+          <div style="padding:6px 0">225,711 Google impressions</div>
+        </div>
+      </div>
+    </div>
+    <a href="#audit-form" class="inline-cta">Getting this kind of treatment from your agency? Let's compare — free audit →</a>
+  </div>
+</section>
+
+<!-- ═══════════ THE STORY - SEGMENTED ═══════════ -->
+<section class="reveal section-light">
+  <div class="container">
+    <div class="tag">How It Started</div>
+    <h2>$4,000 a Month. Less Than 20 Calls. An Ugly GoDaddy Website.</h2>
+    
+    <p class="body-text">When we started with them, we had a call with Philip Myatt. He was working with another marketing agency, probably paying around $4,000 a month or more. They didn't get more than 20 calls a month.</p>
+    
+    <div class="callout" style="background:#f8fafc;border-left:4px solid #E8734A;border-radius:0 12px 12px 0">
+      Almost all of their calls were word of mouth, walk-in clients, or referrals from other doctors — primary care and emergency doctors. The marketing agency was delivering nothing.
+    </div>
+    
+    <p class="body-text" style="margin-top:20px">They had an ugly website from GoDaddy or something — a basic HTML page. We moved them to WordPress. We purchased a small theme for $50, which is easy and quick to set up. We asked them to do a photo shoot — a locally hired photographer cost them about $1,500.</p>
+    
+    <div style="display:flex;gap:16px;margin:28px 0;flex-wrap:wrap">
+      <div style="flex:1;min-width:140px;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;border:1px solid #e8ecf1">
+        <div class="playfair" style="font-size:28px;font-weight:800;color:#0f2137">$50</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px">WordPress Theme</div>
+      </div>
+      <div style="flex:1;min-width:140px;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;border:1px solid #e8ecf1">
+        <div class="playfair" style="font-size:28px;font-weight:800;color:#0f2137">$1,500</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px">Photo Shoot</div>
+      </div>
+      <div style="flex:1;min-width:140px;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;border:1px solid #e8ecf1">
+        <div class="playfair" style="font-size:28px;font-weight:800;color:#E8734A">$2,000</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px">Monthly Retainer</div>
+      </div>
+    </div>
+    
+    <p class="body-text">From the beginning, their request was not "I want so many patients." The doctor was already a little busy. He just wanted to get things done the right way. So we had to help him get patients the right way — using our local SEO strategies.</p>
+  </div>
+</section>
+
+<!-- ═══════════ NUMBERS BAR ═══════════ -->
+<section class="reveal section-navy">
+  <div class="container-wide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:24px;text-align:center">
+    <div><div class="counter playfair" style="font-size:32px" data-target="225711">0</div><div style="font-size:11px;font-weight:600;margin-top:6px;opacity:.8">Google Impressions</div><div style="font-size:10px;opacity:.35;margin-top:2px">16 months</div></div>
+    <div><div class="counter playfair" style="font-size:32px" data-target="7586">0</div><div style="font-size:11px;font-weight:600;margin-top:6px;opacity:.8">Organic Clicks</div><div style="font-size:10px;opacity:.35;margin-top:2px">From search</div></div>
+    <div><div class="counter playfair" style="font-size:32px;color:#10b981" data-target="1540">0</div><div style="font-size:11px;font-weight:600;margin-top:6px;opacity:.8">Patient Calls</div><div style="font-size:10px;opacity:.35;margin-top:2px">Google Maps</div></div>
+    <div><div class="counter playfair" style="font-size:32px;color:#10b981" data-target="648">0</div><div style="font-size:11px;font-weight:600;margin-top:6px;opacity:.8">Directions</div><div style="font-size:10px;opacity:.35;margin-top:2px">Drove to clinic</div></div>
+    <div><div class="counter playfair" style="font-size:32px;color:#E8734A" data-target="15690">0</div><div style="font-size:11px;font-weight:600;margin-top:6px;opacity:.8">Profile Views</div><div style="font-size:10px;opacity:.35;margin-top:2px">Google Business</div></div>
+    <div><div class="counter playfair" style="font-size:32px;color:#E8734A" data-target="152">0</div><div style="font-size:11px;font-weight:600;margin-top:6px;opacity:.8">Pages Ranking</div><div style="font-size:10px;opacity:.35;margin-top:2px">On Google</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ DUAL NICHE TABLE ═══════════ -->
+<section class="reveal section-light">
+  <div class="container-wide">
+    <div class="tag">Step 1: The Decision</div>
+    <h2>Cardiology or Wound Care? We Said Both.</h2>
+    <p class="body-text">They asked us — should we focus only on wound care, or cardiologist, or how? They were totally confused about doing both in marketing. We said, let's do both. Because Waco is not that difficult for us to rank.</p>
+    <p class="body-text" style="margin-top:16px">If we wrote three pieces of content about cardiology, we also wrote about wound care. We talk about cardiologist, we also talk about wound care doctor. That's how we started getting calls for both.</p>
+    
+    <div class="grid-2" style="margin-top:32px;gap:20px">
+      <!-- Cardiology Column -->
+      <div class="niche-card" style="background:#f0f7ff">
+        <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2563eb;margin-bottom:16px">❤️ Cardiology Pages</div>
+        <div class="niche-row"><span>Swollen Feet After Pacemaker</span><strong style="color:#2563eb">28,233 imp · 925 clk</strong></div>
+        <div class="niche-row"><span>Holter Monitor Restrictions</span><strong style="color:#2563eb">28,802 imp · 42 clk</strong></div>
+        <div class="niche-row"><span>Calcium Score Test</span><strong style="color:#2563eb">~5,200 imp · 38 clk</strong></div>
+        <div class="niche-row"><span>PET CT Cardiac Stress Test</span><strong style="color:#2563eb">9,294 imp · 20 clk</strong></div>
+        <div class="niche-row"><span>Structural Heart Disease</span><strong style="color:#2563eb">5,609 imp · ~15 clk</strong></div>
+        <div class="niche-row"><span>Heart Ablation Recovery</span><strong style="color:#2563eb">~3,800 imp · ~12 clk</strong></div>
+        <div style="margin-top:12px;padding:10px;background:#2563eb10;border-radius:8px;font-size:12px;font-weight:600;color:#2563eb;text-align:center">~850+ patient calls from cardiology</div>
+      </div>
+      <!-- Wound Care Column -->
+      <div class="niche-card" style="background:#f0fdf4">
+        <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#16a34a;margin-bottom:16px">🩹 Wound Care Pages</div>
+        <div class="niche-row"><span>Diabetic Foot Ulcer / TCC</span><strong style="color:#16a34a">16,265 imp · 140 clk</strong></div>
+        <div class="niche-row"><span>Types of Wound Debridement</span><strong style="color:#16a34a">13,862 imp · 15 clk</strong></div>
+        <div class="niche-row"><span>Pressure Wound Treatment</span><strong style="color:#16a34a">~4,100 imp · ~18 clk</strong></div>
+        <div class="niche-row"><span>Skin Graft Types</span><strong style="color:#16a34a">~3,500 imp · ~12 clk</strong></div>
+        <div class="niche-row"><span>Wound Dressing Benefits</span><strong style="color:#16a34a">~2,800 imp · ~10 clk</strong></div>
+        <div class="niche-row"><span>Inflammatory Ulcer Treatment</span><strong style="color:#16a34a">~2,200 imp · ~8 clk</strong></div>
+        <div style="margin-top:12px;padding:10px;background:#16a34a10;border-radius:8px;font-size:12px;font-weight:600;color:#16a34a;text-align:center">~690+ patient calls from wound care</div>
+      </div>
+    </div>
+    <a href="#audit-form" class="inline-cta">Do YOU treat multiple specialties? We'll show you how to dominate both →</a>
+  </div>
+</section>
+
+<!-- ═══════════ CONTENT FRAMEWORK ═══════════ -->
+<section class="reveal section-warm">
+  <div class="container">
+    <div class="tag">Step 2: The Content Strategy</div>
+    <h2>We Didn't Focus on Title Tags. We Focused on What Users Want.</h2>
+    <p class="body-text">This is not about optimizing your title tag, meta description, and all the basic things. This is about how we found the gap in the market. We wrote cornerstone content for ranking nationwide — the skyscraper technique, mega guides.</p>
+    
+    <div style="margin:32px 0;background:#fff;border-radius:16px;padding:28px;border:1px solid #e8ecf1">
+      <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8734A;margin-bottom:20px">How We Structure Every Article</div>
+      
+      <div class="framework-step">
+        <div class="step-num">1</div>
+        <div><div style="font-weight:700;margin-bottom:4px;color:#0f2137">Find the Patient's Question</div><div style="font-size:13px;color:#6b7280">What are they typing into Google at 2 AM? → "swollen feet after pacemaker implant"</div></div>
+      </div>
+      <div class="framework-step">
+        <div class="step-num">2</div>
+        <div><div style="font-weight:700;margin-bottom:4px;color:#0f2137">Answer EVERYTHING About It</div><div style="font-size:13px;color:#6b7280">What causes it. Medications. Home remedies. Diet tips. Exercise tips. FAQ. When to see a doctor. 2,000–3,000 words.</div></div>
+      </div>
+      <div class="framework-step">
+        <div class="step-num">3</div>
+        <div><div style="font-weight:700;margin-bottom:4px;color:#0f2137">Optimize for Voice Search</div><div style="font-size:13px;color:#6b7280">"What medications should I use for swelling after pacemaker surgery?" "How to bring down the swelling?"</div></div>
+      </div>
+      <div class="framework-step">
+        <div class="step-num">4</div>
+        <div><div style="font-weight:700;margin-bottom:4px;color:#0f2137">Local Doctor as the Answer</div><div style="font-size:13px;color:#6b7280">"Who is the best cardiologist for pacemaker implantation in Waco, Texas?" → Dr. Myatt.</div></div>
+      </div>
+      <div class="framework-step" style="border:none">
+        <div class="step-num" style="background:#10b981">✓</div>
+        <div><div style="font-weight:700;margin-bottom:4px;color:#10b981">Result: One Article = 28,233 Impressions + 925 Clicks</div><div style="font-size:13px;color:#6b7280">Google ranks it nationwide because the content is so good. Local patients find the doctor through it.</div></div>
+      </div>
+    </div>
+    
+    <div class="callout" style="background:#0f2137;color:#fff;border-radius:12px">
+      <strong style="color:#E8734A">"We didn't write 500-word pages. We didn't focus on what kind of title tag we should give. We focused only on what a user will want. We focused on that alone."</strong>
+      <div style="opacity:.5;margin-top:8px;font-size:12px">— This one strategy alone got us to 225,711 impressions</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GROWTH CHART ═══════════ -->
+<section class="reveal section-light">
+  <div class="container-wide">
+    <div class="tag">The Growth</div>
+    <h2>195 Impressions/Day → 1,622 Impressions/Day</h2>
+    <p style="font-size:14px;color:#6b7280;margin-bottom:24px">8x growth in 16 months — all organic, zero ad spend, $2,000/month</p>
+    <div style="background:#f8fafc;border-radius:16px;padding:24px 20px;border:1px solid #e8ecf1">
+      <div class="chart-container" id="growth-chart"></div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#9ca3af;margin-top:4px"><span>Dec 2024</span><span>Apr 2026</span></div>
+    </div>
+    <div style="text-align:center;padding:40px 20px;background:#FFF8F5;border-radius:16px;border:1px solid #E8734A15;margin:40px 0">
+      <p style="font-size:13px;color:#4a5568;margin-bottom:12px">From 195 impressions a day to 1,622. From 20 calls to 300+. For $2,000 a month.</p>
+      <a href="#audit-form" class="btn">Get This Growth for Your Practice</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GMB STRATEGY ═══════════ -->
+<section class="reveal section-warm">
+  <div class="container">
+    <div class="tag">Step 3: Google My Business</div>
+    <h2>Twice a Week. Every Week. Even With Less Than 30 Reviews.</h2>
+    <p class="body-text">Every week we update twice with the questions users are searching:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0">
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"Is your heart sending warning signals?"</span>
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"Need a total contact cast?"</span>
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"Best cardiologist in Waco?"</span>
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"Nuclear cardiology test Waco"</span>
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"Expert limb salvage surgery"</span>
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"How to detect heart blockage early"</span>
+      <span style="padding:6px 14px;background:#fff;border:1px solid #e8ecf1;border-radius:20px;font-size:12px;color:#4a5568">"Wound dressing in Waco"</span>
+    </div>
+    <p class="body-text" style="margin-top:16px">Even though they have only less than 30 reviews — they are so busy that they can't even do anything about it. And still, Google shows them above competitors because of content relevancy.</p>
+    <div class="grid-2" style="margin-top:28px">
+      <div class="stat-card"><div class="playfair" style="font-size:28px;font-weight:800;color:#10b981">1,540</div><div style="font-size:12px;font-weight:600;color:#0f2137;margin-top:4px">Calls from Maps</div></div>
+      <div class="stat-card"><div class="playfair" style="font-size:28px;font-weight:800;color:#10b981">648</div><div style="font-size:12px;font-weight:600;color:#0f2137;margin-top:4px">Direction Requests</div></div>
+      <div class="stat-card"><div class="playfair" style="font-size:28px;font-weight:800;color:#E8734A">15,690</div><div style="font-size:12px;font-weight:600;color:#0f2137;margin-top:4px">Profile Views</div></div>
+      <div class="stat-card"><div class="playfair" style="font-size:28px;font-weight:800;color:#E8734A">7,424</div><div style="font-size:12px;font-weight:600;color:#0f2137;margin-top:4px">Search Appearances</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LINK BUILDING ═══════════ -->
+<section class="reveal section-light">
+  <div class="container">
+    <div class="tag">Step 4: Link Building</div>
+    <h2>Simple. Quora. Medium. Pinterest. That's It.</h2>
+    <p class="body-text">We use a simple format — Quora, Medium, Pinterest, and a few other legitimate websites where we can provide value using the content we already wrote on the website. We take one content, create a supporting piece, publish it on Medium.com, give one or two backlinks. That's our pretty much simple link building strategy.</p>
+    
+    <div style="margin:28px 0">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;margin-bottom:12px">Real Examples We Built</div>
+      <div class="link-example">
+        <div class="link-icon" style="background:#b92b27">Q</div>
+        <div><div style="font-size:13px;font-weight:600;color:#0f2137;margin-bottom:2px">Quora: Waco Heart & Vascular Profile</div><div style="font-size:12px;color:#6b7280">Answering cardiology questions → links back to wacohv.com</div><div style="font-size:11px;color:#E8734A;margin-top:4px">quora.com/profile/Waco-Heart-Vascular</div></div>
+      </div>
+      <div class="link-example">
+        <div class="link-icon" style="background:#b92b27">Q</div>
+        <div><div style="font-size:13px;font-weight:600;color:#0f2137;margin-bottom:2px">Quora: Wound Debridement in Waco, TX</div><div style="font-size:12px;color:#6b7280">Supporting article → backlink to wound debridement page</div><div style="font-size:11px;color:#E8734A;margin-top:4px">quora.com/.../Wound-Debridement-Types-and-Treatment</div></div>
+      </div>
+      <div class="link-example">
+        <div class="link-icon" style="background:#00ab6c">M</div>
+        <div><div style="font-size:13px;font-weight:600;color:#0f2137;margin-bottom:2px">Medium: Cardiology & Heart Health Articles</div><div style="font-size:12px;color:#6b7280">Educational content → 1-2 backlinks to wacohv.com service pages</div></div>
+      </div>
+      <div class="link-example">
+        <div class="link-icon" style="background:#e60023">P</div>
+        <div><div style="font-size:13px;font-weight:600;color:#0f2137;margin-bottom:2px">Pinterest: Heart Health Infographics</div><div style="font-size:12px;color:#6b7280">Visual pins → driving referral traffic to blog content</div></div>
+      </div>
+    </div>
+
+    <div class="callout" style="background:#0f2137;color:#fff;border-radius:12px">
+      <strong style="color:#E8734A">"We don't want 100,000 visitors. We want 1,000 visitors that actually make sense and actually convert."</strong>
+      <div style="opacity:.5;margin-top:8px;font-size:13px">Highly targeted, location-based visitors — not nationwide 100,000 visitors who will never fly to Waco, Texas to get some small test done.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BOTTOM LINE ═══════════ -->
+<section class="reveal section-warm">
+  <div class="container">
+    <div class="tag" style="color:#10b981">The Bottom Line</div>
+    <h2>$2,000/Month. 300+ Calls. No Ads. No Lock-In.</h2>
+    <p class="body-text">Dr. Myatt's previous agency charged $4,000 a month and delivered less than 20 calls. We charged $2,000 a month and delivered 300 to 400 calls a month. We carefully chose the keywords we want to rank for, either nationwide or local. We focused on things that matter to the patients.</p>
+    <p class="body-text" style="margin-top:16px">This is real data — taken directly from Google Search Console. Not exaggerated. Pure data.</p>
+    <div style="display:flex;gap:16px;margin-top:28px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px;background:#fff;border-radius:12px;padding:20px;border:1px solid #10b98133;text-align:center">
+        <div class="playfair" style="font-size:36px;font-weight:800;color:#10b981">$6.50</div>
+        <div style="font-size:12px;color:#4a5568;margin-top:4px">Cost per patient call</div>
+        <div style="font-size:11px;color:#9ca3af;margin-top:2px">$2,000 ÷ 300+ calls</div>
+      </div>
+      <div style="flex:1;min-width:200px;background:#fff;border-radius:12px;padding:20px;border:1px solid #e74c3c33;text-align:center">
+        <div class="playfair" style="font-size:36px;font-weight:800;color:#e74c3c">$200+</div>
+        <div style="font-size:12px;color:#4a5568;margin-top:4px">Typical Google Ads cost per call</div>
+        <div style="font-size:11px;color:#9ca3af;margin-top:2px">For cardiology keywords</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MORE CASE STUDIES ═══════════ -->
+<section class="reveal section-navy">
+  <div class="container-wide">
+    <div class="tag">More Proof</div>
+    <h2>We've Done This Across Every Specialty</h2>
+    <div class="grid-3">
+      <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.08)"><div style="font-size:10px;font-weight:600;letter-spacing:1px;color:#10b981;text-transform:uppercase;margin-bottom:8px">MedSpa</div><div class="playfair" style="font-size:18px;font-weight:700;margin-bottom:4px">RenewMe MedSpa</div><div style="font-size:11px;opacity:.4;margin-bottom:12px">Los Angeles, CA</div><div style="font-size:14px;font-weight:700;color:#10b981">$0 → $1M/yr</div><div style="font-size:11px;opacity:.4;margin-top:4px">Acquired at 10x</div></div>
+      <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.08)"><div style="font-size:10px;font-weight:600;letter-spacing:1px;color:#f59e0b;text-transform:uppercase;margin-bottom:8px">Pain Management</div><div class="playfair" style="font-size:18px;font-weight:700;margin-bottom:4px">Rozier MD</div><div style="font-size:11px;opacity:.4;margin-bottom:12px">Mansfield, TX</div><div style="font-size:14px;font-weight:700;color:#f59e0b">0 → 200+ calls/mo</div><div style="font-size:11px;opacity:.4;margin-top:4px">7.3M impressions</div></div>
+      <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.08)"><div style="font-size:10px;font-weight:600;letter-spacing:1px;color:#4a9eff;text-transform:uppercase;margin-bottom:8px">Wound Care</div><div class="playfair" style="font-size:18px;font-weight:700;margin-bottom:4px">SW Wound Care</div><div style="font-size:11px;opacity:.4;margin-bottom:12px">Lubbock, TX</div><div style="font-size:14px;font-weight:700;color:#4a9eff">914K impressions</div><div style="font-size:11px;opacity:.4;margin-top:4px">1,260 calls from Maps</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FORM ═══════════ -->
+<section class="reveal" id="audit-form" style="background:linear-gradient(135deg,#0a1929,#0f2137 60%,#162d50);padding:100px 0 160px">
+  <div style="max-width:560px;margin:0 auto;padding:0 24px;text-align:center">
+    <h2 class="playfair" style="font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.2;margin-bottom:16px;color:#fff">How Much Is Your<br><span style="color:#E8734A">Current Agency</span> Costing You?</h2>
+    <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 32px">Not just the monthly fee — the patients you're losing every day because your website doesn't show up. We'll audit your site, your Google Maps, your competitors, and tell you exactly where the gaps are. Free.</p>
+    <div style="background:rgba(255,255,255,.06);border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.12);text-align:left">
+      <div style="font-size:15px;font-weight:700;margin-bottom:20px;text-align:center;color:#fff">Get Your Free Practice Audit</div>
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Dr. Smith"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="you@practice.com"></div>
+      <div class="form-group"><label>Practice Website</label><input type="text" placeholder="www.yourpractice.com"></div>
+      <div class="form-group"><label>Phone</label><input type="tel" placeholder="(555) 123-4567"></div>
+      <div class="form-group"><label>Practice Type</label><select><option value="">Select your specialty</option><option>Cardiology</option><option>MedSpa / Aesthetics</option><option>Pain Management</option><option>Wound Care</option><option>Gastroenterology</option><option>Dental</option><option>Primary Care</option><option>Other Specialty</option></select></div>
+      <button class="btn" style="width:100%;padding:15px;font-size:15px;margin-top:8px;cursor:pointer">Get My Free Audit →</button>
+      <div style="font-size:10px;color:rgba(255,255,255,.3);text-align:center;margin-top:14px">No contracts. No pressure. If we don't find at least 10 growth opportunities, we'll tell you not to hire us.</div>
+    </div>
+  </div>
+</section>
+
+<div style="padding:24px;text-align:center;font-size:11px;color:#9ca3af;padding-bottom:80px;background:#fff">Intellius Medical · Healthcare Marketing Agency · Dallas, TX · intelliusmedical.com</div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})})});
+new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1}).observe(document.querySelector('.reveal')||document.body);
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1}).observe(el)});
+const cObs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting&&!en.target.dataset.done){en.target.dataset.done='1';const t=parseInt(en.target.dataset.target),s=60,inc=t/s;let c=0;const ti=setInterval(()=>{c+=inc;if(c>=t){en.target.textContent=t.toLocaleString();clearInterval(ti)}else en.target.textContent=Math.floor(c).toLocaleString()},33)}})},{threshold:.3});document.querySelectorAll('.counter').forEach(el=>cObs.observe(el));
+const data=[5282,7820,6483,8397,9274,11927,13554,13007,11853,10052,11269,11630,14559,19409,30680,34026];const labels=["Dec 24","Jan 25","Feb 25","Mar 25","Apr 25","May 25","Jun 25","Jul 25","Aug 25","Sep 25","Oct 25","Nov 25","Dec 25","Jan 26","Feb 26","Mar 26"];const mx=Math.max(...data);const ch=document.getElementById('growth-chart');if(ch){data.forEach((v,i)=>{const b=document.createElement('div');b.className='chart-bar';b.style.height=(v/mx*100)+'%';b.style.background=v>25000?'#E8734A':v>13000?'#E8734Aaa':'#E8734A44';const tip=document.createElement('div');tip.className='tooltip';tip.textContent=labels[i]+': '+v.toLocaleString();b.appendChild(tip);ch.appendChild(b)})}
+</script>
+</body>
+</html>
