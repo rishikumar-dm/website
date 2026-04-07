@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardiology SEO Case Study: How Waco Heart & Vascular Dominates Google | Intellius Medical</title>
+<meta name="description" content="Real case study: How we helped a cardiology practice generate 1,540+ patient calls, 390K+ Google impressions, and dominate 'cardiologist Waco' — with zero ad spend.">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #faf9f6;
+    --crimson: #991b1b;
+    --crimson-soft: #fef2f2;
+    --navy: #1e3a5f;
+    --navy-soft: #eff4fb;
+    --gold: #92400e;
+    --gold-soft: #fffbeb;
+    --green: #065f46;
+    --green-soft: #ecfdf5;
+    --gray-50: #f8f7f4;
+    --gray-100: #f0eeea;
+    --gray-200: #e2dfd8;
+    --gray-400: #9c9788;
+    --gray-600: #5c5a52;
+    --gray-800: #2d2b26;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --max-w: 760px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══ HERO ═══ */
+  .hero {
+    background: linear-gradient(170deg, #0f172a 0%, #1e3a5f 60%, #1e3a5f 100%);
+    color: #fff;
+    padding: 72px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--paper), transparent);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: var(--max-w); margin: 0 auto; }
+  .hero-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 16px;
+    border-radius: 100px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 6vw, 48px);
+    font-weight: 400;
+    line-height: 1.12;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em { font-style: italic; color: #fbbf24; }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ═══ STATS BAR ═══ */
+  .stats-bar {
+    max-width: 800px;
+    margin: -28px auto 48px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 24px 12px;
+    border-right: 1px solid var(--gray-100);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-value {
+    font-family: var(--mono);
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--gray-600);
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+
+  /* ═══ CONTENT ═══ */
+  .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  section { padding: 48px 0; }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 4.5vw, 36px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  h2 em { font-style: italic; color: var(--crimson); }
+  h3 {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 36px 0 12px;
+    color: var(--navy);
+  }
+  p { margin-bottom: 18px; color: var(--gray-800); }
+
+  /* ═══ CALLOUT ═══ */
+  .callout {
+    border-radius: 10px;
+    padding: 24px;
+    margin: 28px 0;
+  }
+  .callout-navy { background: var(--navy-soft); border-left: 3px solid var(--navy); }
+  .callout-green { background: var(--green-soft); border-left: 3px solid var(--green); }
+  .callout-gold { background: var(--gold-soft); border-left: 3px solid var(--gold); }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .callout-navy .callout-tag { color: var(--navy); }
+  .callout-green .callout-tag { color: var(--green); }
+  .callout-gold .callout-tag { color: var(--gold); }
+
+  /* ═══ DATA TABLE ═══ */
+  .data-table-wrap {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+  .data-table-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--gray-100);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 15px;
+  }
+  .data-row:last-child { border-bottom: none; }
+  .data-label { color: var(--gray-600); flex: 1; }
+  .data-val {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+    min-width: 90px;
+  }
+  .data-val.green { color: var(--green); }
+  .data-val.navy { color: var(--navy); }
+
+  /* ═══ DIVIDER ═══ */
+  .divider { width: 50px; height: 2px; background: var(--gray-200); margin: 48px auto; border-radius: 1px; }
+
+  /* ═══ CTA ═══ */
+  .cta-section {
+    background: linear-gradient(170deg, #0f172a, #1e3a5f);
+    color: #fff;
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .cta-section h2 { color: #fff; }
+  .cta-section p { color: rgba(255,255,255,0.65); }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fbbf24;
+    color: #0f172a;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.2s;
+    margin-top: 8px;
+  }
+  .cta-btn:hover { background: #f59e0b; transform: translateY(-1px); }
+  .cta-note { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 12px; }
+
+  /* ═══ BYLINE ═══ */
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 0;
+    margin-top: 32px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .byline-av {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 20px; flex-shrink: 0;
+  }
+  .byline-name { font-weight: 700; font-size: 14px; }
+  .byline-role { font-size: 12px; color: var(--gray-600); }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 600px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--gray-100); }
+    .hero { padding: 56px 20px 48px; }
+    .data-row { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Client Case Study · Cardiology</div>
+    <h1>How a Waco Cardiologist Gets <em>1,540 Patient Calls</em> in 6 Months Without Ads</h1>
+    <p class="hero-sub">Waco Heart & Vascular · Dr. Phillip Myatt · Real Google data. Zero ad spend.</p>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-value">1,540</div>
+      <div class="stat-label">Patient Calls</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">390K</div>
+      <div class="stat-label">Google Impressions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">7,851</div>
+      <div class="stat-label">Website Clicks</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">$0</div>
+      <div class="stat-label">Ad Spend</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section>
+  <div class="wrap">
+    <p>Waco Heart & Vascular is a multi-physician cardiology practice in Waco, Texas, led by Dr. Phillip Myatt. When they came to us, they had the same problem every specialist practice faces — patients in their city were searching for a cardiologist, but the practice was not showing up where it mattered.</p>
+
+    <p>No content strategy. No SEO. A website that existed but was not working for them. Meanwhile, patients were typing "cardiologist Waco" and "best cardiologist in Waco TX" into Google hundreds of times a month — and finding competitors or generic directory listings instead.</p>
+
+    <p>We did not run a single ad. No Facebook campaigns. No Google AdWords. Everything you see below is organic — Google Search, Google Maps, and content that actually answers what patients are searching for.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE NUMBERS -->
+<section>
+  <div class="wrap">
+    <h2>The <em>Numbers</em></h2>
+
+    <h3>Google Business Profile — 6 Months</h3>
+    <p>November 2025 through April 2026. These are direct actions patients took from the Google Business Profile — calls, direction requests, website visits.</p>
+
+    <div class="data-table-wrap">
+      <div class="data-table-header">
+        <div class="dot" style="background:var(--navy)"></div>
+        Google Business Profile Performance
+      </div>
+      <div class="data-row">
+        <div class="data-label">Profile Views</div>
+        <div class="data-val navy">15,686</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Patient Calls from Profile</div>
+        <div class="data-val green">1,540</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Website Clicks from Profile</div>
+        <div class="data-val green">908</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Direction Requests</div>
+        <div class="data-val green">636</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Total Interactions</div>
+        <div class="data-val green">3,084</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Searches That Showed Profile</div>
+        <div class="data-val navy">7,424</div>
+      </div>
+    </div>
+
+    <p>1,540 calls in 6 months. That is over 250 patient calls a month coming directly from Google — not from referrals, not from ads, not from social media. Patients searching, finding, and calling.</p>
+
+    <h3>Google Search Console — 16 Months</h3>
+
+    <div class="data-table-wrap">
+      <div class="data-table-header">
+        <div class="dot" style="background:var(--green)"></div>
+        Organic Search Performance
+      </div>
+      <div class="data-row">
+        <div class="data-label">Total Impressions</div>
+        <div class="data-val navy">390,819</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Total Clicks to Website</div>
+        <div class="data-val green">7,851</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Pages Indexed in Google</div>
+        <div class="data-val navy">152</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Unique Keywords Ranking</div>
+        <div class="data-val navy">1,000+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- KEYWORD DOMINATION -->
+<section>
+  <div class="wrap">
+    <h2>Owning Every <em>Cardiology Keyword</em> in Waco</h2>
+
+    <p>When a patient in Waco searches for a cardiologist, Waco Heart & Vascular shows up. Not on page 2. Not buried under directory listings. Position 1 to 5 for virtually every cardiology keyword in the city.</p>
+
+    <div class="data-table-wrap">
+      <div class="data-table-header">
+        <div class="dot" style="background:var(--crimson)"></div>
+        Keyword Rankings — What Patients Search
+      </div>
+      <div class="data-row">
+        <div class="data-label">"waco cardiology"</div>
+        <div class="data-val green">Pos 2.0 · 13,408 imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">"cardiologist waco"</div>
+        <div class="data-val green">Pos 4.5 · 1,666 imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">"cardiologist waco tx"</div>
+        <div class="data-val green">Pos 4.2 · 615 imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">"best cardiologist in waco tx"</div>
+        <div class="data-val green">Pos 4.6 · 1,443 imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">"waco cardiologist"</div>
+        <div class="data-val green">Pos 5.0 · 1,535 imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">"cardiologist near me"</div>
+        <div class="data-val green">Showing · local</div>
+      </div>
+    </div>
+
+    <p>The GBP search breakdown tells the full story. "Waco cardiology" alone was searched 4,919 times. "Best cardiologist in Waco TX" — 329 times. "Cardiologist Waco" — 321 times. "Waco cardiologist" — 297 times. Every single variation leads back to this practice.</p>
+
+    <div class="callout callout-navy">
+      <span class="callout-tag">Why This Matters</span>
+      <p>These are patients actively looking for a cardiologist. Not scrolling Instagram. Not watching a Facebook ad at 2 AM. They have a heart condition, their doctor referred them, or they are worried about symptoms — and they go to Google. Showing up here means the phone rings.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTENT THAT CONVERTS -->
+<section>
+  <div class="wrap">
+    <h2>One Article. <em>914 Clicks.</em></h2>
+
+    <p>We wrote one detailed article about swollen feet after pacemaker implantation. A topic that no other cardiologist in Waco — or most of Texas — had covered on their website.</p>
+
+    <div class="data-table-wrap">
+      <div class="data-table-header">
+        <div class="dot" style="background:var(--gold)"></div>
+        Top Content Pages — Real Performance
+      </div>
+      <div class="data-row">
+        <div class="data-label">Swollen Feet After Pacemaker</div>
+        <div class="data-val green">914 clicks · 28K imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Dr. Phillip Myatt Profile</div>
+        <div class="data-val green">502 clicks · 27K imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Diabetic Foot Ulcer Cast Guide</div>
+        <div class="data-val green">140 clicks · 16K imp</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Holter Monitor Restrictions</div>
+        <div class="data-val green">41 clicks · 28K imp</div>
+      </div>
+    </div>
+
+    <p>The pacemaker article alone — 914 clicks from 28,000 impressions. Patients who just had a pacemaker implanted and are worried about swelling in their feet. They search, they find this article, they see it is written by a cardiologist in Waco, and they call. That is not a "lead." That is a patient who needs a cardiologist right now.</p>
+
+    <p>The Holter monitor page has 28,000 impressions but only 41 clicks — that is a title tag and meta description fix away from hundreds more clicks. The content is already ranking. Google already trusts it. It just needs better packaging.</p>
+
+    <div class="callout callout-green">
+      <span class="callout-tag">The Strategy</span>
+      <p>We do not write 500-word AI blog posts and call it a content strategy. We find the specific medical questions that patients in your area are searching — the ones no other practice has answered — and we write detailed, expert-level content optimized for your location. One article can generate hundreds of patient visits a month.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT WE DID -->
+<section>
+  <div class="wrap">
+    <h2>What We <em>Actually Did</em></h2>
+
+    <p>No secret formula. No magic. We did the work that most agencies skip because it is not flashy enough to put in a pitch deck.</p>
+
+    <h3>Google Business Profile Optimization</h3>
+    <p>Correct categories. Complete service list. Regular posts. Photo updates. Proper business description with location signals. The basics — but done right. 15,686 people viewed this profile in 6 months. 66% found it through Google Search on mobile. Patients are searching on their phone, finding the practice, and calling directly.</p>
+
+    <h3>Cornerstone Content for Cardiology</h3>
+    <p>We identified specific cardiology topics that patients search for but no practice in Waco had covered. Swollen feet after pacemaker. Holter monitor restrictions. Diabetic foot ulcers. Total contact soft cast. Each page is 1,500 to 2,500 words of real medical content — not AI filler, not 300-word placeholder pages. The kind of depth that Google rewards with page 1 rankings.</p>
+
+    <h3>Provider Pages That Rank</h3>
+    <p>Each doctor has a dedicated, optimized profile page. Dr. Phillip Myatt's page alone has 502 clicks and 27,615 impressions. When someone searches "Dr. Myatt Waco TX" — 84 clicks. "Dr. Myatt cardiology Waco" — 32 clicks. Patients search for doctors by name. If your provider pages are thin or missing, you lose those patients to whoever does show up.</p>
+
+    <h3>152 Pages Indexed</h3>
+    <p>This practice now has 152 pages in Google's index. Each one targeting specific conditions, treatments, providers, and locations. That is 152 opportunities for a patient to find this practice through search. Most cardiology practices have 10 to 20 pages. This is how you own a market.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BOTTOM LINE -->
+<section>
+  <div class="wrap">
+    <h2>The Bottom <em>Line</em></h2>
+
+    <div class="callout callout-gold">
+      <span class="callout-tag">Results Summary</span>
+      <p><strong>250+ patient calls per month</strong> from Google alone. 390,000+ impressions. 7,851 clicks to the website. Ranking position 1 to 5 for every major cardiology keyword in Waco. One article generating 914 clicks. All organic. Zero ad spend. This is what happens when a cardiology practice has the right content targeting the right keywords in the right market.</p>
+    </div>
+
+    <p>If you are a cardiologist, heart surgeon, vascular specialist, or any medical practice — and your website is not generating patient calls from Google — the problem is not that patients are not searching. They are. The question is whether they find you or your competitor.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="audit">
+  <div class="wrap">
+    <h2>Want Results Like This for<br><em>Your Practice?</em></h2>
+    <p style="max-width:480px; margin:0 auto 20px;">We will audit your market, show you exactly where the patient demand is, and build a plan to capture it. Free. No contracts.</p>
+    <a href="#" class="cta-btn">Get Your Free Cardiology SEO Audit →</a>
+    <p class="cta-note">48-hour video audit · No obligation · No contracts</p>
+  </div>
+</div>
+
+<!-- BYLINE -->
+<div style="padding:32px 24px 48px; max-width:var(--max-w); margin:0 auto;">
+  <div class="byline">
+    <div class="byline-av">M</div>
+    <div>
+      <div class="byline-name">By Madhan</div>
+      <div class="byline-role">Founder, Intellius Medical</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
