@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southwest Wound Care Case Study | Intellius Medical</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#050505; color:#e8e4df; font-family:'Georgia',serif; overflow-x:hidden; }
+.inter { font-family:'Inter',sans-serif; }
+.playfair { font-family:'Playfair Display',serif; }
+.reveal { opacity:0; transform:translateY(40px); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.container { max-width:680px; margin:0 auto; padding:0 24px; }
+.container-wide { max-width:800px; margin:0 auto; padding:0 24px; }
+.tag { font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; }
+h2 { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; line-height:1.3; margin-bottom:24px; }
+.body-text { font-family:'Inter',sans-serif; font-size:15px; line-height:1.8; opacity:0.6; font-weight:300; }
+.inline-cta { display:block; padding:16px 20px; background:#4a9eff10; border:1px solid #4a9eff33; border-radius:10px; margin-top:24px; text-align:center; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#4a9eff; cursor:pointer; text-decoration:none; }
+.inline-cta:hover { background:#4a9eff20; }
+.block-cta { text-align:center; padding:40px 20px; background:#060a12; border-radius:16px; border:1px solid #4a9eff22; margin:40px 0; }
+.block-cta p { font-family:'Inter',sans-serif; font-size:13px; opacity:0.5; margin-bottom:12px; line-height:1.6; }
+.btn { display:inline-block; padding:14px 36px; background:#4a9eff; color:#050505; font-family:'Inter',sans-serif; font-size:14px; font-weight:700; border-radius:8px; cursor:pointer; text-decoration:none; border:none; letter-spacing:0.3px; }
+.btn:hover { background:#3d8de0; }
+.btn-outline { display:inline-block; padding:14px 32px; background:transparent; color:#4a9eff; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; border-radius:8px; border:1px solid #4a9eff44; cursor:pointer; text-decoration:none; }
+.dark-section { background:#0a0f1a; border-top:1px solid #ffffff08; border-bottom:1px solid #ffffff08; }
+.stat-card { background:#0a0f1a; border-radius:10px; padding:16px; border:1px solid #ffffff08; }
+.monster-row { display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #ffffff08; }
+.search-row { display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #ffffff06; }
+.case-card { background:#0a0f1a; border-radius:12px; padding:20px; border:1px solid #ffffff08; }
+input, select { width:100%; padding:12px 14px; background:#060a12; border:1px solid #ffffff15; border-radius:8px; color:#e8e4df; font-family:'Inter',sans-serif; font-size:14px; outline:none; }
+input::placeholder { color:#ffffff33; }
+label { font-family:'Inter',sans-serif; font-size:11px; opacity:0.5; display:block; margin-bottom:4px; font-weight:500; }
+.form-group { margin-bottom:14px; }
+.pain-item { display:flex; gap:12px; padding:10px 0; font-family:'Inter',sans-serif; font-size:14px; opacity:0.7; line-height:1.5; font-weight:300; }
+.pain-x { color:#ff6b6b; font-size:16px; flex-shrink:0; }
+/* Sticky bar */
+.sticky-bar { position:fixed; bottom:0; left:0; right:0; z-index:100; background:linear-gradient(180deg,transparent 0%,#050505ee 30%,#050505 100%); padding:20px 24px 16px; display:flex; justify-content:center; align-items:center; gap:16px; }
+.sticky-bar span { font-family:'Inter',sans-serif; font-size:13px; font-weight:500; opacity:0.7; }
+.sticky-btn { padding:10px 24px; background:#4a9eff; color:#050505; font-family:'Inter',sans-serif; font-size:13px; font-weight:700; border-radius:6px; cursor:pointer; flex-shrink:0; text-decoration:none; }
+/* Chart bars */
+.chart-container { display:flex; gap:3px; align-items:flex-end; height:180px; padding:20px 0; }
+.chart-bar { flex:1; border-radius:3px 3px 0 0; min-height:4px; transition:all 0.5s; position:relative; }
+.chart-bar:hover { opacity:0.8; }
+.chart-bar .tooltip { display:none; position:absolute; top:-28px; left:50%; transform:translateX(-50%); background:#0f1520; border:1px solid #ffffff22; border-radius:4px; padding:3px 8px; font-family:'Inter',sans-serif; font-size:10px; white-space:nowrap; color:#fff; }
+.chart-bar:hover .tooltip { display:block; }
+/* Counter */
+.counter { font-family:'Playfair Display',serif; font-weight:800; }
+/* Position bars */
+.pos-bars { display:flex; gap:3px; align-items:flex-end; height:100px; }
+.pos-bar { flex:1; border-radius:3px 3px 0 0; min-height:6px; }
+/* Grid helpers */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.grid-6 { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:28px; text-align:center; }
+@media(max-width:600px) { .grid-2 { grid-template-columns:1fr; } .sticky-bar span { display:none; } }
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span>Want these results for your practice?</span>
+  <a href="#audit-form" class="sticky-btn">Free Audit →</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:60px 24px 100px;position:relative">
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 50%,#0a1628 0%,#050505 70%)"></div>
+  <div style="position:relative;z-index:1;max-width:800px;margin:0 auto">
+    <div class="inter" style="font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#4a9eff;margin-bottom:24px">Intellius Medical · Client Case Study</div>
+    <h1 class="playfair" style="font-size:clamp(34px,6vw,56px);font-weight:800;line-height:1.1;margin-bottom:24px">A Wound Care Center<br><span style="color:#4a9eff">Nobody Could Find<br>on Google.</span></h1>
+    <p class="inter" style="font-size:16px;line-height:1.7;opacity:0.5;max-width:520px;margin-bottom:48px;font-weight:300">How we turned Southwest Regional Wound Care Center in Lubbock, Texas into a practice that Google shows nearly one million times a year — generating 1,260 patient calls from Maps alone.</p>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px">
+      <div><div class="counter" style="font-size:44px;color:#fff" data-target="914768">0</div><div class="inter" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.4">Google Impressions</div></div>
+      <div><div class="counter" style="font-size:44px;color:#fff" data-target="1260">0</div><div class="inter" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.4">Patient Calls from Maps</div></div>
+      <div><div class="counter" style="font-size:44px;color:#4a9eff" data-target="438">0</div><div class="inter" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.4">Pages Ranking on Google</div></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="#audit-form" class="btn">Get These Results for Your Practice</a>
+      <a href="#audit-form" class="btn-outline">Free SEO Audit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THE PRACTICE ═══════════ -->
+<section class="reveal" style="padding:100px 0">
+  <div class="container">
+    <div class="tag" style="color:#4a9eff">The Practice</div>
+    <h2 class="playfair" style="font-size:32px">Southwest Regional Wound Care Center</h2>
+    <p class="body-text">Dr. Joseph Wolcott runs one of the most specialized wound care practices in West Texas. Hyperbaric oxygen therapy. Bioengineered skin grafts. Varithena vein treatments. Lymphedema therapy. Advanced wound debridement. Services that save limbs and change lives.</p>
+    <p class="body-text" style="margin-top:16px">The problem wasn't the medicine. The problem was that when someone in Lubbock searched "wound care near me" — Dr. Wolcott's practice was invisible.</p>
+    <a href="#audit-form" class="inline-cta">Is your practice invisible on Google too? Find out in 60 seconds →</a>
+  </div>
+</section>
+
+<!-- ═══════════ IS THIS YOU? ═══════════ -->
+<section class="reveal" style="background:#0f0808;padding:60px 0;border-top:1px solid #ff4a4a15;border-bottom:1px solid #ff4a4a15">
+  <div class="container">
+    <h2 class="playfair" style="font-size:26px;color:#ff6b6b">Does This Sound Like Your Practice?</h2>
+    <div class="pain-item"><span class="pain-x">✕</span><span>You have great services but patients can't find you on Google</span></div>
+    <div class="pain-item"><span class="pain-x">✕</span><span>You've paid an agency $3,000–$5,000/month and have nothing to show for it</span></div>
+    <div class="pain-item"><span class="pain-x">✕</span><span>Your website has 5–10 pages with generic 300-word content</span></div>
+    <div class="pain-item"><span class="pain-x">✕</span><span>You're 100% dependent on referrals for new patients</span></div>
+    <div class="pain-item"><span class="pain-x">✕</span><span>Competitors with worse care show up above you in search results</span></div>
+    <div class="pain-item"><span class="pain-x">✕</span><span>You're spending money on Facebook ads for services patients search on Google</span></div>
+    <div style="margin-top:24px;padding:16px 20px;background:#10b98112;border:1px solid #10b98133;border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;line-height:1.6">
+      <span style="color:#10b981;font-weight:700">That was Dr. Wolcott 16 months ago.</span>
+      <span style="opacity:0.6"> Today, Google shows his practice 914,768 times and 1,260 patients called directly from Google Maps.</span>
+    </div>
+    <a href="#audit-form" class="inline-cta">Let us show you what's possible for YOUR practice →</a>
+  </div>
+</section>
+
+<!-- ═══════════ NUMBERS BAR ═══════════ -->
+<section class="reveal dark-section" style="padding:60px 0">
+  <div class="container-wide grid-6">
+    <div><div class="counter playfair" style="font-size:30px;color:#4a9eff" data-target="914768">0</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px;opacity:0.8">Google Impressions</div><div class="inter" style="font-size:10px;opacity:0.3;margin-top:2px">16 months</div></div>
+    <div><div class="counter playfair" style="font-size:30px;color:#4a9eff" data-target="4513">0</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px;opacity:0.8">Organic Clicks</div><div class="inter" style="font-size:10px;opacity:0.3;margin-top:2px">From search</div></div>
+    <div><div class="counter playfair" style="font-size:30px;color:#10b981" data-target="1260">0</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px;opacity:0.8">Patient Calls</div><div class="inter" style="font-size:10px;opacity:0.3;margin-top:2px">Google Maps</div></div>
+    <div><div class="counter playfair" style="font-size:30px;color:#10b981" data-target="533">0</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px;opacity:0.8">Direction Requests</div><div class="inter" style="font-size:10px;opacity:0.3;margin-top:2px">Drove to clinic</div></div>
+    <div><div class="counter playfair" style="font-size:30px;color:#f59e0b" data-target="5515">0</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px;opacity:0.8">Profile Views</div><div class="inter" style="font-size:10px;opacity:0.3;margin-top:2px">Google Business</div></div>
+    <div><div class="counter playfair" style="font-size:30px;color:#f59e0b" data-target="438">0</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px;opacity:0.8">Pages Ranking</div><div class="inter" style="font-size:10px;opacity:0.3;margin-top:2px">On Google</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ GROWTH CHART ═══════════ -->
+<section class="reveal" style="padding:80px 0">
+  <div class="container-wide">
+    <div class="tag" style="color:#4a9eff">The Growth</div>
+    <h2>34,000 → 101,000 Impressions Per Month</h2>
+    <p class="inter" style="font-size:13px;opacity:0.4;margin-bottom:24px;font-weight:300">3x growth in 10 months — all organic, zero ad spend</p>
+    <div style="background:#0a0f1a;border-radius:16px;padding:24px 20px;border:1px solid #ffffff08">
+      <div class="chart-container" id="growth-chart"></div>
+      <div style="display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:10px;opacity:0.3;margin-top:4px">
+        <span>Dec 2024</span><span>Mar 2026</span>
+      </div>
+    </div>
+    <div class="block-cta">
+      <p>We did this for a wound care center in Lubbock, Texas. Imagine what we can do for your practice.</p>
+      <a href="#audit-form" class="btn">Show Me What's Possible</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHAT WE BUILT ═══════════ -->
+<section class="reveal" style="padding:0 0 80px">
+  <div class="container">
+    <div class="tag" style="color:#4a9eff">What We Built</div>
+    <h2>438 Pages. Every Condition. Every Treatment. Every Question.</h2>
+    <p class="body-text">We didn't write 10 blog posts and call it a day. We built a page for every single condition Dr. Wolcott treats, every treatment he offers, and every question a patient in West Texas might type into Google at 2 AM when they're worried about a wound that won't heal.</p>
+    <p class="body-text" style="margin-top:16px">Each page is 1,000 to 2,000 words of real medical content. Not AI filler. Content that answers the question, builds trust, and puts a "Call Now" button where it needs to be.</p>
+    <a href="#audit-form" class="inline-cta">How many of YOUR treatments have a page on Google? Find out free →</a>
+  </div>
+</section>
+
+<!-- ═══════════ MONSTER PAGES ═══════════ -->
+<section class="reveal dark-section" style="padding:80px 0">
+  <div class="container-wide">
+    <div class="tag" style="color:#f59e0b">Content That Dominates</div>
+    <h2>Pages Google Shows Over 10,000 Times Each</h2>
+
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Veins Popping Out — Causes & Fixes</div><div class="inter" style="font-size:11px;opacity:0.3">96 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#4a9eff">116K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Varithena Vein Treatment</div><div class="inter" style="font-size:11px;opacity:0.3">250 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#4a9eff">68K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Wound Debridement</div><div class="inter" style="font-size:11px;opacity:0.3">76 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#4a9eff">61K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Bulging Veins on Feet</div><div class="inter" style="font-size:11px;opacity:0.3">29 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#ffffff88">61K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Double Crush Syndrome Guide</div><div class="inter" style="font-size:11px;opacity:0.3">108 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#ffffff88">40K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Wound Culture Test & Biopsy</div><div class="inter" style="font-size:11px;opacity:0.3">47 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#ffffff88">41K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Diabetic Foot Ulcer Guide</div><div class="inter" style="font-size:11px;opacity:0.3">12 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#ffffff88">25K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+    <div class="monster-row" style="border:none"><div><div class="inter" style="font-size:14px;font-weight:500;margin-bottom:3px">Compression Therapy Benefits</div><div class="inter" style="font-size:11px;opacity:0.3">27 patient clicks</div></div><div style="text-align:right"><span class="playfair" style="font-size:22px;font-weight:700;color:#ffffff88">23K</span><div class="inter" style="font-size:9px;opacity:0.3">impressions</div></div></div>
+
+    <div style="margin-top:32px;padding:20px;background:#050505;border-radius:12px;border:1px solid #f59e0b22">
+      <p class="inter" style="font-size:13px;line-height:1.7;opacity:0.6;margin-bottom:12px">One page about "veins popping out" was shown <strong style="color:#f59e0b">115,676 times</strong>. One page about varithena got <strong style="color:#f59e0b">250 patient clicks</strong>. These are people actively searching for help — and finding Dr. Wolcott.</p>
+      <p class="inter" style="font-size:13px;font-weight:600;color:#f59e0b">How many conditions does YOUR practice treat that don't have a page?</p>
+      <a href="#audit-form" class="inline-cta">Get your free content gap analysis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GOOGLE MAPS ═══════════ -->
+<section class="reveal" style="padding:80px 0">
+  <div class="container">
+    <div class="tag" style="color:#10b981">Google Maps</div>
+    <h2>1,260 Patient Calls. 533 People Driving to the Clinic.</h2>
+    <p class="body-text">When someone in Lubbock searches "wound care near me" — Dr. Wolcott shows up. When they search his name, his competitors' names, or "clinic for wounds that won't heal" — he shows up.</p>
+    <div class="grid-2" style="margin-top:32px">
+      <div class="stat-card"><div class="playfair" style="font-size:26px;font-weight:800;color:#10b981">1,260</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px">Calls</div><div class="inter" style="font-size:10px;opacity:0.3">from Google Maps</div></div>
+      <div class="stat-card"><div class="playfair" style="font-size:26px;font-weight:800;color:#10b981">533</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px">Directions</div><div class="inter" style="font-size:10px;opacity:0.3">drove to clinic</div></div>
+      <div class="stat-card"><div class="playfair" style="font-size:26px;font-weight:800;color:#4a9eff">5,515</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px">Profile Views</div><div class="inter" style="font-size:10px;opacity:0.3">viewed the practice</div></div>
+      <div class="stat-card"><div class="playfair" style="font-size:26px;font-weight:800;color:#4a9eff">68%</div><div class="inter" style="font-size:12px;font-weight:600;margin-top:4px">Mobile</div><div class="inter" style="font-size:10px;opacity:0.3">searching on phone</div></div>
+    </div>
+    <div class="block-cta">
+      <p>1,260 calls from Google Maps alone. How many calls is YOUR profile generating?</p>
+      <a href="#audit-form" class="btn">Check My Google Maps — Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHAT PATIENTS SEARCH ═══════════ -->
+<section class="reveal dark-section" style="padding:80px 0">
+  <div class="container">
+    <div class="tag" style="color:#4a9eff">What Patients Search</div>
+    <h2>The Searches That Lead Patients to This Practice</h2>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">01</span>"wound care lubbock"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1-4</div></div>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">02</span>"wound care"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1-3</div></div>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">03</span>"dr wolcott wound care"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1-2</div></div>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">04</span>"wound care lubbock tx"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1-4</div></div>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">05</span>"wound care center lubbock"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1-4</div></div>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">06</span>"hyperbaric oxygen therapy lubbock"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1</div></div>
+    <div class="search-row"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">07</span>"varicose vein treatment lubbock"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1-6</div></div>
+    <div class="search-row" style="border:none"><div class="inter" style="font-size:14px"><span style="opacity:0.2;margin-right:12px;font-weight:700">08</span>"clinic for wounds that won't heal"</div><div class="inter" style="font-size:12px;color:#10b981;font-weight:600">#1</div></div>
+    <a href="#audit-form" class="inline-cta">What keywords should YOUR practice rank for? We'll tell you — free →</a>
+  </div>
+</section>
+
+<!-- ═══════════ MORE CASE STUDIES ═══════════ -->
+<section class="reveal" style="padding:80px 0">
+  <div class="container-wide">
+    <div class="tag" style="color:#4a9eff">More Proof</div>
+    <h2>This Isn't the Only Practice We've Transformed</h2>
+    <div class="grid-3">
+      <div class="case-card">
+        <div class="inter" style="font-size:10px;font-weight:600;letter-spacing:1px;color:#10b981;text-transform:uppercase;margin-bottom:8px">MedSpa</div>
+        <div class="playfair" style="font-size:18px;font-weight:700;margin-bottom:4px">RenewMe MedSpa</div>
+        <div class="inter" style="font-size:11px;opacity:0.4;margin-bottom:12px">Los Angeles, CA</div>
+        <div class="inter" style="font-size:14px;font-weight:700;color:#10b981">$0 → $1M/yr</div>
+        <div class="inter" style="font-size:11px;opacity:0.4;margin-top:4px">Acquired at 10x</div>
+      </div>
+      <div class="case-card">
+        <div class="inter" style="font-size:10px;font-weight:600;letter-spacing:1px;color:#f59e0b;text-transform:uppercase;margin-bottom:8px">Pain Management</div>
+        <div class="playfair" style="font-size:18px;font-weight:700;margin-bottom:4px">Rozier MD</div>
+        <div class="inter" style="font-size:11px;opacity:0.4;margin-bottom:12px">Mansfield, TX</div>
+        <div class="inter" style="font-size:14px;font-weight:700;color:#f59e0b">0 → 200+ calls/mo</div>
+        <div class="inter" style="font-size:11px;opacity:0.4;margin-top:4px">7.3M impressions</div>
+      </div>
+      <div class="case-card">
+        <div class="inter" style="font-size:10px;font-weight:600;letter-spacing:1px;color:#4a9eff;text-transform:uppercase;margin-bottom:8px">Gastroenterology</div>
+        <div class="playfair" style="font-size:18px;font-weight:700;margin-bottom:4px">GI Practice</div>
+        <div class="inter" style="font-size:11px;opacity:0.4;margin-bottom:12px">Dallas, TX</div>
+        <div class="inter" style="font-size:14px;font-weight:700;color:#4a9eff">Largest in region</div>
+        <div class="inter" style="font-size:11px;opacity:0.4;margin-top:4px">Physician referral domination</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FORM ═══════════ -->
+<section class="reveal" id="audit-form" style="background:linear-gradient(135deg,#0a1628 0%,#050505 100%);padding:100px 0 160px;border-top:1px solid #ffffff08">
+  <div style="max-width:560px;margin:0 auto;padding:0 24px;text-align:center">
+    <h2 class="playfair" style="font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.2;margin-bottom:16px">How Many Patients Is<br><span style="color:#4a9eff">Your Practice Losing</span> to Google?</h2>
+    <p class="inter" style="font-size:14px;line-height:1.7;opacity:0.5;font-weight:300;max-width:480px;margin:0 auto 32px">We'll audit your website, your Google Maps, your competitors, and your content — and tell you exactly where you're losing patients. If we don't find at least 10 growth opportunities, we'll tell you not to hire us.</p>
+    <div style="background:#0a0f1a;border-radius:16px;padding:28px;border:1px solid #ffffff10;text-align:left">
+      <div class="inter" style="font-size:15px;font-weight:700;margin-bottom:20px;text-align:center">Get Your Free Practice Audit</div>
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Dr. Smith"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="you@practice.com"></div>
+      <div class="form-group"><label>Practice Website</label><input type="text" placeholder="www.yourpractice.com"></div>
+      <div class="form-group"><label>Phone</label><input type="tel" placeholder="(555) 123-4567"></div>
+      <div class="form-group">
+        <label>Practice Type</label>
+        <select>
+          <option value="">Select your specialty</option>
+          <option value="medspa">MedSpa / Aesthetics</option>
+          <option value="pain">Pain Management</option>
+          <option value="wound">Wound Care</option>
+          <option value="gastro">Gastroenterology</option>
+          <option value="dental">Dental</option>
+          <option value="cardio">Cardiology</option>
+          <option value="primary">Primary Care</option>
+          <option value="other">Other Specialty</option>
+        </select>
+      </div>
+      <button class="btn" style="width:100%;padding:14px;font-size:15px;margin-top:8px;cursor:pointer">Get My Free Audit →</button>
+      <div class="inter" style="font-size:10px;opacity:0.3;text-align:center;margin-top:12px">No contracts. No pressure. Just a clear picture of where you stand on Google.</div>
+    </div>
+  </div>
+</section>
+
+<div class="inter" style="padding:24px;text-align:center;font-size:11px;opacity:0.2;padding-bottom:80px">Intellius Medical · Healthcare Marketing Agency · Dallas, TX</div>
+
+<script>
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior:'smooth' });
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Counter animation
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.done) {
+      entry.target.dataset.done = '1';
+      const target = parseInt(entry.target.dataset.target);
+      const duration = 2000;
+      const steps = 60;
+      const inc = target / steps;
+      let cur = 0;
+      const t = setInterval(() => {
+        cur += inc;
+        if (cur >= target) { entry.target.textContent = target.toLocaleString(); clearInterval(t); }
+        else entry.target.textContent = Math.floor(cur).toLocaleString();
+      }, duration / steps);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// Growth chart
+const chartData = [34415,42065,32775,38180,43261,52896,54839,69854,101233,75739,101378,69514,59246,39681,48650,48248];
+const chartLabels = ["Dec 24","Jan 25","Feb 25","Mar 25","Apr 25","May 25","Jun 25","Jul 25","Aug 25","Sep 25","Oct 25","Nov 25","Dec 25","Jan 26","Feb 26","Mar 26"];
+const maxImp = Math.max(...chartData);
+const chart = document.getElementById('growth-chart');
+if (chart) {
+  chartData.forEach((val, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'chart-bar';
+    const pct = (val / maxImp) * 100;
+    bar.style.height = pct + '%';
+    bar.style.background = val > 80000 ? '#4a9eff' : val > 50000 ? '#4a9effaa' : '#4a9eff55';
+    const tip = document.createElement('div');
+    tip.className = 'tooltip';
+    tip.textContent = chartLabels[i] + ': ' + val.toLocaleString();
+    bar.appendChild(tip);
+    chart.appendChild(bar);
+  });
+}
+</script>
+</body>
+</html>
