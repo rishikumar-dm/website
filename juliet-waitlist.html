@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Juliet — Early Access Waitlist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b3e;
+    --navy-mid: #1a2f5e;
+    --blue: #2563eb;
+    --blue-light: #3b82f6;
+    --blue-soft: #dbeafe;
+    --blue-pale: #eff6ff;
+    --coral: #f97316;
+    --white: #ffffff;
+    --off-white: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-600: #475569;
+    --gray-800: #1e293b;
+    --text-dark: #0f172a;
+    --text-mid: #334155;
+    --text-muted: #64748b;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--text-dark);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(13, 27, 62, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: #fff; }
+
+  .nav-cta {
+    background: var(--blue-light);
+    color: #fff !important;
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--blue) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d1b3e 0%, #1a2f5e 50%, #0f3460 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.35);
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 32px;
+    letter-spacing: 0.3px;
+    animation: fadeInDown 0.6s ease both;
+  }
+
+  .hero-badge-dot {
+    width: 7px; height: 7px;
+    background: #60a5fa;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    color: #fff;
+    max-width: 760px;
+    margin: 0 auto 24px;
+    line-height: 1.1;
+    animation: fadeInDown 0.7s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #93c5fd;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+    font-weight: 300;
+    animation: fadeInDown 0.7s 0.2s ease both;
+  }
+
+  /* Waitlist Form */
+  .hero-form-wrap {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeInDown 0.7s 0.3s ease both;
+  }
+
+  .hero-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-form input[type="email"],
+  .hero-form input[type="text"] {
+    width: 100%;
+    padding: 16px 22px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: var(--radius-md);
+    color: #fff;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .hero-form input::placeholder { color: rgba(255,255,255,0.4); }
+  .hero-form input:focus {
+    border-color: rgba(59,130,246,0.6);
+    background: rgba(255,255,255,0.12);
+  }
+
+  .hero-form-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  .hero-form-row input { flex: 1; }
+
+  .btn-primary {
+    width: 100%;
+    padding: 17px 32px;
+    background: var(--blue-light);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.2px;
+  }
+
+  .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+
+  .trust-icon {
+    width: 16px; height: 16px;
+    opacity: 0.6;
+  }
+
+  /* ── SOCIAL PROOF STRIP ── */
+  .proof-strip {
+    background: var(--navy);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .proof-item {
+    text-align: center;
+  }
+
+  .proof-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+  }
+
+  .proof-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 3px;
+  }
+
+  .proof-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+    align-self: stretch;
+  }
+
+  /* ── SECTION BASE ── */
+  .section {
+    padding: 100px 40px;
+  }
+
+  .section-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem {
+    background: var(--off-white);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .stat-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .stat-card:hover {
+    box-shadow: 0 8px 32px rgba(37,99,235,0.08);
+    transform: translateY(-2px);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    line-height: 1;
+    min-width: 80px;
+  }
+
+  .stat-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .stat-text p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .problem-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .problem-right h3 {
+    font-size: 26px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .problem-right p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .problem-right p strong {
+    color: var(--text-dark);
+  }
+
+  .problem-quote {
+    background: var(--navy);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    color: rgba(255,255,255,0.85);
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+    border-left: 3px solid var(--blue-light);
+  }
+
+  /* ── CONVERSATION DEMO ── */
+  .demo-section {
+    background: var(--navy);
+    padding: 100px 40px;
+  }
+
+  .demo-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .demo-left .section-tag { color: #93c5fd; }
+  .demo-left .section-title { color: #fff; }
+  .demo-left .section-sub { color: rgba(255,255,255,0.6); max-width: 420px; }
+
+  .demo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .demo-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .demo-feat-icon {
+    width: 36px; height: 36px;
+    background: rgba(59,130,246,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+
+  .demo-feat-text strong {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .demo-feat-text span {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Chat Window */
+  .chat-window {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .chat-header {
+    background: rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chat-avatar {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chat-header-text strong {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .chat-header-text span {
+    color: rgba(255,255,255,0.45);
+    font-size: 12px;
+  }
+
+  .chat-online {
+    width: 8px; height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-left: auto;
+  }
+
+  .chat-body {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 300px;
+  }
+
+  .msg {
+    max-width: 82%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .msg-user {
+    background: var(--blue-light);
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+
+  .msg-juliet {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.88);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .msg-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 4px;
+  }
+
+  .msg-label.right { text-align: right; }
+
+  .chat-input-area {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .chat-input {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    padding: 10px 18px;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+  }
+
+  .chat-send {
+    width: 36px; height: 36px;
+    background: var(--blue-light);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+
+  .chat-send:hover { background: var(--blue); }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background: var(--white); }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .steps-row::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-200), var(--gray-200), transparent);
+  }
+
+  .step-card {
+    text-align: center;
+    padding: 40px 28px 32px;
+    background: var(--off-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .step-card:hover {
+    box-shadow: 0 12px 40px rgba(37,99,235,0.1);
+    transform: translateY(-4px);
+  }
+
+  .step-num {
+    width: 52px; height: 52px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-card:nth-child(2) .step-num { background: var(--blue-light); }
+  .step-card:nth-child(3) .step-num { background: #0891b2; }
+
+  .step-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+  }
+
+  .step-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── SCIENCE ── */
+  .science-section { background: var(--blue-pale); }
+
+  .science-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .metric-circles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .metric-circ {
+    text-align: center;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 16px;
+    border: 1px solid var(--gray-200);
+    transition: box-shadow 0.2s;
+  }
+
+  .metric-circ:hover { box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+
+  .metric-circ-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--navy-mid);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric-circ-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .science-right {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .sci-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .sci-dot {
+    width: 10px; height: 10px;
+    background: var(--blue-light);
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .sci-point h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .sci-point p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .science-note {
+    background: var(--navy);
+    color: rgba(255,255,255,0.8);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  .science-note strong { color: #93c5fd; }
+
+  /* ── WHAT YOU GET ── */
+  .access-section { background: var(--white); }
+
+  .access-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 56px;
+  }
+
+  .access-card {
+    background: var(--off-white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: 32px 24px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .access-card:hover {
+    box-shadow: 0 8px 32px rgba(37,99,235,0.08);
+    transform: translateY(-3px);
+  }
+
+  .access-card.highlight {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+
+  .access-icon {
+    width: 44px; height: 44px;
+    background: var(--blue-soft);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .access-card.highlight .access-icon {
+    background: rgba(59,130,246,0.2);
+  }
+
+  .access-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .access-card.highlight h4 { color: #fff; }
+
+  .access-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .access-card.highlight p { color: rgba(255,255,255,0.55); }
+
+  .access-badge {
+    display: inline-block;
+    background: rgba(59,130,246,0.15);
+    color: #93c5fd;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── COMING SOON ── */
+  .future-section { background: var(--off-white); }
+
+  .future-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .future-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .future-card:hover {
+    box-shadow: 0 12px 40px rgba(37,99,235,0.08);
+    transform: translateY(-3px);
+  }
+
+  .future-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-light), #06b6d4);
+  }
+
+  .future-card:nth-child(2)::before {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  }
+
+  .future-card:nth-child(3)::before {
+    background: linear-gradient(90deg, #10b981, #3b82f6);
+  }
+
+  .future-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 12px;
+  }
+
+  .future-card:nth-child(2) .future-tag { color: #8b5cf6; }
+  .future-card:nth-child(3) .future-tag { color: #10b981; }
+
+  .future-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+
+  .future-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .future-soon {
+    display: inline-block;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── PRIVACY ── */
+  .privacy-section {
+    background: var(--navy);
+    padding: 100px 40px;
+  }
+
+  .privacy-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .privacy-inner .section-tag { color: #93c5fd; }
+  .privacy-inner .section-title { color: #fff; }
+  .privacy-inner .section-sub { color: rgba(255,255,255,0.55); margin: 0 auto 60px; }
+
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .priv-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    text-align: left;
+    transition: background 0.2s;
+  }
+
+  .priv-card:hover { background: rgba(255,255,255,0.08); }
+
+  .priv-icon {
+    font-size: 24px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .priv-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .priv-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .privacy-promise {
+    background: rgba(59,130,246,0.12);
+    border: 1px solid rgba(59,130,246,0.25);
+    border-radius: var(--radius-md);
+    padding: 24px 32px;
+    margin-top: 40px;
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .privacy-promise strong { color: #93c5fd; font-style: normal; }
+
+  /* ── FINAL CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #e0f2fe 100%);
+    padding: 100px 40px;
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-inner .section-title {
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 16px;
+  }
+
+  .cta-inner .section-sub {
+    margin: 0 auto 48px;
+    font-size: 17px;
+  }
+
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .cta-form input[type="email"],
+  .cta-form input[type="text"] {
+    width: 100%;
+    padding: 16px 22px;
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    color: var(--text-dark);
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .cta-form input:focus { border-color: var(--blue-light); }
+  .cta-form input::placeholder { color: var(--gray-400); }
+
+  .btn-cta {
+    width: 100%;
+    padding: 18px 32px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-cta:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+  .cta-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .cta-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .cta-stat strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+  }
+
+  .cta-stat span {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 48px 60px 32px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand p {
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.5;
+    max-width: 280px;
+  }
+
+  .footer-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 60px;
+  }
+
+  .footer-col h5 {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: #fff; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p {
+    color: rgba(255,255,255,0.3);
+    font-size: 12px;
+  }
+
+  .footer-disclaimer {
+    color: rgba(255,255,255,0.25);
+    font-size: 11px;
+    font-style: italic;
+    max-width: 440px;
+    line-height: 1.5;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SUCCESS STATE ── */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 32px;
+    background: rgba(34,197,94,0.08);
+    border: 1px solid rgba(34,197,94,0.2);
+    border-radius: var(--radius-md);
+  }
+
+  .form-success.show { display: block; }
+
+  .form-success h4 {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .form-success p {
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .proof-strip { gap: 32px; padding: 24px; }
+    .proof-divider { display: none; }
+    .section { padding: 70px 24px; }
+    .problem-grid, .science-grid, .demo-inner { grid-template-columns: 1fr; gap: 40px; }
+    .steps-row, .access-grid, .future-grid, .privacy-grid { grid-template-columns: 1fr; }
+    .steps-row::before { display: none; }
+    .metric-circles { grid-template-columns: repeat(3, 1fr); }
+    .footer-top { flex-direction: column; }
+    .footer-links { gap: 32px; flex-wrap: wrap; }
+    footer { padding: 40px 24px 24px; }
+    .hero-form-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Juliet.ai</a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Break the Cycle</a></li>
+    <li><a href="#">Invest in Juliet</a></li>
+    <li><a href="#">Technology behind Juliet</a></li>
+    <li><a href="#">About Juliet</a></li>
+  </ul>
+  <a href="https://calendly.com/yourlink" class="nav-links" style="list-style:none;"><a href="https://calendly.com/yourlink" class="nav-cta" target="_blank">Talk to the Team</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    Early Access — Limited Spots Available
+  </div>
+
+  <h1>The AI that doesn't just<br><em>listen</em> — it understands.</h1>
+
+  <p class="hero-sub">
+    Juliet is the world's first Emotional Intelligence AI. Built not to process your words, but to truly feel what you mean — and meet you exactly where you are.
+  </p>
+
+  <div class="hero-form-wrap">
+    <div class="hero-form" id="heroForm">
+      <div class="hero-form-row">
+        <input type="text" id="heroFirst" placeholder="First name" autocomplete="given-name">
+        <input type="text" id="heroLast" placeholder="Last name" autocomplete="family-name">
+      </div>
+      <input type="email" id="heroEmail" placeholder="Your email address" autocomplete="email">
+      <button class="btn-primary" onclick="submitForm('heroForm', 'heroSuccess')">
+        Join the Waitlist — It's Free →
+      </button>
+    </div>
+    <div class="form-success" id="heroSuccess">
+      <h4>You're on the list. ✓</h4>
+      <p>We'll reach out as soon as your early access is ready. Welcome to something different.</p>
+    </div>
+  </div>
+
+  <div class="hero-trust" style="margin-top:24px;">
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 4.5H14l-3.7 2.7 1.4 4.3L8 10.1l-3.7 2.4 1.4-4.3L2 5.5h4.5z" fill="rgba(255,255,255,0.4)"/></svg>
+      Private. Judgment-free. 24/7.
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><path d="M5.5 7V5a2.5 2.5 0 115 0v2" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/></svg>
+      End-to-end encrypted
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      No data selling. Ever.
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item">
+    <span class="proof-num">50K+</span>
+    <span class="proof-label">Trusted Users</span>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <span class="proof-num">100K+</span>
+    <span class="proof-label">Real Emotional Conversations</span>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <span class="proof-num">88%</span>
+    <span class="proof-label">Emotional Accuracy</span>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <span class="proof-num">83%</span>
+    <span class="proof-label">Stress Reduction in 7 Days</span>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <span class="proof-num">3</span>
+    <span class="proof-label">Disciplines: Therapy · Neuro · AI</span>
+  </div>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="section problem">
+  <div class="section-inner">
+    <div style="max-width:580px;">
+      <span class="section-tag fade-up">The World We're In</span>
+      <h2 class="section-title fade-up">We live in the most connected era in history. And we've never been more alone.</h2>
+      <p class="section-sub fade-up">This isn't a wellness problem. It's a systemic failure — of technology, of access, of design. And it's getting worse.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="stat-stack fade-up">
+        <div class="stat-card">
+          <div class="stat-num">1 in 3</div>
+          <div class="stat-text">
+            <strong>Adults report chronic loneliness</strong>
+            <p>Not sadness — chronic disconnection. A persistent feeling of not being truly heard by anyone.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">970M</div>
+          <div class="stat-text">
+            <strong>People face anxiety or mental stress</strong>
+            <p>According to the WHO. Most will never reach a therapist — 6–8 week waitlists in major cities.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">60%</div>
+          <div class="stat-text">
+            <strong>Conceal their feelings entirely</strong>
+            <p>They don't want to burden others. So they carry it alone — quietly, invisibly, daily.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-right fade-up">
+        <h3>The world made AI think smarter. It forgot to make it feel human.</h3>
+        <p>Billions were poured into AI that could process information with sophistication. ChatGPT predicts words with accuracy. But it struggles to truly <strong>sense emotion</strong>. It replies with perfect sentences — but doesn't genuinely understand what you're experiencing.</p>
+        <p>Users stop using today's chatbots after just <strong>3 sessions</strong>. Not because they're broken — but because they feel hollow. There's no presence. No warmth. No understanding of what's left unsaid.</p>
+        <div class="problem-quote fade-up">
+          "People don't need more information. They need someone who truly listens — without judgment, without fatigue, without an agenda. That's the gap Juliet was built to fill."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSATION DEMO -->
+<section class="demo-section">
+  <div class="demo-inner">
+    <div class="demo-left">
+      <span class="section-tag">Experience Juliet</span>
+      <h2 class="section-title" style="color:#fff;">Real moments.<br>Real connection.</h2>
+      <p class="section-sub">These are the conversations that matter — the ones where you don't have to pretend. Where your feelings are valid. Where someone is truly listening.</p>
+
+      <div class="demo-features">
+        <div class="demo-feat">
+          <div class="demo-feat-icon">🎧</div>
+          <div class="demo-feat-text">
+            <strong>Juliet Listens</strong>
+            <span>No filter, no script. Type what's on your mind. Just you, as you are, right now.</span>
+          </div>
+        </div>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">🔍</div>
+          <div class="demo-feat-text">
+            <strong>Juliet Understands</strong>
+            <span>She reads tone, pauses, and patterns. Catches what you're really saying, even between the lines.</span>
+          </div>
+        </div>
+        <div class="demo-feat">
+          <div class="demo-feat-icon">🧭</div>
+          <div class="demo-feat-text">
+            <strong>Juliet Guides</strong>
+            <span>Evidence-based prompts, compassionate reframes, gentle clarity — at your pace, not hers.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-window fade-up">
+      <div class="chat-header">
+        <div class="chat-avatar">J</div>
+        <div class="chat-header-text">
+          <strong>Juliet</strong>
+          <span>Emotional Intelligence AI</span>
+        </div>
+        <div class="chat-online"></div>
+      </div>
+
+      <div class="chat-body" id="chatBody">
+        <div class="msg-label">You</div>
+        <div class="msg msg-user">I can't stop overthinking. It's 2am and my brain won't quiet down.</div>
+
+        <div class="msg-label">Juliet</div>
+        <div class="msg msg-juliet">I hear you. That kind of quiet that isn't actually quiet — thoughts pulling in every direction. You're not broken. Your mind is working hard right now. Let's slow it down together.</div>
+
+        <div class="msg-label">You</div>
+        <div class="msg msg-user">I don't even know what I'm anxious about. Just everything, I guess.</div>
+
+        <div class="msg-label">Juliet</div>
+        <div class="msg msg-juliet">"Everything" is a heavy word to carry alone. You don't need to name it perfectly. Sometimes the weight is real before the words exist for it. I'm here — no rush.</div>
+      </div>
+
+      <div class="chat-input-area">
+        <input class="chat-input" type="text" id="chatInput" placeholder="Tell Juliet what's on your mind…">
+        <button class="chat-send" onclick="sendMessage()">↑</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag fade-up">How It Works</span>
+    <h2 class="section-title fade-up" style="max-width:560px;margin:0 auto 12px;">Three steps to breathe again</h2>
+    <p class="section-sub fade-up" style="margin:0 auto;">Getting started is as simple as taking your next breath. No questionnaires. No barriers. Just three natural steps.</p>
+
+    <div class="steps-row">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <h4>You Talk. Juliet Listens.</h4>
+        <p>Type it, voice it, or say nothing and just start. Juliet meets you exactly where you are. Some days you'll have paragraphs. Other days, a word or two. Both are welcome.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <h4>Juliet Reads Your Signals.</h4>
+        <p>She picks up on tone, patterns, and emotional markers — understanding not just what you said, but what you meant. The hesitation. The weight. The things almost said but not quite.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <h4>Juliet Guides You to Calm.</h4>
+        <p>Evidence-based prompts and thoughtful reflections that actually help. Not generic advice — responses tailored to your specific emotional state. Clarity, one breath at a time.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:40px; font-size:13px; color:var(--text-muted); background:var(--blue-pale); display:inline-block; padding:14px 24px; border-radius:50px;">
+      Powered by the Juliet Emotional LLM (EIM-1) — trained on 100,000+ anonymized emotional conversations and validated by licensed mental health professionals.
+    </p>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section class="section science-section">
+  <div class="section-inner">
+    <div class="science-grid">
+      <div class="fade-up">
+        <span class="section-tag">The Science</span>
+        <h2 class="section-title">Built different. Proven different.</h2>
+        <p class="section-sub" style="margin-bottom:36px;">Juliet's Emotional LLM (EIM-1) was built from scratch — not a wrapper, not a chatbot with empathy bolted on. Purpose-engineered at the tokenization level for emotional intelligence.</p>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div class="sci-point">
+            <div class="sci-dot"></div>
+            <div>
+              <h4>Tone of Voice Detection</h4>
+              <p>Acoustic emotion mapping detects subtle vocal cues. Pitch, pace, and intensity reveal hidden feelings beneath what's being said.</p>
+            </div>
+          </div>
+          <div class="sci-point">
+            <div class="sci-dot" style="background:#06b6d4;"></div>
+            <div>
+              <h4>Typing Rhythm Analysis</h4>
+              <p>Rapid bursts or hesitant pauses sense anxiety or agitation. Speed patterns expose emotional states that words alone cannot.</p>
+            </div>
+          </div>
+          <div class="sci-point">
+            <div class="sci-dot" style="background:#8b5cf6;"></div>
+            <div>
+              <h4>Micro-Pause Recognition</h4>
+              <p>Silence speaks volumes. Brief gaps indicate hesitation, stress, or deep thought processing — signals other AI systems ignore.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="science-note fade-up">
+          <strong>Technical edge:</strong> EIM-1's emotion embedding layer operates at the tokenization level — allowing real-time emotional context to influence every aspect of response generation, not just post-processing sentiment analysis.
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="metric-circles">
+          <div class="metric-circ">
+            <span class="metric-circ-num">36%</span>
+            <div class="metric-circ-label">Higher Empathy Detection vs GPT-4</div>
+          </div>
+          <div class="metric-circ">
+            <span class="metric-circ-num">52%</span>
+            <div class="metric-circ-label">Greater Context Accuracy</div>
+          </div>
+          <div class="metric-circ">
+            <span class="metric-circ-num">92%</span>
+            <div class="metric-circ-label">Emotional Match vs Therapists</div>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:32px;margin-top:20px;">
+          <h4 style="font-size:17px;margin-bottom:20px;color:var(--text-dark);">Private Beta Results — 2,000 Participants</h4>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span style="font-size:13px;color:var(--text-mid);">Stress Reduction (7 days)</span>
+                <span style="font-size:13px;font-weight:600;color:var(--navy);">83%</span>
+              </div>
+              <div style="background:var(--gray-200);border-radius:50px;height:7px;">
+                <div style="background:var(--blue-light);width:83%;height:7px;border-radius:50px;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span style="font-size:13px;color:var(--text-mid);">Engagement vs Calm/Woebot</span>
+                <span style="font-size:13px;font-weight:600;color:var(--navy);">5x higher</span>
+              </div>
+              <div style="background:var(--gray-200);border-radius:50px;height:7px;">
+                <div style="background:#06b6d4;width:95%;height:7px;border-radius:50px;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span style="font-size:13px;color:var(--text-mid);">7-day Active Retention</span>
+                <span style="font-size:13px;font-weight:600;color:var(--navy);">80%</span>
+              </div>
+              <div style="background:var(--gray-200);border-radius:50px;height:7px;">
+                <div style="background:#8b5cf6;width:80%;height:7px;border-radius:50px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size:12px;color:var(--text-muted);margin-top:20px;line-height:1.5;">Users returning an average of 4.2 sessions per day — compared to 3-session drop-off for leading AI competitors.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section access-section">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag fade-up">Early Access</span>
+    <h2 class="section-title fade-up" style="max-width:520px;margin:0 auto 12px;">What you get when you join today</h2>
+    <p class="section-sub fade-up" style="margin:0 auto;">Early access members aren't just users — they're part of something being built. A community that believes mental health support should be accessible, private, and genuinely helpful.</p>
+
+    <div class="access-grid">
+      <div class="access-card fade-up">
+        <div class="access-icon">🕐</div>
+        <h4>24/7 Availability</h4>
+        <p>Juliet doesn't sleep. Whether it's 2am anxiety or a midday overwhelm, support is always a message away.</p>
+        <div class="access-badge">Always On</div>
+      </div>
+      <div class="access-card highlight fade-up">
+        <div class="access-icon">⭐</div>
+        <h4>Free for Beta Members</h4>
+        <p>No cost during the beta period. You're helping build something meaningful — Juliet gives back fully in return.</p>
+        <div class="access-badge">Beta Perk</div>
+      </div>
+      <div class="access-card fade-up">
+        <div class="access-icon">🔒</div>
+        <h4>100% Private & Secure</h4>
+        <p>Your words are yours. Military-grade encryption. Zero ads. Zero data selling. Your emotional data belongs to you alone.</p>
+        <div class="access-badge">Encrypted</div>
+      </div>
+      <div class="access-card fade-up">
+        <div class="access-icon">🌱</div>
+        <h4>Shape the Future</h4>
+        <p>Beta members directly influence Juliet's development. Your feedback trains an AI that's genuinely more human.</p>
+        <div class="access-badge">Founding Member</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="section future-section">
+  <div class="section-inner">
+    <div class="fade-up" style="max-width:580px;">
+      <span class="section-tag">The JulietOS Vision</span>
+      <h2 class="section-title">Juliet in everything. Soon.</h2>
+      <p class="section-sub">What you're experiencing now is just the beginning. We're building an entire ecosystem of emotional intelligence tools — designed to understand how you feel wherever you are.</p>
+    </div>
+
+    <div class="future-grid">
+      <div class="future-card fade-up">
+        <div class="future-tag">Ear Companion</div>
+        <h4>Emotional support in your ear</h4>
+        <p>Voice-based emotional support that travels with you. In your car, on your walk, wherever you need it most. The AI that hears how you feel — in real time.</p>
+        <div class="future-soon">Coming Soon</div>
+      </div>
+      <div class="future-card fade-up">
+        <div class="future-tag">Smart Mirror</div>
+        <h4>Start your day with emotional clarity</h4>
+        <p>Mood at a glance, words when you need them. Your mirror becomes your emotional compass — visual feedback meets genuine awareness.</p>
+        <div class="future-soon">Coming Soon</div>
+      </div>
+      <div class="future-card fade-up">
+        <div class="future-tag">JulietOS SDK</div>
+        <h4>Emotional intelligence for every app</h4>
+        <p>An API and SDK for healthcare providers, wellness platforms, and mental health applications. Making empathy programmable at scale.</p>
+        <div class="future-soon">Coming Soon</div>
+      </div>
+    </div>
+
+    <p style="margin-top:40px;font-size:14px;color:var(--text-muted);text-align:center;">
+      The emotional layer of the AI era. <strong style="color:var(--navy);">Built for a billion people.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="privacy-section">
+  <div class="privacy-inner">
+    <span class="section-tag fade-up">Our Promise to You</span>
+    <h2 class="section-title fade-up" style="max-width:560px;margin:0 auto 16px;">Empathy without trust<br>isn't empathy — it's exploitation.</h2>
+    <p class="section-sub fade-up">Juliet was built on a different foundation. One where privacy, safety, and genuine care come first. Not as a feature. As the architecture.</p>
+
+    <div class="privacy-grid fade-up">
+      <div class="priv-card">
+        <span class="priv-icon">🔐</span>
+        <h4>End-to-End Encryption</h4>
+        <p>Every conversation encrypted with military-grade protocols. Not even Juliet's engineers can access your private conversations.</p>
+      </div>
+      <div class="priv-card">
+        <span class="priv-icon">🚫</span>
+        <h4>Zero Data Monetization</h4>
+        <p>No advertisements. No tracking pixels. No selling user data to third parties — ever. Revenue comes from subscriptions, not surveillance.</p>
+      </div>
+      <div class="priv-card">
+        <span class="priv-icon">☁️</span>
+        <h4>Private Cloud Nodes</h4>
+        <p>All conversations processed through isolated, secure infrastructure. No shared servers. Your emotional data belongs to you alone.</p>
+      </div>
+    </div>
+
+    <div class="privacy-promise fade-up">
+      <strong>Your emotions stay yours.</strong> You maintain complete ownership and control over your emotional data — with the ability to export or delete everything at any time. We're here to <strong>heal, not harvest.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-tag fade-up">Join the Waitlist</span>
+    <h2 class="section-title fade-up">You don't have to<br>figure it out alone.</h2>
+    <p class="section-sub fade-up">Be one of the first to feel the difference. Early access is limited — we're building a community of people who believe mental health support should be accessible, private, and genuinely helpful.</p>
+
+    <div class="cta-form fade-up">
+      <div style="display:flex;gap:12px;">
+        <input type="text" id="ctaFirst" placeholder="First name" style="flex:1;">
+        <input type="text" id="ctaLast" placeholder="Last name" style="flex:1;">
+      </div>
+      <input type="email" id="ctaEmail" placeholder="Your email address">
+      <button class="btn-cta" onclick="submitForm('ctaForm', 'ctaSuccess')">Join the Waitlist — It's Free →</button>
+    </div>
+    <div class="form-success" id="ctaSuccess" style="max-width:440px;margin:0 auto;">
+      <h4>Welcome to Juliet. ✓</h4>
+      <p>We'll be in touch. Thousands of people are already on the list — you're part of something changing how we think about emotional health.</p>
+    </div>
+
+    <p class="cta-note fade-up">You're not alone in this. Thousands of people are already on the list, waiting to experience emotional AI that actually understands.</p>
+
+    <div class="cta-stats fade-up">
+      <div class="cta-stat">
+        <strong>10,000+</strong>
+        <span>Already on the waitlist</span>
+      </div>
+      <div class="cta-stat">
+        <strong>Free</strong>
+        <span>For all beta members</span>
+      </div>
+      <div class="cta-stat">
+        <strong>24/7</strong>
+        <span>Always available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Juliet.ai</div>
+      <p>© 2025 — Emotional Intelligence, built with heart.<br>Because the future of AI isn't just smart — it's kind.</p>
+      <p style="margin-top:12px;font-size:11px;font-style:italic;color:rgba(255,255,255,0.25);max-width:260px;line-height:1.5;">Juliet is not a replacement for professional therapy or emergency services. If you're in crisis, please contact a crisis helpline or emergency services immediately.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="#">Home</a>
+        <a href="#">Break the Cycle</a>
+        <a href="#">How it Works</a>
+        <a href="#">Technology</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#">About Juliet</a>
+        <a href="#">The Team</a>
+        <a href="#">Careers</a>
+        <a href="#">Research</a>
+      </div>
+      <div class="footer-col">
+        <h5>Investors</h5>
+        <a href="#">Invest in Juliet</a>
+        <a href="https://calendly.com/yourlink" target="_blank">Schedule a Meeting</a>
+        <a href="#">View Deck</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Juliet.ai — Emotional Intelligence, built with heart.</p>
+    <p style="color:rgba(255,255,255,0.3);font-size:12px;">Stay connected: Follow our journey as we build the future of emotional AI. Subscribe to updates about new features, research insights, and the Juliet community.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Form submit
+  function submitForm(formId, successId) {
+    const s = document.getElementById(successId);
+    const f = document.getElementById(formId);
+    if (f) f.style.display = 'none';
+    s.classList.add('show');
+  }
+
+  // Chat demo
+  const replies = [
+    "I'm here with you. Take your time — there's no rush.",
+    "That sounds really heavy. What you're feeling makes sense.",
+    "You don't need to have the right words. Just start wherever feels natural.",
+    "I notice you're carrying a lot right now. Let's unpack it gently, together.",
+    "Sometimes the hardest thing is just admitting something feels hard. You've done that."
+  ];
+  let replyIdx = 0;
+
+  function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const body = document.getElementById('chatBody');
+    const text = input.value.trim();
+    if (!text) return;
+
+    const userLabel = document.createElement('div');
+    userLabel.className = 'msg-label right';
+    userLabel.textContent = 'You';
+    body.appendChild(userLabel);
+
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg msg-user';
+    userMsg.textContent = text;
+    body.appendChild(userMsg);
+    input.value = '';
+
+    setTimeout(() => {
+      const jLabel = document.createElement('div');
+      jLabel.className = 'msg-label';
+      jLabel.textContent = 'Juliet';
+      body.appendChild(jLabel);
+
+      const jMsg = document.createElement('div');
+      jMsg.className = 'msg msg-juliet';
+      jMsg.textContent = replies[replyIdx % replies.length];
+      replyIdx++;
+      body.appendChild(jMsg);
+      body.scrollTop = body.scrollHeight;
+    }, 800);
+
+    body.scrollTop = body.scrollHeight;
+  }
+
+  document.getElementById('chatInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendMessage();
+  });
+</script>
+</body>
+</html>
