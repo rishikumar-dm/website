@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Case Studies – Intellius Medical</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0d1b2e;
+    --navy2:   #12243c;
+    --peach:   #f5e0cc;
+    --peach2:  #eedbc8;
+    --orange:  #e86527;
+    --orange2: #f07840;
+    --teal:    #2dd4a0;
+    --white:   #ffffff;
+    --offwhite:#faf7f4;
+    --text:    #1a2a3a;
+    --muted:   #6b7e8f;
+    --border:  rgba(255,255,255,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--offwhite);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  .logo-dot { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+  .nav-cta {
+    background: var(--orange);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: .875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .nav-cta:hover { background: var(--orange2); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 90px 6% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(232,101,39,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 10%;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(45,212,160,.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232,101,39,.15);
+    border: 1px solid rgba(232,101,39,.35);
+    color: var(--orange2);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: var(--white);
+    line-height: 1.1;
+    max-width: 780px;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: var(--orange); }
+  .hero p {
+    color: rgba(255,255,255,.68);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--orange);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,.35);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: .95rem;
+    text-decoration: none;
+    transition: border-color .2s, background .2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.06); }
+
+  /* ── AGGREGATE STATS BAR ── */
+  .stats-bar {
+    background: var(--peach);
+    padding: 0 6%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 2px solid var(--peach2);
+  }
+  .stat-item {
+    padding: 32px 0;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,.1);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--orange);
+    display: block;
+  }
+  .stat-label {
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION WRAPPERS ── */
+  .section { padding: 88px 6%; }
+  .section-label {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 600px;
+    margin-bottom: 56px;
+  }
+
+  /* ── HOW WE WORK ── */
+  .how-section { background: var(--navy); }
+  .how-section .section-title { color: var(--white); }
+  .how-section .section-sub { color: rgba(255,255,255,.6); }
+  .how-section .section-label { color: var(--teal); }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2px;
+  }
+  .step-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    padding: 36px 30px;
+    position: relative;
+    transition: background .3s;
+  }
+  .step-card:hover { background: rgba(255,255,255,.08); }
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: rgba(232,101,39,.2);
+    position: absolute;
+    top: 18px; right: 24px;
+    line-height: 1;
+  }
+  .step-icon {
+    width: 44px; height: 44px;
+    background: rgba(232,101,39,.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+  .step-card h3 {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .step-card p {
+    font-size: .9rem;
+    color: rgba(255,255,255,.55);
+    line-height: 1.65;
+  }
+
+  /* ── SPECIALTIES ── */
+  .spec-section { background: var(--offwhite); }
+  .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+  .spec-card {
+    background: var(--white);
+    border: 1.5px solid #e8e0d8;
+    border-radius: 10px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    cursor: default;
+  }
+  .spec-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(232,101,39,.12);
+  }
+  .spec-emoji { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+  .spec-card h4 { font-size: .95rem; color: var(--navy); font-weight: 600; }
+  .spec-card p { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+
+  /* ── PROOF STRIP ── */
+  .proof-strip {
+    background: var(--peach);
+    padding: 56px 6%;
+  }
+  .proof-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .proof-inner h2 { font-size: clamp(1.6rem,3vw,2.2rem); color: var(--navy); margin-bottom: 16px; }
+  .proof-inner p { color: var(--muted); line-height: 1.75; font-size: 1rem; margin-bottom: 20px; }
+  .proof-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .proof-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: .95rem; color: var(--text); line-height: 1.5;
+  }
+  .proof-list li::before {
+    content: '✓';
+    background: var(--orange);
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 700;
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .quote-card {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+  }
+  .quote-mark {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    color: var(--orange);
+    opacity: .3;
+    line-height: .7;
+    position: absolute;
+    top: 24px; left: 30px;
+  }
+  .quote-card blockquote {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.85);
+    line-height: 1.75;
+    font-style: italic;
+    padding-top: 32px;
+    margin-bottom: 24px;
+  }
+  .quote-card cite {
+    font-size: .85rem;
+    color: var(--teal);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ── CASE STUDY CARDS ── */
+  .cases-section { background: var(--white); }
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 28px;
+  }
+  .case-card {
+    border: 1.5px solid #e8e0d8;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow .3s, transform .3s;
+    background: var(--offwhite);
+    display: flex; flex-direction: column;
+  }
+  .case-card:hover {
+    box-shadow: 0 16px 50px rgba(13,27,46,.12);
+    transform: translateY(-4px);
+  }
+  .case-card-header {
+    background: var(--navy);
+    padding: 30px 30px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -20px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(232,101,39,.2) 0%, transparent 70%);
+  }
+  .case-specialty-tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .tag-cardio  { background: rgba(45,212,160,.15); color: var(--teal); border: 1px solid rgba(45,212,160,.3); }
+  .tag-wound   { background: rgba(232,101,39,.15); color: var(--orange2); border: 1px solid rgba(232,101,39,.3); }
+  .tag-medspa  { background: rgba(180,120,255,.15); color: #c89aff; border: 1px solid rgba(180,120,255,.3); }
+  .tag-spa2    { background: rgba(255,200,80,.15); color: #f5c842; border: 1px solid rgba(255,200,80,.3); }
+
+  .case-card-header h3 {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .case-location {
+    font-size: .82rem;
+    color: rgba(255,255,255,.5);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .case-metrics {
+    display: flex; gap: 0;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin-top: 20px;
+  }
+  .metric {
+    flex: 1;
+    padding: 14px 0 0;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.08);
+  }
+  .metric:last-child { border-right: none; }
+  .metric-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--orange);
+    display: block;
+  }
+  .metric-lbl {
+    font-size: .7rem;
+    color: rgba(255,255,255,.45);
+    display: block;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .case-card-body { padding: 26px 30px; flex: 1; display: flex; flex-direction: column; }
+  .case-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .case-card-body p {
+    font-size: .92rem;
+    color: var(--muted);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 22px;
+  }
+  .case-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+  .ctag {
+    background: #f0ebe4;
+    color: #5a6a78;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--orange);
+    font-weight: 600;
+    font-size: .9rem;
+    text-decoration: none;
+    border-top: 1px solid #e8e0d8;
+    padding-top: 18px;
+    transition: gap .2s;
+    margin-top: auto;
+  }
+  .case-link:hover { gap: 12px; }
+  .case-link span { font-size: 1rem; }
+
+  /* ── RESULTS TABLE ── */
+  .results-section { background: var(--peach); }
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.07);
+  }
+  .results-table th {
+    background: var(--navy);
+    color: rgba(255,255,255,.7);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+  }
+  .results-table td {
+    padding: 18px 20px;
+    font-size: .9rem;
+    color: var(--text);
+    border-bottom: 1px solid #f0ebe4;
+    vertical-align: middle;
+  }
+  .results-table tr:last-child td { border-bottom: none; }
+  .results-table tr:hover td { background: #fdf9f5; }
+  .td-name { font-weight: 700; color: var(--navy); }
+  .td-name small { display: block; font-weight: 400; font-size: .78rem; color: var(--muted); margin-top: 2px; }
+  .td-highlight { color: var(--orange); font-weight: 700; font-family: 'Syne', sans-serif; }
+  .td-green { color: #1db87a; font-weight: 700; }
+  .badge-specialty {
+    display: inline-block;
+    font-size: .7rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 12px;
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--navy);
+    padding: 88px 6%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(232,101,39,.12) 0%, transparent 55%),
+      radial-gradient(circle at 80% 50%, rgba(45,212,160,.08) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .cta-band h2 { font-size: clamp(1.8rem,4vw,3rem); color: var(--white); margin-bottom: 16px; line-height: 1.2; }
+  .cta-band h2 span { color: var(--orange); }
+  .cta-band p { color: rgba(255,255,255,.6); font-size: 1.05rem; max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+  .cta-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-form input {
+    flex: 1 1 220px;
+    background: rgba(255,255,255,.08);
+    border: 1.5px solid rgba(255,255,255,.18);
+    border-radius: 7px;
+    padding: 13px 16px;
+    color: var(--white);
+    font-size: .9rem;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color .2s;
+  }
+  .cta-form input::placeholder { color: rgba(255,255,255,.4); }
+  .cta-form input:focus { border-color: var(--orange); }
+  .cta-form button {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 7px;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background .2s;
+  }
+  .cta-form button:hover { background: var(--orange2); }
+  .cta-note { font-size: .78rem; color: rgba(255,255,255,.35); margin-top: 14px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #091523;
+    color: rgba(255,255,255,.5);
+    padding: 48px 6%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    font-size: .85rem;
+  }
+  .foot-brand { color: var(--white); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 10px; }
+  .foot-desc { line-height: 1.65; font-size: .83rem; }
+  footer h5 { color: rgba(255,255,255,.75); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  footer a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+  footer a:hover { color: var(--white); }
+  .foot-bottom {
+    background: #091523;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .78rem;
+    color: rgba(255,255,255,.3);
+  }
+  .foot-bottom a { color: rgba(255,255,255,.3); text-decoration: none; }
+  .foot-bottom a:hover { color: rgba(255,255,255,.6); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-label { animation: fadeUp .6s ease both; }
+  .hero h1    { animation: fadeUp .6s .1s ease both; }
+  .hero p     { animation: fadeUp .6s .2s ease both; }
+  .hero-btns  { animation: fadeUp .6s .3s ease both; }
+
+  /* RESPONSIVE */
+  @media(max-width:900px) {
+    .stats-bar { grid-template-columns: repeat(3,1fr); }
+    .stat-item:nth-child(4),
+    .stat-item:nth-child(5) { border-top: 1px solid rgba(0,0,0,.1); }
+    .proof-inner { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+  @media(max-width:600px) {
+    .stats-bar { grid-template-columns: repeat(2,1fr); }
+    footer { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-dot"></div>
+    Intellius Medical
+  </a>
+  <div class="nav-links">
+    <a href="#">Services</a>
+    <a href="#">Who We Help</a>
+    <a href="#">Portfolio</a>
+    <a href="#" class="active">Case Study</a>
+    <a href="#">Blog</a>
+    <a href="#">About</a>
+  </div>
+  <a href="#free-audit" class="nav-cta">Ready to Grow?</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">📋 Client Case Studies</div>
+  <h1>Real Practices.<br>Real Numbers.<br><span>Zero Ad Spend.</span></h1>
+  <p>We've taken medical practices from invisible on Google to market leaders — using organic SEO, content strategy, and Google Business optimization. No paid ads. No lock-in contracts. No fake data. Here's the proof.</p>
+  <div class="hero-btns">
+    <a href="#case-studies" class="btn-primary">See All Case Studies <span>↓</span></a>
+    <a href="#free-audit" class="btn-outline">Get Your Free SEO Audit →</a>
+  </div>
+</section>
+
+<!-- AGGREGATE STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">1.1M+</span>
+    <span class="stat-label">Total Google Impressions</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3,000+</span>
+    <span class="stat-label">Patient Calls Generated</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">700+</span>
+    <span class="stat-label">Pages Ranking on Google</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">$0</span>
+    <span class="stat-label">Spent on Paid Ads</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">10x</span>
+    <span class="stat-label">Acquisition Multiple Achieved</span>
+  </div>
+</div>
+
+<!-- HOW WE WORK -->
+<section class="section how-section">
+  <div class="section-label">Our Process</div>
+  <h2 class="section-title" style="color:var(--white)">How We Turn an Invisible Practice<br>into a Patient-Generating Machine</h2>
+  <p class="section-sub">Every practice we work with goes through the same four-step playbook. It's not complicated. But it demands precision, patience, and content that actually answers what patients are searching for at 2 AM.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">🔬</div>
+      <h3>Market Research & Gap Analysis</h3>
+      <p>Before writing a single word, we map your entire competitive landscape. We identify the keywords your competitors aren't covering, the questions patients are asking, and the exact content gaps that are costing you new patients every single day.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">📝</div>
+      <h3>Cornerstone Content Strategy</h3>
+      <p>We don't write 500-word filler pages. We build 1,500–2,500-word cornerstone guides for every condition, treatment, and symptom you treat — optimized for voice search, featured snippets, and local intent so patients find you, not your competitor.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">📍</div>
+      <h3>Google Business Profile Domination</h3>
+      <p>We update your Google Business Profile twice every week with patient questions, service posts, and geo-targeted content. Even with fewer reviews than competitors, our clients consistently rank above them because of content relevancy and posting frequency.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-icon">🔗</div>
+      <h3>Strategic Link Building</h3>
+      <p>We repurpose your content across Quora, Medium, LinkedIn, and Pinterest — building 1–2 quality backlinks per month from legitimate platforms. No Fiverr links. No HARO spam. No AI-generated filler. Just real authority signals that compound over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES SECTION -->
+<section class="section spec-section">
+  <div class="section-label">Who We Work With</div>
+  <h2 class="section-title">We've Done This Across<br>Every Medical Specialty</h2>
+  <p class="section-sub">Our SEO playbook is built specifically for healthcare. We understand the compliance requirements, the patient search behavior, and the competitive dynamics that are unique to each specialty. We don't serve every industry — we serve yours.</p>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <span class="spec-emoji">🫀</span>
+      <h4>Cardiologists</h4>
+      <p>Heart & vascular practices</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">🩹</span>
+      <h4>Wound Care</h4>
+      <p>Specialized wound centers</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">💉</span>
+      <h4>Med Spas</h4>
+      <p>Aesthetic & wellness clinics</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">🧠</span>
+      <h4>Pain Management</h4>
+      <p>Interventional pain clinics</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">🔬</span>
+      <h4>Gastroenterology</h4>
+      <p>GI & digestive specialists</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">🏥</span>
+      <h4>General Surgeons</h4>
+      <p>Surgical & procedural practices</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">🌿</span>
+      <h4>Dermatologists</h4>
+      <p>Skin & cosmetic dermatology</p>
+    </div>
+    <div class="spec-card">
+      <span class="spec-emoji">🦴</span>
+      <h4>Orthopedics</h4>
+      <p>Bone, joint & sports medicine</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div>
+      <div class="section-label">Why It Works</div>
+      <h2>We Don't Focus on Title Tags.<br>We Focus on What Patients Want.</h2>
+      <p>Most agencies obsess over meta descriptions and keyword density. We obsess over the question a patient is typing into Google at 2 AM. That single shift in philosophy is why our clients' pages rank nationally while their competitors' sites stay invisible.</p>
+      <ul class="proof-list">
+        <li>We find the exact question patients are searching — then answer it completely, with home remedies, medications, symptoms, FAQs, and when to see a doctor.</li>
+        <li>We optimize every page for voice search so patients asking "best cardiologist near me" find your practice first.</li>
+        <li>We build location-specific content so you rank for patients in your city, not nationwide visitors who'll never show up.</li>
+        <li>We never use AI-generated filler. We tested 1,000 AI articles — nearly all got penalized by Google. Every word we publish is written by human medical writers.</li>
+        <li>We focus on conversion: every page has a visible "Call Now" button because the goal is patient calls, not website visitors.</li>
+      </ul>
+    </div>
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <blockquote>His previous agency charged $4,000 a month and delivered less than 20 calls. We charged $2,000 a month and delivered 300 to 400 calls a month. We carefully chose the keywords to rank for, either nationwide or local. We focused on things that matter to the patients. This is real data taken directly from Google Search Console. Not exaggerated. Pure data.</blockquote>
+      <cite>— Intellius Medical, on the Cardiologist Case Study</cite>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDY CARDS -->
+<section class="section cases-section" id="case-studies">
+  <div class="section-label">Client Case Studies</div>
+  <h2 class="section-title">Four Practices. Four Transformations.<br>One Playbook.</h2>
+  <p class="section-sub">Every case study below is backed by real Google Search Console data. No stock photos, no hypothetical projections — just the actual numbers from actual practices we've worked with.</p>
+
+  <div class="cases-grid">
+
+    <!-- Case 1: Cardiologist -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-specialty-tag tag-cardio">Cardiology</span>
+        <h3>A Cardiologist in Waco Was Invisible on Google</h3>
+        <div class="case-location">📍 Waco, Texas &nbsp;·&nbsp; Dr. Philip Myatt</div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-val">225K+</span>
+            <span class="metric-lbl">Impressions</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">1,540</span>
+            <span class="metric-lbl">Calls from Maps</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">$2K/mo</span>
+            <span class="metric-lbl">Our Retainer</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">300-400</span>
+            <span class="metric-lbl">Calls/Month Now</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-headline">From less than 20 calls/month to 300–400 calls/month. Half the price of the previous agency.</div>
+        <p>Dr. Myatt was paying $4,000/month to an agency that delivered fewer than 20 calls a month — nearly all referrals. We migrated his site to WordPress, ran a photo shoot, built 152 pages of cornerstone content covering both cardiology and wound care, and updated his Google Business Profile twice a week. Within 16 months: 225,711 Google impressions, 7,586 clicks, and 1,540 patient calls from Maps alone — for $2,000/month.</p>
+        <div class="case-tags">
+          <span class="ctag">Local SEO</span>
+          <span class="ctag">GMB Optimization</span>
+          <span class="ctag">Content Strategy</span>
+          <span class="ctag">152 Pages Built</span>
+          <span class="ctag">$6.50 Cost/Call</span>
+        </div>
+        <a href="cardiologist-seo-case-study.html" class="case-link">Read Full Case Study <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- Case 2: Wound Care -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-specialty-tag tag-wound">Wound Care</span>
+        <h3>A Wound Care Center Nobody Could Find on Google</h3>
+        <div class="case-location">📍 Lubbock, Texas &nbsp;·&nbsp; Dr. Joseph Wolcott</div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-val">914K+</span>
+            <span class="metric-lbl">Impressions</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">1,260</span>
+            <span class="metric-lbl">Calls from Maps</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">438</span>
+            <span class="metric-lbl">Pages Ranking</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">3x</span>
+            <span class="metric-lbl">Growth in 10 mo.</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-headline">From 34,000 to 101,000 impressions per month. Nearly 1 million Google shows per year.</div>
+        <p>Dr. Wolcott's practice offered hyperbaric oxygen therapy, bioengineered skin grafts, Varithena vein treatments, and advanced wound debridement — but when patients searched "wound care near me" in Lubbock, his practice was invisible. We built 438 pages covering every condition, treatment, and patient question. Pages now rank for "varicose vein treatment Lubbock," "hyperbaric oxygen therapy Lubbock," and "clinic for wounds that won't heal" — all at position #1.</p>
+        <div class="case-tags">
+          <span class="ctag">438 Pages Built</span>
+          <span class="ctag">Maps Optimization</span>
+          <span class="ctag">533 Directions/mo</span>
+          <span class="ctag">Medical Content</span>
+          <span class="ctag">Zero Ad Spend</span>
+        </div>
+        <a href="southwest-woundcare-casestudy.html" class="case-link">Read Full Case Study <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- Case 3: MedSpa SEO -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-specialty-tag tag-medspa">Med Spa SEO</span>
+        <h3>How to Get 50+ Patient Calls a Month for a Medspa Using Local SEO Alone</h3>
+        <div class="case-location">📍 Wylie / Plano, Texas &nbsp;·&nbsp; Healthy By Hillary</div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-val">350x</span>
+            <span class="metric-lbl">Impression Growth</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">60+</span>
+            <span class="metric-lbl">Calls/Month</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">20+</span>
+            <span class="metric-lbl">Page 1 Rankings</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">1,000+</span>
+            <span class="metric-lbl">Ranking Queries</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-headline">From 85 impressions/month to 29,593 — with fewer than 10 reviews and zero paid ads.</div>
+        <p>Healthy By Hillary had a clean website and zero visibility. Competitors had 100–500 reviews; they had fewer than 10. Instead of fighting the review war, we ranked for every individual service and procedure: peptide therapy, semaglutide, tirzepatide, Xeomin, Dysport, BHRT, and more — all with geo-targeted content for Wylie, Plano, and Texas. Within 14 months: 20+ page 1 rankings, 1,000+ ranking queries, 60+ calls/month, and a Google Business Profile growing from 13,900 to 29,700 impressions in just 3 months.</p>
+        <div class="case-tags">
+          <span class="ctag">31 New Pages</span>
+          <span class="ctag">Geo-Targeted Content</span>
+          <span class="ctag">GBP Growth 114%</span>
+          <span class="ctag">Mobile Optimized</span>
+          <span class="ctag">No Reviews Needed</span>
+        </div>
+        <a href="medspa-seo-case-study.html" class="case-link">Read Full Case Study <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- Case 4: RenewMe -->
+    <div class="case-card">
+      <div class="case-card-header">
+        <span class="case-specialty-tag tag-spa2">Med Spa · Acquisition</span>
+        <h3>How a Brand New Med Spa Became a $1M+ Business and Got Acquired</h3>
+        <div class="case-location">📍 Los Angeles, California &nbsp;·&nbsp; RenewMe MedSpa</div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-val">$0</span>
+            <span class="metric-lbl">Paid Ad Spend</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">$120K</span>
+            <span class="metric-lbl">Monthly Revenue Peak</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">24 mo</span>
+            <span class="metric-lbl">Zero to $1M+/yr</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val">10x</span>
+            <span class="metric-lbl">Acquisition Multiple</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <div class="case-headline">From zero patients, zero reviews, zero ad budget — to $1M+ annual revenue and acquired by a 100+ location franchise group.</div>
+        <p>RenewMe MedSpa opened in Los Angeles with no patient base, no reviews, and no budget for ads. We advised skipping PPC entirely (the math showed a $7,000/month loss from day one) and instead built 20 cornerstone pages around IV therapy — a high-demand, low-competition niche in LA. By month 3, they had 10–20 new Google clients a month. By month 9, they were the top-ranking med spa for IV therapy in LA. By month 24, revenue crossed $120,000/month — then the franchise acquisition came in at 10x annual revenue.</p>
+        <div class="case-tags">
+          <span class="ctag">IV Therapy Niche</span>
+          <span class="ctag">Market Gap Strategy</span>
+          <span class="ctag">Content Marketing</span>
+          <span class="ctag">Franchise Acquired</span>
+          <span class="ctag">60-70% Conversion Rate</span>
+        </div>
+        <a href="renewmespa-casestudy.html" class="case-link">Read Full Case Study <span>→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS COMPARISON TABLE -->
+<section class="section results-section">
+  <div class="section-label">Results at a Glance</div>
+  <h2 class="section-title">Every Client. Every Number.<br>All Organic. All Real.</h2>
+  <p class="section-sub">These are figures pulled directly from Google Search Console, Google Business Profile, and Maps — not estimates or projections.</p>
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>Practice</th>
+        <th>Specialty</th>
+        <th>Google Impressions</th>
+        <th>Patient Calls</th>
+        <th>Pages Ranking</th>
+        <th>Key Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-name">Dr. Philip Myatt<small>Waco Heart & Vascular</small></td>
+        <td><span class="badge-specialty" style="background:rgba(45,212,160,.1);color:#2dd4a0;">Cardiology</span></td>
+        <td class="td-highlight">225,711</td>
+        <td class="td-highlight">1,540</td>
+        <td>23 pages</td>
+        <td class="td-green">$6.50/patient call (vs $200+ on Google Ads)</td>
+      </tr>
+      <tr>
+        <td class="td-name">Dr. Joseph Wolcott<small>SW Regional Wound Care</small></td>
+        <td><span class="badge-specialty" style="background:rgba(232,101,39,.1);color:#e86527;">Wound Care</span></td>
+        <td class="td-highlight">914,768</td>
+        <td class="td-highlight">1,260</td>
+        <td>438 pages</td>
+        <td class="td-green">34K → 101K impressions/month (3x in 10 months)</td>
+      </tr>
+      <tr>
+        <td class="td-name">Healthy By Hillary<small>Medspa · Wylie/Plano TX</small></td>
+        <td><span class="badge-specialty" style="background:rgba(180,120,255,.1);color:#c89aff;">Med Spa</span></td>
+        <td class="td-highlight">29,593/mo</td>
+        <td class="td-highlight">60+/mo</td>
+        <td>20+ page 1</td>
+        <td class="td-green">85 → 29,593 impressions/month (350x growth)</td>
+      </tr>
+      <tr>
+        <td class="td-name">RenewMe MedSpa<small>Los Angeles, CA</small></td>
+        <td><span class="badge-specialty" style="background:rgba(255,200,80,.1);color:#d4a200;">Med Spa</span></td>
+        <td class="td-highlight">—</td>
+        <td class="td-highlight">10–20/mo new clients</td>
+        <td>—</td>
+        <td class="td-green">$0 to $120K/month revenue → acquired at 10x</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="free-audit">
+  <h2>How Many Patients Is<br><span>Your Practice Losing to Google?</span></h2>
+  <p>We'll audit your website, your Google Maps profile, your competitors, and your content — and tell you exactly where the gaps are. If we don't find at least 10 growth opportunities, we'll tell you not to hire us.</p>
+  <div class="cta-form">
+    <input type="text" placeholder="Your Name (Dr. Jane Smith)">
+    <input type="email" placeholder="Your Email Address">
+    <button type="submit">Get My Free Audit →</button>
+  </div>
+  <p class="cta-note">We'll review your site and send the audit within 48 hours. No spam, ever.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="foot-brand">Intellius Medical</div>
+    <p class="foot-desc">Medical SEO agency helping healthcare practices dominate Google without paid ads. 100+ healthcare clients served. 10+ years in healthcare marketing.</p>
+  </div>
+  <div>
+    <h5>Case Studies</h5>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Services</h5>
+    <ul>
+      <li><a href="#">Digital Marketing</a></li>
+      <li><a href="#">Medical SEO</a></li>
+      <li><a href="#">SEO Audit</a></li>
+      <li><a href="#">Local SEO</a></li>
+      <li><a href="#">Technical SEO</a></li>
+      <li><a href="#">Link Building</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Who We Help</h5>
+    <ul>
+      <li><a href="#">Gastroenterologist</a></li>
+      <li><a href="#">Cardiologist</a></li>
+      <li><a href="#">Wound Care</a></li>
+      <li><a href="#">Pain Management</a></li>
+      <li><a href="#">Med Spa</a></li>
+      <li><a href="#">View All</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Follow Us</h5>
+    <ul>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="foot-bottom">
+  <span>© 2025 Intellius LLC – All Rights Reserved</span>
+  <span>
+    <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#">Terms &amp; Conditions</a>
+  </span>
+</div>
+
+</body>
+</html>
