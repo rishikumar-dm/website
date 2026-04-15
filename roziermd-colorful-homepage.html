@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Antonio Rozier, MD | Zen Interventional Pain Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #00C17C;
+    --emerald-dark: #00965F;
+    --teal: #00B4D8;
+    --teal-dark: #0077A8;
+    --navy: #0D1B2A;
+    --navy-mid: #1A2E42;
+    --purple: #6A0DAD;
+    --purple-light: #9B3DD8;
+    --gold: #F4A923;
+    --coral: #FF6B6B;
+    --white: #FFFFFF;
+    --off-white: #F4FAF7;
+    --light-gray: #F0F4F8;
+    --text-dark: #0D1B2A;
+    --text-mid: #3D5066;
+    --text-light: #6B839A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    background: var(--white);
+  }
+
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,193,124,0.15);
+    padding: 14px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy);
+    text-decoration: none;
+  }
+  .nav-logo span {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--emerald));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 13px; font-weight: 700;
+  }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--emerald); }
+  .nav-ctas { display: flex; gap: 10px; align-items: center; }
+  .btn-book {
+    background: linear-gradient(135deg, var(--emerald), var(--teal));
+    color: white; border: none; padding: 10px 22px; border-radius: 50px;
+    font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,193,124,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-book:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,193,124,0.45); }
+  .btn-call {
+    background: linear-gradient(135deg, var(--teal-dark), var(--purple-light));
+    color: white; padding: 10px 22px; border-radius: 50px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    box-shadow: 0 4px 15px rgba(106,13,173,0.25);
+    transition: transform 0.2s;
+  }
+  .btn-call:hover { transform: translateY(-2px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #EAF9F2 0%, #E0F4FF 35%, #F0E8FF 70%, #FFF3E0 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -150px; left: -150px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(106,13,173,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; width: 100%; display: flex; align-items: center; gap: 60px; }
+  .hero-left { flex: 1; animation: fadeUp 0.8s ease both; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, rgba(0,193,124,0.15), rgba(0,180,216,0.15));
+    border: 1px solid rgba(0,193,124,0.3);
+    padding: 6px 16px; border-radius: 50px; margin-bottom: 24px;
+    font-size: 12px; font-weight: 600; color: var(--emerald-dark);
+    letter-spacing: 0.5px;
+  }
+  .hero-badge::before { content: '+'; font-size: 14px; }
+  .hero-title { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; margin-bottom: 20px; }
+  .hero-title .accent { color: var(--emerald); display: block; }
+  .hero-subtitle { font-size: 15px; color: var(--text-mid); line-height: 1.7; max-width: 420px; margin-bottom: 32px; }
+  .hero-stats { display: flex; gap: 28px; margin-bottom: 36px; }
+  .stat { text-align: left; }
+  .stat-num { font-size: 26px; font-weight: 800; color: var(--navy); }
+  .stat-num span { font-size: 14px; }
+  .stat-label { font-size: 11px; color: var(--text-light); font-weight: 500; margin-top: 2px; }
+  .stat:nth-child(2) .stat-num { color: var(--gold); }
+  .stat:nth-child(3) .stat-num { color: var(--teal-dark); }
+  .hero-btns { display: flex; gap: 14px; margin-bottom: 28px; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--emerald), var(--teal));
+    color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none;
+    font-size: 15px; font-weight: 600; cursor: pointer; border: none;
+    box-shadow: 0 6px 24px rgba(0,193,124,0.4);
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,193,124,0.5); }
+  .btn-secondary {
+    color: var(--text-dark); padding: 14px 28px; border-radius: 50px; text-decoration: none;
+    font-size: 15px; font-weight: 600; border: 2px solid rgba(0,0,0,0.12);
+    transition: all 0.3s; background: white;
+  }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
+  .hero-trust { display: flex; gap: 20px; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--text-mid); }
+  .trust-icon { font-size: 14px; }
+  .hero-right { flex: 1; position: relative; animation: fadeIn 1s ease both; }
+  .hero-img-wrap {
+    position: relative; width: 100%; max-width: 500px; margin-left: auto;
+    border-radius: 24px; overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+  }
+  .hero-img-wrap img { width: 100%; height: 420px; object-fit: cover; opacity: 0.9; }
+  .hero-img-placeholder {
+    width: 100%; height: 420px;
+    background: linear-gradient(135deg, #1A2E42 0%, #0D1B2A 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.3); font-size: 14px;
+  }
+  .card-float {
+    position: absolute; background: white; border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 14px 18px;
+  }
+  .card-float.doctor { bottom: 24px; left: -20px; min-width: 220px; }
+  .card-float.doctor .label { font-size: 10px; color: var(--teal); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .card-float.doctor .name { font-size: 16px; font-weight: 700; color: var(--navy); font-family: 'Playfair Display', serif; }
+  .card-float.doctor .title { font-size: 11px; color: var(--text-mid); margin-top: 2px; }
+  .card-float.top-left {
+    top: 20px; left: -20px;
+    background: linear-gradient(135deg, var(--teal), var(--emerald));
+    color: white; min-width: 170px;
+  }
+  .card-float.top-left .label { font-size: 10px; font-weight: 700; opacity: 0.8; letter-spacing: 1px; margin-bottom: 4px; }
+  .card-float.top-left .value { font-size: 14px; font-weight: 700; }
+  .card-float.top-right {
+    top: 50%; right: -20px; transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--purple-light), var(--purple));
+    color: white; min-width: 130px;
+  }
+  .card-float.top-right .label { font-size: 10px; font-weight: 700; opacity: 0.8; margin-bottom: 4px; }
+  .card-float.top-right .value { font-size: 13px; font-weight: 700; }
+
+  /* ── PAIN SECTION ── */
+  .pain-section {
+    padding: 100px 48px;
+    background: white;
+  }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-title { font-size: clamp(28px, 4vw, 42px); color: var(--navy); }
+  .section-sub { font-size: 15px; color: var(--text-mid); margin-top: 12px; }
+  .section-sub span { color: var(--teal-dark); text-decoration: underline; cursor: pointer; }
+  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+  .pain-card {
+    border-radius: 18px; overflow: hidden; cursor: pointer; position: relative;
+    height: 180px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .pain-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.18); }
+  .pain-card:nth-child(1) { background: linear-gradient(135deg, #1A2E42, #0D3B5C); }
+  .pain-card:nth-child(2) { background: linear-gradient(135deg, #004D40, #00695C); }
+  .pain-card:nth-child(3) { background: linear-gradient(135deg, #1A237E, #283593); }
+  .pain-card:nth-child(4) { background: linear-gradient(135deg, #4A148C, #6A1B9A); }
+  .pain-card:nth-child(5) { background: linear-gradient(135deg, #B71C1C, #C62828); }
+  .pain-card:nth-child(6) { background: linear-gradient(135deg, #0D47A1, #1565C0); }
+  .pain-img {
+    position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%;
+    opacity: 0.35; mix-blend-mode: luminosity;
+  }
+  .pain-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  }
+  .pain-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; }
+  .pain-icon { font-size: 20px; margin-bottom: 6px; opacity: 0.85; }
+  .pain-label { font-size: 14px; font-weight: 700; color: white; }
+
+  /* ── CONDITIONS ── */
+  .conditions-section {
+    padding: 100px 48px;
+    background: linear-gradient(160deg, var(--navy) 0%, #0A2540 50%, #0D1B2A 100%);
+    position: relative; overflow: hidden;
+  }
+  .conditions-section::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(0,180,216,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(106,13,173,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .conditions-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,193,124,0.2); border: 1px solid rgba(0,193,124,0.3);
+    color: var(--emerald); padding: 6px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; margin-bottom: 20px;
+  }
+  .conditions-section .section-title { color: white; }
+  .conditions-section .section-sub { color: rgba(255,255,255,0.6); }
+  .cond-grid { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px; 
+    max-width: 960px; margin: 0 auto 40px;
+  }
+  .cond-card {
+    border-radius: 16px; overflow: hidden; cursor: pointer; position: relative;
+    height: 180px; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .cond-card:hover { transform: translateY(-4px); }
+  .cond-card:nth-child(1) { grid-row: span 2; height: auto; min-height: 376px; background: linear-gradient(160deg, #1a6b3c, #0d3b5c); }
+  .cond-card:nth-child(2) { background: linear-gradient(135deg, #0a4a6b, #0d3b8a); }
+  .cond-card:nth-child(3) { background: linear-gradient(135deg, #4a0d6b, #6a1b8a); }
+  .cond-card:nth-child(4) { background: linear-gradient(135deg, #006b5c, #00897B); }
+  .cond-card:nth-child(5) { background: linear-gradient(135deg, #8a4a00, #b05e00); }
+  .cond-card:nth-child(6) { grid-column: span 1; background: linear-gradient(135deg, #5c0d1a, #7B1FA2); }
+  .cond-card:nth-child(7) { background: linear-gradient(135deg, #003366, #0D47A1); }
+  .cond-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+  .cond-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.2) 100%); }
+  .cond-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; }
+  .cond-icon { font-size: 22px; margin-bottom: 8px; opacity: 0.9; }
+  .cond-label { font-size: 16px; font-weight: 700; color: white; }
+  .btn-explore {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 0 auto; padding: 14px 32px; border-radius: 50px;
+    background: transparent; border: 2px solid rgba(255,255,255,0.3);
+    color: white; font-size: 15px; font-weight: 600; cursor: pointer;
+    text-decoration: none; transition: all 0.3s;
+    display: block; width: fit-content; margin: 0 auto;
+  }
+  .btn-explore:hover { background: rgba(255,255,255,0.1); border-color: var(--emerald); color: var(--emerald); }
+
+  /* ── TREATMENTS ── */
+  .treatments-section {
+    padding: 100px 48px;
+    background: linear-gradient(135deg, #EAF9F2 0%, #E0F4FF 50%, #EEE8FF 100%);
+    position: relative;
+  }
+  .treatments-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,180,216,0.15); border: 1px solid rgba(0,180,216,0.3);
+    color: var(--teal-dark); padding: 6px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; margin-bottom: 20px;
+  }
+  .tabs { display: flex; gap: 4px; margin-bottom: 50px; flex-wrap: wrap; }
+  .tab {
+    padding: 10px 22px; border-radius: 50px; font-size: 14px; font-weight: 600;
+    cursor: pointer; border: none; transition: all 0.3s;
+    background: white; color: var(--text-mid);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .tab.active { background: linear-gradient(135deg, var(--emerald), var(--teal)); color: white; box-shadow: 0 4px 15px rgba(0,193,124,0.35); }
+  .treatment-layout { display: flex; gap: 50px; align-items: flex-start; max-width: 1100px; margin: 0 auto; }
+  .treatment-visual {
+    flex: 1; border-radius: 24px; overflow: hidden;
+    background: var(--navy); min-height: 420px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+  .treatment-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,193,124,0.15), rgba(106,13,173,0.15));
+  }
+  .spine-visual {
+    font-size: 80px; position: relative; z-index: 1;
+    filter: drop-shadow(0 0 30px rgba(0,193,124,0.4));
+  }
+  .treatment-list { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+  .treatment-item {
+    background: white; border-radius: 14px; padding: 20px 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06); cursor: pointer;
+    transition: all 0.3s; border-left: 4px solid transparent;
+  }
+  .treatment-item:hover, .treatment-item.active { 
+    border-left-color: var(--emerald); 
+    box-shadow: 0 6px 24px rgba(0,193,124,0.15); 
+    transform: translateX(4px);
+  }
+  .treatment-item h4 { font-size: 16px; font-weight: 700; color: var(--navy); font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 8px; }
+  .treatment-meta { display: flex; gap: 24px; }
+  .t-meta { font-size: 12px; color: var(--text-light); }
+  .t-meta span { font-weight: 700; }
+  .t-meta span.same-day { color: var(--emerald); }
+  .t-meta span.immediate { color: var(--gold); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); display: inline-block; margin-right: 6px; }
+  .why-box {
+    background: linear-gradient(135deg, rgba(0,193,124,0.08), rgba(0,180,216,0.08));
+    border: 1px solid rgba(0,193,124,0.2);
+    border-radius: 14px; padding: 20px; margin-top: 20px;
+  }
+  .why-box h5 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .why-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .why-list li { font-size: 13px; color: var(--text-mid); display: flex; gap: 6px; }
+  .why-list li::before { content: '•'; color: var(--emerald); font-weight: 700; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section {
+    padding: 100px 48px;
+    background: linear-gradient(135deg, var(--navy) 0%, #0A2540 100%);
+    position: relative; overflow: hidden;
+  }
+  .how-section::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(244,169,35,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(0,193,124,0.07) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .how-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,180,216,0.2); border: 1px solid rgba(0,180,216,0.3);
+    color: var(--teal); padding: 6px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; margin-bottom: 20px;
+  }
+  .how-section .section-title { color: white; }
+  .how-section .section-sub { color: rgba(255,255,255,0.5); max-width: 500px; margin: 12px auto 0; }
+  .steps { max-width: 900px; margin: 60px auto 0; display: flex; flex-direction: column; gap: 16px; }
+  .step {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 24px 28px;
+    display: flex; gap: 24px; align-items: center;
+    transition: background 0.3s;
+  }
+  .step:hover { background: rgba(255,255,255,0.08); }
+  .step-num {
+    font-size: 40px; font-weight: 800; font-family: 'Playfair Display', serif;
+    min-width: 60px;
+  }
+  .step:nth-child(1) .step-num { color: var(--emerald); }
+  .step:nth-child(2) .step-num { color: var(--teal); }
+  .step:nth-child(3) .step-num { color: var(--gold); }
+  .step:nth-child(4) .step-num { color: var(--coral); }
+  .step-icon-wrap {
+    width: 44px; height: 44px; border-radius: 12px; min-width: 44px;
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .step:nth-child(1) .step-icon-wrap { background: rgba(0,193,124,0.15); }
+  .step:nth-child(2) .step-icon-wrap { background: rgba(0,180,216,0.15); }
+  .step:nth-child(3) .step-icon-wrap { background: rgba(244,169,35,0.15); }
+  .step:nth-child(4) .step-icon-wrap { background: rgba(255,107,107,0.15); }
+  .step-info { flex: 1; }
+  .step-info h4 { font-size: 17px; font-weight: 700; color: white; margin-bottom: 6px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .step-info p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+  .step-time { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+  .btn-journey {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--emerald), var(--teal));
+    color: white; padding: 15px 34px; border-radius: 50px;
+    font-size: 16px; font-weight: 700; text-decoration: none; border: none; cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0,193,124,0.4);
+    transition: all 0.3s; margin-top: 40px;
+  }
+  .btn-journey:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,193,124,0.5); }
+
+  /* ── DOCTOR ── */
+  .doctor-section {
+    padding: 100px 48px;
+    background: linear-gradient(135deg, #F0F9FF 0%, #EAF9F2 50%, #F5EEFF 100%);
+  }
+  .doctor-inner { display: flex; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .doctor-img-wrap {
+    flex: 1; border-radius: 24px; overflow: hidden; position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15); min-height: 500px;
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+  }
+  .doctor-img-placeholder {
+    width: 100%; height: 500px;
+    background: linear-gradient(160deg, #1A2E42, #0D1B2A);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 80px;
+  }
+  .doc-badge {
+    position: absolute; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, var(--emerald), var(--teal));
+    color: white; border-radius: 14px; padding: 12px 18px;
+  }
+  .doc-badge .badge-num {
+    font-size: 24px; font-weight: 800; font-family: 'Playfair Display', serif;
+  }
+  .doc-badge .badge-label { font-size: 11px; opacity: 0.8; }
+  .doctor-content { flex: 1; }
+  .doc-meet {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,193,124,0.12); border: 1px solid rgba(0,193,124,0.25);
+    color: var(--emerald-dark); padding: 5px 14px; border-radius: 50px;
+    font-size: 11px; font-weight: 700; margin-bottom: 18px; letter-spacing: 0.5px;
+  }
+  .doctor-content h2 { font-size: clamp(28px, 3.5vw, 42px); color: var(--navy); margin-bottom: 16px; }
+  .doctor-content p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+  .doctor-content p strong { color: var(--navy); font-weight: 700; }
+  .doctor-cards { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+  .doc-card {
+    display: flex; align-items: center; gap: 14px;
+    background: white; border-radius: 14px; padding: 16px 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .doc-card-icon {
+    width: 42px; height: 42px; border-radius: 12px; min-width: 42px;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+  }
+  .doc-card:nth-child(1) .doc-card-icon { background: rgba(0,193,124,0.12); }
+  .doc-card:nth-child(2) .doc-card-icon { background: rgba(0,180,216,0.12); }
+  .doc-card-text h5 { font-size: 14px; font-weight: 700; color: var(--navy); font-family: 'Plus Jakarta Sans', sans-serif; }
+  .doc-card-text p { font-size: 12px; color: var(--text-light); margin: 0; }
+  .philosophy-box {
+    background: var(--navy); border-radius: 16px; padding: 22px 24px; margin-top: 24px;
+  }
+  .philosophy-box h5 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 14px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .philosophy-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .philosophy-list li { font-size: 13px; color: rgba(255,255,255,0.65); display: flex; gap: 8px; }
+  .philosophy-list li::before { content: '•'; color: var(--emerald); font-weight: 700; }
+  .doc-stats { display: flex; gap: 32px; margin-top: 28px; }
+  .doc-stat-num { font-size: 28px; font-weight: 800; font-family: 'Playfair Display', serif; }
+  .doc-stat-num:nth-child(1) { color: var(--emerald); }
+  .doc-stat-label { font-size: 11px; color: var(--text-light); font-weight: 500; margin-top: 2px; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    padding: 100px 48px;
+    background: white;
+  }
+  .test-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(244,169,35,0.12); border: 1px solid rgba(244,169,35,0.3);
+    color: #B07800; padding: 6px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; margin-bottom: 20px;
+  }
+  .stars { color: var(--gold); font-size: 20px; margin-bottom: 6px; }
+  .stars-sm { color: var(--gold); font-size: 15px; margin-bottom: 10px; }
+  .overall-rating { font-size: 15px; font-weight: 600; color: var(--text-mid); margin-bottom: 50px; }
+  .test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1000px; margin: 0 auto 50px; }
+  .test-card {
+    background: white; border-radius: 18px; padding: 24px;
+    border: 1.5px solid rgba(0,0,0,0.07);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .test-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  .test-card:nth-child(1) { border-top: 3px solid var(--emerald); }
+  .test-card:nth-child(2) { border-top: 3px solid var(--teal); }
+  .test-card:nth-child(3) { border-top: 3px solid var(--gold); }
+  .test-card:nth-child(4) { border-top: 3px solid var(--purple-light); }
+  .test-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+  .test-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 50px;
+    font-size: 11px; font-weight: 600; margin-bottom: 16px;
+  }
+  .test-card:nth-child(1) .test-tag { background: rgba(0,193,124,0.12); color: var(--emerald-dark); }
+  .test-card:nth-child(2) .test-tag { background: rgba(0,180,216,0.12); color: var(--teal-dark); }
+  .test-card:nth-child(3) .test-tag { background: rgba(244,169,35,0.12); color: #B07800; }
+  .test-card:nth-child(4) .test-tag { background: rgba(155,61,216,0.12); color: var(--purple); }
+  .test-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .test-meta { font-size: 12px; color: var(--text-light); }
+  .stats-banner {
+    background: linear-gradient(135deg, var(--emerald-dark) 0%, var(--teal-dark) 50%, var(--navy-mid) 100%);
+    border-radius: 20px; padding: 36px 40px; max-width: 800px; margin: 0 auto;
+    display: flex; gap: 0;
+  }
+  .banner-stat { flex: 1; text-align: center; position: relative; }
+  .banner-stat + .banner-stat::before {
+    content: ''; position: absolute; left: 0; top: 20%; bottom: 20%;
+    width: 1px; background: rgba(255,255,255,0.2);
+  }
+  .banner-num { font-size: 36px; font-weight: 800; color: white; font-family: 'Playfair Display', serif; }
+  .banner-sup { font-size: 18px; vertical-align: super; }
+  .banner-label { font-size: 12px; color: rgba(255,255,255,0.65); font-weight: 500; margin-top: 4px; }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 100px 48px;
+    background: linear-gradient(135deg, var(--navy) 0%, #0A2540 40%, #1A1040 100%);
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(0,193,124,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(106,13,173,0.12) 0%, transparent 50%);
+  }
+  .cta-inner { display: flex; gap: 60px; align-items: flex-start; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+  .cta-left { flex: 1; }
+  .cta-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,193,124,0.2); border: 1px solid rgba(0,193,124,0.3);
+    color: var(--emerald); padding: 6px 14px; border-radius: 50px;
+    font-size: 12px; font-weight: 600; margin-bottom: 24px;
+  }
+  .cta-title { font-size: clamp(30px, 4vw, 48px); color: white; line-height: 1.1; margin-bottom: 16px; }
+  .cta-title span { color: var(--emerald); }
+  .cta-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 340px; }
+  .contact-cards { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+  .contact-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 16px 20px;
+    display: flex; align-items: center; gap: 14px;
+    transition: background 0.2s;
+  }
+  .contact-card:hover { background: rgba(255,255,255,0.1); }
+  .cc-icon {
+    width: 40px; height: 40px; border-radius: 10px; min-width: 40px;
+    display: flex; align-items: center; justify-content: center; font-size: 17px;
+  }
+  .contact-card:nth-child(1) .cc-icon { background: rgba(0,193,124,0.2); }
+  .contact-card:nth-child(2) .cc-icon { background: rgba(0,180,216,0.2); }
+  .contact-card:nth-child(3) .cc-icon { background: rgba(244,169,35,0.2); }
+  .cc-label { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+  .cc-value { font-size: 14px; font-weight: 600; color: white; margin-top: 2px; }
+  .hours-box {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 20px; margin-top: 16px;
+  }
+  .hours-box h5 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 10px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .hours-row { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.55); padding: 4px 0; }
+  .hours-row span:last-child { font-weight: 600; color: rgba(255,255,255,0.7); }
+  .hours-row span:last-child.closed { color: var(--coral); }
+  .cta-form {
+    flex: 1; background: white; border-radius: 24px; padding: 36px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .form-title { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { font-size: 12px; font-weight: 600; color: var(--text-mid); display: block; margin-bottom: 6px; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 12px 16px; border-radius: 10px;
+    border: 1.5px solid rgba(0,0,0,0.1); font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; color: var(--text-dark); background: var(--light-gray);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: var(--emerald); background: white;
+  }
+  .form-group textarea { height: 110px; resize: none; }
+  .btn-submit {
+    width: 100%; padding: 15px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, var(--emerald), var(--teal));
+    color: white; font-size: 15px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,193,124,0.4);
+    transition: all 0.3s; font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,193,124,0.5); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(135deg, #0A2010 0%, #0a2540 100%);
+    padding: 60px 48px 30px;
+    color: rgba(255,255,255,0.65);
+  }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 800px; margin: 0 auto 40px; }
+  .footer-about h4 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 14px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .footer-about p { font-size: 13px; line-height: 1.7; }
+  .footer-contact h4 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 14px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .footer-contact p { font-size: 13px; line-height: 1.9; }
+  .footer-contact a { color: var(--emerald); text-decoration: none; }
+  .footer-bottom {
+    text-align: center; padding-top: 24px; margin-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px; color: rgba(255,255,255,0.3);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .float { animation: float 4s ease-in-out infinite; }
+
+  /* ── CENTER HELPERS ── */
+  .text-center { text-align: center; }
+  .mt-center { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="#">
+    <span>ZEN</span>
+    <span style="border:none;background:none;color:var(--navy);font-size:13px;font-weight:600;line-height:1.2;">Interventional<br>Pain·Wellness</span>
+  </a>
+  <div class="nav-links">
+    <a href="#">About Me</a>
+    <a href="#">Services</a>
+    <a href="#">Treatments</a>
+    <a href="#">Common Ailments</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="#cta" class="btn-book">Book Now</a>
+    <a href="tel:6822532886" class="btn-call">Call: 682-253-2886</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Advanced Pain Management</div>
+      <h1 class="hero-title">
+        Precision
+        <span class="accent">Pain Relief</span>
+        Without Surgery
+      </h1>
+      <p class="hero-subtitle">
+        Dr. Antonio Rozier specializes in minimally invasive, image-guided treatments that target the root cause not just symptoms.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">500<span>+</span></div>
+          <div class="stat-label">Patients Treated</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9<span>★</span></div>
+          <div class="stat-label">Patient Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">95<span>%</span></div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#cta" class="btn-primary">▶ Book Consultation</a>
+        <a href="#how" class="btn-secondary">How It Works</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="trust-icon">✅</span> Board Certified</div>
+        <div class="trust-item"><span class="trust-icon">🚫</span> No Surgery</div>
+        <div class="trust-item"><span class="trust-icon">⚡</span> Same-Day Relief</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <div class="hero-img-placeholder">🩺</div>
+        <div class="card-float top-left">
+          <div class="label">Advanced Diagnostic</div>
+          <div class="value">Image-Guided Precision</div>
+        </div>
+        <div class="card-float doctor">
+          <div class="label">YOUR PHYSICIAN</div>
+          <div class="name">Dr. Antonio Rozier, MD</div>
+          <div class="title">Board Certified, Interventional Pain Management</div>
+        </div>
+        <div class="card-float top-right">
+          <div class="label">Minimally Invasive</div>
+          <div class="value">Targeted Relief</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN SYMPTOMS -->
+<section class="pain-section">
+  <div class="section-header">
+    <h2 class="section-title">Do you feel any of these?</h2>
+    <p class="section-sub">Click to see how we can <span>help</span> with your specific <span>pain</span></p>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-overlay"></div>
+      <div class="pain-content">
+        <div class="pain-icon">🦵</div>
+        <div class="pain-label">Pain shooting down the leg</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-overlay"></div>
+      <div class="pain-content">
+        <div class="pain-icon">🤕</div>
+        <div class="pain-label">Neck pain + arm tingling</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-overlay"></div>
+      <div class="pain-content">
+        <div class="pain-icon">🔙</div>
+        <div class="pain-label">Back pain that worsens</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-overlay"></div>
+      <div class="pain-content">
+        <div class="pain-icon">🦴</div>
+        <div class="pain-label">Joint pain</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-overlay"></div>
+      <div class="pain-content">
+        <div class="pain-icon">😣</div>
+        <div class="pain-label">Headaches / facial pain</div>
+      </div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-overlay"></div>
+      <div class="pain-content">
+        <div class="pain-icon">✋</div>
+        <div class="pain-label">Numbness / neuropathy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section class="conditions-section">
+  <div class="text-center" style="margin-bottom: 50px;">
+    <div class="mt-center">
+      <div class="conditions-badge">✦ Comprehensive Care</div>
+    </div>
+    <h2 class="section-title" style="color:white;">Conditions We Treat</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.55); margin-top:12px;">
+      From diagnosis to recovery, we specialize in complex pain conditions with proven, minimally invasive techniques.
+    </p>
+  </div>
+  <div class="cond-grid" style="max-width:960px; margin:0 auto 40px;">
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">🦴</div>
+        <div class="cond-label">Chronic Back Pain</div>
+      </div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">🫀</div>
+        <div class="cond-label">Neck & Cervical Pain</div>
+      </div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">⚡</div>
+        <div class="cond-label">Sciatica & Nerve Pain</div>
+      </div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">💠</div>
+        <div class="cond-label">Herniated Disc</div>
+      </div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">👑</div>
+        <div class="cond-label">Spinal Stenosis</div>
+      </div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">🦵</div>
+        <div class="cond-label">Joint Pain</div>
+      </div>
+    </div>
+    <div class="cond-card">
+      <div class="cond-overlay"></div>
+      <div class="cond-content">
+        <div class="cond-icon">🧬</div>
+        <div class="cond-label">Facet Joint Pain</div>
+      </div>
+    </div>
+  </div>
+  <!-- Row 2 continues from cond-grid - Arthritis as wide card below -->
+  <div style="max-width:960px; margin: 0 auto 40px;">
+    <div class="cond-card" style="height:180px; background: linear-gradient(135deg, #006064, #00838F); border-radius:16px; overflow:hidden; cursor:pointer; position:relative; transition: transform 0.3s;">
+      <div class="cond-overlay"></div>
+      <div class="cond-content" style="position:absolute; bottom:0; left:0; right:0; padding:20px;">
+        <div class="cond-icon">👑</div>
+        <div class="cond-label">Arthritis</div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <a href="#" class="btn-explore">▶ Explore all Conditions</a>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section class="treatments-section" id="treatments">
+  <div class="text-center" style="margin-bottom: 50px;">
+    <div class="mt-center">
+      <div class="treatments-badge">⚕ Image-Guided Precision</div>
+    </div>
+    <h2 class="section-title">Advanced Treatments</h2>
+    <p class="section-sub" style="margin-top:12px;">Every procedure is performed with ultrasound or fluoroscopy guidance for maximum safety and effectiveness.</p>
+  </div>
+  <div class="tabs">
+    <button class="tab active">Spine &amp; Disc</button>
+    <button class="tab">Nerve Blocks</button>
+    <button class="tab">Advanced Interventional</button>
+    <button class="tab">Regenerative Medicine</button>
+  </div>
+  <div class="treatment-layout">
+    <div class="treatment-visual">
+      <div class="spine-visual">🦴</div>
+    </div>
+    <div class="treatment-list">
+      <div class="treatment-item active">
+        <h4>Epidural Steroid Injections</h4>
+        <div class="treatment-meta">
+          <div class="t-meta">Duration <span>15-30 min</span></div>
+          <div class="t-meta">Recovery <span class="same-day">Same day</span></div>
+        </div>
+      </div>
+      <div class="treatment-item">
+        <h4>Facet Joint Injections</h4>
+        <div class="treatment-meta">
+          <div class="t-meta">Duration <span>10-20 min</span></div>
+          <div class="t-meta">Recovery <span class="immediate">Immediate</span></div>
+        </div>
+      </div>
+      <div class="treatment-item">
+        <h4>Radiofrequency Ablation</h4>
+        <div class="treatment-meta">
+          <div class="t-meta">Duration <span>30-45 min</span></div>
+          <div class="t-meta">Recovery <span>24 hours</span></div>
+        </div>
+      </div>
+      <div class="treatment-item">
+        <h4>Medial Branch Blocks</h4>
+        <div class="treatment-meta">
+          <div class="t-meta">Duration <span>15-30 min</span></div>
+          <div class="t-meta">Recovery <span class="same-day">Same day</span></div>
+        </div>
+      </div>
+      <div class="why-box">
+        <h5>Why Choose Image-Guided Treatment?</h5>
+        <ul class="why-list">
+          <li>Real-time visualization for precision</li>
+          <li>Minimally invasive with faster recovery</li>
+          <li>Higher success rates than blind injections</li>
+          <li>Reduced risk of complications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="text-center mt-center">
+    <div class="how-badge">🗺 Your Journey to Relief</div>
+    <h2 class="section-title" style="color:white;">How It Works</h2>
+    <p class="section-sub">A proven, step-by-step approach to diagnosing and treating your pain—with transparency at every stage.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon-wrap">📋</div>
+      <div class="step-info">
+        <h4>Comprehensive Evaluation</h4>
+        <p>In-depth consultation reviewing symptoms, medical history, and previous treatments. Physical examination to identify pain sources.</p>
+      </div>
+      <div class="step-time">🕐 45-60 min</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon-wrap">🔬</div>
+      <div class="step-info">
+        <h4>Precision Diagnosis</h4>
+        <p>Advanced imaging (X-ray, MRI, CT) combined with clinical correlation. We pinpoint the exact cause — no guessing.</p>
+      </div>
+      <div class="step-time">🕐 1-2 weeks</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon-wrap">✅</div>
+      <div class="step-info">
+        <h4>Personalized Treatment Plan</h4>
+        <p>Evidence-based interventions tailored to your condition. Clear explanation of procedure, benefits, and expectations.</p>
+      </div>
+      <div class="step-time">🕐 Ongoing</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon-wrap">🎯</div>
+      <div class="step-info">
+        <h4>Follow-Up &amp; Optimization</h4>
+        <p>Track progress, adjust treatments as needed. Long-term pain management strategy for sustained relief.</p>
+      </div>
+      <div class="step-time">🕐 As needed</div>
+    </div>
+  </div>
+  <div class="text-center" style="margin-top:40px;">
+    <a href="#cta" class="btn-journey">▶ Start Your Recovery Journey</a>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section class="doctor-section">
+  <div class="doctor-inner">
+    <div class="doctor-img-wrap">
+      <div class="doctor-img-placeholder">👨🏾‍⚕️</div>
+      <div class="doc-badge">
+        <div class="badge-num">500+</div>
+        <div class="badge-label">Patients Helped</div>
+      </div>
+    </div>
+    <div class="doctor-content">
+      <div class="doc-meet">☑ Meet Your Physician</div>
+      <h2>Dr. Antonio Rozier, MD</h2>
+      <p>
+        Dr. Rozier is a board-certified specialist in interventional pain management, focusing on
+        <strong>minimally invasive, image-guided treatments</strong> that address the root cause of pain.
+      </p>
+      <p>
+        With extensive training and a commitment to evidence-based care, Dr. Rozier takes a conservative-first approach—recommending procedures only when they align with your diagnosis and goals.
+      </p>
+      <div class="doctor-cards">
+        <div class="doc-card">
+          <div class="doc-card-icon">🎓</div>
+          <div class="doc-card-text">
+            <h5>Board Certified</h5>
+            <p>Interventional Pain Management specialist</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-card-icon">🔬</div>
+          <div class="doc-card-text">
+            <h5>Image-Guided Expert</h5>
+            <p>Ultrasound &amp; fluoroscopy procedures</p>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-card-icon">❤️</div>
+          <div class="doc-card-text">
+            <h5>Patient-First Philosophy</h5>
+            <p>Conservative care before interventions</p>
+          </div>
+        </div>
+      </div>
+      <div class="philosophy-box">
+        <h5>Philosophy of Care</h5>
+        <ul class="philosophy-list">
+          <li>Clear communication at every step</li>
+          <li>Evidence-based treatment plans</li>
+          <li>Minimal invasiveness when possible</li>
+          <li>Personalized to your unique needs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="text-center mt-center">
+    <div class="test-badge">★ Patient Testimonials</div>
+    <h2 class="section-title">Trusted by Hundreds</h2>
+    <p class="section-sub" style="margin-top:12px;">Real stories from real patients who found relief at Rozier MD.</p>
+    <div class="stars" style="margin-top:20px;">★★★★★</div>
+    <div class="overall-rating">4.9 out of 5</div>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="stars-sm">★★★★★</div>
+      <p class="test-text">"After years of chronic back pain, Dr. Rozier finally gave me relief. His image-guided epidural injection was painless and effective. I can finally play with my kids again!"</p>
+      <span class="test-tag">+ Epidural Steroid Injection</span>
+      <div class="test-name">Sarah Martinez</div>
+      <div class="test-meta">Mansfield, TX · Feb 2026</div>
+    </div>
+    <div class="test-card">
+      <div class="stars-sm">★★★★★</div>
+      <p class="test-text">"Dr. Rozier takes time to explain everything. No rushing, no pressure. The radiofrequency ablation worked better than I imagined. Highly recommend!"</p>
+      <span class="test-tag">+ Radiofrequency Ablation</span>
+      <div class="test-name">Michael Chen</div>
+      <div class="test-meta">Arlington, TX · Jan 2026</div>
+    </div>
+    <div class="test-card">
+      <div class="stars-sm">★★★★★</div>
+      <p class="test-text">"Professional, compassionate, and truly skilled. My sciatica is 90% improved after just two visits. The best pain management doctor in DFW."</p>
+      <span class="test-tag">+ Nerve Block</span>
+      <div class="test-name">Patricia Johnson</div>
+      <div class="test-meta">Grand Prairie, TX · Jan 2026</div>
+    </div>
+    <div class="test-card">
+      <div class="stars-sm">★★★★★</div>
+      <p class="test-text">"I was skeptical about injections, but Dr. Rozier's thorough explanation and gentle approach put me at ease. Results speak for themselves — pain-free for 6 months now!"</p>
+      <span class="test-tag">+ Facet Joint Injection</span>
+      <div class="test-name">Robert Williams</div>
+      <div class="test-meta">Mansfield, TX · Dec 2025</div>
+    </div>
+  </div>
+  <div class="stats-banner">
+    <div class="banner-stat">
+      <div class="banner-num">500<span class="banner-sup">+</span></div>
+      <div class="banner-label">Patients Treated</div>
+    </div>
+    <div class="banner-stat">
+      <div class="banner-num">4.9<span class="banner-sup">★</span></div>
+      <div class="banner-label">Patient Rating</div>
+    </div>
+    <div class="banner-stat">
+      <div class="banner-num">95<span class="banner-sup">%</span></div>
+      <div class="banner-label">Success Rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="cta-badge">📅 Schedule Your Visit</div>
+      <h2 class="cta-title">Ready to Live<br><span>Pain-Free?</span></h2>
+      <p class="cta-sub">Book your consultation with Dr. Rozier and take the first step toward lasting relief. Most patients see improvement within weeks.</p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="cc-icon">📞</div>
+          <div>
+            <div class="cc-label">Call Us</div>
+            <div class="cc-value">(817) 779-4470</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon">✉️</div>
+          <div>
+            <div class="cc-label">Email</div>
+            <div class="cc-value">info@roziermd.com</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="cc-icon">📍</div>
+          <div>
+            <div class="cc-label">Location</div>
+            <div class="cc-value">Mansfield, TX (DFW Area)</div>
+          </div>
+        </div>
+      </div>
+      <div class="hours-box">
+        <h5>Office Hours</h5>
+        <div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 5:00 PM</span></div>
+        <div class="hours-row"><span>Saturday – Sunday</span><span class="closed">Closed</span></div>
+      </div>
+    </div>
+    <div class="cta-form">
+      <div class="form-title">Request Free Consultation</div>
+      <div class="form-group">
+        <label>Your Full Name</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label>Your Email</label>
+        <input type="email" placeholder="john@email.com">
+      </div>
+      <div class="form-group">
+        <label>Your Phone</label>
+        <input type="tel" placeholder="(817) 000-0000">
+      </div>
+      <div class="form-group">
+        <label>Your Location</label>
+        <input type="text" placeholder="City, TX">
+      </div>
+      <div class="form-group">
+        <label>How can we help you?</label>
+        <textarea placeholder="Describe your pain or symptoms..."></textarea>
+      </div>
+      <button class="btn-submit">Request Free Consultation</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <h4>About Rozier MD</h4>
+      <p>
+        Dr. Antonio Rozier is trained and experienced to treat spinal and musculoskeletal pain by carrying out the latest interventional and minimally invasive techniques. Along with performing these procedures, Dr. Rozier executes ultrasound-guided, regenerative interventional techniques.
+      </p>
+    </div>
+    <div class="footer-contact">
+      <h4>Location &amp; Contact Info:</h4>
+      <p>
+        120 North Miller Road<br>
+        Suite #300<br>
+        Mansfield TX 76063<br><br>
+        Call: <a href="tel:6822532986">682-253-2986</a><br>
+        Email: <a href="mailto:zenwellness@roziermd.com">zenwellness@roziermd.com</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Pain Management Physician Mansfield TX | Zen Pain &amp; Wellness.
+  </div>
+</footer>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // Treatment items
+  document.querySelectorAll('.treatment-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.treatment-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.step, .test-card, .pain-card, .cond-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
