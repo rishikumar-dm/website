@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VP Engineering OKRs at 200-500 SaaS: The Real Playbook | ShiftFocus</title>
+<meta name="description" content="Complete VP Engineering OKR playbook for 200-500 SaaS — DORA-aligned KRs, sprint drift enforcement, escalation chains, cross-team dependencies, and the $3.85M per quarter your roadmap misses cost.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-soft: #faf8fc;
+  --bg-card: #f5f1fa;
+  --bg-elev: #ede5f5;
+  --border: #e6ddf0;
+  --border-strong: #d4c5e3;
+  --text: #1a0e2e;
+  --text-soft: #4a3d60;
+  --text-dim: #756b85;
+  --text-faint: #a49bb3;
+  --purple: #6b3fd8;
+  --purple-dark: #4d2aa8;
+  --purple-light: #8b62e8;
+  --purple-soft: #f0e9fb;
+  --red: #d63541;
+  --amber: #d68a1f;
+  --green: #2a9d5f;
+  --ink: #2a1a45;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.serif { font-family: 'Fraunces', serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+/* Nav */
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 50;
+}
+nav .inner { display: flex; justify-content: space-between; align-items: center; }
+nav .logo {
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 21px; letter-spacing: -0.02em; color: var(--ink);
+}
+nav .logo span { color: var(--purple); }
+nav .cta {
+  background: var(--purple); color: #fff; padding: 9px 20px;
+  border-radius: 8px; font-weight: 500; text-decoration: none; font-size: 14px;
+  transition: background 0.2s;
+}
+nav .cta:hover { background: var(--purple-dark); }
+
+/* Breadcrumb */
+.breadcrumb { padding: 24px 0 8px; font-size: 13px; color: var(--text-faint); }
+.breadcrumb a { color: var(--text-dim); text-decoration: none; }
+.breadcrumb a:hover { color: var(--purple); }
+.breadcrumb .sep { margin: 0 8px; color: var(--text-faint); }
+
+/* Hero */
+.hero { padding: 40px 0 56px; border-bottom: 1px solid var(--border); }
+.tag-row { display: flex; gap: 8px; margin-bottom: 26px; flex-wrap: wrap; }
+.tag {
+  background: var(--purple-soft);
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 500; color: var(--purple-dark);
+}
+.tag.neutral { background: #f0ebf5; color: var(--text-soft); }
+h1 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(32px, 4.8vw, 52px); line-height: 1.08;
+  letter-spacing: -0.02em; margin-bottom: 24px;
+  color: var(--ink);
+}
+h1 em { font-style: italic; color: var(--purple); font-weight: 400; }
+.subhead {
+  font-size: 19px; color: var(--text-soft); max-width: 740px;
+  line-height: 1.55;
+}
+
+/* Meta row */
+.meta-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin: 44px 0 0;
+  border: 1px solid var(--border); border-radius: 12px;
+  background: var(--bg-soft); overflow: hidden;
+}
+.meta-strip > div { padding: 20px 22px; border-right: 1px solid var(--border); }
+.meta-strip > div:last-child { border-right: none; }
+.meta-label {
+  font-size: 11px; text-transform: uppercase; color: var(--text-dim);
+  letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 500;
+}
+.meta-value {
+  font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.meta-value.red { color: var(--red); }
+
+/* TOC */
+.toc {
+  margin: 56px 0; padding: 28px 32px;
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px;
+}
+.toc-label {
+  font-size: 12px; text-transform: uppercase; color: var(--purple);
+  letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 600;
+}
+.toc ol { list-style: none; counter-reset: toc; }
+.toc ol li {
+  counter-increment: toc;
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 12px 0; border-bottom: 1px dashed var(--border);
+}
+.toc ol li:last-child { border-bottom: none; }
+.toc ol li::before {
+  content: "0" counter(toc);
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--purple); min-width: 26px; font-weight: 500;
+}
+.toc a { color: var(--text); text-decoration: none; font-size: 16px; flex: 1; }
+.toc a:hover { color: var(--purple); }
+
+/* Section styles */
+section.content { padding: 64px 0; border-bottom: 1px solid var(--border); }
+section.content:last-of-type { border-bottom: none; }
+.section-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--purple); letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 14px; font-weight: 500;
+}
+h2 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px;
+  color: var(--ink);
+}
+h3 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 22px; letter-spacing: -0.01em;
+  margin: 36px 0 14px; color: var(--ink);
+}
+p { margin-bottom: 18px; color: var(--text); max-width: 720px; font-size: 16px; }
+p.lead { font-size: 17px; color: var(--text-soft); }
+
+/* Callouts */
+.callout {
+  margin: 28px 0; padding: 22px 26px;
+  border-left: 3px solid var(--purple);
+  background: var(--purple-soft);
+  border-radius: 0 10px 10px 0;
+}
+.callout .label {
+  font-size: 11px; color: var(--purple);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 10px; font-weight: 600;
+}
+.callout p { margin: 0; color: var(--ink); }
+.callout.red { border-left-color: var(--red); background: #fdf0f1; }
+.callout.red .label { color: var(--red); }
+
+/* Tables */
+.table-wrap {
+  margin: 24px 0 16px; overflow-x: auto;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: #fff;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th {
+  background: var(--bg-soft); padding: 14px 16px; text-align: left;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-dim); border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--ink); }
+td .mini { font-size: 12px; color: var(--text-dim); margin-top: 3px; }
+td.num { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 13px; }
+td.num.red { color: var(--red); }
+td.num.green { color: var(--green); }
+td.num.amber { color: var(--amber); }
+td.highlight { background: var(--purple-soft); color: var(--purple-dark); }
+.table-note {
+  font-size: 12px; color: var(--text-dim); margin-top: 12px;
+  line-height: 1.5;
+}
+.table-note a { color: var(--purple); }
+
+/* Strategy cards */
+.strategy-stack { display: flex; flex-direction: column; gap: 16px; margin: 28px 0; }
+.strat-card {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  background: #fff;
+}
+.strat-head {
+  padding: 18px 24px; border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.strat-head .st-title {
+  font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px;
+  color: var(--ink);
+}
+.strat-head .st-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--purple); letter-spacing: 0.08em; font-weight: 500;
+}
+.strat-body { padding: 18px 24px; }
+.initiative {
+  display: grid; grid-template-columns: 36px 1fr auto;
+  gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--border);
+  align-items: center;
+}
+.initiative:last-child { border-bottom: none; }
+.init-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--text-faint); font-weight: 500;
+}
+.init-text { font-size: 15px; color: var(--text); }
+.init-dep {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  background: var(--purple-soft); padding: 4px 9px; border-radius: 4px;
+  color: var(--purple-dark); white-space: nowrap; font-weight: 500;
+}
+.init-dep.internal { background: #f0ebf5; color: var(--text-dim); }
+
+/* Escalation ladder */
+.ladder { margin: 32px 0; position: relative; padding-left: 8px; }
+.ladder::before {
+  content: ''; position: absolute; left: 20px; top: 20px; bottom: 20px;
+  width: 2px; background: linear-gradient(to bottom, var(--green) 0%, var(--amber) 50%, var(--red) 100%);
+}
+.rung {
+  position: relative; padding: 16px 0 16px 56px;
+}
+.rung::before {
+  content: ''; position: absolute; left: 12px; top: 22px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--border-strong);
+}
+.rung.l1::before { border-color: var(--green); }
+.rung.l2::before { border-color: #85c49b; }
+.rung.l3::before { border-color: var(--amber); }
+.rung.l4::before { border-color: #d66a1f; }
+.rung.l5::before { border-color: var(--red); }
+.rung.l6::before { border-color: #a51f29; box-shadow: 0 0 0 4px rgba(214,53,65,0.15); }
+.rung-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 10px;
+}
+.rung-time {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--purple); letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--purple-soft); padding: 3px 9px; border-radius: 4px;
+  font-weight: 600;
+}
+.rung-who {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink);
+}
+.rung-action { font-size: 14px; color: var(--text-soft); margin-top: 4px; line-height: 1.55; }
+
+/* Enforcement cards */
+.enf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+@media (max-width: 720px) { .enf-grid { grid-template-columns: 1fr; } }
+.enf-card {
+  padding: 22px; border: 1px solid var(--border); border-radius: 12px;
+  background: #fff;
+}
+.enf-card .kr-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: var(--purple); text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 6px; font-weight: 600;
+}
+.enf-card h4 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; margin-bottom: 16px; color: var(--ink);
+}
+.enf-row {
+  display: grid; grid-template-columns: 78px 1fr; gap: 12px;
+  padding: 9px 0; font-size: 13px; border-bottom: 1px dashed var(--border);
+}
+.enf-row:last-child { border-bottom: none; }
+.enf-row .k {
+  color: var(--text-dim); font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+  padding-top: 3px; font-weight: 600;
+}
+.enf-row .v { color: var(--text); line-height: 1.5; }
+.enf-row .v strong { color: var(--purple-dark); font-weight: 600; }
+
+/* Dependency map */
+.dep-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+@media (max-width: 720px) { .dep-split { grid-template-columns: 1fr; } }
+.dep-col { padding: 24px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.dep-col h4 {
+  font-size: 11px; color: var(--text-dim); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 600;
+}
+.dep-col.blocked-by h4::before { content: "← "; color: var(--red); }
+.dep-col.blocks h4::before { content: "→ "; color: var(--amber); }
+.dep-item {
+  padding: 12px 0; border-bottom: 1px dashed var(--border);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.dep-item:last-child { border-bottom: none; }
+.dep-name { font-size: 15px; font-weight: 500; color: var(--ink); }
+.dep-why { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+.dep-sla {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  background: var(--purple-soft); padding: 3px 9px; border-radius: 4px;
+  color: var(--purple-dark); white-space: nowrap; font-weight: 500;
+}
+.dep-sla.downstream { background: #f0ebf5; color: var(--text-dim); }
+
+/* Formula boxes */
+.formula {
+  margin: 20px 0; padding: 22px 26px;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.formula .f-label {
+  font-size: 11px; color: var(--purple); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 10px; font-weight: 600;
+}
+.formula .f-math {
+  font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  color: var(--ink); font-weight: 500;
+}
+.formula .f-math strong { color: var(--purple); }
+.formula .f-example {
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px dashed var(--border); font-size: 14px;
+  color: var(--text-soft); line-height: 1.55;
+}
+.formula .f-example strong { color: var(--red); font-weight: 600; }
+
+/* Cost table */
+.cost-table {
+  margin: 24px 0; background: #fff;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+}
+.cost-row {
+  display: grid; grid-template-columns: 1fr auto;
+  padding: 16px 24px; border-bottom: 1px solid var(--border);
+  align-items: center; gap: 20px;
+}
+.cost-row:last-of-type { border-bottom: 2px solid var(--border-strong); }
+.cost-total {
+  display: grid; grid-template-columns: 1fr auto;
+  padding: 20px 24px; background: #fdf0f1;
+  border-bottom: 1px solid var(--border);
+  align-items: center; gap: 20px;
+}
+.cost-label { font-size: 15px; color: var(--text); }
+.cost-label .why { font-size: 13px; color: var(--text-dim); margin-top: 3px; }
+.cost-amt {
+  font-family: 'JetBrains Mono', monospace; font-weight: 600;
+  font-size: 17px; color: var(--red);
+}
+.cost-total .cost-label {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink);
+}
+.cost-total .cost-amt { font-size: 22px; }
+.cost-win {
+  padding: 20px 24px; background: #e8f5ed;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px;
+}
+.cost-win .cost-label {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 16px; color: var(--ink);
+}
+.cost-win .cost-amt { color: var(--green); font-size: 18px; }
+
+/* Cornerstone link */
+.cornerstone-link {
+  margin: 32px 0; padding: 22px 26px;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+}
+.cornerstone-link .cl-text { font-size: 14px; color: var(--text-soft); line-height: 1.5; }
+.cornerstone-link .cl-text strong {
+  color: var(--ink); display: block; margin-bottom: 3px;
+  font-family: 'Fraunces', serif; font-weight: 500; font-size: 16px;
+}
+.cornerstone-link a {
+  color: var(--purple); text-decoration: none; font-size: 14px;
+  font-weight: 500; white-space: nowrap;
+  border-bottom: 1px solid transparent; transition: border-color 0.2s;
+}
+.cornerstone-link a:hover { border-bottom-color: var(--purple); }
+
+/* CTA */
+.cta-block {
+  margin: 72px 0 48px; padding: 52px 48px;
+  background: linear-gradient(135deg, var(--purple-soft) 0%, #e8ddf5 100%);
+  border: 1px solid var(--purple-light); border-radius: 16px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-block h3 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 32px; margin-bottom: 14px; color: var(--ink);
+}
+.cta-block p { color: var(--text-soft); max-width: 540px; margin: 0 auto 28px; font-size: 16px; }
+.cta-btn {
+  background: var(--purple); color: #fff; padding: 14px 32px;
+  border-radius: 10px; font-weight: 500; text-decoration: none;
+  display: inline-block; font-size: 15px;
+  transition: background 0.2s;
+}
+.cta-btn:hover { background: var(--purple-dark); }
+
+/* Related */
+.related { padding: 48px 0 80px; border-top: 1px solid var(--border); }
+.related-label {
+  font-size: 11px; text-transform: uppercase; color: var(--text-dim);
+  letter-spacing: 0.12em; margin-bottom: 20px; font-weight: 600;
+}
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 720px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card {
+  padding: 22px; border: 1px solid var(--border); border-radius: 12px;
+  background: #fff; text-decoration: none; color: var(--text);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.related-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+.related-card .rc-kicker {
+  font-size: 11px; color: var(--purple); text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 600;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink); line-height: 1.25;
+}
+
+/* Signal cards - Section 1 redesign */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+@media (max-width: 720px) {
+  .signal-grid { grid-template-columns: 1fr; }
+}
+.signal-card {
+  padding: 24px 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  position: relative;
+}
+.signal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 12px 12px 0 0;
+}
+.signal-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--purple);
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.signal-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.signal-body {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+.signal-body strong { color: var(--ink); font-weight: 600; }
+
+footer {
+  padding: 40px 0; border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text-dim); text-align: center;
+}
+
+@media (max-width: 720px) {
+  .meta-strip { grid-template-columns: repeat(2, 1fr); }
+  .meta-strip > div:nth-child(2) { border-right: none; }
+  .meta-strip > div:nth-child(1), .meta-strip > div:nth-child(2) { border-bottom: 1px solid var(--border); }
+  .cornerstone-link { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container inner">
+    <div class="logo">Shift<span>Focus</span></div>
+    <a href="#cta" class="cta">Start free pilot</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="breadcrumb">
+  <a href="/">Home</a><span class="sep">/</span><a href="/playbooks">Playbooks</a><span class="sep">/</span><a href="/playbooks/saas">SaaS</a><span class="sep">/</span>VP Engineering · 200-500
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tag-row">
+    <span class="tag">Role Playbook</span>
+    <span class="tag neutral">SaaS</span>
+    <span class="tag neutral">200-500 employees</span>
+    <span class="tag neutral">VP Engineering</span>
+  </div>
+  <h1>Platform. Product eng. Infra. Security. You run all four as <em>VP Engineering</em>. Nobody prepared you for what that job actually is.</h1>
+  <p class="subhead">Your calendar is 40 hours of meetings. You code-review maybe 3 PRs a week. Three EMs report to you, each with their own fires. Two principals think the architecture is rotting. Product wants Feature X by Q2, Sales already sold it, and your lead just told you the team hit a dependency in week 4 that nobody escalated. Welcome to the job. This is the full playbook — your DORA KRs, the sprint-drift enforcement you need, your place in the chain, and the $4.2M per quarter a single missed roadmap costs you.</p>
+
+  <div class="meta-strip">
+    <div>
+      <div class="meta-label">DORA deploy freq (top 15%)</div>
+      <div class="meta-value">Daily+</div>
+    </div>
+    <div>
+      <div class="meta-label">Change failure rate (elite)</div>
+      <div class="meta-value">0–15%</div>
+    </div>
+    <div>
+      <div class="meta-label">Change lead time (elite)</div>
+      <div class="meta-value">&lt; 1 day</div>
+    </div>
+    <div>
+      <div class="meta-label">Cost of a missed roadmap</div>
+      <div class="meta-value red">$3.85M / qtr</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-label">What's in this playbook</div>
+  <ol>
+    <li><a href="#s1">Three signals your VP Engineering OKRs are drifting</a></li>
+    <li><a href="#s2">VP Engineering OKRs — DORA + 2 more</a></li>
+    <li><a href="#s3">The three bets inside every VP Engineering OKR</a></li>
+    <li><a href="#s4">Enforcement rules when your OKRs go red</a></li>
+    <li><a href="#s5">The VP Engineering OKR escalation chain</a></li>
+    <li><a href="#s6">Cross-team dependencies that miss your OKRs</a></li>
+    <li><a href="#s7">The math — leading indicators for VP Engineering OKRs</a></li>
+  </ol>
+</div>
+
+<!-- SECTION 1: CONTEXT -->
+<section class="content" id="s1">
+  <div class="section-num">01 — What goes wrong</div>
+  <h2>Three signals your VP Engineering OKRs are silently drifting at 200-500 SaaS.</h2>
+
+  <p class="lead">The job structurally removes you from the work. Three layers above the ICs shipping code, one below the CTO, peer to a CPO whose roadmap depends on your commitments. Your visibility comes from what your EMs choose to tell you. By the time you see a real problem, it's usually six weeks old. Three specific signals mean your VP Engineering OKRs are already drifting — even if your dashboards are green.</p>
+
+  <div class="signal-grid">
+    <div class="signal-card">
+      <div class="signal-num">Signal 01</div>
+      <div class="signal-title">You hear about slippage from Product, not your own EMs.</div>
+      <div class="signal-body">A feature ships six weeks late. You find out in week 10 of a 12-week cycle — <strong>from the head of product</strong>, not your team. The EM says "the lead told me we were on track." The lead hit a platform dependency in week 4. Nobody lied. Nobody escalated.</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-num">Signal 02</div>
+      <div class="signal-title">Standup summaries become editorial exercises.</div>
+      <div class="signal-body">Daily standups scale at 15 engineers. At 150 across 6 squads with 3 intermediate managers, <strong>what you see is what each EM chose to surface up</strong>. Good EMs surface bad news early. Mediocre EMs wait. Terrible EMs hide it until it hits you sideways.</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-num">Signal 03</div>
+      <div class="signal-title">The sprint board disagrees with what's actually shippable.</div>
+      <div class="signal-body">Jira shows sprints closing green. Your demos show half the committed work pushed. <strong>The gap between the board and reality is where your job lives</strong> — and no sprint tool will close it for you.</div>
+    </div>
+  </div>
+
+  <p>That gap — between what Jira shows and what's actually shippable — is the VP Engineering job in 2026. Not architecting. Not hiring. Not mentoring seniors. The job is installing the telemetry that catches drift before your EMs decide whether to tell you.</p>
+
+  <div class="callout">
+    <div class="label">How you know you're in this pattern</div>
+    <p>Sprint predictability below 70%. Change failure rate above 20%. More than 30% of engineering time on unplanned work. Two of those three true means it's not a hiring problem or an agile problem. It's an enforcement problem.</p>
+  </div>
+
+  <div class="cornerstone-link">
+    <div class="cl-text">
+      <strong>Deeper read: The VP Engineering trap at Series B — the promotion that trained you for the wrong job</strong>
+      The manager-to-VP jump is the largest behavioral shift in any executive role. Nobody trains you for it.
+    </div>
+    <a href="/blog/vp-engineering-series-b-first-year-failure">Read →</a>
+  </div>
+</section>
+
+<!-- SECTION 2: MATRIX -->
+<section class="content" id="s2">
+  <div class="section-num">02 — The OKRs you actually own</div>
+  <h2>Three VP Engineering objectives that define whether the roadmap ships.</h2>
+
+  <p>The CTO owns architecture. EMs own squad velocity. You own the delivery machine between them. At 200-500 SaaS, three outcomes show up on every VP Engineering scorecard — and none of them are "manage engineers." They're commitments the board can measure. DORA supplies the benchmarks.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 30%;">Objective</th>
+          <th style="width: 30%;">Key Result</th>
+          <th style="width: 20%;">Benchmark</th>
+          <th style="width: 20%;">Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2"><strong>Become the predictable engineering org the CEO can commit the roadmap on</strong><div class="mini">O1 · The question behind every board meeting</div></td>
+          <td>Ship 85%+ of what you commit per sprint</td>
+          <td class="num">Typical 60–70%</td>
+          <td class="num green highlight">&gt; 85%</td>
+        </tr>
+        <tr>
+          <td>Deploy to production at least daily</td>
+          <td class="num">Top 15%: multiple/day</td>
+          <td class="num green highlight">≥ 1/day</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><strong>Ship software the customer never sees break</strong><div class="mini">O2 · Where your EMs either earn trust or lose it</div></td>
+          <td>Hold change failure rate below 12%</td>
+          <td class="num">Elite: 0–15%</td>
+          <td class="num green highlight">&lt; 12%</td>
+        </tr>
+        <tr>
+          <td>Cut mean time to recovery</td>
+          <td class="num">Top 15%: &lt; 1 hour</td>
+          <td class="num green highlight">&lt; 45 min</td>
+        </tr>
+        <tr>
+          <td>Cut change lead time from commit to prod</td>
+          <td class="num">Top 15%: &lt; 1 day</td>
+          <td class="num amber highlight">&lt; 24 hrs</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><strong>Turn engineering capacity into a compounding asset</strong><div class="mini">O3 · The CFO's actual question when velocity drops</div></td>
+          <td>Hold unplanned work below 20% of capacity</td>
+          <td class="num">Typical 35–45%</td>
+          <td class="num amber highlight">&lt; 20%</td>
+        </tr>
+        <tr>
+          <td>Cut on-call burden per engineer</td>
+          <td class="num">Typical 8–12 pages/wk</td>
+          <td class="num green highlight">&lt; 4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-note">Benchmarks from <a href="https://dora.dev/guides/dora-metrics-four-keys/">DORA 2025 State of DevOps Report</a> (4,800+ respondents), <a href="https://getdx.com/blog/dora-metrics/">DX 2025 Engineering Performance Report</a>, LinearB 2025 Engineering Benchmarks (3,000+ teams), <a href="https://www.atlassian.com/devops/frameworks/dora-metrics">Atlassian DORA Performance Levels</a>.</div>
+
+  <div class="callout">
+    <div class="label">Why O1 is where most VP Engineerings lose the seat</div>
+    <p>Most VP Engineerings optimize O2 and O3 because they're engineering-native — CFR, MTTR, toil. O1 is where the job actually lives. A VP who ships the roadmap at 60% predictability is harder to keep than one who ships 15% less surface at 90%. Product plans against your commitments. Sales sells against them. Marketing launches against them. When the commitments aren't real, every downstream team gets burned — and they remember whose fault it was.</p>
+  </div>
+</section>
+
+<!-- SECTION 3: STRATEGY STACK -->
+<section class="content" id="s3">
+  <div class="section-num">03 — Your strategy stack</div>
+  <h2>The three strategic bets inside every VP Engineering OKR stack.</h2>
+
+  <p>Every sprint planning, squads bring new priorities — platform upgrades, tech debt, scope expansions, experiments, integrations. Backlog is infinite. Capacity isn't. Strategy at this stage is deciding what <em>not</em> to do so the three bets that actually move DORA numbers get the capacity. Those three bets: cut toil, build a real platform layer, make the roadmap honest.</p>
+
+  <p>More than half the initiatives below need something from another team — Product, Security, Finance. When dependencies slip, sprint predictability slips. The ones marked below are the silent killers decomposed in Section 6.</p>
+
+  <div class="strategy-stack">
+    <div class="strat-card">
+      <div class="strat-head">
+        <div class="st-title">Strategy 1 — Cut the toil tax from 40% → 20%</div>
+        <div class="st-num">→ OBJ-3 · OBJ-4</div>
+      </div>
+      <div class="strat-body">
+        <div class="initiative"><div class="init-num">1.1</div><div class="init-text">Audit every recurring manual ops task; automate or kill top 10 by week 6</div><div class="init-dep internal">Internal</div></div>
+        <div class="initiative"><div class="init-num">1.2</div><div class="init-text">Spin up a dedicated platform squad (3 engineers, 1 EM)</div><div class="init-dep">Recruiting + Finance</div></div>
+        <div class="initiative"><div class="init-num">1.3</div><div class="init-text">Roll out incident classification + auto-triage to cut page volume</div><div class="init-dep">Security</div></div>
+        <div class="initiative"><div class="init-num">1.4</div><div class="init-text">Mandatory postmortem on every P0/P1 within 72 hours; action items tracked as KRs</div><div class="init-dep internal">Internal</div></div>
+      </div>
+    </div>
+
+    <div class="strat-card">
+      <div class="strat-head">
+        <div class="st-title">Strategy 2 — Fix the CI/CD pipeline</div>
+        <div class="st-num">→ OBJ-1 · OBJ-2</div>
+      </div>
+      <div class="strat-body">
+        <div class="initiative"><div class="init-num">2.1</div><div class="init-text">Cut median PR merge time from 4 days → under 24 hours</div><div class="init-dep internal">Internal</div></div>
+        <div class="initiative"><div class="init-num">2.2</div><div class="init-text">Mandatory feature flags on every production deploy</div><div class="init-dep">Security review</div></div>
+        <div class="initiative"><div class="init-num">2.3</div><div class="init-text">Parallelize test suite; target full run under 8 min</div><div class="init-dep internal">Internal</div></div>
+        <div class="initiative"><div class="init-num">2.4</div><div class="init-text">Kill any deploy that requires more than 2 humans to ship</div><div class="init-dep internal">Internal</div></div>
+      </div>
+    </div>
+
+    <div class="strat-card">
+      <div class="strat-head">
+        <div class="st-title">Strategy 3 — Make the roadmap real</div>
+        <div class="st-num">→ OBJ-5</div>
+      </div>
+      <div class="strat-body">
+        <div class="initiative"><div class="init-num">3.1</div><div class="init-text">Force T-shirt sizing on every story above 2 points at refinement</div><div class="init-dep">Product</div></div>
+        <div class="initiative"><div class="init-num">3.2</div><div class="init-text">Add 20% buffer to every sprint commit — non-negotiable with Product</div><div class="init-dep">Product</div></div>
+        <div class="initiative"><div class="init-num">3.3</div><div class="init-text">Mid-sprint check-in at day 5: raise red early or shut up at retro</div><div class="init-dep internal">Internal</div></div>
+        <div class="initiative"><div class="init-num">3.4</div><div class="init-text">Kill the "stretch goal" culture — committed work only, or it's not on the board</div><div class="init-dep internal">Internal</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: ENFORCEMENT -->
+<section class="content" id="s4">
+  <div class="section-num">04 — Enforcement rules</div>
+  <h2>Enforcement for VP Engineering OKRs — the 2 triggers that fire hardest in your seat.</h2>
+
+  <p>ShiftFocus watches seven signals on every KR. All seven apply to you. Two define your daily pain as VP Engineering: <strong>Velocity Drop</strong> (Trigger 2) and <strong>Momentum Decay</strong> (Trigger 3). The roadmap slips you can't recover from are almost always one of these two, caught in week 10 instead of week 4.</p>
+
+  <h3>The two that fire hardest in engineering</h3>
+
+  <div class="enf-grid">
+    <div class="enf-card" style="grid-column: span 2;">
+      <div class="kr-label">Trigger 2 · Velocity Drop — your 4-week warning</div>
+      <div class="enf-row"><div class="k">Fires when</div><div class="v">Squad velocity falls below 50% of planned pace — measured from the KRProgressHistory table against baseline</div></div>
+      <div class="enf-row"><div class="k">Why it matters</div><div class="v">A squad at 30% in week 4 looks fine on a Jira dashboard. Velocity math projects them to land at 60%, not 100%. Most teams see that in week 11. ShiftFocus sees it in week 4 when Trigger 2 fires — while there's still time to descope, reallocate, or escalate.</div></div>
+      <div class="enf-row"><div class="k">Example</div><div class="v">Squad committed to 240 points across 6 sprints. Sprint 3 close: 96 points shipped. Planned pace: 40/sprint. Actual: 32/sprint. Velocity = 0.80. Trigger 2 fires at 0.50 threshold — still green here. But momentum tells you where the slope is headed. See Trigger 3.</div></div>
+    </div>
+
+    <div class="enf-card" style="grid-column: span 2;">
+      <div class="kr-label">Trigger 3 · Momentum Decay — the slope trigger</div>
+      <div class="enf-row"><div class="k">Fires when</div><div class="v">Week-over-week velocity decelerates 2+ sprints in a row</div></div>
+      <div class="enf-row"><div class="k">Why it matters</div><div class="v">Velocity tells you pace. Momentum tells you whether pace is getting better or worse. A squad at 70% of commit with 0.8 momentum will land at 45% by end of quarter. The number on the dashboard doesn't show that — the slope does. Trigger 3 catches failing KRs 3-4 weeks before traditional sprint reporting does.</div></div>
+      <div class="enf-row"><div class="k">Example</div><div class="v">Squad's sprint 1 velocity: 38 pts/sprint. Sprint 2: 34. Sprint 3: 30. Momentum = 30 ÷ 34 = 0.88, and 34 ÷ 38 = 0.89. Two consecutive decelerating sprints. Trigger 3 fires. KR flags with momentum-decay indicator. Your next staff meeting has this squad at the top — not at the QBR six weeks later.</div></div>
+    </div>
+  </div>
+
+  <h3>The other 5 that also fire on your KRs</h3>
+
+  <div class="enf-grid">
+    <div class="enf-card">
+      <div class="kr-label">Trigger 1 · Missed Check-in</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">EM misses weekly KR update. 48h clock, then escalates to you.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 4 · KPI Drift</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Change failure rate or deploy frequency crosses threshold — parent KR flags red.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 5 · Owner Absence</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">KR ownership "shared" across EMs, or owner inactive 7+ days.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 6 · Dependency SLA</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Product spec, Security review, or Design mocks past 48h SLA — blocking team's KR flags.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 7 · Projected Miss</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Projected end-of-quarter completion drops below 70% at week 6 — exec brief fires.</div></div>
+    </div>
+  </div>
+
+  <div class="callout red">
+    <div class="label">Why this works where integration-based tools fail</div>
+    <p>Lattice needs HRIS integration. Viva Goals needs Jira integration. Every time a customer changes sprint tools, the enforcement breaks. ShiftFocus enforces at the accountability layer — which is universal. Your squads can use Jira, Linear, Shortcut, or Notion. The enforcement works the same regardless of the tool.</p>
+  </div>
+</section>
+
+<!-- SECTION 5: ESCALATION -->
+<section class="content" id="s5">
+  <div class="section-num">05 — The escalation chain</div>
+  <h2>The VP Engineering OKR escalation chain — 5 levels, all on a 48-hour clock.</h2>
+
+  <p>Every trigger from Section 4 feeds into this ladder. The ladder climbs on time, not on human judgment. Nobody has to decide "is this bad enough to escalate" — the clock runs and the system moves it up.</p>
+
+  <div class="ladder">
+    <div class="rung l1">
+      <div class="rung-head"><div class="rung-who">L1 — Auto-Nudge</div><div class="rung-time">Immediate</div></div>
+      <div class="rung-action">Any trigger fires. KR owner gets a Slack DM + email with the KR status link and what changed.</div>
+    </div>
+    <div class="rung l2">
+      <div class="rung-head"><div class="rung-who">L2 — Peer Flag</div><div class="rung-time">48h after L1</div></div>
+      <div class="rung-action">Owner hasn't responded. Initiative Lead + peer EMs notified. Peer review requested on the KR.</div>
+    </div>
+    <div class="rung l3">
+      <div class="rung-head"><div class="rung-who">L3 — Manager Alert</div><div class="rung-time">48h after L2</div></div>
+      <div class="rung-action">You get the escalation brief: dependency map, blocker details, suggested reallocation. You own the next action.</div>
+    </div>
+    <div class="rung l4">
+      <div class="rung-head"><div class="rung-who">L4 — Executive Brief</div><div class="rung-time">Week 6 auto-check</div></div>
+      <div class="rung-action">Projected completion below 70%. CTO/CEO receives one-page PDF: what's failing, why, recommended intervention.</div>
+    </div>
+    <div class="rung l5">
+      <div class="rung-head"><div class="rung-who">L5 — Intervention</div><div class="rung-time">3 weeks before quarter end</div></div>
+      <div class="rung-action">Projected miss greater than 30%. War-room triggered. Resource reallocation or scope reduction required within 48 hours.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="label">What this kills</div>
+    <p>The "nobody wants to be the bad guy" problem. In most eng orgs, slipping roadmaps surface at the quarterly review — when Sales and Marketing have already committed plans to dates that aren't happening. ShiftFocus surfaces the same drift at week 4 by auto-nudging when velocity signals fire. Nobody is a snitch. The clock is.</p>
+  </div>
+</section>
+
+<!-- SECTION 6: DEPENDENCIES -->
+<section class="content" id="s6">
+  <div class="section-num">06 — Cross-team dependencies</div>
+  <h2>Cross-team dependencies: the real reason VP Engineering OKRs miss.</h2>
+
+  <p>When a feature ships late at 200-500 SaaS, the story is almost always "engineering fell behind." The root cause is usually somewhere else. Product locked the spec late. Design shipped mocks two weeks into a four-week sprint. Security review took three sprints for a two-week workflow. Infra couldn't provision staging. Engineering owns the ship date either way — because you said "yes, Q2" in planning — but the team that caused the slip almost never pays for it. Honest dependency tracking is the highest-leverage thing you install at this stage.</p>
+
+  <p>ShiftFocus tracks every dependency with its own SLA and escalation. If one blows past SLA, it blocks the owning squad's enforcement chain — so a missed ship date caused by a late spec gets attributed to the late spec, not the engineering team that waited on it.</p>
+
+  <div class="dep-split">
+    <div class="dep-col blocked-by">
+      <h4>Teams that block this role</h4>
+      <div class="dep-item">
+        <div><div class="dep-name">Product Management</div><div class="dep-why">Specs, story refinement, scope trade-off decisions</div></div>
+        <div class="dep-sla">SLA 5d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Design</div><div class="dep-why">Mocks, interaction specs, design system updates</div></div>
+        <div class="dep-sla">SLA 10d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Security</div><div class="dep-why">Architecture review, pen test scheduling, compliance sign-off</div></div>
+        <div class="dep-sla">SLA 14d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Infra / Platform</div><div class="dep-why">Environments, CI/CD runners, observability tooling</div></div>
+        <div class="dep-sla">SLA 5d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Recruiting</div><div class="dep-why">Senior engineer + EM pipeline</div></div>
+        <div class="dep-sla">SLA 60d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Finance</div><div class="dep-why">Cloud budget, tool procurement, hiring req approval</div></div>
+        <div class="dep-sla">SLA 10d</div>
+      </div>
+    </div>
+
+    <div class="dep-col blocks">
+      <h4>Teams this role blocks</h4>
+      <div class="dep-item">
+        <div><div class="dep-name">Sales</div><div class="dep-why">Feature delivery → deals commit to dates</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Marketing</div><div class="dep-why">Launch campaigns depend on ship dates</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Customer Success</div><div class="dep-why">Bug fixes, feature asks from churn-risk accounts</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Product</div><div class="dep-why">Roadmap commitments tied to sales and marketing plans</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout red">
+    <div class="label">The specific fight that breaks this stage</div>
+    <p>Engineering-Product scope fights are the #1 cross-team fight at 200-500 SaaS. Product says "you committed to Q2." Engineering says "you changed the spec in week 4." ShiftFocus tracks both sides: Product-owned spec locks have their own KR + SLA. Engineering-owned sprint commits have theirs. When either side breaches, the breach shows on that side's KR — not the downstream team that got blocked. Neither function can rewrite history at the QBR.</p>
+  </div>
+</section>
+
+<!-- SECTION 7: VELOCITY + COST -->
+<section class="content" id="s7">
+  <div class="section-num">07 — The math</div>
+  <h2>The three leading indicators every VP Engineering OKR needs.</h2>
+
+  <p>Every VP Engineering reports the same number to their CTO: percentage-of-commit shipped last sprint. It's honest and it's useless. It describes what already happened, not what's about to. A squad at 80% with a momentum of 0.7 will land at 55% by sprint 6 and below 40% by end of quarter. The percentage hid the slope. The slope is what matters.</p>
+
+  <p>ShiftFocus calculates three numbers per squad, recomputed every sprint. These are the numbers you bring to your CTO instead.</p>
+
+  <div class="formula">
+    <div class="f-label">Velocity — are you on pace?</div>
+    <div class="f-math">Velocity = (points shipped ÷ sprints elapsed) ÷ (total roadmap points ÷ total sprints)</div>
+    <div class="f-example">Above 1.0 means ahead. Below 0.8 means behind. Below 0.6 is critical — the roadmap is almost certainly slipping without intervention.</div>
+  </div>
+
+  <div class="formula">
+    <div class="f-label">Momentum — is it getting better or worse?</div>
+    <div class="f-math">Momentum = this sprint's velocity ÷ last sprint's velocity</div>
+    <div class="f-example">A squad at 70% of commit in sprint 3 looks okay. But if momentum is 0.8, they'll finish sprint 6 at 45%. Momentum catches roadmap drift 2-3 sprints before percentage does.</div>
+  </div>
+
+  <div class="formula">
+    <div class="f-label">Health score — the weighted score for Engineering roles</div>
+    <div class="f-math">Health = (0.30 × velocity) + (0.40 × momentum) + (0.30 × dependency health)</div>
+    <div class="f-example">Engineering weights momentum highest because engineering pace is stable — when it shifts, something real changed (dependency, tech debt, attrition). Sales weights velocity highest because revenue impact is near-real-time.</div>
+  </div>
+
+  <h3>What this looks like in practice</h3>
+  <p>You're 3 sprints into a 6-sprint roadmap. The roadmap was scoped at 240 points across your 3 squads. You've shipped 96 points. Target pace: 40 points/sprint. Current pace: 32 points/sprint.</p>
+
+  <div class="formula">
+    <div class="f-math">Velocity = (96 ÷ 3) ÷ (240 ÷ 6) = 32 ÷ 40 = <strong>0.80</strong></div>
+    <div class="f-example">Behind pace. Projected end of roadmap: 192 points shipped against 240 committed. That's a <strong>48-point gap</strong> — about 1.5 sprints of work. Momentum over last two sprints: 0.87 — still slowing. Health score: 0.68. Trigger 7 fires at week 6 since projected completion is below 70%.</div>
+  </div>
+
+  <h3>What the miss actually costs</h3>
+  <p>The 48-point gap isn't the real cost. The damage compounds across the org and lands far outside engineering. Numbers below are sourced, not estimated.</p>
+
+  <div class="cost-table">
+    <div class="cost-row">
+      <div class="cost-label">Deals slipped because a feature missed Q2<div class="why">3 enterprise deals committed on the launch date. 1 churned to competitor, 2 pushed 6 months. Median mid-market SaaS ACV $62K × 3.3× LTV.<sup><a href="#src1" style="color:var(--purple)">1</a></sup></div></div>
+      <div class="cost-amt">−$1.23M</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Engineer attrition from the firefighting quarter<div class="why">2 senior engineers leave. SHRM: replacement cost 100–200% of salary for specialized roles. Senior SWE base $170K × 150% midpoint.<sup><a href="#src2" style="color:var(--purple)">2</a></sup></div></div>
+      <div class="cost-amt">−$510K</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Replacement ramp time<div class="why">18–24 month productivity ramp for complex technical roles. 4 months × 50% productivity × $170K × 2 engineers.<sup><a href="#src3" style="color:var(--purple)">3</a></sup></div></div>
+      <div class="cost-amt">−$227K</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Marketing launch with no feature to launch<div class="why">Mid-market SaaS product launch cost: typical $300K–$500K in campaign spend, event commits, paid media already booked.<sup><a href="#src4" style="color:var(--purple)">4</a></sup></div></div>
+      <div class="cost-amt">−$380K</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Valuation hit at next raise<div class="why">Roadmap misses signal delivery risk. KeyBanc 2024: top-quartile SaaS valuation multiples drop 0.3–0.5× on missed guidance. Against $500M valuation.<sup><a href="#src5" style="color:var(--purple)">5</a></sup></div></div>
+      <div class="cost-amt">−$1.5M</div>
+    </div>
+    <div class="cost-total">
+      <div class="cost-label">Quarterly cost of running without enforcement</div>
+      <div class="cost-amt">−$3.85M</div>
+    </div>
+  </div>
+
+  <p class="table-note" style="margin-top:16px;">
+    <sup id="src1">1</sup> <a href="https://thedigitalbloom.com/learn/pipeline-performance-benchmarks-2025/">Digital Bloom 2025 SaaS Pipeline Benchmarks</a> — median ACV $62K at $10-20M ARR bracket. LTV multiplier from <a href="https://www.highalpha.com/saas-benchmarks">High Alpha/OpenView 2024</a>.<br>
+    <sup id="src2">2</sup> <a href="https://www.apollotechnical.com/employee-retention-statistics/">SHRM + Work Institute 2025 Retention Report</a> — 100–200% replacement cost for specialized roles. Senior SWE base from <a href="https://blog.exceeds.ai/software-engineer-salary/">Exceeds.ai 2026 US SWE Salary</a>.<br>
+    <sup id="src3">3</sup> <a href="https://www.apollotechnical.com/employee-retention-statistics/">Work Institute 2025</a> — 18–24 month productivity ramp for complex technical roles.<br>
+    <sup id="src4">4</sup> SaaS product launch benchmarks — typical B2B SaaS launch campaign budget ranges, Battery Ventures OpenCloud 2024.<br>
+    <sup id="src5">5</sup> <a href="https://www.highalpha.com/saas-benchmarks">KeyBanc 2024 Private SaaS Survey</a> — valuation multiple sensitivity to delivery guidance.
+  </p>
+
+  <div class="callout">
+    <div class="label">The ROI math for a VP Engineering buying this internally</div>
+    <p>Quarterly cost: $3.85M. Annual: $15.4M. Stopping a single roadmap slip per year covers the tool cost many times over. That's the business case for your CTO — not "let's try another project tool."</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block" id="cta">
+  <h3>See the roadmap risk your squads should've flagged last sprint.</h3>
+  <p>Connect your Jira or Linear. We'll run the enforcement audit on your last 3 sprints and show you the specific stories that should've been descoped — the ones that would've given you a shippable roadmap.</p>
+  <a href="/audit" class="cta-btn">Run my enforcement audit →</a>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <div class="related-label">Related playbooks</div>
+  <div class="related-grid">
+    <a href="/playbooks/saas/head-of-sales-200-500" class="related-card">
+      <div class="rc-kicker">SaaS · Sales</div>
+      <div class="rc-title">Head of Sales OKRs at 200-500 SaaS</div>
+    </a>
+    <a href="/playbooks/saas/vp-engineering-50-200" class="related-card">
+      <div class="rc-kicker">SaaS · Eng · Earlier</div>
+      <div class="rc-title">VP Engineering OKRs at 50-200 SaaS</div>
+    </a>
+    <a href="/playbooks/saas/cto-500-1000" class="related-card">
+      <div class="rc-kicker">SaaS · Later stage</div>
+      <div class="rc-title">CTO OKRs at 500-1000 SaaS</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div>ShiftFocus OS — Execution enforcement for companies that stopped pretending</div>
+</footer>
+
+</div>
+
+</body>
+</html>

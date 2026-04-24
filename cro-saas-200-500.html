@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRO OKRs at 200-500 SaaS: The Real Playbook | ShiftFocus</title>
+<meta name="description" content="Complete CRO OKR playbook for 200-500 SaaS — the revenue engine metrics (NRR, GRR, CAC payback), cross-functional enforcement, and the $7.2M per quarter the revenue engine leaks when nobody owns the handoffs.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-soft: #faf8fc;
+  --bg-card: #f5f1fa;
+  --bg-elev: #ede5f5;
+  --border: #e6ddf0;
+  --border-strong: #d4c5e3;
+  --text: #1a0e2e;
+  --text-soft: #4a3d60;
+  --text-dim: #756b85;
+  --text-faint: #a49bb3;
+  --purple: #6b3fd8;
+  --purple-dark: #4d2aa8;
+  --purple-light: #8b62e8;
+  --purple-soft: #f0e9fb;
+  --red: #d63541;
+  --amber: #d68a1f;
+  --green: #2a9d5f;
+  --ink: #2a1a45;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.serif { font-family: 'Fraunces', serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+/* Nav */
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 50;
+}
+nav .inner { display: flex; justify-content: space-between; align-items: center; }
+nav .logo {
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 21px; letter-spacing: -0.02em; color: var(--ink);
+}
+nav .logo span { color: var(--purple); }
+nav .cta {
+  background: var(--purple); color: #fff; padding: 9px 20px;
+  border-radius: 8px; font-weight: 500; text-decoration: none; font-size: 14px;
+  transition: background 0.2s;
+}
+nav .cta:hover { background: var(--purple-dark); }
+
+/* Breadcrumb */
+.breadcrumb { padding: 24px 0 8px; font-size: 13px; color: var(--text-faint); }
+.breadcrumb a { color: var(--text-dim); text-decoration: none; }
+.breadcrumb a:hover { color: var(--purple); }
+.breadcrumb .sep { margin: 0 8px; color: var(--text-faint); }
+
+/* Hero */
+.hero { padding: 40px 0 56px; border-bottom: 1px solid var(--border); }
+.tag-row { display: flex; gap: 8px; margin-bottom: 26px; flex-wrap: wrap; }
+.tag {
+  background: var(--purple-soft);
+  padding: 5px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 500; color: var(--purple-dark);
+}
+.tag.neutral { background: #f0ebf5; color: var(--text-soft); }
+h1 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(32px, 4.8vw, 52px); line-height: 1.08;
+  letter-spacing: -0.02em; margin-bottom: 24px;
+  color: var(--ink);
+}
+h1 em { font-style: italic; color: var(--purple); font-weight: 400; }
+.subhead {
+  font-size: 19px; color: var(--text-soft); max-width: 740px;
+  line-height: 1.55;
+}
+
+/* Meta row */
+.meta-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin: 44px 0 0;
+  border: 1px solid var(--border); border-radius: 12px;
+  background: var(--bg-soft); overflow: hidden;
+}
+.meta-strip > div { padding: 20px 22px; border-right: 1px solid var(--border); }
+.meta-strip > div:last-child { border-right: none; }
+.meta-label {
+  font-size: 11px; text-transform: uppercase; color: var(--text-dim);
+  letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 500;
+}
+.meta-value {
+  font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.meta-value.red { color: var(--red); }
+
+/* TOC */
+.toc {
+  margin: 56px 0; padding: 28px 32px;
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px;
+}
+.toc-label {
+  font-size: 12px; text-transform: uppercase; color: var(--purple);
+  letter-spacing: 0.12em; margin-bottom: 18px; font-weight: 600;
+}
+.toc ol { list-style: none; counter-reset: toc; }
+.toc ol li {
+  counter-increment: toc;
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 12px 0; border-bottom: 1px dashed var(--border);
+}
+.toc ol li:last-child { border-bottom: none; }
+.toc ol li::before {
+  content: "0" counter(toc);
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--purple); min-width: 26px; font-weight: 500;
+}
+.toc a { color: var(--text); text-decoration: none; font-size: 16px; flex: 1; }
+.toc a:hover { color: var(--purple); }
+
+/* Section styles */
+section.content { padding: 64px 0; border-bottom: 1px solid var(--border); }
+section.content:last-of-type { border-bottom: none; }
+.section-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  color: var(--purple); letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 14px; font-weight: 500;
+}
+h2 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15;
+  letter-spacing: -0.01em; margin-bottom: 24px; max-width: 780px;
+  color: var(--ink);
+}
+h3 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 22px; letter-spacing: -0.01em;
+  margin: 36px 0 14px; color: var(--ink);
+}
+p { margin-bottom: 18px; color: var(--text); max-width: 720px; font-size: 16px; }
+p.lead { font-size: 17px; color: var(--text-soft); }
+
+/* Callouts */
+.callout {
+  margin: 28px 0; padding: 22px 26px;
+  border-left: 3px solid var(--purple);
+  background: var(--purple-soft);
+  border-radius: 0 10px 10px 0;
+}
+.callout .label {
+  font-size: 11px; color: var(--purple);
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 10px; font-weight: 600;
+}
+.callout p { margin: 0; color: var(--ink); }
+.callout.red { border-left-color: var(--red); background: #fdf0f1; }
+.callout.red .label { color: var(--red); }
+
+/* Tables */
+.table-wrap {
+  margin: 24px 0 16px; overflow-x: auto;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: #fff;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th {
+  background: var(--bg-soft); padding: 14px 16px; text-align: left;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-dim); border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
+tr:last-child td { border-bottom: none; }
+td strong { color: var(--ink); }
+td .mini { font-size: 12px; color: var(--text-dim); margin-top: 3px; }
+td.num { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 13px; }
+td.num.red { color: var(--red); }
+td.num.green { color: var(--green); }
+td.num.amber { color: var(--amber); }
+td.highlight { background: var(--purple-soft); color: var(--purple-dark); }
+.table-note {
+  font-size: 12px; color: var(--text-dim); margin-top: 12px;
+  line-height: 1.5;
+}
+.table-note a { color: var(--purple); }
+
+/* Strategy cards */
+.strategy-stack { display: flex; flex-direction: column; gap: 16px; margin: 28px 0; }
+.strat-card {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  background: #fff;
+}
+.strat-head {
+  padding: 18px 24px; border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.strat-head .st-title {
+  font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px;
+  color: var(--ink);
+}
+.strat-head .st-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--purple); letter-spacing: 0.08em; font-weight: 500;
+}
+.strat-body { padding: 18px 24px; }
+.initiative {
+  display: grid; grid-template-columns: 36px 1fr auto;
+  gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--border);
+  align-items: center;
+}
+.initiative:last-child { border-bottom: none; }
+.init-num {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--text-faint); font-weight: 500;
+}
+.init-text { font-size: 15px; color: var(--text); }
+.init-dep {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  background: var(--purple-soft); padding: 4px 9px; border-radius: 4px;
+  color: var(--purple-dark); white-space: nowrap; font-weight: 500;
+}
+.init-dep.internal { background: #f0ebf5; color: var(--text-dim); }
+
+/* Escalation ladder */
+.ladder { margin: 32px 0; position: relative; padding-left: 8px; }
+.ladder::before {
+  content: ''; position: absolute; left: 20px; top: 20px; bottom: 20px;
+  width: 2px; background: linear-gradient(to bottom, var(--green) 0%, var(--amber) 50%, var(--red) 100%);
+}
+.rung {
+  position: relative; padding: 16px 0 16px 56px;
+}
+.rung::before {
+  content: ''; position: absolute; left: 12px; top: 22px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--border-strong);
+}
+.rung.l1::before { border-color: var(--green); }
+.rung.l2::before { border-color: #85c49b; }
+.rung.l3::before { border-color: var(--amber); }
+.rung.l4::before { border-color: #d66a1f; }
+.rung.l5::before { border-color: var(--red); }
+.rung.l6::before { border-color: #a51f29; box-shadow: 0 0 0 4px rgba(214,53,65,0.15); }
+.rung-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 10px;
+}
+.rung-time {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--purple); letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--purple-soft); padding: 3px 9px; border-radius: 4px;
+  font-weight: 600;
+}
+.rung-who {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink);
+}
+.rung-action { font-size: 14px; color: var(--text-soft); margin-top: 4px; line-height: 1.55; }
+
+/* Enforcement cards */
+.enf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+@media (max-width: 720px) { .enf-grid { grid-template-columns: 1fr; } }
+.enf-card {
+  padding: 22px; border: 1px solid var(--border); border-radius: 12px;
+  background: #fff;
+}
+.enf-card .kr-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: var(--purple); text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: 6px; font-weight: 600;
+}
+.enf-card h4 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; margin-bottom: 16px; color: var(--ink);
+}
+.enf-row {
+  display: grid; grid-template-columns: 78px 1fr; gap: 12px;
+  padding: 9px 0; font-size: 13px; border-bottom: 1px dashed var(--border);
+}
+.enf-row:last-child { border-bottom: none; }
+.enf-row .k {
+  color: var(--text-dim); font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+  padding-top: 3px; font-weight: 600;
+}
+.enf-row .v { color: var(--text); line-height: 1.5; }
+.enf-row .v strong { color: var(--purple-dark); font-weight: 600; }
+
+/* Dependency map */
+.dep-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+@media (max-width: 720px) { .dep-split { grid-template-columns: 1fr; } }
+.dep-col { padding: 24px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+.dep-col h4 {
+  font-size: 11px; color: var(--text-dim); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 600;
+}
+.dep-col.blocked-by h4::before { content: "← "; color: var(--red); }
+.dep-col.blocks h4::before { content: "→ "; color: var(--amber); }
+.dep-item {
+  padding: 12px 0; border-bottom: 1px dashed var(--border);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.dep-item:last-child { border-bottom: none; }
+.dep-name { font-size: 15px; font-weight: 500; color: var(--ink); }
+.dep-why { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+.dep-sla {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  background: var(--purple-soft); padding: 3px 9px; border-radius: 4px;
+  color: var(--purple-dark); white-space: nowrap; font-weight: 500;
+}
+.dep-sla.downstream { background: #f0ebf5; color: var(--text-dim); }
+
+/* Formula boxes */
+.formula {
+  margin: 20px 0; padding: 22px 26px;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.formula .f-label {
+  font-size: 11px; color: var(--purple); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 10px; font-weight: 600;
+}
+.formula .f-math {
+  font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  color: var(--ink); font-weight: 500;
+}
+.formula .f-math strong { color: var(--purple); }
+.formula .f-example {
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px dashed var(--border); font-size: 14px;
+  color: var(--text-soft); line-height: 1.55;
+}
+.formula .f-example strong { color: var(--red); font-weight: 600; }
+
+/* Cost table */
+.cost-table {
+  margin: 24px 0; background: #fff;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+}
+.cost-row {
+  display: grid; grid-template-columns: 1fr auto;
+  padding: 16px 24px; border-bottom: 1px solid var(--border);
+  align-items: center; gap: 20px;
+}
+.cost-row:last-of-type { border-bottom: 2px solid var(--border-strong); }
+.cost-total {
+  display: grid; grid-template-columns: 1fr auto;
+  padding: 20px 24px; background: #fdf0f1;
+  border-bottom: 1px solid var(--border);
+  align-items: center; gap: 20px;
+}
+.cost-label { font-size: 15px; color: var(--text); }
+.cost-label .why { font-size: 13px; color: var(--text-dim); margin-top: 3px; }
+.cost-amt {
+  font-family: 'JetBrains Mono', monospace; font-weight: 600;
+  font-size: 17px; color: var(--red);
+}
+.cost-total .cost-label {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink);
+}
+.cost-total .cost-amt { font-size: 22px; }
+.cost-win {
+  padding: 20px 24px; background: #e8f5ed;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px;
+}
+.cost-win .cost-label {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 16px; color: var(--ink);
+}
+.cost-win .cost-amt { color: var(--green); font-size: 18px; }
+
+/* Cornerstone link */
+.cornerstone-link {
+  margin: 32px 0; padding: 22px 26px;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+}
+.cornerstone-link .cl-text { font-size: 14px; color: var(--text-soft); line-height: 1.5; }
+.cornerstone-link .cl-text strong {
+  color: var(--ink); display: block; margin-bottom: 3px;
+  font-family: 'Fraunces', serif; font-weight: 500; font-size: 16px;
+}
+.cornerstone-link a {
+  color: var(--purple); text-decoration: none; font-size: 14px;
+  font-weight: 500; white-space: nowrap;
+  border-bottom: 1px solid transparent; transition: border-color 0.2s;
+}
+.cornerstone-link a:hover { border-bottom-color: var(--purple); }
+
+/* CTA */
+.cta-block {
+  margin: 72px 0 48px; padding: 52px 48px;
+  background: linear-gradient(135deg, var(--purple-soft) 0%, #e8ddf5 100%);
+  border: 1px solid var(--purple-light); border-radius: 16px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-block h3 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 32px; margin-bottom: 14px; color: var(--ink);
+}
+.cta-block p { color: var(--text-soft); max-width: 540px; margin: 0 auto 28px; font-size: 16px; }
+.cta-btn {
+  background: var(--purple); color: #fff; padding: 14px 32px;
+  border-radius: 10px; font-weight: 500; text-decoration: none;
+  display: inline-block; font-size: 15px;
+  transition: background 0.2s;
+}
+.cta-btn:hover { background: var(--purple-dark); }
+
+/* Related */
+.related { padding: 48px 0 80px; border-top: 1px solid var(--border); }
+.related-label {
+  font-size: 11px; text-transform: uppercase; color: var(--text-dim);
+  letter-spacing: 0.12em; margin-bottom: 20px; font-weight: 600;
+}
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 720px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card {
+  padding: 22px; border: 1px solid var(--border); border-radius: 12px;
+  background: #fff; text-decoration: none; color: var(--text);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.related-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+.related-card .rc-kicker {
+  font-size: 11px; color: var(--purple); text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 8px; font-weight: 600;
+}
+.related-card .rc-title {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: 17px; color: var(--ink); line-height: 1.25;
+}
+
+/* Signal cards - Section 1 redesign */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+@media (max-width: 720px) {
+  .signal-grid { grid-template-columns: 1fr; }
+}
+.signal-card {
+  padding: 24px 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  position: relative;
+}
+.signal-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 12px 12px 0 0;
+}
+.signal-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--purple);
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.signal-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.signal-body {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+.signal-body strong { color: var(--ink); font-weight: 600; }
+
+footer {
+  padding: 40px 0; border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text-dim); text-align: center;
+}
+
+@media (max-width: 720px) {
+  .meta-strip { grid-template-columns: repeat(2, 1fr); }
+  .meta-strip > div:nth-child(2) { border-right: none; }
+  .meta-strip > div:nth-child(1), .meta-strip > div:nth-child(2) { border-bottom: 1px solid var(--border); }
+  .cornerstone-link { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container inner">
+    <div class="logo">Shift<span>Focus</span></div>
+    <a href="#cta" class="cta">Start free pilot</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="breadcrumb">
+  <a href="/">Home</a><span class="sep">/</span><a href="/playbooks">Playbooks</a><span class="sep">/</span><a href="/playbooks/saas">SaaS</a><span class="sep">/</span>CRO · 200-500
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tag-row">
+    <span class="tag">Role Playbook</span>
+    <span class="tag neutral">SaaS</span>
+    <span class="tag neutral">200-500 employees</span>
+    <span class="tag neutral">CRO</span>
+  </div>
+  <h1>Your comp plan says you own revenue. Your calendar says you own Sales. Welcome to the <em>CRO OKR</em> gap at 200-500 SaaS.</h1>
+  <p class="subhead">Sales, Marketing, CS, RevOps, Partnerships all report to you. The board measures you on NRR and ARR growth. The CEO asks you about pipeline. You spend 70% of your week on Sales because that's where the fire is. Meanwhile expansion stalls, CS silently churns, and Marketing runs on a plan from six months ago. This is the playbook for the three CRO OKRs that actually matter, the enforcement that stops the revenue engine from leaking, and the $7.2M per quarter that slips when cross-functional handoffs have no owner.</p>
+
+  <div class="meta-strip">
+    <div>
+      <div class="meta-label">NRR median (SaaS 2025)</div>
+      <div class="meta-value">106%</div>
+    </div>
+    <div>
+      <div class="meta-label">Top quartile NRR</div>
+      <div class="meta-value">120%+</div>
+    </div>
+    <div>
+      <div class="meta-label">CAC payback median</div>
+      <div class="meta-value">8 months</div>
+    </div>
+    <div>
+      <div class="meta-label">Revenue engine leakage</div>
+      <div class="meta-value red">$7.2M / qtr</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-label">What's in this playbook</div>
+  <ol>
+    <li><a href="#s1">Three signals your CRO OKRs are leaking</a></li>
+    <li><a href="#s2">CRO OKRs — three objectives behind the revenue number</a></li>
+    <li><a href="#s3">The three bets inside every CRO OKR stack</a></li>
+    <li><a href="#s4">Enforcement rules when CRO OKRs go red</a></li>
+    <li><a href="#s5">Where the CRO sits in the escalation chain</a></li>
+    <li><a href="#s6">Cross-functional dependencies inside the revenue engine</a></li>
+    <li><a href="#s7">The math — leading indicators every CRO OKR needs</a></li>
+  </ol>
+</div>
+
+<!-- SECTION 1: CONTEXT -->
+<section class="content" id="s1">
+  <div class="section-num">01 — What goes wrong</div>
+  <h2>Three signals your CRO OKRs are leaking inside the revenue engine.</h2>
+
+  <p class="lead">The CRO job is the hardest one to fail visibly at. Sales hitting its number gives you cover. NRR slowly compressing, CS losing accounts at the edges, expansion pipeline thinning — these don't show up until the quarter where Sales misses too, and suddenly everything is on fire at once. Three signals mean your CRO OKRs are leaking before anyone calls it out.</p>
+
+  <div class="signal-grid">
+    <div class="signal-card">
+      <div class="signal-num">Signal 01</div>
+      <div class="signal-title">Your week is 70% Sales even though half your org isn't Sales.</div>
+      <div class="signal-body">Sales VP pulls you into deal reviews. Marketing, CS, RevOps run without you. <strong>The functions that compound revenue get your attention last</strong> — which is why expansion stalls quietly while you're closing Q2 deals.</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-num">Signal 02</div>
+      <div class="signal-title">NRR is drifting but nobody's called it out.</div>
+      <div class="signal-body">Your NRR moved from 112% to 106% over two quarters. That's a 6-point drift worth millions at scale. <strong>Nobody owns the gap between CS and Sales</strong> — CS says retention, Sales says expansion, and nobody owns both. The KPI drops quietly.</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-num">Signal 03</div>
+      <div class="signal-title">Forecast accuracy is eroding across the engine, not just Sales.</div>
+      <div class="signal-body">Sales forecast is 8% off. Marketing's pipeline contribution forecast is 25% off. CS expansion pipeline is fiction. <strong>You report one revenue number to the board, built on four forecasts of wildly different quality.</strong> The board finds out when two of them miss in the same quarter.</div>
+    </div>
+  </div>
+
+  <p>Any two of these signals together and the revenue engine is leaking faster than Sales can compensate. The enforcement problem isn't a Sales problem — it's that no CRO has time to enforce across four functions without a system.</p>
+
+  <div class="callout">
+    <div class="label">How you know you're in this pattern</div>
+    <p>NRR trending down 2+ quarters. Pipeline coverage ratio from Marketing below 3×. CS expansion ARR less than 30% of net new. Forecast variance across functions above 15%. Two or more true means the revenue engine has multiple leaks and no single KR surfaces them all.</p>
+  </div>
+
+  <div class="cornerstone-link">
+    <div class="cl-text">
+      <strong>Deeper read: Why the first-time CRO role has a 24-month average tenure in SaaS</strong>
+      The shortest-tenured C-suite seat isn't CEO or CFO — it's CRO. The reason isn't hiring bad people. It's a role with ambiguous scope and zero enforcement infrastructure.
+    </div>
+    <a href="/blog/cro-tenure-saas-series-b">Read →</a>
+  </div>
+</section>
+
+<!-- SECTION 2: MATRIX -->
+<section class="content" id="s2">
+  <div class="section-num">02 — The OKRs you actually own</div>
+  <h2>Three CRO objectives that decide whether you keep the seat past 24 months.</h2>
+
+  <p>The CEO owns growth strategy. The CFO owns the financial model. You own the revenue engine that has to deliver against both. Three objectives show up on every CRO scorecard at 200-500 SaaS — and none of them are "hit the number." They're outcomes that compound.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 30%;">Objective</th>
+          <th style="width: 30%;">Key Result</th>
+          <th style="width: 20%;">Benchmark</th>
+          <th style="width: 20%;">Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3"><strong>Turn the existing customer base into a growth engine that compounds without CAC</strong><div class="mini">O1 · Where CROs either create compounding value or get replaced</div></td>
+          <td>Hit NRR above 115% within 2 quarters</td>
+          <td class="num">Median 106%<sup>1</sup></td>
+          <td class="num green highlight">≥ 115%</td>
+        </tr>
+        <tr>
+          <td>Hold gross revenue retention above 92%</td>
+          <td class="num">Median 90%<sup>2</sup></td>
+          <td class="num green highlight">≥ 92%</td>
+        </tr>
+        <tr>
+          <td>Expansion ARR ≥ 40% of net new ARR</td>
+          <td class="num">40-50% at $50M+<sup>3</sup></td>
+          <td class="num amber highlight">≥ 40%</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><strong>Hit the growth number efficiently enough that the CFO stops watching burn</strong><div class="mini">O2 · The objective that separates CROs who survive from CROs who raise</div></td>
+          <td>Cut CAC payback below 6 months</td>
+          <td class="num">Median 8 months<sup>4</sup></td>
+          <td class="num green highlight">&lt; 6 mo</td>
+        </tr>
+        <tr>
+          <td>Hit Rule of 40 on the revenue side</td>
+          <td class="num">33% of SaaS hit it<sup>5</sup></td>
+          <td class="num amber highlight">Growth + margin ≥ 40</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><strong>Make the revenue forecast something the board can actually plan against</strong><div class="mini">O3 · The objective that gets CROs fired fastest when missed</div></td>
+          <td>Cut forecast variance across all functions to ±5%</td>
+          <td class="num">Typical 15-25%</td>
+          <td class="num green highlight">±5%</td>
+        </tr>
+        <tr>
+          <td>Hit 90% of commit-level pipeline coverage</td>
+          <td class="num">3× pipeline typical</td>
+          <td class="num green highlight">≥ 3.5×</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-note">
+    <sup>1</sup> <a href="https://www.joinpavilion.com/resource/b2b-saas-performance-benchmarks">Pavilion 2025 B2B SaaS Benchmarks</a> — median NRR compressed to 101% in 2025, 106% per ChartMogul N=2,100.<br>
+    <sup>2</sup> <a href="https://www.saas-capital.com/blog-posts/benchmarking-metrics-for-bootstrapped-saas-companies/">SaaS Capital 2025</a> — GRR median 90%, 90th percentile 98%.<br>
+    <sup>3</sup> <a href="https://www.highalpha.com/blog/net-revenue-retention-2025-why-its-crucial-for-saas-growth">High Alpha 2024 Benchmarks</a> — expansion ARR share above $50M ARR exceeds 40-50%.<br>
+    <sup>4</sup> <a href="https://developmentcorporate.com/startups/the-2025-saas-metrics-that-matter-most-for-1m-5m-arr-startups/">High Alpha 2025 SaaS Benchmarks</a> — CAC payback median 8 months.<br>
+    <sup>5</sup> <a href="https://www.thesaascfo.com/rule-of-40-saas/">SaaS CFO + RevOpsSquared 2024</a>.
+  </div>
+
+  <div class="callout">
+    <div class="label">Why O1 is where first-time CROs lose the seat</div>
+    <p>Every CRO focuses on O2 (growth) because it's what they were hired for. O1 (NRR and retention) is where the seat is actually won or lost. SaaS companies with NRR above 120% grow 2.5× faster than those below 106%. Miss on growth, you get another quarter. Miss on NRR for 2 quarters running and the board starts asking if the CRO can see the whole engine — not just the Sales half.</p>
+  </div>
+</section>
+
+<!-- SECTION 3: STRATEGY STACK -->
+<section class="content" id="s3">
+  <div class="section-num">03 — Your strategy stack</div>
+  <h2>The three bets inside every CRO OKR stack — and the twelve Sales-VPs run without you.</h2>
+
+  <p>Every Sales leader runs a quarterly plan. You're not them. Your job is the three bets that move all four functions in lockstep — and letting your VPs run their own quarterly bets underneath. Three bets you personally own. Everything else delegates.</p>
+
+  <div class="strategy-stack">
+    <div class="strat-card">
+      <div class="strat-head">
+        <div class="st-title">Strategy 1 — Re-engineer the Sales-to-CS handoff so expansion doesn't leak</div>
+        <div class="st-num">→ O1</div>
+      </div>
+      <div class="strat-body">
+        <div class="initiative"><div class="init-num">1.1</div><div class="init-text">Install a 90-day post-close checkpoint: every account reviewed for expansion signal</div><div class="init-dep">CS + Sales</div></div>
+        <div class="initiative"><div class="init-num">1.2</div><div class="init-text">Shared quota between AE and CSM on expansion ARR for top 50 accounts</div><div class="init-dep">Sales + CS</div></div>
+        <div class="initiative"><div class="init-num">1.3</div><div class="init-text">Build an expansion pipeline that's tracked like new-logo pipeline</div><div class="init-dep internal">Internal</div></div>
+        <div class="initiative"><div class="init-num">1.4</div><div class="init-text">Weekly churn-risk review: accounts below 40% product engagement</div><div class="init-dep">CS + Product</div></div>
+      </div>
+    </div>
+
+    <div class="strat-card">
+      <div class="strat-head">
+        <div class="st-title">Strategy 2 — Cut CAC payback without cutting growth</div>
+        <div class="st-num">→ O2</div>
+      </div>
+      <div class="strat-body">
+        <div class="initiative"><div class="init-num">2.1</div><div class="init-text">Kill the bottom 2 channels by CAC efficiency; reallocate to top 2</div><div class="init-dep">Marketing + Finance</div></div>
+        <div class="initiative"><div class="init-num">2.2</div><div class="init-text">Lock a stricter ICP-match scoring on inbound leads — kill the unqualified pipeline</div><div class="init-dep">Marketing + RevOps</div></div>
+        <div class="initiative"><div class="init-num">2.3</div><div class="init-text">Shift comp structure to reward ACV over count — stop rewarding low-ACV closes</div><div class="init-dep">Finance + Sales</div></div>
+        <div class="initiative"><div class="init-num">2.4</div><div class="init-text">Monthly CAC payback review with CFO — not quarterly</div><div class="init-dep">Finance</div></div>
+      </div>
+    </div>
+
+    <div class="strat-card">
+      <div class="strat-head">
+        <div class="st-title">Strategy 3 — Build one revenue forecast the board can plan against</div>
+        <div class="st-num">→ O3</div>
+      </div>
+      <div class="strat-body">
+        <div class="initiative"><div class="init-num">3.1</div><div class="init-text">Consolidate Sales, CS, and Marketing forecasts into one weekly revenue call</div><div class="init-dep internal">Internal</div></div>
+        <div class="initiative"><div class="init-num">3.2</div><div class="init-text">MEDDPICC or similar qualification required on every deal above $75K</div><div class="init-dep">Sales</div></div>
+        <div class="initiative"><div class="init-num">3.3</div><div class="init-text">Pipeline coverage below 3.5× triggers an inspection — no exceptions</div><div class="init-dep">RevOps</div></div>
+        <div class="initiative"><div class="init-num">3.4</div><div class="init-text">Lock forecast by Friday EOD every week; mid-week changes require written rationale</div><div class="init-dep internal">Internal</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: ENFORCEMENT -->
+<section class="content" id="s4">
+  <div class="section-num">04 — Enforcement rules</div>
+  <h2>Enforcement for CRO OKRs — the 2 triggers that fire hardest in your seat.</h2>
+
+  <p>ShiftFocus watches seven signals on every KR. All seven apply to you. Two define your daily pain as CRO: <strong>Momentum Decay</strong> (Trigger 3) and <strong>Dependency SLA Breach</strong> (Trigger 6). The CRO seats lost in the last 3 years were almost all lost to one of these two, caught too late.</p>
+
+  <h3>The two that fire hardest at the CRO layer</h3>
+
+  <div class="enf-grid">
+    <div class="enf-card" style="grid-column: span 2;">
+      <div class="kr-label">Trigger 3 · Momentum Decay — the NRR killer</div>
+      <div class="enf-row"><div class="k">Fires when</div><div class="v">Week-over-week velocity on any revenue KR decelerates for 2+ weeks — measured across NRR, pipeline coverage, expansion ARR, CAC payback</div></div>
+      <div class="enf-row"><div class="k">Why it matters</div><div class="v">NRR doesn't drop suddenly. It compresses quietly — 112% → 110% → 108% across 3 quarters. By the time the board notices, you've lost 6 points of growth that compounds forever. Trigger 3 catches the deceleration in week 4, not the QBR. Same math for pipeline coverage, expansion pipeline, and CAC payback trend.</div></div>
+      <div class="enf-row"><div class="k">Example</div><div class="v">Your NRR KR target is 115%. Q1 actual 112%. Q2 actual 110%. Week-over-week expansion ARR velocity has declined 4 consecutive weeks. Trigger 3 fires. Your weekly revenue call gets the NRR KR at the top with the momentum chart. You don't have to notice it — the system does.</div></div>
+    </div>
+
+    <div class="enf-card" style="grid-column: span 2;">
+      <div class="kr-label">Trigger 6 · Dependency SLA Breach — the handoff killer</div>
+      <div class="enf-row"><div class="k">Fires when</div><div class="v">Cross-functional handoff (Marketing → Sales MQLs, Sales → CS account transitions, CS → Sales expansion signals, RevOps → Sales pipeline cleanliness) past 48-hour SLA</div></div>
+      <div class="enf-row"><div class="k">Why it matters</div><div class="v">The revenue engine leaks at the seams. Marketing-qualified leads sit in a queue for a week before Sales touches them. Closed-won deals take 3 weeks to fully hand off to CS. Expansion signals from CS never make it to Sales. Each handoff looks small — until you realize 80% of the revenue engine's value is created or destroyed at these seams. Trigger 6 flags the breach on the blocking function's KR, not the receiving function's. Marketing can't blame Sales for low conversion when Marketing's MQL-to-SAL handoff is the breach.</div></div>
+      <div class="enf-row"><div class="k">Example</div><div class="v">Sales KR "Lift Stage 2 → Stage 3 conversion to 35%" depends on Marketing shipping updated battle cards within 48h of any competitor release. Competitor releases Feature X on Monday. Marketing doesn't ship by Wednesday. Trigger 6 fires on Marketing's KR, not Sales'. Your Friday revenue call has Marketing's owner explaining — not Sales defending a conversion drop they didn't cause.</div></div>
+    </div>
+  </div>
+
+  <h3>The other 5 that also fire on your KRs</h3>
+
+  <div class="enf-grid">
+    <div class="enf-card">
+      <div class="kr-label">Trigger 1 · Missed Check-in</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Functional VP (Sales, CS, Marketing, RevOps) misses weekly KR update. 48h clock, then escalates to you.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 2 · Velocity Drop</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Revenue KR progress rate falls below 50% of planned pace.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 4 · KPI Drift</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Underlying KPI (NRR, GRR, CAC payback, pipeline coverage) crosses threshold — parent KR flags red.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 5 · Owner Absence</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">KR ownership "shared" between Sales and CS, or owner inactive 7+ days.</div></div>
+    </div>
+    <div class="enf-card">
+      <div class="kr-label">Trigger 7 · Projected Miss</div>
+      <div class="enf-row"><div class="k">When</div><div class="v">Projected end-of-quarter revenue or NRR drops below 70% at week 6 — exec brief fires to CEO.</div></div>
+    </div>
+  </div>
+
+  <div class="callout red">
+    <div class="label">Why this works where integration-based tools fail</div>
+    <p>Lattice needs HRIS integration. Gainsight only reads CS signals. Clari only reads Sales signals. Every revenue tool enforces within its own lane. ShiftFocus enforces across lanes — at the KR layer that sits above all of them. Your functions can use Salesforce, Gainsight, Clari, or Gong. The enforcement works the same.</p>
+  </div>
+</section>
+
+<!-- SECTION 5: ESCALATION -->
+<section class="content" id="s5">
+  <div class="section-num">05 — The escalation chain</div>
+  <h2>The CRO OKR escalation chain — 5 levels, all on a 48-hour clock.</h2>
+
+  <p>Every trigger from Section 4 feeds into this ladder. The ladder climbs on time, not on human judgment. Nobody has to decide "is this bad enough to escalate" — the clock runs and the system moves it up.</p>
+
+  <div class="ladder">
+    <div class="rung l1">
+      <div class="rung-head"><div class="rung-who">L1 — Auto-Nudge</div><div class="rung-time">Immediate</div></div>
+      <div class="rung-action">Any trigger fires. KR owner (functional VP) gets Slack + email with the KR status link and what changed.</div>
+    </div>
+    <div class="rung l2">
+      <div class="rung-head"><div class="rung-who">L2 — Peer Flag</div><div class="rung-time">48h after L1</div></div>
+      <div class="rung-action">Owner hasn't responded. Other revenue-side VPs notified. Peer review on the cross-functional KR.</div>
+    </div>
+    <div class="rung l3">
+      <div class="rung-head"><div class="rung-who">L3 — CRO Alert</div><div class="rung-time">48h after L2</div></div>
+      <div class="rung-action">You get the escalation brief: dependency map, blocker details, suggested reallocation. You own the next action.</div>
+    </div>
+    <div class="rung l4">
+      <div class="rung-head"><div class="rung-who">L4 — Executive Brief</div><div class="rung-time">Week 6 auto-check</div></div>
+      <div class="rung-action">Projected completion below 70%. CEO receives one-page PDF: what's failing, why, recommended intervention.</div>
+    </div>
+    <div class="rung l5">
+      <div class="rung-head"><div class="rung-who">L5 — Intervention</div><div class="rung-time">3 weeks before quarter end</div></div>
+      <div class="rung-action">Projected miss greater than 30%. War-room triggered. Forecast adjustment or resource reallocation required within 48 hours.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="label">What this kills</div>
+    <p>The CRO failure mode where the CEO learns about a revenue miss at the board meeting, not in week 6. Most CRO misses surface in the last week of the quarter — when there's nothing left to do except explain. ShiftFocus surfaces the same information at week 4 via Trigger 3. Same facts, 8 weeks earlier, while the recovery window is still open.</p>
+  </div>
+</section>
+
+<!-- SECTION 6: DEPENDENCIES -->
+<section class="content" id="s6">
+  <div class="section-num">06 — Cross-functional dependencies</div>
+  <h2>Cross-functional dependencies: where the revenue engine actually leaks.</h2>
+
+  <p>Sales gets blamed when revenue misses. The data usually says it wasn't Sales. Marketing shipped 40% fewer MQLs than forecast. CS didn't flag churn-risk accounts until they churned. Product Marketing's new-feature battle cards are 6 weeks late. RevOps has lead routing broken in 2 territories. Each looks small — until the quarter misses and everyone points sideways.</p>
+
+  <p>ShiftFocus tracks every cross-functional handoff with a 48-hour SLA (Trigger 6). When a handoff breaches, the breach flags on the blocking function's KR, not the receiving function's.</p>
+
+  <div class="dep-split">
+    <div class="dep-col blocked-by">
+      <h4>Functions the CRO's KRs depend on</h4>
+      <div class="dep-item">
+        <div><div class="dep-name">Marketing</div><div class="dep-why">MQL volume and quality, campaign-to-pipeline conversion</div></div>
+        <div class="dep-sla">SLA 7d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Product Marketing</div><div class="dep-why">Battle cards, competitor intel, positioning, win-loss</div></div>
+        <div class="dep-sla">SLA 10d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">RevOps</div><div class="dep-why">Pipeline hygiene, forecast tooling, lead routing, comp plans</div></div>
+        <div class="dep-sla">SLA 5d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Customer Success</div><div class="dep-why">Expansion signals, churn-risk flags, account health scoring</div></div>
+        <div class="dep-sla">SLA 7d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Product</div><div class="dep-why">Feature delivery for deals committed on a roadmap date</div></div>
+        <div class="dep-sla">SLA 14d</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Finance</div><div class="dep-why">Deal desk, pricing approvals, contracts, invoicing cycle</div></div>
+        <div class="dep-sla">SLA 5d</div>
+      </div>
+    </div>
+
+    <div class="dep-col blocks">
+      <h4>Who the CRO blocks (downstream)</h4>
+      <div class="dep-item">
+        <div><div class="dep-name">CEO</div><div class="dep-why">Board-facing revenue forecast and narrative</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">CFO</div><div class="dep-why">Cash planning, burn model, ARR forecast accuracy</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+      <div class="dep-item">
+        <div><div class="dep-name">Board</div><div class="dep-why">Revenue commits, NRR trajectory, growth efficiency</div></div>
+        <div class="dep-sla downstream">Downstream</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout red">
+    <div class="label">The specific fight that breaks the CRO seat</div>
+    <p>The Sales-CS expansion fight is the #1 handoff breakage at 200-500 SaaS. Sales closes the deal. CS onboards the account. 6 months later the account is up for expansion — and nobody agrees who owns it. Sales says CS should surface the signal. CS says Sales should drive the expansion conversation. Expansion pipeline stays empty. NRR drifts. ShiftFocus makes the handoff explicit: expansion signals from CS have a 7-day SLA to reach Sales, expansion opportunities have a named owner on day 1, and breaches flag the blocking side — not the receiving side.</p>
+  </div>
+</section>
+
+<!-- SECTION 7: VELOCITY + COST -->
+<section class="content" id="s7">
+  <div class="section-num">07 — The math</div>
+  <h2>The three leading indicators every CRO OKR needs.</h2>
+
+  <p>Every CRO reports the same number to the board: bookings hit or missed. It's the outcome. It tells you nothing about whether next quarter is safe. Three numbers tell you where the revenue engine is headed, not where it's been.</p>
+
+  <div class="formula">
+    <div class="f-label">Revenue velocity — are the four functions on pace?</div>
+    <div class="f-math">Velocity = (ARR added ÷ weeks elapsed) ÷ (target ARR ÷ total weeks)</div>
+    <div class="f-example">Above 1.0 means ahead. Below 0.8 means behind. Computed weekly across net new, expansion, and contraction — not just new-logo close rate.</div>
+  </div>
+
+  <div class="formula">
+    <div class="f-label">NRR momentum — is the compounding machine compounding?</div>
+    <div class="f-math">Momentum = This month's NRR run-rate ÷ Last month's NRR run-rate</div>
+    <div class="f-example">Momentum above 1.0 = NRR accelerating. Below 1.0 = compressing. 3 consecutive months below 1.0 is the pattern that precedes every CRO replacement in the last 3 years.</div>
+  </div>
+
+  <div class="formula">
+    <div class="f-label">Revenue engine health — the weighted composite</div>
+    <div class="f-math">Health = (0.35 × revenue velocity) + (0.35 × NRR momentum) + (0.30 × pipeline coverage trajectory)</div>
+    <div class="f-example">CRO health weights NRR equally with velocity because CROs who miss growth get another quarter. CROs who miss NRR for 2 quarters get replaced.</div>
+  </div>
+
+  <h3>What this looks like in practice</h3>
+  <p>Week 6 of Q2. Target: $8M net new ARR. Closed: $2.4M. NRR: 108% this month vs 110% last month. Pipeline coverage: 3.2× vs 3.5× target.</p>
+
+  <div class="formula">
+    <div class="f-math">Velocity = ($2.4M ÷ 6) ÷ ($8M ÷ 13) = $400K ÷ $615K = <strong>0.65</strong>. NRR momentum = 108 ÷ 110 = <strong>0.98</strong>. Coverage trajectory: <strong>0.91</strong>. Health = (0.35 × 0.65) + (0.35 × 0.98) + (0.30 × 0.91) = <strong>0.84</strong></div>
+    <div class="f-example">Revenue velocity well behind. NRR starting to compress. Pipeline coverage trending down. Health 0.84 crosses Level 3 threshold — you get the escalation brief. If nothing changes, Trigger 7 fires in week 7 when projected attainment crosses below 70%.</div>
+  </div>
+
+  <h3>What the revenue engine leakage actually costs</h3>
+  <p>CRO misses don't show up as a single number. They compound across the engine. Numbers sourced, scenarios illustrative.</p>
+
+  <div class="cost-table">
+    <div class="cost-row">
+      <div class="cost-label">NRR compression from 115% → 106% across 2 quarters<div class="why">On $40M ARR base, 9 points of NRR = $3.6M/yr of lost compounding. Quarterly impact.<sup><a href="#src1" style="color:var(--purple)">1</a></sup></div></div>
+      <div class="cost-amt">−$900K</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Missed net new from pipeline coverage below 3×<div class="why">Coverage shortfall = conversion × ACV math. $8M target × (1 - 0.3) × 0.35 coverage gap.<sup><a href="#src2" style="color:var(--purple)">2</a></sup></div></div>
+      <div class="cost-amt">−$1.8M</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Expansion ARR leaked to untouched accounts<div class="why">30% of accounts have expansion signal but no owner assigned. Top 50 × $40K avg expansion × 30%.<sup><a href="#src3" style="color:var(--purple)">3</a></sup></div></div>
+      <div class="cost-amt">−$600K</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">CRO team attrition from a miss-fire quarter<div class="why">2 senior AEs + 1 CSM exit. 150% replacement cost × avg $180K fully loaded.<sup><a href="#src4" style="color:var(--purple)">4</a></sup></div></div>
+      <div class="cost-amt">−$810K</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Valuation hit from NRR trend visible in diligence<div class="why">Companies below NRR 106% trade at 2-3× lower multiples. Against $500M valuation.<sup><a href="#src5" style="color:var(--purple)">5</a></sup></div></div>
+      <div class="cost-amt">−$3.1M</div>
+    </div>
+    <div class="cost-total">
+      <div class="cost-label">Quarterly cost of running without cross-functional enforcement</div>
+      <div class="cost-amt">−$7.21M</div>
+    </div>
+  </div>
+
+  <p class="table-note" style="margin-top:16px;">
+    <sup id="src1">1</sup> <a href="https://www.highalpha.com/blog/net-revenue-retention-2025-why-its-crucial-for-saas-growth">High Alpha 2024 SaaS Benchmarks</a> — NRR compounding impact on growth rate.<br>
+    <sup id="src2">2</sup> <a href="https://www.joinpavilion.com/resource/b2b-saas-performance-benchmarks">Pavilion 2025 B2B SaaS Benchmarks</a> — pipeline coverage to conversion math.<br>
+    <sup id="src3">3</sup> <a href="https://developmentcorporate.com/startups/the-2025-saas-metrics-that-matter-most-for-1m-5m-arr-startups/">High Alpha 2025</a> — expansion ARR contribution at $50M+ ARR.<br>
+    <sup id="src4">4</sup> <a href="https://www.apollotechnical.com/employee-retention-statistics/">SHRM 2025 Retention Report</a> — 100-200% replacement cost for specialized roles.<br>
+    <sup id="src5">5</sup> <a href="https://optif.ai/learn/questions/b2b-saas-net-revenue-retention-benchmark/">Optifai NRR Benchmarks 2026</a> — NRR valuation multiple correlation.
+  </p>
+
+  <div class="callout">
+    <div class="label">The ROI math for a CRO buying this internally</div>
+    <p>Quarterly leakage: $7.2M. Annual: $28.8M. Stopping a single NRR compression trend or preventing one preventable AE exit pays the tool cost many times over. That's the business case you take to the CEO — not "another RevOps tool to layer on Salesforce."</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block" id="cta">
+  <h3>See the cross-functional leaks in your revenue engine from last quarter.</h3>
+  <p>Connect your revenue systems. We'll audit the last 4 quarters for handoff latency, NRR momentum, and forecast accuracy — and show you exactly where the engine is leaking.</p>
+  <a href="/audit" class="cta-btn">Run my revenue engine audit →</a>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <div class="related-label">Related playbooks</div>
+  <div class="related-grid">
+    <a href="/playbooks/saas/head-of-sales-200-500" class="related-card">
+      <div class="rc-kicker">SaaS · Sales</div>
+      <div class="rc-title">Head of Sales OKRs at 200-500 SaaS</div>
+    </a>
+    <a href="/playbooks/saas/coo-200-500" class="related-card">
+      <div class="rc-kicker">SaaS · Operations</div>
+      <div class="rc-title">COO OKRs at 200-500 SaaS</div>
+    </a>
+    <a href="/playbooks/saas/cro-500-1000" class="related-card">
+      <div class="rc-kicker">SaaS · Later stage</div>
+      <div class="rc-title">CRO OKRs at 500-1000 SaaS</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div>ShiftFocus OS — Execution enforcement for companies that stopped pretending</div>
+</footer>
+
+</div>
+
+</body>
+</html>
