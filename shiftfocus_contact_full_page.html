@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Pilot Scoping Call — ShiftFocus</title>
+<meta name="description" content="ShiftFocus surfaces execution failures 2–3 weeks before they reach your boardroom. Request a 30-minute pilot scoping call. No sales pitch. No lock-in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+
+/* ════════════════════════════════════════
+   TOKENS
+════════════════════════════════════════ */
+:root {
+  --bg:           #07090F;
+  --bg2:          #0C0F1A;
+  --bg3:          #111827;
+  --card:         rgba(255,255,255,0.025);
+  --card-hover:   rgba(255,255,255,0.045);
+  --purple:       #6B4EFF;
+  --purple-mid:   #8B72FF;
+  --purple-dim:   rgba(107,78,255,0.12);
+  --purple-glow:  rgba(107,78,255,0.25);
+  --purple-border:rgba(107,78,255,0.28);
+  --green:        #22D3A0;
+  --green-dim:    rgba(34,211,160,0.1);
+  --amber:        #F5A623;
+  --red:          #FC5A5A;
+  --text:         #EDF2FF;
+  --text-mid:     #8898B3;
+  --text-dim:     #3D4F66;
+  --border:       rgba(255,255,255,0.065);
+  --border-focus: rgba(107,78,255,0.45);
+  --r:            10px;
+  --r-lg:         18px;
+  --r-xl:         28px;
+}
+
+/* ════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ════════════════════════════════════════
+   NOISE TEXTURE + GRID
+════════════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(107,78,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107,78,255,0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none; z-index: 0;
+}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 60px;
+  background: rgba(7,9,15,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 34px; height: 34px;
+  background: var(--purple);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 15px; color: #fff;
+  letter-spacing: -1px;
+}
+.nav-logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 17px; color: var(--text);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px; color: var(--text-mid); text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  padding: 10px 22px;
+  background: var(--purple);
+  border: none; border-radius: var(--r);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 600; color: #fff;
+  cursor: pointer; text-decoration: none;
+  transition: all .25s;
+}
+.nav-cta:hover {
+  background: var(--purple-mid);
+  box-shadow: 0 6px 20px var(--purple-glow);
+  transform: translateY(-1px);
+}
+
+/* ════════════════════════════════════════
+   SECTIONS COMMON
+════════════════════════════════════════ */
+section { position: relative; z-index: 1; }
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.section-pad { padding: 100px 0; }
+.section-pad-sm { padding: 72px 0; }
+
+/* ════════════════════════════════════════
+   ① HERO
+════════════════════════════════════════ */
+.hero {
+  padding: 180px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute;
+  width: 900px; height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,78,255,0.14) 0%, transparent 65%);
+  top: -300px; left: 50%; transform: translateX(-50%);
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--purple-dim);
+  border: 1px solid var(--purple-border);
+  border-radius: 100px;
+  padding: 7px 18px;
+  font-size: 12px; font-weight: 500; color: var(--purple-mid);
+  letter-spacing: 0.6px; text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fade-up .7s ease both;
+}
+.tag-dot {
+  width: 6px; height: 6px;
+  background: var(--green); border-radius: 50%;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.3;transform:scale(.6)}
+}
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  margin-bottom: 24px;
+  animation: fade-up .7s .1s ease both;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--purple-mid), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--text-mid);
+  max-width: 560px; margin: 0 auto 48px;
+  line-height: 1.7;
+  font-weight: 300;
+  animation: fade-up .7s .2s ease both;
+}
+.hero-cta-row {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap;
+  animation: fade-up .7s .3s ease both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px;
+  background: var(--purple);
+  border: none; border-radius: var(--r);
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 600; color: #fff;
+  cursor: pointer; text-decoration: none;
+  transition: all .25s; position: relative; overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.12), transparent);
+  opacity: 0; transition: opacity .2s;
+}
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary:hover {
+  background: var(--purple-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--purple-glow);
+}
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 28px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  font-size: 15px; color: var(--text-mid);
+  text-decoration: none;
+  transition: all .2s;
+}
+.btn-ghost:hover {
+  border-color: var(--purple-border);
+  color: var(--text);
+}
+.hero-proof-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+  margin-top: 64px; padding-top: 48px;
+  border-top: 1px solid var(--border);
+  animation: fade-up .7s .4s ease both;
+}
+.hero-stat {}
+.hero-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px; font-weight: 800;
+  letter-spacing: -1px; color: var(--text);
+  line-height: 1;
+}
+.hero-stat-num span { color: var(--purple-mid); }
+.hero-stat-label {
+  font-size: 13px; color: var(--text-mid); margin-top: 4px;
+}
+.hero-divider {
+  width: 1px; height: 48px;
+  background: var(--border);
+}
+
+/* ════════════════════════════════════════
+   ② PAIN POINTS
+════════════════════════════════════════ */
+.pain-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--purple-mid);
+  margin-bottom: 16px;
+}
+.section-label::before {
+  content: ''; width: 24px; height: 1px; background: var(--purple-mid);
+}
+.section-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700; letter-spacing: -1px;
+  margin-bottom: 12px; line-height: 1.15;
+}
+.section-sub {
+  font-size: 16px; color: var(--text-mid);
+  max-width: 560px; line-height: 1.7; margin-bottom: 56px;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pain-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.pain-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--purple-mid), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.pain-card:hover { border-color: var(--purple-border); background: var(--card-hover); }
+.pain-card:hover::before { opacity: 1; }
+.pain-icon {
+  width: 48px; height: 48px;
+  background: var(--purple-dim); border: 1px solid var(--purple-border);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 20px;
+}
+.pain-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700;
+  letter-spacing: -.3px; margin-bottom: 10px;
+}
+.pain-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+.pain-quote {
+  margin-top: 16px; padding: 14px 16px;
+  background: rgba(107,78,255,0.07);
+  border-left: 2px solid var(--purple);
+  border-radius: 0 var(--r) var(--r) 0;
+  font-size: 13px; color: var(--text-mid);
+  font-style: italic;
+}
+
+/* ════════════════════════════════════════
+   ③ WHAT YOU GET
+════════════════════════════════════════ */
+.what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px; align-items: center;
+}
+.what-visual {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  position: relative; overflow: hidden;
+}
+.what-visual::after {
+  content: '';
+  position: absolute; bottom: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: var(--purple-dim);
+  pointer-events: none;
+}
+.call-timeline { display: flex; flex-direction: column; gap: 0; }
+.call-item {
+  display: flex; gap: 16px; padding-bottom: 28px;
+  position: relative;
+}
+.call-item:last-child { padding-bottom: 0; }
+.call-item:not(:last-child)::after {
+  content: '';
+  position: absolute; left: 16px; top: 36px;
+  width: 1px; bottom: 0;
+  background: var(--border);
+}
+.call-num {
+  width: 32px; height: 32px; flex-shrink: 0;
+  background: var(--purple-dim); border: 1px solid var(--purple-border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700; color: var(--purple-mid);
+  z-index: 1;
+}
+.call-content {}
+.call-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 600; margin-bottom: 4px;
+}
+.call-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+.call-time {
+  display: inline-block; margin-top: 6px;
+  font-size: 11px; color: var(--purple-mid);
+  background: var(--purple-dim); border-radius: 100px;
+  padding: 2px 10px;
+}
+
+.what-content {}
+.what-points { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.what-point {
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.what-check {
+  width: 22px; height: 22px; flex-shrink: 0;
+  background: var(--green-dim); border: 1px solid rgba(34,211,160,.3);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--green);
+  margin-top: 2px;
+}
+.what-point-text { font-size: 15px; color: var(--text-mid); line-height: 1.6; }
+.what-point-text strong { color: var(--text); font-weight: 500; }
+
+/* ════════════════════════════════════════
+   ④ FORM
+════════════════════════════════════════ */
+.form-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+.form-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px; align-items: start;
+}
+.form-left {}
+.form-left-sticky { position: sticky; top: 100px; }
+.form-left h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 700; letter-spacing: -.8px;
+  margin-bottom: 16px; line-height: 1.2;
+}
+.form-left p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 36px; }
+
+.sidebar-facts { display: flex; flex-direction: column; gap: 12px; }
+.sidebar-fact {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r);
+  font-size: 14px; color: var(--text-mid);
+  transition: all .2s;
+}
+.sidebar-fact:hover { border-color: var(--purple-border); color: var(--text); }
+.fact-icon { font-size: 18px; flex-shrink: 0; }
+.fact-text strong { color: var(--text); display: block; font-size: 13px; margin-bottom: 2px; }
+.fact-text span { font-size: 12px; }
+
+/* FORM RIGHT */
+.form-right {
+  background: rgba(255,255,255,0.018);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 48px;
+}
+.form-right h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 700; letter-spacing: -.3px;
+  margin-bottom: 6px;
+}
+.form-right .form-sub-text {
+  font-size: 14px; color: var(--text-mid); margin-bottom: 36px;
+}
+
+/* FIELD GROUPS */
+.form-section-title {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--purple-mid);
+  margin-bottom: 16px; margin-top: 32px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.form-section-title:first-of-type { margin-top: 0; }
+
+.form-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-bottom: 16px;
+}
+.form-row.single { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.span2 { grid-column: 1 / -1; }
+
+label {
+  font-size: 12px; font-weight: 500; letter-spacing: .3px;
+  text-transform: uppercase; color: var(--text-mid);
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 13px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; color: var(--text);
+  outline: none; width: 100%;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+  -webkit-appearance: none;
+}
+input::placeholder, textarea::placeholder { color: var(--text-dim); }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--border-focus);
+  background: var(--purple-dim);
+  box-shadow: 0 0 0 3px rgba(107,78,255,.1);
+}
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238898B3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px; cursor: pointer;
+}
+select option { background: #121826; color: var(--text); }
+textarea { resize: none; min-height: 110px; line-height: 1.6; }
+input.err, select.err, textarea.err {
+  border-color: var(--red);
+  background: rgba(252,90,90,0.05);
+}
+.err-msg {
+  font-size: 11px; color: var(--red);
+  display: none; margin-top: 3px;
+}
+.field-note {
+  font-size: 11px; color: var(--text-dim); margin-top: 3px;
+}
+
+/* CHECKBOXES */
+.check-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.check-item {
+  display: flex; align-items: flex-start; gap: 10px; cursor: pointer;
+}
+.check-item input[type="checkbox"] {
+  width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px;
+  border-radius: 4px; border: 1.5px solid var(--border);
+  background: transparent; cursor: pointer;
+  accent-color: var(--purple);
+}
+.check-item-text { font-size: 14px; color: var(--text-mid); line-height: 1.5; }
+.check-item-text strong { color: var(--text); font-weight: 500; }
+
+/* SUBMIT */
+.form-submit-area { margin-top: 36px; }
+.submit-btn {
+  width: 100%; padding: 17px 28px;
+  background: var(--purple); border: none; border-radius: var(--r);
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700; color: #fff;
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 10px;
+  transition: all .25s; letter-spacing: -.2px;
+  position: relative; overflow: hidden;
+}
+.submit-btn::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+  transition: left .5s;
+}
+.submit-btn:hover::before { left: 100%; }
+.submit-btn:hover {
+  background: var(--purple-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--purple-glow);
+}
+.submit-btn:active { transform: translateY(0); }
+.submit-note {
+  font-size: 12px; color: var(--text-dim);
+  text-align: center; margin-top: 14px; line-height: 1.6;
+}
+.submit-note a { color: var(--text-mid); }
+
+/* SUCCESS */
+.success-panel {
+  display: none; text-align: center; padding: 48px 24px;
+}
+.success-panel.show { display: block; }
+.success-ring {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--green-dim); border: 2px solid var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; margin: 0 auto 24px;
+  animation: pop .5s .1s cubic-bezier(.175,.885,.32,1.275) both;
+}
+@keyframes pop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.success-panel h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px; font-weight: 700; letter-spacing: -.5px;
+  margin-bottom: 12px;
+}
+.success-panel p {
+  font-size: 15px; color: var(--text-mid); max-width: 380px;
+  margin: 0 auto 32px; line-height: 1.7;
+}
+.success-cards {
+  display: flex; flex-direction: column; gap: 1px;
+  background: var(--border); border-radius: var(--r);
+  overflow: hidden; text-align: left;
+}
+.success-card {
+  background: var(--bg2); padding: 14px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 14px;
+}
+.success-card-label { color: var(--text-dim); }
+.success-card-val { color: var(--text); font-weight: 500; }
+
+/* ════════════════════════════════════════
+   ⑤ HOW PILOT WORKS
+════════════════════════════════════════ */
+.pilot-section { border-top: 1px solid var(--border); }
+.pilot-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 20px;
+  margin-top: 56px;
+}
+.pilot-week {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 24px;
+  transition: all .3s; position: relative; overflow: hidden;
+}
+.pilot-week::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--purple), var(--green));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .4s ease;
+}
+.pilot-week:hover::before { transform: scaleX(1); }
+.pilot-week:hover { border-color: var(--purple-border); }
+.pilot-week-num {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--purple-mid);
+  margin-bottom: 10px;
+}
+.pilot-week h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700; margin-bottom: 10px;
+}
+.pilot-week ul {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+}
+.pilot-week li {
+  font-size: 13px; color: var(--text-mid);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.pilot-week li::before {
+  content: '→'; color: var(--purple-mid); flex-shrink: 0; font-size: 12px; margin-top: 2px;
+}
+.pilot-guarantee {
+  margin-top: 40px; padding: 28px 36px;
+  background: var(--purple-dim); border: 1px solid var(--purple-border);
+  border-radius: var(--r-lg);
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.guarantee-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 700; letter-spacing: -.3px;
+}
+.guarantee-sub { font-size: 14px; color: var(--text-mid); margin-top: 4px; }
+.guarantee-badge {
+  padding: 12px 24px; background: var(--purple); border-radius: var(--r);
+  font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; color: #fff;
+  white-space: nowrap;
+}
+
+/* ════════════════════════════════════════
+   ⑥ TRUST / SECURITY
+════════════════════════════════════════ */
+.trust-section {
+  background: var(--bg2); border-top: 1px solid var(--border);
+}
+.trust-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+  margin-top: 56px;
+}
+.trust-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px;
+  transition: all .25s;
+}
+.trust-card:hover { border-color: var(--purple-border); }
+.trust-card-icon { font-size: 28px; margin-bottom: 16px; }
+.trust-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700; margin-bottom: 8px;
+}
+.trust-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+.badge-row {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 48px;
+}
+.badge {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 100px; font-size: 13px; color: var(--text-mid);
+}
+.badge-icon { font-size: 15px; }
+
+/* ════════════════════════════════════════
+   ⑦ FINAL CTA
+════════════════════════════════════════ */
+.final-cta {
+  text-align: center;
+  padding: 120px 0;
+  position: relative; overflow: hidden;
+}
+.final-cta-glow {
+  position: absolute; width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,78,255,0.12) 0%, transparent 65%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.final-cta h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800; letter-spacing: -1.5px;
+  margin-bottom: 20px; line-height: 1.1;
+  position: relative; z-index: 1;
+}
+.final-cta p {
+  font-size: 17px; color: var(--text-mid);
+  max-width: 480px; margin: 0 auto 44px;
+  line-height: 1.7; position: relative; z-index: 1;
+}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 40px;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  position: relative; z-index: 1;
+}
+.footer-left { font-size: 13px; color: var(--text-dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: var(--text-dim); text-decoration: none; }
+.footer-links a:hover { color: var(--text-mid); }
+
+/* ════════════════════════════════════════
+   ANIMATIONS
+════════════════════════════════════════ */
+@keyframes fade-up {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:1024px){
+  nav { padding: 18px 32px; }
+  .container { padding: 0 32px; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .what-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .pilot-grid { grid-template-columns: 1fr 1fr; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:640px){
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .container { padding: 0 20px; }
+  .hero { padding: 140px 0 72px; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-right { padding: 28px 20px; }
+  .pilot-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .hero-divider { display: none; }
+  .pilot-guarantee { flex-direction: column; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">SF</div>
+    <span class="nav-logo-text">ShiftFocus</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Compare</a></li>
+    <li><a href="#">Use Cases</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+  <a href="#form" class="nav-cta">Request a Pilot →</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     ① HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+
+    <div class="hero-tag">
+      <span class="tag-dot"></span>
+      90-Day Parallel Pilot — No Rip-and-Replace
+    </div>
+
+    <h1>
+      Your dashboard says on track.<br>
+      Your quarter says <em>otherwise.</em>
+    </h1>
+
+    <p class="hero-sub">
+      Most companies discover execution failures at the quarterly review — when the money is already gone and the damage is already done. ShiftFocus surfaces problems 2–3 weeks before they reach your boardroom.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#form" class="btn-primary">
+        Request a Pilot Scoping Call
+        <span>→</span>
+      </a>
+      <a href="#how-it-works" class="btn-ghost">
+        See how it works
+      </a>
+    </div>
+
+    <div class="hero-proof-row">
+      <div class="hero-stat">
+        <div class="hero-stat-num">18 <span>days</span></div>
+        <div class="hero-stat-label">Average early warning on slippage</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">97<span>%</span></div>
+        <div class="hero-stat-label">Weekly check-in completion rate</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">94<span>%</span></div>
+        <div class="hero-stat-label">OKRs on-track at quarter end</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">30 <span>days</span></div>
+        <div class="hero-stat-label">To first measurable signal</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ② PAIN POINTS
+══════════════════════════════════════ -->
+<section class="pain-section section-pad">
+  <div class="container">
+    <div class="section-label">Does this sound familiar?</div>
+    <h2 class="section-headline reveal">Three patterns we see in every company<br>before they run a pilot.</h2>
+    <p class="section-sub reveal">These aren't edge cases. They're the moments where cross-team execution breaks down — and you're the one who catches it, connects it, and fixes it.</p>
+
+    <div class="pain-grid">
+
+      <div class="pain-card reveal">
+        <div class="pain-icon">📊</div>
+        <h3>The green dashboard that lies</h3>
+        <p>Every team says on track in standups. Every status update looks fine. Then the quarter ends 30% short and six department heads point at each other in the board meeting.</p>
+        <div class="pain-quote">"We didn't know we were losing until the quarter ended."</div>
+      </div>
+
+      <div class="pain-card reveal">
+        <div class="pain-icon">🔗</div>
+        <h3>The dependency nobody owns</h3>
+        <p>Sales commits to a timeline without checking Engineering's capacity. Product finishes its work but CS never got the handoff memo. The gap lives between teams — and falls through the cracks every single quarter.</p>
+        <div class="pain-quote">"Everyone said it was someone else's problem."</div>
+      </div>
+
+      <div class="pain-card reveal">
+        <div class="pain-icon">🔥</div>
+        <h3>You've become the execution glue</h3>
+        <p>Your week is 22 hours of alignment meetings, Slack threads that should have been a 30-second update, and chasing people for status reports they should have sent on Monday. You're the COO, not the project coordinator.</p>
+        <div class="pain-quote">"The COO's calendar looks like a hostage situation."</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ③ WHAT YOU GET
+══════════════════════════════════════ -->
+<section class="section-pad" id="how-it-works">
+  <div class="container">
+    <div class="what-grid">
+
+      <div class="what-visual reveal">
+        <div class="section-label" style="margin-bottom:24px;">The Scoping Call</div>
+        <div class="call-timeline">
+          <div class="call-item">
+            <div class="call-num">1</div>
+            <div class="call-content">
+              <div class="call-title">Your environment, not our script</div>
+              <div class="call-desc">We start by understanding how execution actually breaks in your company — not a generic demo walkthrough.</div>
+              <span class="call-time">0 – 10 min</span>
+            </div>
+          </div>
+          <div class="call-item">
+            <div class="call-num">2</div>
+            <div class="call-content">
+              <div class="call-title">Enforcement mechanics, live</div>
+              <div class="call-desc">We show you the actual system — real dashboards, real escalation events, real enforcement rules — not slides.</div>
+              <span class="call-time">10 – 22 min</span>
+            </div>
+          </div>
+          <div class="call-item">
+            <div class="call-num">3</div>
+            <div class="call-content">
+              <div class="call-title">Pilot fit assessment</div>
+              <div class="call-desc">We tell you honestly whether ShiftFocus is the right fit and what a 90-day parallel pilot would look like in your stack.</div>
+              <span class="call-time">22 – 30 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="what-content reveal">
+        <div class="section-label">What you're requesting</div>
+        <h2 class="section-headline">Not a demo.<br>A fit conversation.</h2>
+        <p class="section-sub" style="margin-bottom:0;">The person you speak with has actually run operations inside a real company — not a sales rep reading a product sheet.</p>
+
+        <div class="what-points">
+          <div class="what-point">
+            <div class="what-check">✓</div>
+            <div class="what-point-text"><strong>No sales pressure.</strong> If ShiftFocus isn't the right fit for your stage or team size, we'll tell you directly.</div>
+          </div>
+          <div class="what-point">
+            <div class="what-check">✓</div>
+            <div class="what-point-text"><strong>No rip-and-replace.</strong> ShiftFocus runs in parallel with your existing OKR stack — Workboard, Quantive, spreadsheets, whatever you have.</div>
+          </div>
+          <div class="what-point">
+            <div class="what-check">✓</div>
+            <div class="what-point-text"><strong>Proof in 30 days.</strong> If we can't create visible leverage inside one quarter, you shouldn't roll it out. We mean that.</div>
+          </div>
+          <div class="what-point">
+            <div class="what-check">✓</div>
+            <div class="what-point-text"><strong>Your schedule, your timezone.</strong> We work around your calendar — no forced slots, no 6 AM calls.</div>
+          </div>
+          <div class="what-point">
+            <div class="what-check">✓</div>
+            <div class="what-point-text"><strong>Built for $20M–$500M ARR.</strong> If you're below $20M or above $500M, we'll say so and point you in the right direction.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ④ FORM
+══════════════════════════════════════ -->
+<section class="form-section section-pad" id="form">
+  <div class="container">
+    <div class="form-wrap">
+
+      <!-- LEFT SIDEBAR -->
+      <div class="form-left">
+        <div class="form-left-sticky">
+          <div class="section-label">Request Your Pilot</div>
+          <h2>Tell us where execution is breaking down.</h2>
+          <p>The more specific you are, the more useful the call. We read every submission before the conversation — so you're not starting from zero when we meet.</p>
+
+          <div class="sidebar-facts">
+            <div class="sidebar-fact">
+              <span class="fact-icon">⏱️</span>
+              <div class="fact-text">
+                <strong>4 minutes to fill</strong>
+                <span>We don't ask for anything we won't use in the call.</span>
+              </div>
+            </div>
+            <div class="sidebar-fact">
+              <span class="fact-icon">📅</span>
+              <div class="fact-text">
+                <strong>Confirmation within 1 business day</strong>
+                <span>No automated sequences. A real person responds.</span>
+              </div>
+            </div>
+            <div class="sidebar-fact">
+              <span class="fact-icon">🔒</span>
+              <div class="fact-text">
+                <strong>Your data stays private</strong>
+                <span>We don't share, sell, or use it for marketing.</span>
+              </div>
+            </div>
+            <div class="sidebar-fact">
+              <span class="fact-icon">🚫</span>
+              <div class="fact-text">
+                <strong>No cold outreach</strong>
+                <span>Submitting this form does not put you on a nurture list.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM RIGHT -->
+      <div class="form-right" id="formContainer">
+
+        <!-- SUCCESS STATE -->
+        <div class="success-panel" id="successPanel">
+          <div class="success-ring">✓</div>
+          <h3>You're in the queue.</h3>
+          <p>We'll reach out within one business day to confirm your scoping call. The person you hear from has actually built and run OKR systems inside real companies — not a sales script.</p>
+          <div class="success-cards">
+            <div class="success-card">
+              <span class="success-card-label">Call type</span>
+              <span class="success-card-val">Pilot Scoping — 30 min</span>
+            </div>
+            <div class="success-card">
+              <span class="success-card-label">Response time</span>
+              <span class="success-card-val">Within 1 business day</span>
+            </div>
+            <div class="success-card">
+              <span class="success-card-label">Pilot goes live</span>
+              <span class="success-card-val">Within 30 days if approved</span>
+            </div>
+            <div class="success-card">
+              <span class="success-card-label">Commitment required</span>
+              <span class="success-card-val">Zero — parallel deployment, no lock-in</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- THE FORM -->
+        <form id="pilotForm" onsubmit="handleSubmit(event)" novalidate>
+
+          <h3>Request a Pilot Scoping Call</h3>
+          <p class="form-sub-text">No sales pitch. 30 minutes. Real answers about whether this is the right fit for your team.</p>
+
+          <!-- SECTION: YOU -->
+          <div class="form-section-title">About You</div>
+          <div class="form-row">
+            <div class="field">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" placeholder="Sarah" autocomplete="given-name">
+              <span class="err-msg" id="e-fname">Please enter your first name.</span>
+            </div>
+            <div class="field">
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" placeholder="Chen" autocomplete="family-name">
+              <span class="err-msg" id="e-lname">Please enter your last name.</span>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="email">Work Email *</label>
+              <input type="email" id="email" placeholder="sarah@company.com" autocomplete="email">
+              <span class="field-note">We don't send newsletters unless you ask for them.</span>
+              <span class="err-msg" id="e-email">Please enter a valid work email address.</span>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="role">Your Role *</label>
+              <select id="role">
+                <option value="" disabled selected>Select your role</option>
+                <option>CEO / Co-Founder</option>
+                <option>COO</option>
+                <option>Chief of Staff</option>
+                <option>VP Operations</option>
+                <option>Head of Product</option>
+                <option>VP Engineering</option>
+                <option>Head of Revenue Operations</option>
+                <option>Other Executive</option>
+              </select>
+              <span class="err-msg" id="e-role">Please select your role.</span>
+            </div>
+          </div>
+
+          <!-- SECTION: COMPANY -->
+          <div class="form-section-title">About Your Company</div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="company">Company Name *</label>
+              <input type="text" id="company" placeholder="Acme Corp" autocomplete="organization">
+              <span class="err-msg" id="e-company">Please enter your company name.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="arr">Annual Recurring Revenue *</label>
+              <select id="arr">
+                <option value="" disabled selected>Select ARR</option>
+                <option>Under $5M</option>
+                <option>$5M – $20M</option>
+                <option>$20M – $50M</option>
+                <option>$50M – $150M</option>
+                <option>$150M – $500M</option>
+                <option>$500M+</option>
+              </select>
+              <span class="err-msg" id="e-arr">Please select your ARR range.</span>
+            </div>
+            <div class="field">
+              <label for="headcount">Team Size *</label>
+              <select id="headcount">
+                <option value="" disabled selected>Select headcount</option>
+                <option>Under 50</option>
+                <option>50 – 150</option>
+                <option>150 – 300</option>
+                <option>300 – 500</option>
+                <option>500 – 1,000</option>
+                <option>1,000+</option>
+              </select>
+              <span class="err-msg" id="e-headcount">Please select team size.</span>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="industry">Industry *</label>
+              <select id="industry">
+                <option value="" disabled selected>Select industry</option>
+                <option>SaaS / Software</option>
+                <option>Fintech</option>
+                <option>Healthcare / HealthTech</option>
+                <option>E-commerce / DTC</option>
+                <option>Professional Services</option>
+                <option>Manufacturing</option>
+                <option>Real Estate</option>
+                <option>Other</option>
+              </select>
+              <span class="err-msg" id="e-industry">Please select your industry.</span>
+            </div>
+          </div>
+
+          <!-- SECTION: CONTEXT -->
+          <div class="form-section-title">Execution Context</div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="current_tool">What are you currently using for OKR or goal tracking? *</label>
+              <select id="current_tool">
+                <option value="" disabled selected>Select your current tool</option>
+                <option>Workboard</option>
+                <option>Quantive / Gtmhub</option>
+                <option>Lattice</option>
+                <option>Betterworks</option>
+                <option>Profit.co</option>
+                <option>Weekdone</option>
+                <option>Spreadsheets / Notion</option>
+                <option>No formal system yet</option>
+                <option>Other</option>
+              </select>
+              <span class="err-msg" id="e-current_tool">Please select your current tool.</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <label style="margin-bottom:12px;display:block;">Where does execution break down most in your company? Select all that apply.</label>
+            <div class="check-group">
+              <label class="check-item">
+                <input type="checkbox" value="ghost-dashboards">
+                <span class="check-item-text"><strong>Ghost dashboards</strong> — Teams stop updating OKRs by week 3 and nobody notices until the QBR.</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" value="dependencies">
+                <span class="check-item-text"><strong>Unowned dependencies</strong> — Cross-team handoffs fall through the cracks with no single person accountable.</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" value="late-signals">
+                <span class="check-item-text"><strong>Late signals</strong> — Problems surface at the quarterly review when it's already too late to fix them.</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" value="coo-bottleneck">
+                <span class="check-item-text"><strong>Leadership bottleneck</strong> — Everything escalates to you because the system doesn't enforce it at the team level.</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" value="vanity-metrics">
+                <span class="check-item-text"><strong>Misleading metrics</strong> — Dashboard shows green while execution is quietly failing underneath.</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" value="alignment-meetings">
+                <span class="check-item-text"><strong>Alignment overhead</strong> — Too many status meetings that exist only because nobody trusts the reporting.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row single">
+            <div class="field">
+              <label for="context">Tell us specifically what's breaking. The more detail, the better the call.</label>
+              <textarea id="context" placeholder="e.g. We're 200 people, 3 quarters into an OKR rollout. The L10 meetings work but execution dies between Fridays. By the time we see the problem it's already week 8..."></textarea>
+              <span class="field-note">Optional but strongly recommended. We read every submission before the call.</span>
+            </div>
+          </div>
+
+          <!-- SECTION: SCHEDULE -->
+          <div class="form-section-title">Scheduling Preferences</div>
+          <div class="form-row">
+            <div class="field">
+              <label for="timezone">Your Timezone *</label>
+              <select id="timezone">
+                <option value="" disabled selected>Select timezone</option>
+                <option>UTC-8 (PST — Los Angeles)</option>
+                <option>UTC-7 (MST — Denver)</option>
+                <option>UTC-6 (CST — Chicago)</option>
+                <option>UTC-5 (EST — New York)</option>
+                <option>UTC-4 (AST — Halifax)</option>
+                <option>UTC+0 (GMT — London)</option>
+                <option>UTC+1 (CET — Berlin / Paris)</option>
+                <option>UTC+2 (EET — Cairo)</option>
+                <option>UTC+3 (AST — Riyadh / Moscow)</option>
+                <option>UTC+4 (GST — Dubai)</option>
+                <option>UTC+5:30 (IST — India)</option>
+                <option>UTC+7 (ICT — Bangkok)</option>
+                <option>UTC+8 (SGT — Singapore)</option>
+                <option>UTC+9 (JST — Tokyo)</option>
+                <option>UTC+10 (AEST — Sydney)</option>
+              </select>
+              <span class="err-msg" id="e-timezone">Please select your timezone.</span>
+            </div>
+            <div class="field">
+              <label for="preferred_time">Preferred Call Time *</label>
+              <select id="preferred_time">
+                <option value="" disabled selected>Select preference</option>
+                <option>Early Morning (7–9 AM)</option>
+                <option>Morning (9 AM – 12 PM)</option>
+                <option>Afternoon (12 – 4 PM)</option>
+                <option>Late Afternoon (4 – 6 PM)</option>
+                <option>Evening (6 PM+)</option>
+              </select>
+              <span class="err-msg" id="e-preferred_time">Please select a preferred time.</span>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="phone">Phone / WhatsApp (optional)</label>
+              <input type="tel" id="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+              <span class="field-note">Only used for scheduling. Never for sales calls or outreach.</span>
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="referral">How did you find ShiftFocus?</label>
+              <select id="referral">
+                <option value="" disabled selected>Select source</option>
+                <option>LinkedIn post or article</option>
+                <option>Medium article</option>
+                <option>Google / search</option>
+                <option>Referred by a colleague</option>
+                <option>Twitter / X</option>
+                <option>Podcast or interview</option>
+                <option>ShiftFocus blog</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="form-submit-area">
+            <button type="submit" class="submit-btn">
+              Request Pilot Scoping Call →
+            </button>
+            <p class="submit-note">
+              By submitting, you agree to our <a href="#">Privacy Policy</a>. No spam.
+              No automated sequences. A real person responds within one business day.
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ⑤ HOW PILOT WORKS
+══════════════════════════════════════ -->
+<section class="pilot-section section-pad">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-headline reveal">Live in 30 days.<br>Decided with proof in 90.</h2>
+    <p class="section-sub reveal">No rip-and-replace. No forced migration. ShiftFocus runs alongside your existing system and you compare results side by side at week 12.</p>
+
+    <div class="pilot-grid">
+      <div class="pilot-week reveal">
+        <div class="pilot-week-num">Week 1</div>
+        <h4>Baseline + Scope</h4>
+        <ul>
+          <li>Pick 1–2 org units to pilot</li>
+          <li>Define success metrics + current pain points</li>
+          <li>Connect calendar and cadence signals</li>
+          <li>Security review kickoff</li>
+        </ul>
+      </div>
+      <div class="pilot-week reveal">
+        <div class="pilot-week-num">Week 2</div>
+        <h4>Integrations + Model</h4>
+        <ul>
+          <li>Connect Slack, Jira, Asana (optional)</li>
+          <li>Import OKRs and owners</li>
+          <li>Map team dependencies</li>
+          <li>Configure risk prediction model</li>
+        </ul>
+      </div>
+      <div class="pilot-week reveal">
+        <div class="pilot-week-num">Week 3</div>
+        <h4>Enforcement Active</h4>
+        <ul>
+          <li>First enforcement cycle runs</li>
+          <li>Auto-escalation activates</li>
+          <li>Risk detection engine goes live</li>
+          <li>First weekly exec brief generated</li>
+        </ul>
+      </div>
+      <div class="pilot-week reveal">
+        <div class="pilot-week-num">Week 4 → Day 30</div>
+        <h4>First Measurable Outcomes</h4>
+        <ul>
+          <li>Time-to-signal measured</li>
+          <li>Late escalations tracked</li>
+          <li>Exec review time compared</li>
+          <li>Go / no-go data available</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pilot-guarantee reveal">
+      <div>
+        <div class="guarantee-text">If ShiftFocus can't create visible leverage inside 30 days, you shouldn't roll it out.</div>
+        <div class="guarantee-sub">We say this on the website. We mean it in the pilot. No lock-in, no forced migration, no vendor promises.</div>
+      </div>
+      <a href="#form" class="guarantee-badge">Start the Pilot →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ⑥ TRUST / SECURITY
+══════════════════════════════════════ -->
+<section class="trust-section section-pad-sm">
+  <div class="container">
+    <div class="section-label">Security & Compliance</div>
+    <h2 class="section-headline reveal">Built for enterprise security<br>and procurement requirements.</h2>
+
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">🔐</div>
+        <h4>Enterprise Identity</h4>
+        <p>SSO via Okta and Azure AD. SCIM provisioning for automated user management. Role-based access controls ensure only the right people see what they need to see.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">📋</div>
+        <h4>Complete Audit Trail</h4>
+        <p>Every enforcement event, escalation, and intervention is logged with full context — who triggered it, what action was taken, what changed. Your QBR writes itself from evidence, not memory.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">🛡️</div>
+        <h4>Data Protection</h4>
+        <p>SOC 2 Type II certified. Encryption in transit and at rest. GDPR-ready architecture with data processing agreements. US/EU data residency options available during scoping.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">🔗</div>
+        <h4>Deep Integrations</h4>
+        <p>Connects to Slack, Teams, Jira, Asana, Linear, Google Calendar, Gmail, Okta, and Zapier. Check-ins happen inside the tools your team already uses — no extra login required.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">⚡</div>
+        <h4>Parallel Deployment</h4>
+        <p>ShiftFocus mirrors your existing OKR data read-only. No changes to your current system. Zero disruption to workflows. You flip the switch only when you're ready — after seeing proof.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-card-icon">🤝</div>
+        <h4>Dedicated Pilot Team</h4>
+        <p>Every pilot gets a dedicated implementation team — not canned docs and a support ticket queue. Policy tuning, custom integration help, and exec briefing prep are included.</p>
+      </div>
+    </div>
+
+    <div class="badge-row reveal">
+      <div class="badge"><span class="badge-icon">✓</span> SOC 2 Type II</div>
+      <div class="badge"><span class="badge-icon">✓</span> GDPR Compliant</div>
+      <div class="badge"><span class="badge-icon">✓</span> SSO / SCIM</div>
+      <div class="badge"><span class="badge-icon">✓</span> Audit Logs Standard</div>
+      <div class="badge"><span class="badge-icon">✓</span> Encryption at Rest + Transit</div>
+      <div class="badge"><span class="badge-icon">✓</span> US / EU Data Residency</div>
+      <div class="badge"><span class="badge-icon">✓</span> Vendor Risk Packet Available</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     ⑦ FINAL CTA
+══════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="final-cta-glow"></div>
+  <div class="container">
+    <h2 class="reveal">Stop being the last to know<br>your quarter was already lost.</h2>
+    <p class="reveal">30 minutes. No pitch. No pressure. Just an honest conversation about whether ShiftFocus is the right fit for how your company executes.</p>
+    <div class="hero-cta-row reveal">
+      <a href="#form" class="btn-primary">
+        Request a Pilot Scoping Call →
+      </a>
+      <a href="#how-it-works" class="btn-ghost">
+        See the enforcement loop
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-left">© 2026 ShiftFocus OS. Built for operators who refuse to be surprised by their own company.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms</a>
+    <a href="#">Security</a>
+    <a href="#">Blog</a>
+  </div>
+</footer>
+
+
+<!-- ─── JS ─── -->
+<script>
+/* Scroll reveal */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+/* Form validation helpers */
+const $ = id => document.getElementById(id);
+const showErr = (inputId, errId) => {
+  const el = $(inputId);
+  const err = $(errId);
+  if(el) el.classList.add('err');
+  if(err) err.style.display = 'block';
+};
+const clearErr = (inputId, errId) => {
+  const el = $(inputId);
+  const err = $(errId);
+  if(el) el.classList.remove('err');
+  if(err) err.style.display = 'none';
+};
+
+/* Clear on input */
+document.querySelectorAll('input, select, textarea').forEach(el => {
+  el.addEventListener('input', () => el.classList.remove('err'));
+  el.addEventListener('change', () => el.classList.remove('err'));
+});
+
+/* Validate */
+function validate() {
+  let ok = true;
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const checks = [
+    ['fname','e-fname', v => v.trim() !== ''],
+    ['lname','e-lname', v => v.trim() !== ''],
+    ['email','e-email', v => emailRe.test(v.trim())],
+    ['role','e-role', v => v !== ''],
+    ['company','e-company', v => v.trim() !== ''],
+    ['arr','e-arr', v => v !== ''],
+    ['headcount','e-headcount', v => v !== ''],
+    ['industry','e-industry', v => v !== ''],
+    ['current_tool','e-current_tool', v => v !== ''],
+    ['timezone','e-timezone', v => v !== ''],
+    ['preferred_time','e-preferred_time', v => v !== ''],
+  ];
+
+  checks.forEach(([inputId, errId, test]) => {
+    const el = $(inputId);
+    if (!el) return;
+    clearErr(inputId, errId);
+    if (!test(el.value)) { showErr(inputId, errId); ok = false; }
+  });
+
+  return ok;
+}
+
+/* Submit */
+function handleSubmit(e) {
+  e.preventDefault();
+  if (!validate()) {
+    const firstErr = document.querySelector('.err');
+    if (firstErr) firstErr.scrollIntoView({ behavior:'smooth', block:'center' });
+    return;
+  }
+  $('pilotForm').style.display = 'none';
+  const sp = $('successPanel');
+  sp.classList.add('show');
+  sp.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+</script>
+
+</body>
+</html>
