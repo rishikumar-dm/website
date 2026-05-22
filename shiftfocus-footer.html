@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShiftFocus Footer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --brand-primary:      #6C3CE1;
+      --brand-primary-dark: #5429c5;
+      --brand-glow:         rgba(108, 60, 225, 0.18);
+      --brand-subtle:       rgba(108, 60, 225, 0.08);
+      --color-bg:           #0d0d10;
+      --color-surface:      #13131a;
+      --color-surface-2:    #191922;
+      --color-surface-3:    #1e1e2a;
+      --color-border:       rgba(255,255,255,0.07);
+      --color-divider:      rgba(255,255,255,0.05);
+      --color-text:         #f0eff6;
+      --color-text-muted:   #8a8998;
+      --color-text-faint:   #4d4c5a;
+      --color-success:      #22c55e;
+      --text-xs:   clamp(0.75rem,  0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;
+      --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;
+      --radius-xl:1rem;--radius-full:9999px;
+      --t: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;}
+    a{text-decoration:none;color:inherit;}ul{list-style:none;}img{display:block;}
+
+    .footer{position:relative;background:var(--color-surface);border-top:1px solid var(--color-border);overflow:hidden;}
+    .footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 15% -20%,rgba(108,60,225,0.12) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 85% 110%,rgba(108,60,225,0.08) 0%,transparent 60%);pointer-events:none;}
+    .footer-inner{position:relative;max-width:1200px;margin-inline:auto;padding:var(--space-16) var(--space-8) 0;}
+
+    .footer-cta{display:flex;align-items:center;justify-content:space-between;gap:var(--space-6);background:linear-gradient(135deg,rgba(108,60,225,0.14) 0%,rgba(108,60,225,0.06) 100%);border:1px solid rgba(108,60,225,0.25);border-radius:var(--radius-xl);padding:var(--space-8) var(--space-10);margin-bottom:var(--space-16);}
+    .footer-cta-badge{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-body);font-size:var(--text-xs);font-weight:600;color:var(--color-success);letter-spacing:0.08em;text-transform:uppercase;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);border-radius:var(--radius-full);padding:var(--space-1) var(--space-3);margin-bottom:var(--space-3);}
+    .footer-cta-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--color-success);box-shadow:0 0 6px var(--color-success);animation:pulse-dot 2s ease-in-out infinite;}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.6;transform:scale(0.85);}}
+    .footer-cta-text h3{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);}
+    .footer-cta-text p{font-size:var(--text-sm);color:var(--color-text-muted);max-width:44ch;}
+    .footer-cta-actions{display:flex;align-items:center;gap:var(--space-3);flex-shrink:0;}
+
+    .btn{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-body);font-size:var(--text-sm);font-weight:600;padding:0.625rem var(--space-5);border-radius:var(--radius-md);transition:all var(--t);white-space:nowrap;cursor:pointer;}
+    .btn-primary{background:var(--brand-primary);color:#fff;border:none;box-shadow:0 0 0 0 rgba(108,60,225,0);}
+    .btn-primary:hover{background:var(--brand-primary-dark);box-shadow:0 4px 20px rgba(108,60,225,0.4);transform:translateY(-1px);}
+    .btn-ghost{color:var(--color-text-muted);border:1px solid var(--color-border);background:none;}
+    .btn-ghost:hover{color:var(--color-text);border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);}
+
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:var(--space-12);padding-bottom:var(--space-12);border-bottom:1px solid var(--color-divider);}
+    .footer-logo{display:inline-flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-5);text-decoration:none;}
+    .footer-logo-icon{width:36px;height:36px;flex-shrink:0;}
+    .footer-logo-wordmark{font-family:var(--font-display);font-size:1.25rem;font-weight:800;color:var(--color-text);letter-spacing:-0.02em;}
+    .footer-tagline{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65;max-width:30ch;margin-bottom:var(--space-6);}
+    .footer-social{display:flex;gap:var(--space-2);}
+    .social-link{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-md);border:1px solid var(--color-border);color:var(--color-text-muted);transition:all var(--t);}
+    .social-link:hover{color:var(--color-text);border-color:rgba(108,60,225,0.4);background:var(--brand-subtle);}
+    .social-link svg{width:15px;height:15px;}
+    .footer-trust{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-6);}
+    .trust-badge{display:inline-flex;align-items:center;gap:var(--space-1);font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-text-faint);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:0.25rem 0.5rem;}
+    .trust-badge svg{width:11px;height:11px;opacity:0.7;}
+
+    .footer-nav-heading{font-family:var(--font-display);font-size:var(--text-xs);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-5);}
+    .footer-nav-list{display:flex;flex-direction:column;gap:var(--space-3);}
+    .footer-nav-list a{font-size:var(--text-sm);color:var(--color-text-muted);display:inline-flex;align-items:center;gap:var(--space-2);transition:color var(--t);}
+    .footer-nav-list a:hover{color:var(--color-text);}
+    .nav-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:1px 5px;border-radius:3px;}
+    .nav-tag.new{background:rgba(108,60,225,0.2);color:#a78bfa;border:1px solid rgba(108,60,225,0.3);}
+    .nav-tag.beta{background:rgba(34,197,94,0.12);color:#4ade80;border:1px solid rgba(34,197,94,0.2);}
+
+    .footer-newsletter{display:flex;align-items:center;justify-content:space-between;gap:var(--space-6);padding:var(--space-6) 0;border-bottom:1px solid var(--color-divider);}
+    .footer-newsletter-text{display:flex;align-items:center;gap:var(--space-3);}
+    .newsletter-icon{width:38px;height:38px;border-radius:var(--radius-md);background:var(--brand-subtle);border:1px solid rgba(108,60,225,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#a78bfa;}
+    .newsletter-icon svg{width:17px;height:17px;}
+    .footer-newsletter-text strong{font-size:var(--text-sm);font-weight:600;color:var(--color-text);display:block;}
+    .footer-newsletter-text span{font-size:var(--text-xs);color:var(--color-text-muted);}
+    .footer-newsletter-form{display:flex;gap:var(--space-2);}
+    .newsletter-input{font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-text);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:0.625rem var(--space-4);width:240px;outline:none;transition:border-color var(--t);}
+    .newsletter-input::placeholder{color:var(--color-text-faint);}
+    .newsletter-input:focus{border-color:rgba(108,60,225,0.5);}
+
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-6) 0 var(--space-8);}
+    .footer-copyright{font-size:var(--text-xs);color:var(--color-text-faint);}
+    .footer-copyright a{color:var(--color-text-faint);transition:color var(--t);}
+    .footer-copyright a:hover{color:var(--color-text-muted);}
+    .footer-legal{display:flex;align-items:center;gap:var(--space-6);}
+    .footer-legal a{font-size:var(--text-xs);color:var(--color-text-faint);transition:color var(--t);}
+    .footer-legal a:hover{color:var(--color-text-muted);}
+    .footer-legal-sep{width:3px;height:3px;border-radius:50%;background:var(--color-text-faint);opacity:0.4;}
+    .footer-status{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-success);}
+    .footer-status .status-dot{width:7px;height:7px;border-radius:50%;background:var(--color-success);box-shadow:0 0 0 2px rgba(34,197,94,0.15);animation:pulse-dot 2.5s ease-in-out infinite;}
+
+    @media (max-width:1024px){
+      .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:var(--space-10);}
+      .footer-brand{grid-column:1 / -1;}
+      .footer-cta{flex-direction:column;align-items:flex-start;}
+    }
+    @media (max-width:768px){
+      .footer-inner{padding-inline:var(--space-5);}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:var(--space-8);}
+      .footer-brand{grid-column:1 / -1;}
+      .footer-newsletter{flex-direction:column;align-items:flex-start;}
+      .footer-newsletter-form{width:100%;}
+      .newsletter-input{flex:1;width:auto;}
+      .footer-bottom{flex-direction:column;gap:var(--space-3);text-align:center;}
+      .footer-legal{flex-wrap:wrap;justify-content:center;gap:var(--space-3);}
+      .footer-cta{padding:var(--space-6);}
+      .footer-cta-actions{flex-direction:column;width:100%;}
+      .btn{justify-content:center;}
+    }
+    @media (max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+
+    <!-- CTA Banner -->
+    <div class="footer-cta">
+      <div class="footer-cta-text">
+        <div class="footer-cta-badge">
+          <span class="dot"></span>
+          Strategic Pilot Program Open
+        </div>
+        <h3>Fix execution drift before Q3 starts.</h3>
+        <p>Join execution-obsessed teams running ShiftFocus pilots. Founder-led support. Pricing locked forever.</p>
+      </div>
+      <div class="footer-cta-actions">
+        <a href="#" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Start Free Pilot
+        </a>
+        <a href="#" class="btn btn-ghost">See Demo</a>
+      </div>
+    </div>
+
+    <!-- Main nav grid -->
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="ShiftFocus home">
+          <svg class="footer-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="36" height="36" rx="8" fill="#6C3CE1"/>
+            <circle cx="18" cy="18" r="9" stroke="white" stroke-width="1.6" stroke-dasharray="3 2" opacity="0.35"/>
+            <circle cx="18" cy="18" r="5" stroke="white" stroke-width="1.8" opacity="0.65"/>
+            <circle cx="18" cy="18" r="2" fill="white"/>
+            <path d="M24 12L28 8M28 8H23.5M28 8V12.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="footer-logo-wordmark">ShiftFocus</span>
+        </a>
+        <p class="footer-tagline">The Execution OS that predicts OKR failure 2–3 weeks early, then auto-enforces recovery — without micromanagement.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+        <div class="footer-trust">
+          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>SOC 2 Type II</span>
+          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>GDPR Ready</span>
+          <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>99.9% Uptime</span>
+        </div>
+      </div>
+
+      <nav class="footer-nav-col" aria-label="Product">
+        <h3 class="footer-nav-heading">Product</h3>
+        <ul class="footer-nav-list">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">AI Prediction Engine <span class="nav-tag new">New</span></a></li>
+          <li><a href="#">Enforcement Automation</a></li>
+          <li><a href="#">OKR Execution &amp; Enforcement</a></li>
+          <li><a href="#">Integrations &amp; Ecosystem <span class="nav-tag beta">Beta</span></a></li>
+          <li><a href="#">Security &amp; Compliance</a></li>
+          <li><a href="#">ROI Calculator</a></li>
+          <li><a href="#">Pilot Program</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav-col" aria-label="Solutions">
+        <h3 class="footer-nav-heading">Solutions</h3>
+        <ul class="footer-nav-list">
+          <li><a href="#">For Executives</a></li>
+          <li><a href="#">For Operations</a></li>
+          <li><a href="#">For Revenue Teams</a></li>
+          <li><a href="#">For Engineering</a></li>
+          <li><a href="#">Enterprise</a></li>
+          <li><a href="#">Series B+ Scale-ups</a></li>
+          <li><a href="#">Play Books</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav-col" aria-label="Compare">
+        <h3 class="footer-nav-heading">Compare</h3>
+        <ul class="footer-nav-list">
+          <li><a href="#">vs Profit.co</a></li>
+          <li><a href="#">vs Workboard</a></li>
+          <li><a href="#">vs Lattice</a></li>
+          <li><a href="#">vs Quantive</a></li>
+          <li><a href="#">vs Betterworks</a></li>
+          <li><a href="#">vs Everyone</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav-col" aria-label="Resources">
+        <h3 class="footer-nav-heading">Resources</h3>
+        <ul class="footer-nav-list">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">How ShiftFocus Works</a></li>
+          <li><a href="#">Implementation Guide</a></li>
+          <li><a href="#">OKR Playbook</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-text">
+        <div class="newsletter-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <strong>Execution intelligence, straight to your inbox.</strong>
+          <span>OKR tactics, AI updates, pilot spots. No spam.</span>
+        </div>
+      </div>
+      <form class="footer-newsletter-form" onsubmit="return false;">
+        <input class="newsletter-input" type="email" placeholder="your@company.com" aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 ShiftFocus Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span class="footer-legal-sep"></span>
+        <a href="#">Terms of Service</a>
+        <span class="footer-legal-sep"></span>
+        <a href="#">Cookie Policy</a>
+        <span class="footer-legal-sep"></span>
+        <a href="#">GDPR</a>
+      </div>
+      <div class="footer-status" aria-label="System status: All systems operational">
+        <span class="status-dot"></span>
+        All systems operational
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
