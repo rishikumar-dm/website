@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weight Loss Program in Apopka &amp; Orlando, FL | Golden Rose Wellness &amp; Medical Spa</title>
+<meta name="description" content="A guided medical weight loss program for women in Apopka & Orlando, FL. Nutrition, wellness injections, GLP-1 options, accountability, and aesthetic support with Dr. Kimberly Ayala at Golden Rose." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Brand palette — sampled from Golden Rose's own materials */
+    --blush:#FDDCDC;            /* exact brand pink */
+    --blush-wash:#FFF4F2;       /* pale section wash */
+    --base:#FFFBFA;             /* page base */
+    --rose:#C36F74;             /* brand rose (wordmark) */
+    --rose-deep:#9E4852;        /* accessible rose for text/CTA */
+    --rose-deeper:#7E3942;
+    --gold:#B8975A;             /* champagne gold — the "Golden" */
+    --gold-soft:#D8C08A;
+    --ink:#2E2326;              /* warm near-black */
+    --ink-soft:#6E5B5F;         /* muted body */
+    --line:#EBD4D2;             /* hairline on blush */
+    --card:#FFFFFF;
+
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Jost', system-ui, -apple-system, sans-serif;
+
+    --maxw:1180px;
+    --r:18px;
+    --shadow:0 24px 60px -32px rgba(126,57,66,.45);
+    --shadow-soft:0 14px 40px -28px rgba(126,57,66,.4);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--base);color:var(--ink);
+    font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;letter-spacing:.005em;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em;margin:0;}
+  p{margin:0 0 1.1em;}
+  a{color:var(--rose-deep);text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- shared typographic devices ---------- */
+  .eyebrow{
+    font-family:var(--sans);font-weight:500;font-size:.72rem;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--rose-deep);
+    display:inline-flex;align-items:center;gap:.7em;margin:0 0 1.1rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block;}
+  .eyebrow.center{justify-content:center;}
+  .eyebrow.center::after{content:"";width:26px;height:1px;background:var(--gold);display:inline-block;}
+
+  .lede{font-size:1.18rem;color:var(--ink-soft);font-weight:300;}
+  .kicker-rose{color:var(--rose-deep);font-style:italic;}
+
+  /* petal mark used as bullet/flourish */
+  .petal{width:13px;height:13px;flex:0 0 auto;display:inline-block;}
+  .petal path{fill:var(--gold);}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    font-family:var(--sans);font-weight:500;font-size:.95rem;letter-spacing:.02em;
+    display:inline-flex;align-items:center;gap:.55em;cursor:pointer;border:0;
+    padding:.95em 1.7em;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
+  }
+  .btn-primary{background:var(--rose-deep);color:#fff;box-shadow:0 12px 26px -14px rgba(126,57,66,.7);}
+  .btn-primary:hover{background:var(--rose-deeper);transform:translateY(-2px);box-shadow:0 18px 32px -16px rgba(126,57,66,.75);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--rose);}
+  .btn-ghost:hover{background:var(--blush);transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),#a8853f);color:#fff;box-shadow:0 12px 26px -14px rgba(168,133,63,.7);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 34px -16px rgba(168,133,63,.75);}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;background:rgba(255,251,250,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0;}
+  .brand{display:flex;align-items:baseline;gap:.5rem;line-height:1;}
+  .brand .mark{font-family:var(--serif);font-size:1.5rem;color:var(--rose);letter-spacing:.01em;}
+  .brand .mark em{font-style:italic;color:var(--gold);}
+  .brand .sub{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);}
+  .nav-links{display:flex;gap:30px;font-family:var(--sans);font-size:.9rem;font-weight:400;}
+  .nav-links a{color:var(--ink);position:relative;}
+  .nav-links a:hover{color:var(--rose-deep);}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .nav-phone{font-family:var(--sans);font-weight:500;color:var(--ink);font-size:.92rem;white-space:nowrap;}
+  .nav-phone:hover{color:var(--rose-deep);}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--rose-deep);cursor:pointer;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:
+      radial-gradient(120% 120% at 85% -10%, var(--blush) 0%, var(--blush-wash) 42%, var(--base) 78%);}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:84px;padding-bottom:92px;}
+  .hero h1{font-size:clamp(2.9rem,6vw,4.7rem);font-weight:300;}
+  .hero h1 .bloom{font-style:italic;color:var(--rose-deep);position:relative;}
+  .hero h1 .bloom::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;}
+  .hero p.sub{max-width:34ch;margin-top:1.4rem;font-size:1.12rem;color:var(--ink-soft);}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:2rem;}
+  .trust{display:flex;gap:30px;margin-top:2.4rem;flex-wrap:wrap;}
+  .trust .t{display:flex;flex-direction:column;}
+  .trust .n{font-family:var(--serif);font-size:1.7rem;color:var(--ink);line-height:1;}
+  .trust .l{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:.45rem;}
+  .trust .div{width:1px;background:var(--line);}
+
+  /* hero visual — self contained "bloom" panel */
+  .hero-card{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);}
+  .photo-slot{aspect-ratio:4/5;background:
+      linear-gradient(160deg,#fff 0%, var(--blush) 60%, #f6c9c9 100%);
+      position:relative;display:flex;align-items:flex-end;}
+  .photo-slot .bloomsvg{position:absolute;inset:0;opacity:.9;}
+  .photo-slot .slot-tag{position:absolute;top:16px;left:16px;font-family:var(--sans);font-size:.62rem;
+      letter-spacing:.22em;text-transform:uppercase;color:var(--rose-deep);background:rgba(255,255,255,.75);
+      padding:.5em .9em;border-radius:999px;}
+  .quote-strip{background:var(--ink);color:#fff;padding:26px 28px;}
+  .quote-strip .q{font-family:var(--serif);font-style:italic;font-size:1.22rem;line-height:1.4;}
+  .quote-strip .by{font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-top:.9rem;}
+
+  /* ---------- section scaffolding ---------- */
+  .section{padding:88px 0;}
+  .section.blush{background:var(--blush-wash);}
+  .section.deep{background:var(--ink);color:#fff;}
+  .section-head{max-width:640px;}
+  .section-head.center{margin:0 auto;text-align:center;}
+  .section h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;}
+  .section h2 em{font-style:italic;color:var(--rose-deep);}
+  .section.deep h2 em{color:var(--gold-soft);}
+
+  /* ---------- "more than medication" statement ---------- */
+  .statement .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .statement .big{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:300;line-height:1.3;}
+  .statement .big em{font-style:italic;color:var(--rose-deep);}
+  .look-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+  .look-list li{display:flex;gap:13px;align-items:flex-start;font-size:1rem;color:var(--ink-soft);}
+
+  /* ---------- pillars ---------- */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px;}
+  .pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;transition:transform .3s ease,box-shadow .3s ease;}
+  .pillar:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft);}
+  .pillar .ic{width:42px;height:42px;border-radius:12px;background:var(--blush);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .pillar .ic svg{width:22px;height:22px;}
+  .pillar h3{font-size:1.32rem;margin-bottom:.5rem;}
+  .pillar p{font-size:.96rem;color:var(--ink-soft);margin:0;}
+  .pillar.wide{grid-column:span 1;}
+
+  /* ---------- packages : ascending bloom ---------- */
+  .pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:58px;align-items:end;}
+  .pkg{position:relative;border-radius:22px;padding:34px 30px 32px;border:1px solid var(--line);background:var(--card);
+       display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease;}
+  .pkg:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .pkg .tier{font-family:var(--sans);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--rose-deep);}
+  .pkg h3{font-size:1.7rem;margin:.6rem 0 .2rem;font-weight:400;}
+  .pkg .dur{font-family:var(--sans);font-size:.85rem;color:var(--ink-soft);letter-spacing:.04em;}
+  .pkg .blurb{font-size:.92rem;color:var(--ink-soft);margin:1rem 0 1.3rem;}
+  .pkg .incl-label{font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+       border-top:1px solid var(--line);padding-top:18px;margin-bottom:14px;}
+  .pkg ul{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:11px;flex:1;}
+  .pkg li{display:flex;gap:11px;align-items:flex-start;font-size:.92rem;line-height:1.5;}
+  .pkg li svg{width:12px;height:12px;margin-top:.42em;flex:0 0 auto;}
+  .pkg .add{font-size:.82rem;color:var(--ink-soft);font-style:italic;margin:-14px 0 22px;}
+  .pkg .btn{width:100%;justify-content:center;margin-top:auto;}
+
+  /* tier 1 basic */
+  .pkg.basic{background:var(--card);}
+  /* tier 2 ultimate — featured */
+  .pkg.ultimate{background:linear-gradient(180deg,#fff, var(--blush-wash));border:1px solid var(--rose);box-shadow:var(--shadow);
+       transform:translateY(-14px);}
+  .pkg.ultimate:hover{transform:translateY(-20px);}
+  .pkg.ultimate .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--rose-deep);color:#fff;
+       font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;padding:.5em 1.1em;border-radius:999px;white-space:nowrap;}
+  /* tier 3 platinum — richest */
+  .pkg.platinum{background:linear-gradient(170deg,#3a2c30 0%, var(--ink) 100%);color:#fff;border:1px solid rgba(184,151,90,.5);}
+  .pkg.platinum .tier{color:var(--gold-soft);}
+  .pkg.platinum .dur,.pkg.platinum .blurb{color:#d8c7c9;}
+  .pkg.platinum .incl-label{color:#fff;border-top-color:rgba(255,255,255,.16);}
+  .pkg.platinum li{color:#f3e9ea;}
+  .pkg.platinum li svg path{fill:var(--gold-soft);}
+
+  .pkg-foot{text-align:center;margin-top:30px;font-size:.92rem;color:var(--ink-soft);}
+
+  /* ---------- process timeline : the gold stem ---------- */
+  .steps{position:relative;margin-top:54px;}
+  .steps::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;
+       background:linear-gradient(180deg,var(--gold-soft),var(--gold),transparent);}
+  .step{position:relative;padding:0 0 38px 78px;}
+  .step:last-child{padding-bottom:0;}
+  .step .num{position:absolute;left:0;top:0;width:48px;height:48px;border-radius:50%;background:var(--base);
+       border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;
+       font-family:var(--serif);font-size:1.1rem;color:var(--rose-deep);z-index:1;}
+  .section.blush .step .num{background:var(--blush-wash);}
+  .step h3{font-size:1.4rem;margin-bottom:.35rem;}
+  .step p{font-size:.98rem;color:var(--ink-soft);margin:0;}
+
+  /* ---------- reassurance band ---------- */
+  .reassure{background:var(--blush);border-radius:22px;padding:46px 48px;display:grid;grid-template-columns:auto 1fr;gap:38px;align-items:center;}
+  .reassure .mk{font-family:var(--serif);font-style:italic;font-size:3.4rem;color:var(--rose-deep);line-height:1;}
+  .reassure h3{font-size:1.6rem;margin-bottom:.5rem;}
+  .reassure p{margin:0;color:var(--ink-soft);}
+
+  /* ---------- comparison ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px;}
+  .compare .col{border-radius:var(--r);padding:34px 32px;}
+  .compare .standard{background:var(--card);border:1px solid var(--line);}
+  .compare .golden{background:var(--ink);color:#fff;}
+  .compare h3{font-size:1.45rem;margin-bottom:1.3rem;}
+  .compare .golden h3 em{color:var(--gold-soft);font-style:italic;}
+  .compare ul{list-style:none;margin:0;padding:0;display:grid;gap:13px;}
+  .compare li{display:flex;gap:12px;align-items:flex-start;font-size:.98rem;}
+  .compare .standard li{color:var(--ink-soft);}
+  .compare .x{color:#c9a9ab;flex:0 0 auto;}
+  .compare .golden li{color:#f3e9ea;}
+  .compare .check{flex:0 0 auto;margin-top:.18em;}
+
+  /* ---------- testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px;}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;}
+  .stars{color:var(--gold);letter-spacing:.12em;font-size:.95rem;margin-bottom:14px;}
+  .quote p{font-family:var(--serif);font-size:1.06rem;font-style:italic;line-height:1.5;color:var(--ink);margin:0 0 18px;}
+  .quote .who{font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-deep);}
+
+  /* ---------- faq ---------- */
+  .faq{margin-top:46px;max-width:860px;}
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;position:relative;
+       font-family:var(--serif);font-size:1.22rem;color:var(--ink);}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
+       font-family:var(--sans);font-weight:300;font-size:1.7rem;color:var(--rose);transition:transform .3s ease;}
+  .faq details[open] summary::after{content:"–";color:var(--rose-deep);}
+  .faq .a{padding:0 44px 26px 0;color:var(--ink-soft);font-size:1rem;}
+
+  /* ---------- final cta ---------- */
+  .final{position:relative;overflow:hidden;background:
+       radial-gradient(130% 120% at 15% 20%, #4a373c 0%, var(--ink) 60%);color:#fff;text-align:center;padding:96px 0;}
+  .final::after{content:"";position:absolute;right:-120px;bottom:-120px;width:420px;height:420px;border-radius:50%;
+       background:radial-gradient(circle, rgba(184,151,90,.22), transparent 70%);}
+  .final h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:300;position:relative;}
+  .final h2 em{font-style:italic;color:var(--gold-soft);}
+  .final p{max-width:46ch;margin:1.2rem auto 2rem;color:#e6d6d8;position:relative;}
+  .final .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;}
+  .final .sig{margin-top:2.4rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#fff;position:relative;}
+  .final .sig span{display:block;font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-top:.5rem;}
+
+  /* ---------- footer ---------- */
+  footer.site{background:var(--ink);color:#cdbfc1;padding:64px 0 36px;border-top:1px solid rgba(184,151,90,.22);}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  footer .mark{font-family:var(--serif);font-size:1.55rem;color:#fff;}
+  footer .mark em{font-style:italic;color:var(--gold-soft);}
+  footer h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px;font-weight:500;}
+  footer a{color:#cdbfc1;}footer a:hover{color:#fff;}
+  footer .row{display:flex;flex-direction:column;gap:9px;font-size:.95rem;}
+  .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
+       display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.8rem;color:#9b8c8e;}
+  .disclaimer{font-size:.78rem;color:#8f8082;line-height:1.6;margin-top:14px;max-width:60ch;}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .hero .wrap{grid-template-columns:1fr;gap:40px;padding-top:56px;padding-bottom:64px;}
+    .hero-card{max-width:460px;}
+    .statement .wrap{grid-template-columns:1fr;gap:30px;}
+    .pillars{grid-template-columns:repeat(2,1fr);}
+    .pkgs{grid-template-columns:1fr;}
+    .pkg.ultimate{transform:none;}.pkg.ultimate:hover{transform:translateY(-6px);}
+    .compare{grid-template-columns:1fr;}
+    .quotes{grid-template-columns:1fr;}
+    .reassure{grid-template-columns:1fr;gap:18px;padding:36px 30px;}
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+       background:var(--base);padding:20px 28px;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-soft);}
+    .foot-grid{grid-template-columns:1fr;gap:30px;}
+  }
+  @media(max-width:560px){
+    body{font-size:16px;}
+    .section{padding:64px 0;}
+    .pillars{grid-template-columns:1fr;}
+    .trust{gap:20px;}
+    .trust .div{display:none;}
+    .nav-phone{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+    *{transition:none!important;}
+  }
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--rose-deep);outline-offset:3px;border-radius:6px;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Golden Rose Wellness and Medical Spa">
+      <span class="mark">Golden <em>Rose</em></span>
+      <span class="sub">Wellness &amp; Med Spa</span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="#program">The Program</a>
+      <a href="#packages">Packages</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+14073354055">(407) 335-4055</a>
+      <a class="btn btn-primary" href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Book a Consultation</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Weight Loss &middot; Apopka &amp; Orlando, FL</span>
+      <h1>The Metabolic Reset, <span class="bloom">perfectly&nbsp;in&nbsp;bloom</span></h1>
+      <p class="sub">A guided weight loss program for women who are doing all the right things and still waiting to see the change. More than the shot — nutrition, wellness, accountability, and aesthetic support, together.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Book Your Consultation</a>
+        <a class="btn btn-ghost" href="#packages">See the Programs</a>
+      </div>
+      <div class="trust">
+        <div class="t"><span class="n">8</span><span class="l">Years Caring</span></div>
+        <div class="div"></div>
+        <div class="t"><span class="n">775</span><span class="l">Happy Patients</span></div>
+        <div class="div"></div>
+        <div class="t"><span class="n">157+</span><span class="l">5-Star Reviews</span></div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="photo-slot">
+        <span class="slot-tag">Add your photo here</span>
+        <svg class="bloomsvg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g opacity="0.5" fill="none" stroke="#fff" stroke-width="1.4">
+            <path d="M200 360 C200 300 200 250 200 200" />
+            <path d="M200 250 C160 240 130 215 120 175" />
+            <path d="M200 250 C240 240 270 215 280 175" />
+          </g>
+          <g transform="translate(200 165)" opacity="0.85">
+            <g fill="#C36F74">
+              <ellipse cx="0" cy="-30" rx="22" ry="40"/>
+              <ellipse cx="0" cy="-30" rx="22" ry="40" transform="rotate(60)"/>
+              <ellipse cx="0" cy="-30" rx="22" ry="40" transform="rotate(120)"/>
+              <ellipse cx="0" cy="-30" rx="22" ry="40" transform="rotate(180)"/>
+              <ellipse cx="0" cy="-30" rx="22" ry="40" transform="rotate(240)"/>
+              <ellipse cx="0" cy="-30" rx="22" ry="40" transform="rotate(300)"/>
+            </g>
+            <circle r="20" fill="#B8975A"/>
+          </g>
+        </svg>
+      </div>
+      <div class="quote-strip">
+        <div class="q">"When you feel good in your body, you show up differently in your life."</div>
+        <div class="by">Dr. Kimberly Ayala Vega · DNP, FNP-C</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MORE THAN MEDICATION ============ -->
+<section class="section statement" id="program">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">More Than Medication</span>
+      <p class="big">Many clinics only focus on the shot. At Golden Rose, we look at the <em>whole picture</em> — because lasting change is rarely about one prescription.</p>
+    </div>
+    <div>
+      <p style="color:var(--ink-soft);margin-bottom:1.4rem;">A program that works asks more than "what medication are you on?" Before we recommend anything, we look at:</p>
+      <ul class="look-list">
+        <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> What you're actually eating, day to day</li>
+        <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Whether your routine feels consistent or chaotic</li>
+        <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> If appetite is quietly making progress harder</li>
+        <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> How your energy is shifting</li>
+        <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> How your face and skin may change as weight comes off</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILLARS ============ -->
+<section class="section blush">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">What's Included</span>
+      <h2>Five layers of <em>support</em>, in one program</h2>
+      <p class="lede" style="margin-top:1rem;">Your plan is built from the pieces that fit your goals — never a one-size-fits-all handout.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E4852" stroke-width="1.6"><path d="M12 3v18M5 8c0-2 3-4 7-4M19 8c0-2-3-4-7-4M5 8c0 4 3 7 7 7M19 8c0 4-3 7-7 7"/></svg></div>
+        <h3>Nutrition Support</h3>
+        <p>Anti-inflammatory diet guidance, a personalized supplement protocol, and planning tools that reduce the guesswork — structure without punishment.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E4852" stroke-width="1.6"><path d="M4 12h4l2 6 4-14 2 8h4"/></svg></div>
+        <h3>Accountability</h3>
+        <p>Weekly coaching emails, a workout calendar, a private community, and monthly follow-up with Dr. Ayala so you're never left alone after visit one.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E4852" stroke-width="1.6"><path d="M14 4l6 6-9 9-6 1 1-6z"/><path d="M13 5l6 6"/></svg></div>
+        <h3>Wellness Injections</h3>
+        <p>Super Lipo and L-carnitine injections, with IV therapy in select packages — used as part of a broader plan, never as a stand-alone shortcut.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E4852" stroke-width="1.6"><path d="M9 3h6M10 3v5l-5 9a3 3 0 003 4h8a3 3 0 003-4l-5-9V3"/></svg></div>
+        <h3>Medical Weight Loss</h3>
+        <p>Lab work, personalized dosing, and GLP-1 options like semaglutide — and tirzepatide when appropriate — guided by evaluation, not assumption.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#9E4852" stroke-width="1.6"><circle cx="12" cy="9" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg></div>
+        <h3>Aesthetic Support</h3>
+        <p>As weight shifts, faces change too. Savings on Morpheus8, Sculptra, CoolPeel, and neurotoxin help you care for your skin while you care for your health.</p>
+      </div>
+      <div class="pillar reveal" style="background:var(--blush);border-color:var(--rose);">
+        <div class="ic" style="background:#fff;"><svg viewBox="0 0 24 24" fill="none" stroke="#9E4852" stroke-width="1.6"><path d="M12 21C7 16 4 13 4 9a4 4 0 018-1 4 4 0 018 1c0 4-3 7-8 12z"/></svg></div>
+        <h3>A Consultation First</h3>
+        <p>Every plan begins with a real conversation about your body, history, and goals — so your program is built for you, not pulled off a shelf.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section class="section" id="packages">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Choose Your Bloom</span>
+      <h2>Three program levels, <em>one personal path</em></h2>
+      <p class="lede" style="margin-top:1rem;">Each level adds more support, structure, and medical depth. Not sure which fits? That's exactly what your consultation is for.</p>
+    </div>
+
+    <div class="pkgs">
+      <!-- BASIC -->
+      <article class="pkg basic reveal">
+        <span class="tier">Level One</span>
+        <h3>Basic Weight Wellness</h3>
+        <span class="dur">12-week program</span>
+        <p class="blurb">A guided start for women who want consistency, accountability, and wellness-based support — before beginning prescription GLP-1 medication.</p>
+        <div class="incl-label">What's included</div>
+        <ul>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Customized supplement protocol via Fullscript (15% off)</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Anti-inflammatory diet plan</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Workout calendar</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Weekly coaching emails</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Private Facebook group access</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Weekly Super Lipo wellness injection</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Weekly L-carnitine injections</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Calocurb appetite support</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Monthly follow-up with Dr. Ayala</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Start Here</a>
+      </article>
+
+      <!-- ULTIMATE -->
+      <article class="pkg ultimate reveal">
+        <span class="badge">Most Chosen</span>
+        <span class="tier">Level Two</span>
+        <h3>Ultimate Golden</h3>
+        <span class="dur">Medical weight loss + aesthetics</span>
+        <p class="blurb">Everything in Basic (in place of Calocurb), plus labs, medication support, IV therapy, and aesthetic savings for a more complete plan.</p>
+        <div class="incl-label">Everything in Basic, plus</div>
+        <ul>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Exclusive branded water bottle</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 100-page personalized nutrition map notebook</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Blood work included (once)</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 90-day supply of personalized dosing &amp; semaglutide, with supplies, when appropriate</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Monthly IV Skinny Drip</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 25% off a Morpheus8 package of 3</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 35% off 2 vials of Sculptra (to soften "Ozempic face")</li>
+        </ul>
+        <p class="add">Tirzepatide may be added when appropriate (additional $297).</p>
+        <a class="btn btn-primary" href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Book a Consultation</a>
+      </article>
+
+      <!-- PLATINUM -->
+      <article class="pkg platinum reveal">
+        <span class="tier">Level Three</span>
+        <h3>Platinum Rose</h3>
+        <span class="dur">The high-touch experience</span>
+        <p class="blurb">Our most hands-on program — added peptide support, 1:1 access, labs, and elevated aesthetic value for women who want it all in one place.</p>
+        <div class="incl-label">Everything in Ultimate, plus</div>
+        <ul>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Tesamorelin (growth hormone), 5 days a week when appropriate</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 1:1 support via HIPAA-compliant video or text</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Monthly IV therapy of your choice</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Labs included (once)</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 35% off a Morpheus8 package</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 3 face &amp; neck CoolPeel treatments (value $2,500)</li>
+          <li><svg class="petal" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> 3 areas of neurotoxin (value $650), one time</li>
+        </ul>
+        <a class="btn btn-gold" href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Request Platinum Rose</a>
+      </article>
+    </div>
+    <p class="pkg-foot">Medication and peptide options are offered only when appropriate after evaluation. Your provider will confirm eligibility during your consultation.</p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section blush" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>A path that's <em>guided</em>, not rushed</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">01</div>
+        <h3>Consultation &amp; goal review</h3>
+        <p>We start with a real conversation about your goals, health history, lifestyle, and what has made weight loss difficult before.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">02</div>
+        <h3>Your program recommendation</h3>
+        <p>Based on your goals and eligibility, Dr. Ayala recommends the level — Basic, Ultimate Golden, or Platinum Rose — that fits you best.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">03</div>
+        <h3>Nutrition, wellness &amp; injections begin</h3>
+        <p>You receive the tools in your package — nutrition guidance, supplements, coaching, injections, IV therapy, and medication support where included.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">04</div>
+        <h3>Follow-up &amp; adjustments</h3>
+        <p>Your body responds in its own way. Follow-up lets us review progress, answer questions, and adjust the plan — one of the most important parts of safe, steady results.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">05</div>
+        <h3>Aesthetic support, when you want it</h3>
+        <p>If skin or facial changes show up along the way, options like Morpheus8, Sculptra, CoolPeel, or neurotoxin are there — only if they fit your goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REASSURANCE ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="reassure reveal">
+      <div class="mk">"</div>
+      <div>
+        <h3>Is this only for GLP-1 medication?</h3>
+        <p>No. Golden Rose offers both wellness-based and medical weight loss support. Some women start with nutrition, supplements, injections, and coaching. Others qualify for GLP-1 options like semaglutide or tirzepatide after evaluation. The right plan depends on your body and your goals — which is why it always begins with a consultation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section class="section blush">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">The Golden Rose Difference</span>
+      <h2>More than a <em>medication-only</em> clinic</h2>
+    </div>
+    <div class="compare">
+      <div class="col standard reveal">
+        <h3>A standard weight loss visit</h3>
+        <ul>
+          <li><span class="x">—</span> Quick intake, then a prescription</li>
+          <li><span class="x">—</span> Medication-focused, little else</li>
+          <li><span class="x">—</span> Limited follow-up</li>
+          <li><span class="x">—</span> Little nutrition guidance</li>
+          <li><span class="x">—</span> No discussion of skin or facial change</li>
+        </ul>
+      </div>
+      <div class="col golden reveal">
+        <h3>The <em>Golden Rose</em> approach</h3>
+        <ul>
+          <li><svg class="petal check" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Provider-guided evaluation with Dr. Ayala</li>
+          <li><svg class="petal check" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Three program levels to match your goals</li>
+          <li><svg class="petal check" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Nutrition, supplements &amp; weekly injections</li>
+          <li><svg class="petal check" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Monthly follow-up, labs &amp; IV therapy in select plans</li>
+          <li><svg class="petal check" viewBox="0 0 24 24"><path d="M12 2C7 7 7 12 12 22 17 12 17 7 12 2Z"/></svg> Aesthetic support &amp; 1:1 access in Platinum Rose</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Golden Results</span>
+      <h2>Women who started <em>exactly where you are</em></h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"I started a weight loss treatment when I was struggling and at a loss for how to help myself. Dr. Ayala sat down and went over all my challenges. Since then I've lost 30 lbs — a weight I haven't seen in over 30 years."</p>
+        <div class="who">— J.P.</div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"I've been on the weight loss program for about six months. I'm happy with my results — the staff is excellent and so supportive, and I'm looking forward to continued success."</p>
+        <div class="who">— S.D.</div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Golden Rose has been a true blessing on my journey. The doctor and staff are so kind and genuinely caring — they treat you like family and make every visit a positive experience."</p>
+        <div class="who">— A.R.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section blush" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Questions, Answered</span>
+      <h2>Before you <em>begin</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>What's included in the weight loss program?</summary>
+        <div class="a">Depending on the package you choose, your program may include nutrition guidance, a supplement protocol, coaching emails, a workout calendar, wellness injections, follow-up care, labs, GLP-1 medication options, IV therapy, and aesthetic support.</div>
+      </details>
+      <details>
+        <summary>Do I need semaglutide to join?</summary>
+        <div class="a">No. Not every package is built around semaglutide. Many women start with the Basic Weight Wellness Package, which focuses on nutrition, supplements, injections, coaching, and accountability.</div>
+      </details>
+      <details>
+        <summary>Is tirzepatide available?</summary>
+        <div class="a">Tirzepatide may be added as an option when appropriate. During your consultation, your provider will discuss eligibility, cost, and whether it makes sense for your plan.</div>
+      </details>
+      <details>
+        <summary>How long is the Basic Weight Wellness Package?</summary>
+        <div class="a">It's a 12-week program that includes nutrition support, weekly coaching emails, private group access, weekly wellness and L-carnitine injections, Calocurb appetite support, and monthly follow-up.</div>
+      </details>
+      <details>
+        <summary>Are labs included?</summary>
+        <div class="a">Labs are included in select packages. The Ultimate Golden package includes blood work once, and the Platinum Rose package also includes labs once.</div>
+      </details>
+      <details>
+        <summary>Does the program include nutrition support?</summary>
+        <div class="a">Yes. Depending on the package, this may include an anti-inflammatory diet plan, a supplement protocol, a nutrition notebook, and coaching to help you stay consistent.</div>
+      </details>
+      <details>
+        <summary>Can weight loss affect my face or skin?</summary>
+        <div class="a">It can. Some women notice changes in facial volume, skin firmness, or jawline and neck definition. Aesthetic options such as Morpheus8, Sculptra, CoolPeel, and neurotoxin can be discussed if they fit your goals.</div>
+      </details>
+      <details>
+        <summary>How do I know which package is right for me?</summary>
+        <div class="a">The best fit depends on your goals, health history, interest in medication support, and how much guidance you want. Your consultation is where we review all of that and recommend the right level for you.</div>
+      </details>
+      <details>
+        <summary>Where is the program available?</summary>
+        <div class="a">Golden Rose Wellness &amp; Medical Spa serves women in Apopka, Orlando, and nearby areas of Central Florida from our Apopka location. The best first step is to schedule a consultation.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <h2>Ready to feel like <em>yourself</em> again?</h2>
+    <p>Your plan starts with a conversation — about your goals, your history, and the support that actually fits your life. Whether you want wellness-based help, medical weight loss, or the full experience, we'll find your level together.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Book Your Consultation</a>
+      <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.5);" href="tel:+14073354055">Call (407) 335-4055</a>
+    </div>
+    <div class="sig">Talk soon,<br>Dr. Kimberly Ayala<span>Founder · Golden Rose Wellness &amp; Medical Spa</span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="mark">Golden <em>Rose</em></div>
+        <p style="margin-top:14px;color:#cdbfc1;max-width:34ch;">Wellness &amp; Beauty, perfectly in bloom. A women's medical spa in Apopka, FL — weight loss, hormone optimization, and skin rejuvenation, led by Dr. Kimberly Ayala Vega.</p>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <div class="row">
+          <a href="https://maps.app.goo.gl/KCDRHXGbEcp58wy97" target="_blank" rel="noopener">1706 E Semoran Blvd, STE 118<br>Apopka, FL 32703</a>
+          <a href="tel:+14073354055">(407) 335-4055</a>
+          <a href="https://wa.me/13219175308" target="_blank" rel="noopener">WhatsApp (321) 917-5308</a>
+          <span>Tue–Fri 10–5 · Sat 10–3 · Se habla español</span>
+        </div>
+      </div>
+      <div>
+        <h4>Get Started</h4>
+        <div class="row">
+          <a href="https://book.prospyrmed.com/52936f9c-83c6-4022-b862-ba698db66ea5/select-service?workspaceId=95d1355c-871e-47c5-bd91-a6de7d60868f&locationId=e429d77f-868a-4a29-bce5-f398af2b840e" target="_blank" rel="noopener">Book a Consultation</a>
+          <a href="#packages">Program Packages</a>
+          <a href="#faq">Frequently Asked</a>
+          <a href="https://www.instagram.com/dr.kimberlyayala/" target="_blank" rel="noopener">Instagram &amp; Facebook</a>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer">Individual results vary and are not guaranteed. All medication, peptide, and aesthetic treatments are provided only when clinically appropriate following evaluation by a licensed provider. This page is for general information and is not medical advice.</p>
+    <div class="foot-bottom">
+      <span>© 2026 Golden Rose Wellness &amp; Medical Spa. All rights reserved.</span>
+      <span>Apopka &amp; Orlando, FL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  var mt = document.getElementById('menuToggle');
+  var nl = document.getElementById('navlinks');
+  if(mt){mt.addEventListener('click',function(){
+    var open = nl.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+  nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');mt.setAttribute('aria-expanded',false);});});}
+
+  // Scroll reveal
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+</script>
+</body>
+</html>
