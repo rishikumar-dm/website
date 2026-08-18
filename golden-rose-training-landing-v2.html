@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction to Neuromodulators — Hands-On Injector Training | Golden Rose Wellness &amp; Medical Spa</title>
+<meta name="description" content="Hands-on neuromodulator injector training with Dr. Kimberly Ayala Vega, DNP, APRN, FNP-C at Golden Rose Wellness &amp; Medical Spa, Apopka, FL — Sunday, November 1, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GOLDEN ROSE — DESIGN TOKENS
+   ============================================================ */
+:root{
+  /* color */
+  --blush-bg:      #FBF3EF;
+  --warm-white:    #FFFDFB;
+  --beige:         #F1E4DA;
+  --rose-dust:     #C98A93;
+  --rose-mid:      #A45D68;
+  --rose-dark:     #7C3F49;
+  --rose-deep:     #5B2A33;
+  --gold-line:     #C6A15B;
+  --charcoal:      #2A2320;
+  --charcoal-soft: #5B5049;
+  --hairline:      rgba(124,63,73,0.16);
+  --card-shadow:   0 20px 45px -28px rgba(91,42,51,0.35);
+
+  /* type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body:    "Work Sans", -apple-system, "Segoe UI", sans-serif;
+
+  --container: 1180px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--charcoal);
+  background:var(--warm-white);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+img,svg{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3,h4{ font-family:var(--font-display); margin:0; font-weight:500; color:var(--rose-deep); }
+p{ margin:0; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+:focus-visible{ outline:2px solid var(--rose-mid); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+}
+
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 28px;
+}
+.section{ padding:88px 0; position:relative; }
+.section--tight{ padding:64px 0; }
+@media (max-width:768px){
+  .section{ padding:60px 0; }
+  .section--tight{ padding:44px 0; }
+  .container{ padding:0 20px; }
+}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:12.5px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--rose-mid);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:16px;
+}
+.eyebrow::before{
+  content:"";
+  width:26px; height:1px;
+  background:var(--gold-line);
+  display:inline-block;
+}
+
+.h-xl{ font-size:clamp(2.4rem, 4.6vw, 4.1rem); line-height:1.06; letter-spacing:-0.01em; }
+.h-lg{ font-size:clamp(2rem, 3.2vw, 2.9rem); line-height:1.12; }
+.h-md{ font-size:clamp(1.4rem, 2vw, 1.7rem); line-height:1.25; }
+.lede{ font-size:clamp(1.02rem, 1.3vw, 1.18rem); color:var(--charcoal-soft); line-height:1.7; }
+
+.section-head{ max-width:640px; margin:0 auto 52px; text-align:center; }
+.section-head.left{ margin-left:0; text-align:left; }
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px;
+  padding:16px 34px;
+  border-radius:999px;
+  font-size:13.5px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  border:1px solid transparent;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--rose-dark);
+  color:var(--warm-white);
+  box-shadow:0 14px 30px -12px rgba(124,63,73,0.55);
+}
+.btn-primary:hover{ background:var(--rose-deep); transform:translateY(-2px); box-shadow:0 18px 34px -12px rgba(91,42,51,0.6); }
+.btn-secondary{
+  background:transparent;
+  color:var(--rose-deep);
+  border-color:var(--rose-dust);
+}
+.btn-secondary:hover{ background:var(--beige); transform:translateY(-2px); }
+.btn-light{
+  background:var(--warm-white);
+  color:var(--rose-deep);
+}
+.btn-light:hover{ transform:translateY(-2px); }
+.btn-block{ width:100%; }
+
+/* ---------- placeholder chip ---------- */
+.ph{
+  display:inline-block;
+  font-style:italic;
+  font-weight:500;
+  color:var(--rose-mid);
+  background:repeating-linear-gradient(135deg, rgba(198,161,90,0.14) 0 8px, rgba(198,161,90,0.05) 8px 16px);
+  border:1px dashed var(--gold-line);
+  border-radius:8px;
+  padding:2px 10px;
+  font-size:0.92em;
+}
+
+/* ============================================================
+   BLOOM PATH — signature connective motif
+   ============================================================ */
+.bloom-divider{
+  display:flex; align-items:center; justify-content:center;
+  gap:18px;
+  padding:6px 0 0;
+}
+.bloom-divider .stem{ flex:1; max-width:120px; height:1px; background:linear-gradient(90deg, transparent, var(--gold-line)); }
+.bloom-divider .stem.r{ background:linear-gradient(270deg, transparent, var(--gold-line)); }
+.bud{ width:15px; height:15px; flex:none; }
+.bud path{ fill:none; stroke:var(--gold-line); stroke-width:1.4; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,253,251,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--hairline);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 28px;
+  max-width:var(--container);
+  margin:0 auto;
+}
+.logo{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-display);
+  font-size:1.28rem;
+  color:var(--rose-deep);
+  letter-spacing:0.01em;
+}
+.logo .mark{ width:30px; height:30px; }
+.logo .mark path{ fill:none; stroke:var(--rose-dark); stroke-width:1.3; }
+.logo small{ display:block; font-family:var(--font-body); font-size:9.5px; letter-spacing:0.24em; text-transform:uppercase; color:var(--rose-mid); font-weight:600; }
+
+.nav-links{ display:flex; align-items:center; gap:36px; }
+.nav-links a{
+  font-size:13.5px; font-weight:500; letter-spacing:0.04em;
+  color:var(--charcoal-soft);
+  position:relative;
+  padding:4px 0;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:1px;
+  background:var(--rose-dark); transform:scaleX(0); transform-origin:left;
+  transition:transform .25s ease;
+}
+.nav-links a:hover{ color:var(--rose-deep); }
+.nav-links a:hover::after{ transform:scaleX(1); }
+
+.header-cta{ display:flex; align-items:center; gap:14px; }
+.hamburger{
+  display:none; flex-direction:column; gap:5px;
+  background:none; border:none; padding:8px;
+}
+.hamburger span{ width:22px; height:2px; background:var(--rose-deep); border-radius:2px; }
+
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  background:var(--warm-white);
+  border-top:1px solid var(--hairline);
+  padding:8px 20px 20px;
+}
+.mobile-nav a{
+  padding:14px 0;
+  border-bottom:1px solid var(--hairline);
+  font-size:15px; font-weight:500; color:var(--charcoal);
+}
+.mobile-nav.open{ display:flex; }
+
+@media (max-width:920px){
+  .nav-links{ display:none; }
+  .header-cta .btn-secondary{ display:none; }
+  .hamburger{ display:flex; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(201,138,147,0.16), transparent 55%),
+    linear-gradient(180deg, var(--blush-bg) 0%, var(--warm-white) 100%);
+  padding:76px 0 90px;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:64px;
+  align-items:center;
+}
+.hero-copy .h-xl{ margin-bottom:20px; }
+.hero-sub{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:clamp(1.05rem, 1.6vw, 1.35rem);
+  color:var(--rose-mid);
+  margin-bottom:28px;
+}
+.hero-facts{
+  display:flex; flex-wrap:wrap; gap:14px 28px;
+  margin:30px 0 36px;
+  padding:20px 0;
+  border-top:1px solid var(--hairline);
+  border-bottom:1px solid var(--hairline);
+}
+.hero-fact{ display:flex; align-items:center; gap:10px; font-size:14.5px; font-weight:500; }
+.hero-fact svg{ width:18px; height:18px; flex:none; }
+.hero-fact svg path,.hero-fact svg circle,.hero-fact svg line{ stroke:var(--rose-dark); fill:none; stroke-width:1.5; }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:16px; }
+
+.hero-visual{ position:relative; }
+.arch-frame{
+  position:relative;
+  border-radius:230px 230px 18px 18px;
+  overflow:hidden;
+  aspect-ratio:3/3.7;
+  background:linear-gradient(160deg, var(--rose-dust), var(--rose-mid) 55%, var(--rose-deep));
+  box-shadow:var(--card-shadow);
+}
+.arch-frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.arch-frame .ph-photo{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:12px;
+  color:rgba(255,253,251,0.92);
+  text-align:center; padding:30px;
+}
+.arch-frame .ph-photo svg{ width:64px; height:64px; opacity:0.85; }
+.arch-frame .ph-photo svg path{ stroke:#fff; fill:none; stroke-width:1.2; }
+.arch-frame .ph-photo span{ font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; }
+.hero-visual .float-card{
+  position:absolute; left:-26px; bottom:34px;
+  background:var(--warm-white);
+  border-radius:18px;
+  padding:18px 22px;
+  box-shadow:var(--card-shadow);
+  display:flex; align-items:center; gap:14px;
+  max-width:250px;
+}
+.hero-visual .float-card svg{ width:30px; height:30px; flex:none; }
+.hero-visual .float-card svg path{ stroke:var(--rose-dark); fill:none; stroke-width:1.4; }
+.hero-visual .float-card strong{ display:block; font-family:var(--font-display); font-size:1rem; color:var(--rose-deep); }
+.hero-visual .float-card span{ font-size:12.5px; color:var(--charcoal-soft); }
+
+@media (max-width:920px){
+  .hero-grid{ grid-template-columns:1fr; gap:44px; }
+  .hero-visual{ order:-1; max-width:340px; margin:0 auto; }
+  .hero-visual .float-card{ left:8px; bottom:-22px; }
+  .hero-facts{ gap:12px 20px; }
+}
+
+/* ============================================================
+   TRUST STRIP
+   ============================================================ */
+.trust-strip{
+  background:var(--rose-deep);
+  color:var(--warm-white);
+  padding:34px 0;
+}
+.trust-inner{
+  display:flex; align-items:center; justify-content:center; gap:40px;
+  flex-wrap:wrap; text-align:center;
+}
+.trust-name{ font-family:var(--font-display); font-size:1.25rem; }
+.trust-name small{ display:block; font-family:var(--font-body); font-size:12px; letter-spacing:0.1em; color:rgba(255,253,251,0.75); margin-top:2px; }
+.trust-tags{ display:flex; gap:26px; flex-wrap:wrap; justify-content:center; }
+.trust-tags span{ font-size:13px; letter-spacing:0.03em; color:rgba(255,253,251,0.92); padding-left:16px; position:relative; }
+.trust-tags span::before{ content:"—"; position:absolute; left:0; color:var(--gold-line); }
+
+/* ============================================================
+   CARD GRIDS — What You'll Learn / Why Golden Rose
+   ============================================================ */
+.grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+@media (max-width:1024px){ .grid-4{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .grid-4,.grid-3{ grid-template-columns:1fr; } }
+
+.card{
+  background:var(--warm-white);
+  border:1px solid var(--hairline);
+  border-radius:22px;
+  padding:32px 28px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{ transform:translateY(-4px); box-shadow:var(--card-shadow); }
+.card .icon{
+  width:46px; height:46px;
+  border-radius:14px;
+  background:var(--beige);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:18px;
+}
+.card .icon svg{ width:24px; height:24px; }
+.card .icon svg path,.card .icon svg circle,.card .icon svg line,.card .icon svg rect{ stroke:var(--rose-dark); fill:none; stroke-width:1.5; }
+.card h4{ font-size:1.08rem; margin-bottom:8px; }
+.card p{ font-size:14.5px; color:var(--charcoal-soft); }
+
+.section--learn{ background:var(--blush-bg); }
+.note-box{
+  margin-top:36px;
+  border:1px solid var(--hairline);
+  background:var(--warm-white);
+  border-radius:16px;
+  padding:18px 24px;
+  font-size:14px;
+  color:var(--charcoal-soft);
+  display:flex; gap:12px; align-items:flex-start;
+  max-width:720px; margin-left:auto; margin-right:auto;
+}
+.note-box svg{ width:20px; height:20px; flex:none; margin-top:2px; }
+.note-box svg path,.note-box svg circle,.note-box svg line{ stroke:var(--rose-mid); fill:none; stroke-width:1.5; }
+
+/* ============================================================
+   HANDS-ON SEQUENCE
+   ============================================================ */
+.sequence{
+  display:grid; grid-template-columns:1fr auto 1fr auto 1fr;
+  align-items:center; gap:8px;
+  margin-top:10px;
+}
+.seq-step{
+  background:var(--warm-white);
+  border:1px solid var(--hairline);
+  border-radius:20px;
+  padding:30px 22px;
+  text-align:center;
+}
+.seq-step .bud-lg{ width:34px; height:34px; margin:0 auto 16px; }
+.seq-step .bud-lg path{ fill:none; stroke:var(--gold-line); stroke-width:1.3; }
+.seq-step h4{ font-size:1.02rem; margin-bottom:6px; }
+.seq-step p{ font-size:13.5px; color:var(--charcoal-soft); }
+.seq-arrow{ width:26px; height:26px; }
+.seq-arrow path{ stroke:var(--rose-dust); fill:none; stroke-width:1.6; }
+@media (max-width:820px){
+  .sequence{ grid-template-columns:1fr; }
+  .seq-arrow{ transform:rotate(90deg); margin:2px auto; }
+}
+
+/* ============================================================
+   SCHEDULE TIMELINE
+   ============================================================ */
+.timeline{
+  max-width:720px; margin:0 auto;
+  border-left:1px solid var(--hairline);
+  padding-left:36px;
+  position:relative;
+}
+.tl-item{ position:relative; padding-bottom:38px; }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-item::before{
+  content:""; position:absolute; left:-42px; top:2px;
+  width:12px; height:12px; border-radius:50%;
+  background:var(--warm-white); border:2px solid var(--rose-dark);
+}
+.tl-time{ font-size:12.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--rose-mid); margin-bottom:6px; }
+.tl-title{ font-family:var(--font-display); font-size:1.2rem; color:var(--rose-deep); margin-bottom:4px; }
+.tl-desc{ font-size:14.5px; color:var(--charcoal-soft); }
+
+/* ============================================================
+   WHO SHOULD ATTEND
+   ============================================================ */
+.attend-panel{
+  background:linear-gradient(135deg, var(--beige), var(--blush-bg));
+  border-radius:28px;
+  padding:52px;
+  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+}
+.attend-panel .h-md{ margin-bottom:14px; }
+.attend-list{ display:flex; flex-direction:column; gap:14px; }
+.attend-list li{ display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:var(--charcoal-soft); }
+.attend-list svg{ width:18px; height:18px; flex:none; margin-top:2px; }
+.attend-list svg path{ stroke:var(--rose-dark); fill:none; stroke-width:1.6; }
+@media (max-width:820px){
+  .attend-panel{ grid-template-columns:1fr; padding:34px 26px; }
+}
+
+/* ============================================================
+   MEET DR. KIMBERLY
+   ============================================================ */
+.trainer-grid{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center; }
+.trainer-photo{
+  border-radius:210px 210px 16px 16px;
+  aspect-ratio:3/3.8;
+  background:linear-gradient(160deg, var(--rose-mid), var(--rose-deep));
+  box-shadow:var(--card-shadow);
+  overflow:hidden;
+  position:relative;
+}
+.trainer-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.trainer-photo svg{ width:58px; height:58px; opacity:0.85; }
+.trainer-photo svg path{ stroke:#fff; fill:none; stroke-width:1.2; }
+.trainer-photo span{ font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; }
+.credential-row{ display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 26px; }
+.credential-pill{
+  font-size:12.5px; font-weight:600; letter-spacing:0.03em;
+  background:var(--beige); color:var(--rose-deep);
+  padding:8px 16px; border-radius:999px;
+}
+@media (max-width:900px){
+  .trainer-grid{ grid-template-columns:1fr; gap:34px; }
+  .trainer-photo{ max-width:300px; margin:0 auto; }
+}
+
+/* ============================================================
+   LOCATION
+   ============================================================ */
+.location-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.map-ph{
+  border-radius:24px;
+  aspect-ratio:4/3.2;
+  background:
+    repeating-linear-gradient(45deg, rgba(124,63,73,0.05) 0 2px, transparent 2px 16px),
+    var(--beige);
+  border:1px solid var(--hairline);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;
+  color:var(--rose-mid);
+}
+.map-ph svg{ width:44px; height:44px; }
+.map-ph svg path,.map-ph svg circle{ stroke:var(--rose-dark); fill:none; stroke-width:1.4; }
+.map-ph span{ font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; }
+.location-facts{ display:flex; flex-direction:column; gap:16px; margin:26px 0 30px; }
+.location-fact{ display:flex; gap:14px; align-items:flex-start; }
+.location-fact svg{ width:20px; height:20px; flex:none; margin-top:2px; }
+.location-fact svg path,.location-fact svg circle{ stroke:var(--rose-dark); fill:none; stroke-width:1.5; }
+.location-fact strong{ display:block; font-size:14.5px; }
+.location-fact span{ font-size:13.5px; color:var(--charcoal-soft); }
+@media (max-width:860px){ .location-grid{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   REGISTRATION + PAYMENT
+   ============================================================ */
+.section--register{
+  background:linear-gradient(180deg, var(--rose-deep), var(--rose-dark));
+  color:var(--warm-white);
+}
+.section--register .eyebrow{ color:var(--rose-dust); }
+.section--register .h-lg{ color:var(--warm-white); }
+.section--register .lede{ color:rgba(255,253,251,0.82); }
+.register-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:52px; align-items:flex-start; margin-top:44px; }
+
+.summary-card{
+  background:rgba(255,253,251,0.06);
+  border:1px solid rgba(255,253,251,0.18);
+  border-radius:24px;
+  padding:34px;
+}
+.summary-row{ display:flex; justify-content:space-between; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,253,251,0.14); }
+.summary-row:last-child{ border-bottom:none; }
+.summary-row span:first-child{ font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,253,251,0.65); }
+.summary-row span:last-child{ font-size:14.5px; font-weight:600; text-align:right; }
+.summary-fee{ margin-top:22px; padding-top:22px; border-top:1px solid rgba(255,253,251,0.25); display:flex; justify-content:space-between; align-items:center; }
+.summary-fee strong{ font-family:var(--font-display); font-size:1.3rem; }
+.secure-note{ display:flex; gap:10px; align-items:center; margin-top:22px; font-size:12.5px; color:rgba(255,253,251,0.72); }
+.secure-note svg{ width:16px; height:16px; }
+.secure-note svg path{ stroke:rgba(255,253,251,0.72); fill:none; stroke-width:1.4; }
+
+.reg-form{
+  background:var(--warm-white);
+  border-radius:24px;
+  padding:38px;
+  color:var(--charcoal);
+}
+.form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.form-field{ display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+.form-field.full{ grid-column:1 / -1; }
+.form-field label{ font-size:12.5px; font-weight:600; letter-spacing:0.04em; color:var(--rose-deep); }
+.form-field input,.form-field select,.form-field textarea{
+  border:1px solid var(--hairline);
+  background:var(--blush-bg);
+  border-radius:12px;
+  padding:13px 15px;
+  font-family:var(--font-body);
+  font-size:14.5px;
+  color:var(--charcoal);
+}
+.form-field textarea{ resize:vertical; min-height:90px; }
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{ outline:2px solid var(--rose-mid); outline-offset:1px; background:var(--warm-white); }
+.form-fee-line{
+  display:flex; justify-content:space-between; align-items:center;
+  background:var(--beige); border-radius:14px; padding:16px 20px; margin:8px 0 22px;
+}
+.form-fee-line span:first-child{ font-size:13px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--rose-deep); }
+@media (max-width:900px){
+  .register-grid{ grid-template-columns:1fr; }
+  .reg-form{ padding:26px; }
+}
+@media (max-width:560px){ .form-grid{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+.faq-list{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+.faq-item{ border:1px solid var(--hairline); border-radius:16px; background:var(--warm-white); overflow:hidden; }
+.faq-q{
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  gap:16px; background:none; border:none; text-align:left;
+  padding:20px 24px; font-family:var(--font-display); font-size:1.02rem; color:var(--rose-deep);
+}
+.faq-q .plus{ width:20px; height:20px; flex:none; position:relative; }
+.faq-q .plus::before,.faq-q .plus::after{
+  content:""; position:absolute; background:var(--rose-dark); border-radius:2px;
+  transition:transform .25s ease, opacity .25s ease;
+}
+.faq-q .plus::before{ left:0; top:9px; width:20px; height:2px; }
+.faq-q .plus::after{ left:9px; top:0; width:2px; height:20px; }
+.faq-item.open .plus::after{ transform:rotate(90deg); opacity:0; }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .32s ease; }
+.faq-a-inner{ padding:0 24px 22px; font-size:14.5px; color:var(--charcoal-soft); }
+.faq-item.open .faq-a{ max-height:340px; }
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.section--final{
+  background:
+    radial-gradient(110% 140% at 50% 0%, rgba(201,138,147,0.22), transparent 60%),
+    var(--beige);
+  text-align:center;
+}
+.final-facts{ display:flex; justify-content:center; gap:30px; margin:26px 0 34px; flex-wrap:wrap; }
+.final-facts span{ font-size:13.5px; font-weight:600; letter-spacing:0.05em; color:var(--rose-deep); }
+.final-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{ background:var(--rose-deep); color:rgba(255,253,251,0.82); padding:50px 0 26px; }
+.footer-top{ display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:30px; border-bottom:1px solid rgba(255,253,251,0.16); }
+.footer-logo{ font-family:var(--font-display); font-size:1.3rem; color:var(--warm-white); margin-bottom:10px; }
+.footer-address{ font-size:13.5px; line-height:1.7; }
+.footer-links{ display:flex; gap:26px; flex-wrap:wrap; align-items:flex-start; }
+.footer-links a{ font-size:13.5px; }
+.footer-links a:hover{ color:var(--warm-white); }
+.footer-bottom{ padding-top:22px; font-size:12.5px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:rgba(255,253,251,0.55); }
+@media (max-width:600px){ .footer-top{ flex-direction:column; } }
+
+/* ============================================================
+   WHAT'S INCLUDED / LEAVE WITH — icon-list cards
+   ============================================================ */
+.grid-6{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media (max-width:900px){ .grid-6{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .grid-6{ grid-template-columns:1fr; } }
+.incl-card{
+  background:var(--warm-white);
+  border:1px solid var(--hairline);
+  border-radius:18px;
+  padding:22px 22px;
+  display:flex; gap:14px; align-items:flex-start;
+}
+.incl-card .icon{ width:38px; height:38px; border-radius:11px; background:var(--beige); display:flex; align-items:center; justify-content:center; flex:none; }
+.incl-card .icon svg{ width:19px; height:19px; }
+.incl-card .icon svg path,.incl-card .icon svg circle,.incl-card .icon svg line{ stroke:var(--rose-dark); fill:none; stroke-width:1.6; }
+.incl-card h4{ font-size:0.98rem; margin-bottom:4px; }
+.incl-card p{ font-size:13.5px; color:var(--charcoal-soft); }
+
+/* ============================================================
+   PREREQUISITES LIST (Who Should Attend expansion)
+   ============================================================ */
+.prereq-block{ margin-top:28px; padding-top:24px; border-top:1px solid var(--hairline); }
+.prereq-block h4{ font-size:1rem; margin-bottom:14px; }
+.prereq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; }
+@media (max-width:560px){ .prereq-grid{ grid-template-columns:1fr; } }
+.prereq-grid li{ display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--charcoal-soft); }
+.prereq-grid svg{ width:16px; height:16px; flex:none; margin-top:3px; }
+.prereq-grid svg path{ stroke:var(--rose-mid); fill:none; stroke-width:1.6; }
+
+/* ============================================================
+   POLICY ACCORDION (registration section)
+   ============================================================ */
+.policy-box{
+  margin-top:28px;
+  border:1px solid rgba(255,253,251,0.22);
+  border-radius:16px;
+  overflow:hidden;
+}
+.policy-q{
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  gap:16px; background:rgba(255,253,251,0.06); border:none; text-align:left;
+  padding:16px 20px; font-family:var(--font-display); font-size:0.98rem; color:var(--warm-white);
+}
+.policy-q .plus{ width:18px; height:18px; flex:none; position:relative; }
+.policy-q .plus::before,.policy-q .plus::after{ content:""; position:absolute; background:rgba(255,253,251,0.85); border-radius:2px; transition:transform .25s ease, opacity .25s ease; }
+.policy-q .plus::before{ left:0; top:8px; width:18px; height:2px; }
+.policy-q .plus::after{ left:8px; top:0; width:2px; height:18px; }
+.policy-item.open .plus::after{ transform:rotate(90deg); opacity:0; }
+.policy-a{ max-height:0; overflow:hidden; transition:max-height .32s ease; background:rgba(255,253,251,0.03); }
+.policy-a-inner{ padding:0 20px 18px; font-size:13.5px; color:rgba(255,253,251,0.82); line-height:1.7; }
+.policy-item.open .policy-a{ max-height:320px; }
+
+/* ============================================================
+   TESTIMONIAL
+   ============================================================ */
+.testimonial{
+  margin-top:28px;
+  padding:22px 24px;
+  border-left:3px solid var(--gold-line);
+  background:var(--beige);
+  border-radius:0 14px 14px 0;
+}
+.testimonial p{ font-family:var(--font-display); font-style:italic; font-size:1.02rem; color:var(--rose-deep); line-height:1.6; }
+.testimonial cite{ display:block; margin-top:10px; font-style:normal; font-size:12.5px; font-weight:600; letter-spacing:0.04em; color:var(--charcoal-soft); }
+
+/* utility */
+.mt-lg{ margin-top:44px; }
+.text-center{ text-align:center; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://goldenrosemedspa.com" class="logo">
+      <img src="https://goldenrosemedspa.com/wp-content/uploads/2025/08/golden-rose-logo.webp" alt="Golden Rose Wellness & Medical Spa" style="height:40px; width:auto;">
+    </a>
+    <nav class="nav-links">
+      <a href="#training">Training</a>
+      <a href="#trainer">About Dr. Kimberly</a>
+      <a href="#details">Training Details</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#register" class="btn btn-secondary">Training Details</a>
+      <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#training">Training</a>
+    <a href="#trainer">About Dr. Kimberly</a>
+    <a href="#details">Training Details</a>
+    <a href="#register" class="btn btn-primary" style="margin-top:16px; text-align:center;">Reserve Your Seat</a>
+  </nav>
+</header>
+
+<div id="top"></div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="training">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Hands-On Injector Training</p>
+      <h1 class="h-xl">Introduction to<br>Neuromodulators</h1>
+      <p class="hero-sub">Hands-On Injector Training with Dr. Kimberly Ayala Vega</p>
+
+      <div class="hero-facts">
+        <div class="hero-fact">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
+          Sunday, November 1, 2026
+        </div>
+        <div class="hero-fact">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          8:00 AM – Approx. 6:00 PM
+        </div>
+        <div class="hero-fact">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Apopka, Florida
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+        <a href="#details" class="btn btn-secondary">View Training Details</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="arch-frame">
+        <img src="https://goldenrosemedspa.com/wp-content/uploads/2025/08/golden-rose-about-page-7.webp" alt="Dr. Kimberly Ayala Vega, DNP, APRN, FNP-C">
+      </div>
+      <div class="float-card">
+        <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+        <div>
+          <strong>Perfectly in Bloom</strong>
+          <span>Golden Rose's signature approach to aesthetic education</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRAINER TRUST STRIP
+     ============================================================ -->
+<section class="trust-strip">
+  <div class="container trust-inner">
+    <div class="trust-name">
+      Dr. Kimberly Ayala Vega
+      <small>DNP, APRN, FNP-C — Founder, Golden Rose Wellness &amp; Medical Spa</small>
+    </div>
+    <div class="trust-tags">
+      <span>Board-Certified Family Nurse Practitioner</span>
+      <span>Aesthetic Injector Trainer</span>
+      <span>8+ Years of Practice · 775+ Patients Treated</span>
+      <span>Bilingual — English &amp; Español</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT YOU'LL LEARN
+     ============================================================ -->
+<section class="section section--learn" id="details">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Curriculum Overview</p>
+      <h2 class="h-lg">What You'll Learn</h2>
+      <p class="lede mt-lg" style="margin-top:16px;">A hands-on introduction to neuromodulator injection, guided by Dr. Kimberly from foundational theory through live technique.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <h4>Neuromodulator Fundamentals</h4>
+        <p>Core mechanisms, product overview, and foundational clinical theory.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
+        <h4>Patient Assessment</h4>
+        <p>Approaching facial evaluation and treatment candidacy with clinical care.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div>
+        <h4>Treatment Planning</h4>
+        <p>Building a considered, individualized treatment approach.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 18L18 6M9 6h9v9"/></svg></div>
+        <h4>Injection Technique</h4>
+        <p>Guided technique instruction under direct clinical supervision.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg></div>
+        <h4>Clinical Safety</h4>
+        <p>Safety protocol, precautions, and best-practice standards.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 4h8l-2 6h4l-8 10 2-8H8l2-8z"/></svg></div>
+        <h4>Hands-On Practice</h4>
+        <p>Live, supervised practice within a real medical spa setting.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>Final curriculum topics and sequencing will be confirmed by the trainer ahead of the training date.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HANDS-ON TRAINING SEQUENCE
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The Learning Experience</p>
+      <h2 class="h-lg">Learn by Doing</h2>
+      <p class="lede mt-lg" style="margin-top:16px;">This is hands-on injector training — designed around direct guidance, live demonstration, and supervised practice.</p>
+    </div>
+
+    <div class="sequence">
+      <div class="seq-step">
+        <svg class="bud-lg" viewBox="0 0 40 40"><path d="M20 6c4 4 4 8 0 12-4-4-4-8 0-12zM8 20c4-4 8-4 12 0-4 4-8 4-12 0zM32 20c-4-4-8-4-12 0 4 4 8 4 12 0zM20 22c4 4 4 8 0 12-4-4-4-8 0-12z"/></svg>
+        <h4>Instructor Guidance</h4>
+        <p>Direct instruction from Dr. Kimberly on theory and technique.</p>
+      </div>
+      <svg class="seq-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      <div class="seq-step">
+        <svg class="bud-lg" viewBox="0 0 40 40"><path d="M20 6c4 4 4 8 0 12-4-4-4-8 0-12zM8 20c4-4 8-4 12 0-4 4-8 4-12 0zM32 20c-4-4-8-4-12 0 4 4 8 4 12 0zM20 22c4 4 4 8 0 12-4-4-4-8 0-12z"/></svg>
+        <h4>Clinical Demonstration</h4>
+        <p>Live demonstration of technique within a real training setting.</p>
+      </div>
+      <svg class="seq-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      <div class="seq-step">
+        <svg class="bud-lg" viewBox="0 0 40 40"><path d="M20 6c4 4 4 8 0 12-4-4-4-8 0-12zM8 20c4-4 8-4 12 0-4 4-8 4-12 0zM32 20c-4-4-8-4-12 0 4 4 8 4 12 0zM20 22c4 4 4 8 0 12-4-4-4-8 0-12z"/></svg>
+        <h4>Hands-On Learning</h4>
+        <p>Supervised, hands-on practice to apply what you've learned.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span><strong style="color:var(--rose-deep);">Models &amp; live practice:</strong> <span class="ph">[CONFIRM — are models provided by Golden Rose, or do attendees bring their own? How many models per attendee, and will every attendee perform live injections under supervision?]</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRAINING SCHEDULE
+     ============================================================ -->
+<section class="section section--tight" style="background:var(--blush-bg);">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Training Day</p>
+      <h2 class="h-lg">Training Schedule</h2>
+      <p class="lede mt-lg" style="margin-top:16px;">Sunday, November 1, 2026</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">8:00 AM</div>
+        <div class="tl-title">Training Begins</div>
+        <div class="tl-desc">Arrival, welcome, and the start of instruction.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Morning – Afternoon</div>
+        <div class="tl-title">Instruction + Hands-On Training</div>
+        <div class="tl-desc">Guided instruction, demonstration, and supervised hands-on practice.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">Approximately 6:00 PM</div>
+        <div class="tl-title">Expected End Time</div>
+        <div class="tl-desc">Training wraps for the day.</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <span>Training may run later depending on students and models.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT YOU'LL LEAVE WITH
+     ============================================================ -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The Outcome</p>
+      <h2 class="h-lg">What You'll Leave With</h2>
+      <p class="lede mt-lg" style="margin-top:16px;">By the end of the day, you'll walk away with more than notes — you'll have applied what you learned, in real time, under direct supervision.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg></div>
+        <h4>Foundational Knowledge</h4>
+        <p>A working understanding of neuromodulator fundamentals, dosing considerations, and treatment planning.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 4h8l-2 6h4l-8 10 2-8H8l2-8z"/></svg></div>
+        <h4>Hands-On Experience</h4>
+        <p>Supervised, live injection practice — not observation-only training.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <h4>Clinical Confidence</h4>
+        <p>Direct feedback from Dr. Kimberly to help you refine technique and decision-making.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></div>
+        <h4>A Practical Framework</h4>
+        <p>An approach to patient assessment and treatment planning you can bring back to your own practice.</p>
+      </div>
+    </div>
+    <div class="note-box">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span><span class="ph">[CONFIRM — certificate of completion / CE-CME hours awarded?]</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHO SHOULD ATTEND
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="attend-panel">
+      <div>
+        <p class="eyebrow">Eligibility</p>
+        <h2 class="h-md">Who Should Attend?</h2>
+        <p class="lede" style="margin-top:14px;">Designed for licensed medical professionals looking to build a foundation in neuromodulator injection.</p>
+      </div>
+      <ul class="attend-list">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Registered Nurses (RN), Nurse Practitioners (NP/APRN), Physician Assistants (PA-C), and Physicians (MD/DO)</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>New to injectables or looking to build a stronger foundation in neuromodulator technique</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Active, unrestricted professional license required</span></li>
+      </ul>
+      <p class="lede" style="margin-top:18px; font-size:0.85em;"><span class="ph">Draft eligibility — pending final confirmation from Golden Rose</span></p>
+
+      <div class="prereq-block" style="grid-column:1 / -1;">
+        <h4>Before You Register</h4>
+        <ul class="prereq-grid">
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Prior injectable experience: <span class="ph" style="font-size:0.85em;">[CONFIRM — required or not required?]</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Skill level: <span class="ph" style="font-size:0.85em;">[CONFIRM — beginner-friendly, or some experience expected?]</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Basic anatomy knowledge: <span class="ph" style="font-size:0.85em;">[CONFIRM if assumed]</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Existing aesthetic practice: <span class="ph" style="font-size:0.85em;">[CONFIRM if required]</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>Class size: <span class="ph" style="font-size:0.85em;">[CONFIRM — max number of attendees]</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span>CE/CME credit: <span class="ph" style="font-size:0.85em;">[CONFIRM availability]</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MEET DR. KIMBERLY
+     ============================================================ -->
+<section class="section section--tight" id="trainer" style="background:var(--beige);">
+  <div class="container">
+    <div class="trainer-grid">
+      <div class="trainer-photo">
+        <img src="https://goldenrosemedspa.com/wp-content/uploads/2025/08/golden-rose-about-page-5.webp" alt="Dr. Kimberly Ayala Vega, founder of Golden Rose Wellness & Medical Spa">
+      </div>
+      <div>
+        <p class="eyebrow">Meet Your Trainer</p>
+        <h2 class="h-lg">Dr. Kimberly Ayala Vega, DNP, APRN, FNP-C</h2>
+        <p class="lede" style="margin-top:18px;">Founder and clinical director of Golden Rose Wellness &amp; Medical Spa, Dr. Ayala Vega is a board-certified Family Nurse Practitioner with over a decade of experience across primary care, regenerative aesthetics, and functional wellness — building a practice rooted in science, empathy, and transformation.</p>
+
+        <div class="credential-row">
+          <span class="credential-pill">DNP</span>
+          <span class="credential-pill">APRN</span>
+          <span class="credential-pill">Board-Certified FNP-C</span>
+          <span class="credential-pill">Certified in Aesthetic Medicine &amp; Functional Medicine</span>
+          <span class="credential-pill">Aesthetic Injector Trainer</span>
+          <span class="credential-pill">Licensed in Florida</span>
+        </div>
+
+        <div class="testimonial">
+          <p class="ph" style="font-style:italic;">[ADD GENUINE TRAINEE TESTIMONIAL IF AVAILABLE — e.g. "The hands-on experience completely changed the way I approach treatment planning." Only include if a real quote exists; omit this block otherwise.]</p>
+          <cite>— Previous Training Participant</cite>
+        </div>
+
+        <a href="#register" class="btn btn-primary" style="margin-top:26px;">Reserve Your Seat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY TRAIN AT GOLDEN ROSE
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">The Golden Rose Difference</p>
+      <h2 class="h-lg">Why Train at Golden Rose?</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></div>
+        <h4>Learn Directly From an Experienced Provider</h4>
+        <p>Guided instruction from Dr. Kimberly Ayala Vega, DNP, APRN, FNP-C.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 18L18 6M9 6h9v9"/></svg></div>
+        <h4>Hands-On Clinical Learning</h4>
+        <p>Live, supervised practice — not lecture-only instruction.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M9 21V12h6v9"/></svg></div>
+        <h4>Real Medical Spa Environment</h4>
+        <p>Train within an active, real-world aesthetic practice setting — not a rented conference room.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4><span class="ph" style="font-size:0.9em;">[CONFIRM]</span> Small-Group Training</h4>
+        <p><span class="ph">[CONFIRM class size / instructor-to-student ratio for direct, personalized feedback]</span></p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <h4><span class="ph" style="font-size:0.9em;">[CONFIRM]</span> Real Patient Experience</h4>
+        <p><span class="ph">[CONFIRM if training includes real patient/model treatment rather than practice pads]</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCATION
+     ============================================================ -->
+<section class="section section--tight" style="background:var(--blush-bg);">
+  <div class="container">
+    <div class="location-grid">
+      <div>
+        <p class="eyebrow">Where</p>
+        <h2 class="h-lg">Train at Golden Rose</h2>
+        <div class="location-facts">
+          <div class="location-fact">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <div><strong>Golden Rose Wellness &amp; Medical Spa</strong><span>1706 E Semoran Blvd, STE 118, Apopka, FL 32703</span></div>
+          </div>
+          <div class="location-fact">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div><strong>Training Date</strong><span>Sunday, November 1, 2026</span></div>
+          </div>
+          <div class="location-fact">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><strong>Training Time</strong><span>8:00 AM – Approximately 6:00 PM</span></div>
+          </div>
+          <div class="location-fact">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <div><strong>Parking &amp; Arrival</strong><span class="ph" style="font-size:0.9em;">[CONFIRM parking instructions and preferred arrival time, e.g. "Please arrive 15 minutes early"]</span></div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=1706+E+Semoran+Blvd+STE+118+Apopka+FL+32703" target="_blank" rel="noopener" class="btn btn-secondary">Get Directions</a>
+      </div>
+      <div class="map-ph">
+        <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        <span>Map — 1706 E Semoran Blvd, Apopka, FL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT'S INCLUDED
+     ============================================================ -->
+<section class="section section--tight" style="background:var(--blush-bg);">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Your Investment</p>
+      <h2 class="h-lg">What's Included With Your Registration?</h2>
+      <p class="lede mt-lg" style="margin-top:16px;">Everything below is confirmed with Golden Rose before this page goes live — nothing is assumed.</p>
+    </div>
+    <div class="grid-6">
+      <div class="incl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div><h4>Full-Day Training</h4><p>8:00 AM – approx. 6:00 PM with Dr. Kimberly.</p></div>
+      </div>
+      <div class="incl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 4h8l-2 6h4l-8 10 2-8H8l2-8z"/></svg></div>
+        <div><h4>Hands-On Practice</h4><p class="ph" style="font-size:0.92em;">[CONFIRM if live models/patients are included]</p></div>
+      </div>
+      <div class="incl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div><h4>Training Materials</h4><p class="ph" style="font-size:0.92em;">[CONFIRM what's provided — handouts, product guide, etc.]</p></div>
+      </div>
+      <div class="incl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg></div>
+        <div><h4>Certificate of Completion</h4><p class="ph" style="font-size:0.92em;">[CONFIRM — certificate issued? CE/CME hours?]</p></div>
+      </div>
+      <div class="incl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <div><h4>Instructor Guidance</h4><p>Direct, in-person feedback from Dr. Kimberly throughout the day.</p></div>
+      </div>
+      <div class="incl-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+        <div><h4>Meals / Refreshments</h4><p class="ph" style="font-size:0.92em;">[CONFIRM if lunch or refreshments are included]</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REGISTRATION + PAYMENT
+     ============================================================ -->
+<section class="section section--register" id="register">
+  <div class="container">
+    <div class="section-head" style="max-width:640px;">
+      <p class="eyebrow">Registration</p>
+      <h2 class="h-lg">Reserve Your Seat</h2>
+      <p class="lede mt-lg" style="margin-top:16px;">Spaces for hands-on training are limited. Complete the form below to register for Introduction to Neuromodulators.</p>
+    </div>
+
+    <div class="register-grid">
+      <div class="summary-card">
+        <h3 style="color:var(--warm-white); font-size:1.15rem; margin-bottom:10px;">Training Summary</h3>
+        <div class="summary-row"><span>Training</span><span>Introduction to Neuromodulators</span></div>
+        <div class="summary-row"><span>Date</span><span>Sunday, Nov 1, 2026</span></div>
+        <div class="summary-row"><span>Time</span><span>8:00 AM – Approx. 6:00 PM</span></div>
+        <div class="summary-row"><span>Location</span><span>Apopka, FL</span></div>
+        <div class="summary-fee">
+          <span style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,253,251,0.65);">Training Fee</span>
+          <strong class="ph" style="color:#fff; background:rgba(255,253,251,0.14); border-color:rgba(255,253,251,0.4);">[CONFIRM TRAINING FEE]</strong>
+        </div>
+        <div class="secure-note">
+          <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Secure registration &amp; payment
+        </div>
+
+        <div class="policy-box" id="policyBox">
+          <div class="policy-item">
+            <button class="policy-q"><span>Payment &amp; Seat Confirmation</span><span class="plus"></span></button>
+            <div class="policy-a"><div class="policy-a-inner"><span class="ph" style="color:rgba(255,253,251,0.9);">[CONFIRM — is full payment required to reserve a seat, or is a deposit accepted? Which payment processor is used, and when exactly is the seat considered confirmed?]</span></div></div>
+          </div>
+          <div class="policy-item">
+            <button class="policy-q"><span>Cancellation &amp; Refund Policy</span><span class="plus"></span></button>
+            <div class="policy-a"><div class="policy-a-inner"><span class="ph" style="color:rgba(255,253,251,0.9);">[CONFIRM — refund eligibility, cancellation deadline, seat-transfer policy, and what happens if the training is postponed or the attendee doesn't show.]</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <form class="reg-form" onsubmit="return false;">
+        <div class="form-grid">
+          <div class="form-field full">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" type="text" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="(555) 555-5555" required>
+          </div>
+          <div class="form-field">
+            <label for="title">Professional Title</label>
+            <input id="title" type="text" placeholder="e.g., Registered Nurse">
+          </div>
+          <div class="form-field">
+            <label for="licenseType">License Type</label>
+            <input id="licenseType" type="text" placeholder="e.g., RN, APRN, PA-C">
+          </div>
+          <div class="form-field">
+            <label for="licenseNumber">License Number <span class="ph" style="font-size:0.78em;">[IF REQUIRED]</span></label>
+            <input id="licenseNumber" type="text" placeholder="License number">
+          </div>
+          <div class="form-field">
+            <label for="practice">Practice / Clinic</label>
+            <input id="practice" type="text" placeholder="Practice or clinic name">
+          </div>
+          <div class="form-field full">
+            <label for="experience">Experience Level</label>
+            <select id="experience">
+              <option>New to Injectables</option>
+              <option>Some Prior Experience</option>
+              <option>Experienced Injector</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label for="notes">Questions / Notes</label>
+            <textarea id="notes" placeholder="Anything you'd like us to know before training day"></textarea>
+          </div>
+        </div>
+
+        <div class="form-fee-line">
+          <span>Training Fee</span>
+          <span class="ph">[CONFIRM]</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Register &amp; Pay</button>
+        <p style="font-size:12px; color:var(--charcoal-soft); text-align:center; margin-top:12px;">Payment provider to be confirmed. No payment will be processed until finalized.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h-lg">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q"><span>What is the training date?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">The training is held on Sunday, November 1, 2026.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What time does training begin?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Training begins at 8:00 AM.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How long does the training last?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Training runs from 8:00 AM until approximately 6:00 PM, and may run later depending on students and models.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Where is the training held?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Golden Rose Wellness &amp; Medical Spa, 1706 E Semoran Blvd, STE 118, Apopka, FL 32703.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Is the training hands-on?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes — this is a hands-on injector training that includes instructor guidance, clinical demonstration, and supervised hands-on practice.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Who is eligible to attend?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">This training is designed for licensed medical professionals — RNs, NPs, PAs, and physicians — with an active, unrestricted license. Prior injectable experience is not required. <span class="ph" style="font-size:0.85em;">(Draft — final eligibility pending client confirmation)</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What is included in the training?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM INCLUDED MATERIALS]</span> — see the "What's Included" section above for the full breakdown once confirmed.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What is the training fee?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM TRAINING FEE]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Is certification provided?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM CERTIFICATION / CE-CME DETAILS]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Are prerequisites required to attend?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM — is prior injectable experience required, and is this beginner-friendly or for experienced injectors?]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Are models provided, or do I bring my own?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM the model arrangement — provided by Golden Rose, brought by attendees, or a mix — and whether it's included in the training fee.]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Will I actually perform injections during the training?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM — do all attendees perform live, supervised injections, and how much practice time is allotted per person?]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How many people will be in the training?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM maximum class size / instructor-to-student ratio]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What should I bring?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM WHAT ATTENDEES SHOULD BRING]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What is the payment &amp; cancellation policy?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM — deposit vs. full payment, refund eligibility, cancellation deadline, and transfer policy.]</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Is parking available?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><span class="ph">[CONFIRM parking instructions]</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="section section--final">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;">Limited Seats</p>
+    <h2 class="h-lg">Ready to Elevate Your Injector Skills?</h2>
+    <p class="lede" style="max-width:560px; margin:18px auto 0;">Join Dr. Kimberly Ayala Vega for hands-on neuromodulator training at Golden Rose Wellness &amp; Medical Spa.</p>
+    <div class="final-facts">
+      <span>November 1, 2026</span>
+      <span>Apopka, Florida</span>
+    </div>
+    <div class="final-actions">
+      <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo" style="background:var(--warm-white); display:inline-block; padding:10px 16px; border-radius:12px;"><img src="https://goldenrosemedspa.com/wp-content/uploads/2025/08/golden-rose-logo.webp" alt="Golden Rose" style="height:30px; width:auto;"></div>
+        <div class="footer-address">
+          1706 E Semoran Blvd, STE 118<br>
+          Apopka, FL 32703<br>
+          <a href="tel:+14073354055">(407) 335-4055</a> · <a href="https://wa.me/13219175308" target="_blank" rel="noopener">WhatsApp (321) 917-5308</a><br>
+          Se habla español
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/dr.kimberlyayala/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/goldenrosemedspa" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.tiktok.com/@goldenrosemedspa" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://goldenrosemedspa.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://goldenrosemedspa.com/terms-and-conditions/" target="_blank" rel="noopener">Terms</a>
+        <a href="https://goldenrosemedspa.com/accessibility-statement/" target="_blank" rel="noopener">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Golden Rose Wellness &amp; Medical Spa. All rights reserved.</span>
+      <span>goldenrosemedspa.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Policy accordion (registration section)
+  document.querySelectorAll('.policy-item').forEach(item => {
+    const btn = item.querySelector('.policy-q');
+    btn.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.policy-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
